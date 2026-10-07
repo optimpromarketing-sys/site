@@ -1,14 +1,4 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Оптим | Трудозатраты — приложение для Битрикс24 | Оптим Про</title>
-<meta name="description" content="Вы знаете, сколько длилась задача. Но не знаете, сколько она стоила. Приложение для руководителей, которые считают не только время, но и деньги. IT-команды, агентства, сервисные отделы в Битрикс24.">
-<meta name="referrer" content="strict-origin-when-cross-origin">
-</head>
-<body>
-<div class="op-root">
+<div class="op-root" id="op-app-laborcost">
 <link rel="stylesheet" href="https://fonts.bunny.net/css?family=montserrat:400,600,700,800&display=swap">
 <style>
 @import url('https://fonts.bunny.net/css?family=montserrat:400,600,700,800&display=swap');
@@ -373,7 +363,7 @@ section.op-w{padding:96px 40px}
 <section class="hero op-w">
   <div class="hero-eyebrow">
     <span class="hero-dot"></span>
-    <img class="hero-icon" src="https://util.1c-bitrix.ru/upload/bx24vendor/ef2/97qopyudy046e4xjf26jyk5ttqvp55ry/Frame%2012%20(1).png" alt="Оптим | Трудозатраты" onerror="this.style.display='none'">
+    <img class="hero-icon" src="https://util.1c-bitrix.ru/upload/bx24vendor/ef2/97qopyudy046e4xjf26jyk5ttqvp55ry/Frame%2012%20(1).png" alt="Оптим | Трудозатраты" data-image-fallback="hide">
     <span class="hero-tag" style="background:#2FC7F718;color:#2FC7F7;border-color:#2FC7F740">Задачи · Аналитика</span>
   </div>
   <h1 class="hero-h1">Оптим | Трудозатраты</h1>
@@ -387,6 +377,7 @@ section.op-w{padding:96px 40px}
     <div class="stat-item"><div class="stat-num" style="font-size:22px;line-height:1.3">Встроен в Битрикс24</div><div class="stat-label">работает без внешних сервисов</div></div>
     <div class="stat-item"><div class="stat-num" style="font-size:22px;line-height:1.3">Перенос записей</div><div class="stat-label">уникальная функция — в базовой версии её нет</div></div>
     <div class="stat-item"><div class="stat-num" style="font-size:22px;line-height:1.3">История хранится</div><div class="stat-label">удалённые записи не пропадают</div></div></div>
+</div>
 </div>
 
 <!-- PAINS -->
@@ -545,6 +536,161 @@ section.op-w{padding:96px 40px}
 </section>
 
 
+<section class="op-w">
+  <div class="section-label">Установка</div>
+  <h2 class="section-h2">Три шага — и приложение работает</h2>
+  <div class="setup-steps">
+    <div class="setup-step">
+      <div class="step-head">
+        <div class="step-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></div>
+        <div class="step-num-badge">01</div>
+      </div>
+      <div class="setup-body">
+        <div class="setup-title">Установите из маркетплейса</div>
+        <div class="setup-text">Одна кнопка в маркетплейсе Битрикс24 — приложение встраивается в карточку задачи.</div>
+      </div>
+    </div>
+    <div class="setup-step">
+      <div class="step-head">
+        <div class="step-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg></div>
+        <div class="step-num-badge">02</div>
+      </div>
+      <div class="setup-body">
+        <div class="setup-title">Настройте ставки</div>
+        <div class="setup-text">Укажите ставки по должностям или конкретным сотрудникам. Один раз — работает везде.</div>
+      </div>
+    </div>
+    <div class="setup-step">
+      <div class="step-head">
+        <div class="step-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg></div>
+        <div class="step-num-badge">03</div>
+      </div>
+      <div class="setup-body">
+        <div class="setup-title">Откройте любую задачу</div>
+        <div class="setup-text">Откройте задачу → вкладка «Трудозатраты» → стоимость в реальном времени.</div>
+      </div>
+    </div></div>
+</section>
+
+<!-- CTA REDESIGN -->
+<section class="op-w">
+  <div class="section-label">Вопросы и ответы</div>
+  <h2 class="section-h2">Самое важное перед тем, как начать</h2>
+  <div class="faq-list">
+    <div class="faq-item">
+      <button class="faq-q">Работает ли с существующими записями времени? <span class="faq-arrow">+</span></button>
+      <div class="faq-a">Да. Берёт записи из Битрикс24 и добавляет стоимость по вашим ставкам.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">Можно ли настроить разные ставки для разных сотрудников? <span class="faq-arrow">+</span></button>
+      <div class="faq-a">Да. По должности или индивидуально — как настроите.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">Что значит «перенос трудозатрат»? <span class="faq-arrow">+</span></button>
+      <div class="faq-a">Записали время не в ту задачу — переносите в нужную. Автор, дата, комментарий сохраняются. В стандартном Битрикс24 этого нет.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">Видят ли сотрудники ставки друг друга? <span class="faq-arrow">+</span></button>
+      <div class="faq-a">Нет, если не настроить. По умолчанию финансовые данные видят только руководители.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">Чем отличается от стандартного учёта времени? <span class="faq-arrow">+</span></button>
+      <div class="faq-a">Стандартный Битрикс24 фиксирует часы — не считает стоимость, не переносит записи, не вносит время за другого. Трудозатраты закрывают все три пробела.</div>
+    </div></div>
+</section>
+<section class="op-w cta-form-block" id="cta-form">
+  <div class="cta-fb-card">
+    <div class="cta-fb-inner">
+      <div class="section-label is-v">Кастомное решение</div>
+      <h2>Нужна настройка под вашу структуру — возьмём на себя</h2>
+      <p class="cta-fb-sub">Оставьте заявку — настроим ставки, роли и выгрузки под вашу команду. Расскажите, как устроена структура, и мы предложим конкретное решение.</p>
+      <script data-b24-form="inline/244/ufbsnj" data-skip-moving="true">
+(function(w,d,u){
+var s=d.createElement('script');s.async=true;s.src=u+'?'+(Date.now()/180000|0);
+var h=d.getElementsByTagName('script')[0];h.parentNode.insertBefore(s,h);
+})(window,document,'https://cdn-ru.bitrix24.ru/b1445091/crm/form/loader_244.js');
+</script>
+    </div>
+  </div>
+</section>
+
+<!-- OTHER APPS -->
+<section class="op-w">
+  <div class="section-label">Экосистема Оптим Про</div>
+  <h2 class="section-h2">Другие приложения</h2>
+  <div class="others-wrap">
+    <button class="others-arrow others-arrow-l" id="othL"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 18l-6-6 6-6"/></svg></button>
+    <div class="others-strip" id="othStrip">
+    <a class="other-card" href="https://b24.pro/prilozheniyastranitsa/optimgpt/">
+      <img class="other-icon" src="https://util.1c-bitrix.ru/upload/bx24vendor/4da/52usp5c3dt5cgs4qzoq3936di0wzqrqg/Frame%2012.png" alt="OptimGPT" data-image-fallback="transparent">
+      <div class="other-name">OptimGPT</div>
+      <div class="other-tag">ИИ · Автоматизация</div>
+    </a>
+    <a class="other-card" href="https://b24.pro/prilozheniyastranitsa/geotrekker/">
+      <img class="other-icon" src="https://util.1c-bitrix.ru/upload/bx24vendor/209/0i7kp7gyeo7quxm18wy1h4oftqj95r7f/%D0%9E%D0%BF%D1%82%D0%B8%D0%BC%20%D0%B3%D0%B5%D0%BE%D1%82%D1%80%D0%B5%D0%BA%D0%B5%D1%80.png" alt="Геотрекер" data-image-fallback="transparent">
+      <div class="other-name">Оптим | Геотрекер</div>
+      <div class="other-tag">Управление командой · Мобильное</div>
+    </a>
+    <a class="other-card" href="https://b24.pro/prilozheniyastranitsa/passport/">
+      <img class="other-icon" src="https://util.1c-bitrix.ru/upload/bx24vendor/e0b/74f608ilmfw4e3yy50diwq0ftum2xarq/%D0%9E%D0%BF%D1%82%D0%B8%D0%BC%20%D0%B3%D0%B5%D0%BE%D1%82%D1%80%D0%B5%D0%BA%D0%B5%D1%80.png" alt="Распознавание Документов" data-image-fallback="transparent">
+      <div class="other-name">Распознавание Документов РФ</div>
+      <div class="other-tag">CRM · Автоматизация · ИИ</div>
+    </a>
+    <a class="other-card" href="https://b24.pro/prilozheniyastranitsa/translator/">
+      <img class="other-icon" src="https://util.1c-bitrix.ru/upload/bx24vendor/aef/o0c6ube2seax7oo17wjruh60wsu1vt4m/%D0%9E%D0%BF%D1%82%D0%B8%D0%BC%20%D0%BF%D0%B5%D1%80%D0%B5%D0%B2%D0%BE%D0%B4%D1%87%D0%B8%D0%BA.png" alt="Переводчик" data-image-fallback="transparent">
+      <div class="other-name">Оптим | Переводчик в ОЛ</div>
+      <div class="other-tag">Коммуникации · ИИ</div>
+    </a>
+    <a class="other-card" href="https://b24.pro/prilozheniyastranitsa/optimgpt/">
+      <img class="other-icon" src="https://util.1c-bitrix.ru/upload/bx24vendor/4da/52usp5c3dt5cgs4qzoq3936di0wzqrqg/Frame%2012.png" alt="OptimGPT" data-image-fallback="transparent">
+      <div class="other-name">OptimGPT</div>
+      <div class="other-tag">ИИ · Автоматизация</div>
+    </a>
+    <a class="other-card" href="https://b24.pro/prilozheniyastranitsa/geotrekker/">
+      <img class="other-icon" src="https://util.1c-bitrix.ru/upload/bx24vendor/209/0i7kp7gyeo7quxm18wy1h4oftqj95r7f/%D0%9E%D0%BF%D1%82%D0%B8%D0%BC%20%D0%B3%D0%B5%D0%BE%D1%82%D1%80%D0%B5%D0%BA%D0%B5%D1%80.png" alt="Геотрекер" data-image-fallback="transparent">
+      <div class="other-name">Оптим | Геотрекер</div>
+      <div class="other-tag">Управление командой · Мобильное</div>
+    </a>
+    <a class="other-card" href="https://b24.pro/prilozheniyastranitsa/passport/">
+      <img class="other-icon" src="https://util.1c-bitrix.ru/upload/bx24vendor/e0b/74f608ilmfw4e3yy50diwq0ftum2xarq/%D0%9E%D0%BF%D1%82%D0%B8%D0%BC%20%D0%B3%D0%B5%D0%BE%D1%82%D1%80%D0%B5%D0%BA%D0%B5%D1%80.png" alt="Распознавание Документов" data-image-fallback="transparent">
+      <div class="other-name">Распознавание Документов РФ</div>
+      <div class="other-tag">CRM · Автоматизация · ИИ</div>
+    </a>
+    <a class="other-card" href="https://b24.pro/prilozheniyastranitsa/translator/">
+      <img class="other-icon" src="https://util.1c-bitrix.ru/upload/bx24vendor/aef/o0c6ube2seax7oo17wjruh60wsu1vt4m/%D0%9E%D0%BF%D1%82%D0%B8%D0%BC%20%D0%BF%D0%B5%D1%80%D0%B5%D0%B2%D0%BE%D0%B4%D1%87%D0%B8%D0%BA.png" alt="Переводчик" data-image-fallback="transparent">
+      <div class="other-name">Оптим | Переводчик в ОЛ</div>
+      <div class="other-tag">Коммуникации · ИИ</div>
+    </a>
+    <a class="other-card" href="https://b24.pro/prilozheniyastranitsa/optimgpt/">
+      <img class="other-icon" src="https://util.1c-bitrix.ru/upload/bx24vendor/4da/52usp5c3dt5cgs4qzoq3936di0wzqrqg/Frame%2012.png" alt="OptimGPT" data-image-fallback="transparent">
+      <div class="other-name">OptimGPT</div>
+      <div class="other-tag">ИИ · Автоматизация</div>
+    </a>
+    <a class="other-card" href="https://b24.pro/prilozheniyastranitsa/geotrekker/">
+      <img class="other-icon" src="https://util.1c-bitrix.ru/upload/bx24vendor/209/0i7kp7gyeo7quxm18wy1h4oftqj95r7f/%D0%9E%D0%BF%D1%82%D0%B8%D0%BC%20%D0%B3%D0%B5%D0%BE%D1%82%D1%80%D0%B5%D0%BA%D0%B5%D1%80.png" alt="Геотрекер" data-image-fallback="transparent">
+      <div class="other-name">Оптим | Геотрекер</div>
+      <div class="other-tag">Управление командой · Мобильное</div>
+    </a>
+    <a class="other-card" href="https://b24.pro/prilozheniyastranitsa/passport/">
+      <img class="other-icon" src="https://util.1c-bitrix.ru/upload/bx24vendor/e0b/74f608ilmfw4e3yy50diwq0ftum2xarq/%D0%9E%D0%BF%D1%82%D0%B8%D0%BC%20%D0%B3%D0%B5%D0%BE%D1%82%D1%80%D0%B5%D0%BA%D0%B5%D1%80.png" alt="Распознавание Документов" data-image-fallback="transparent">
+      <div class="other-name">Распознавание Документов РФ</div>
+      <div class="other-tag">CRM · Автоматизация · ИИ</div>
+    </a>
+    <a class="other-card" href="https://b24.pro/prilozheniyastranitsa/translator/">
+      <img class="other-icon" src="https://util.1c-bitrix.ru/upload/bx24vendor/aef/o0c6ube2seax7oo17wjruh60wsu1vt4m/%D0%9E%D0%BF%D1%82%D0%B8%D0%BC%20%D0%BF%D0%B5%D1%80%D0%B5%D0%B2%D0%BE%D0%B4%D1%87%D0%B8%D0%BA.png" alt="Переводчик" data-image-fallback="transparent">
+      <div class="other-name">Оптим | Переводчик в ОЛ</div>
+      <div class="other-tag">Коммуникации · ИИ</div>
+    </a></div>
+    <button class="others-arrow others-arrow-r" id="othR"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg></button>
+  </div>
+</section>
+
+
+
+</div>
+
+<!-- FAQ -->
+
 <!-- LIGHTBOX -->
 <div class="op-lb" id="opLb">
   <button class="lb-close" id="lbClose">×</button>
@@ -555,6 +701,14 @@ section.op-w{padding:96px 40px}
 </div>
 
 <script>
+(function(){
+  var root=document.getElementById('op-app-laborcost');
+  function fallback(img){if(img.dataset.imageFallback==='hide')img.style.display='none';else img.style.opacity='0';}
+  root.querySelectorAll('img[data-image-fallback]').forEach(function(img){
+    img.addEventListener('error',function(){fallback(img);});
+    if(img.complete && !img.naturalWidth)fallback(img);
+  });
+})();
 (function(){
 // Progress bar
 var prog=document.getElementById('opProg');
@@ -579,14 +733,28 @@ document.getElementById('lbNext').addEventListener('click',function(e){e.stopPro
 lb.addEventListener('click',function(e){if(e.target===lb)lbClose();});
 document.addEventListener('keydown',function(e){if(!lb.classList.contains('open'))return;if(e.key==='Escape')lbClose();else if(e.key==='ArrowRight')lbGo(li+1);else if(e.key==='ArrowLeft')lbGo(li-1);});
 
-// FAQ
-document.querySelectorAll('.faq-q').forEach(function(btn){
-  btn.addEventListener('click',function(){
-    var item=btn.closest('.faq-item'),was=item.classList.contains('open');
-    document.querySelectorAll('.faq-item').forEach(function(i){i.classList.remove('open');});
-    if(!was)item.classList.add('open');
-  });
-});
+// FAQ — initialize after all sections are present.
+(function(){
+  function initFaq(){
+    var root=document.getElementById('op-app-laborcost');
+    if(!root) return;
+    root.querySelectorAll('.faq-q').forEach(function(btn){
+      if(btn.dataset.opFaqBound) return;
+      btn.dataset.opFaqBound='true';
+      btn.setAttribute('aria-expanded','false');
+      btn.addEventListener('click',function(){
+        var item=btn.closest('.faq-item'),was=item.classList.contains('open');
+        root.querySelectorAll('.faq-item').forEach(function(other){
+          other.classList.remove('open');
+          other.querySelector('.faq-q').setAttribute('aria-expanded','false');
+        });
+        if(!was){item.classList.add('open');btn.setAttribute('aria-expanded','true');}
+      });
+    });
+  }
+  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',initFaq);
+  else initFaq();
+})();
 
 // Scroll reveal — all animated elements
 var revealSel='.feat-card,.pain-item,.segment-card,.setup-step,.alt-block,.section-label,.section-h2,.trust-item,.result-callout,.lm-card';
@@ -681,158 +849,3 @@ if(pg){
 })();
 </script>
 </div>
-</body>
-</html><section class="op-w">
-  <div class="section-label">Установка</div>
-  <h2 class="section-h2">Три шага — и приложение работает</h2>
-  <div class="setup-steps">
-    <div class="setup-step">
-      <div class="step-head">
-        <div class="step-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></div>
-        <div class="step-num-badge">01</div>
-      </div>
-      <div class="setup-body">
-        <div class="setup-title">Установите из маркетплейса</div>
-        <div class="setup-text">Одна кнопка в маркетплейсе Битрикс24 — приложение встраивается в карточку задачи.</div>
-      </div>
-    </div>
-    <div class="setup-step">
-      <div class="step-head">
-        <div class="step-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg></div>
-        <div class="step-num-badge">02</div>
-      </div>
-      <div class="setup-body">
-        <div class="setup-title">Настройте ставки</div>
-        <div class="setup-text">Укажите ставки по должностям или конкретным сотрудникам. Один раз — работает везде.</div>
-      </div>
-    </div>
-    <div class="setup-step">
-      <div class="step-head">
-        <div class="step-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg></div>
-        <div class="step-num-badge">03</div>
-      </div>
-      <div class="setup-body">
-        <div class="setup-title">Откройте любую задачу</div>
-        <div class="setup-text">Откройте задачу → вкладка «Трудозатраты» → стоимость в реальном времени.</div>
-      </div>
-    </div></div>
-</section>
-
-<!-- CTA REDESIGN -->
-<section class="op-w">
-  <div class="section-label">Вопросы и ответы</div>
-  <h2 class="section-h2">Самое важное перед тем, как начать</h2>
-  <div class="faq-list">
-    <div class="faq-item">
-      <button class="faq-q">Работает ли с существующими записями времени? <span class="faq-arrow">+</span></button>
-      <div class="faq-a">Да. Берёт записи из Битрикс24 и добавляет стоимость по вашим ставкам.</div>
-    </div>
-    <div class="faq-item">
-      <button class="faq-q">Можно ли настроить разные ставки для разных сотрудников? <span class="faq-arrow">+</span></button>
-      <div class="faq-a">Да. По должности или индивидуально — как настроите.</div>
-    </div>
-    <div class="faq-item">
-      <button class="faq-q">Что значит «перенос трудозатрат»? <span class="faq-arrow">+</span></button>
-      <div class="faq-a">Записали время не в ту задачу — переносите в нужную. Автор, дата, комментарий сохраняются. В стандартном Битрикс24 этого нет.</div>
-    </div>
-    <div class="faq-item">
-      <button class="faq-q">Видят ли сотрудники ставки друг друга? <span class="faq-arrow">+</span></button>
-      <div class="faq-a">Нет, если не настроить. По умолчанию финансовые данные видят только руководители.</div>
-    </div>
-    <div class="faq-item">
-      <button class="faq-q">Чем отличается от стандартного учёта времени? <span class="faq-arrow">+</span></button>
-      <div class="faq-a">Стандартный Битрикс24 фиксирует часы — не считает стоимость, не переносит записи, не вносит время за другого. Трудозатраты закрывают все три пробела.</div>
-    </div></div>
-</section>
-<section class="op-w cta-form-block" id="cta-form">
-  <div class="cta-fb-card">
-    <div class="cta-fb-inner">
-      <div class="section-label is-v">Кастомное решение</div>
-      <h2>Нужна настройка под вашу структуру — возьмём на себя</h2>
-      <p class="cta-fb-sub">Оставьте заявку — настроим ставки, роли и выгрузки под вашу команду. Расскажите, как устроена структура, и мы предложим конкретное решение.</p>
-      <script data-b24-form="inline/244/ufbsnj" data-skip-moving="true">
-(function(w,d,u){
-var s=d.createElement('script');s.async=true;s.src=u+'?'+(Date.now()/180000|0);
-var h=d.getElementsByTagName('script')[0];h.parentNode.insertBefore(s,h);
-})(window,document,'https://cdn-ru.bitrix24.ru/b1445091/crm/form/loader_244.js');
-</script>
-    </div>
-  </div>
-</section>
-
-<!-- OTHER APPS -->
-<section class="op-w">
-  <div class="section-label">Экосистема Оптим Про</div>
-  <h2 class="section-h2">Другие приложения</h2>
-  <div class="others-wrap">
-    <button class="others-arrow others-arrow-l" id="othL"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 18l-6-6 6-6"/></svg></button>
-    <div class="others-strip" id="othStrip">
-    <a class="other-card" href="https://b24.pro/prilozheniyastranitsa/optimgpt/">
-      <img class="other-icon" src="https://util.1c-bitrix.ru/upload/bx24vendor/4da/52usp5c3dt5cgs4qzoq3936di0wzqrqg/Frame%2012.png" alt="OptimGPT" onerror="this.style.opacity=0">
-      <div class="other-name">OptimGPT</div>
-      <div class="other-tag">ИИ · Автоматизация</div>
-    </a>
-    <a class="other-card" href="https://b24.pro/prilozheniyastranitsa/geotrekker/">
-      <img class="other-icon" src="https://util.1c-bitrix.ru/upload/bx24vendor/209/0i7kp7gyeo7quxm18wy1h4oftqj95r7f/%D0%9E%D0%BF%D1%82%D0%B8%D0%BC%20%D0%B3%D0%B5%D0%BE%D1%82%D1%80%D0%B5%D0%BA%D0%B5%D1%80.png" alt="Геотрекер" onerror="this.style.opacity=0">
-      <div class="other-name">Оптим | Геотрекер</div>
-      <div class="other-tag">Управление командой · Мобильное</div>
-    </a>
-    <a class="other-card" href="https://b24.pro/prilozheniyastranitsa/passport/">
-      <img class="other-icon" src="https://util.1c-bitrix.ru/upload/bx24vendor/e0b/74f608ilmfw4e3yy50diwq0ftum2xarq/%D0%9E%D0%BF%D1%82%D0%B8%D0%BC%20%D0%B3%D0%B5%D0%BE%D1%82%D1%80%D0%B5%D0%BA%D0%B5%D1%80.png" alt="Распознавание Документов" onerror="this.style.opacity=0">
-      <div class="other-name">Распознавание Документов РФ</div>
-      <div class="other-tag">CRM · Автоматизация · ИИ</div>
-    </a>
-    <a class="other-card" href="https://b24.pro/prilozheniyastranitsa/translator/">
-      <img class="other-icon" src="https://util.1c-bitrix.ru/upload/bx24vendor/aef/o0c6ube2seax7oo17wjruh60wsu1vt4m/%D0%9E%D0%BF%D1%82%D0%B8%D0%BC%20%D0%BF%D0%B5%D1%80%D0%B5%D0%B2%D0%BE%D0%B4%D1%87%D0%B8%D0%BA.png" alt="Переводчик" onerror="this.style.opacity=0">
-      <div class="other-name">Оптим | Переводчик в ОЛ</div>
-      <div class="other-tag">Коммуникации · ИИ</div>
-    </a>
-    <a class="other-card" href="https://b24.pro/prilozheniyastranitsa/optimgpt/">
-      <img class="other-icon" src="https://util.1c-bitrix.ru/upload/bx24vendor/4da/52usp5c3dt5cgs4qzoq3936di0wzqrqg/Frame%2012.png" alt="OptimGPT" onerror="this.style.opacity=0">
-      <div class="other-name">OptimGPT</div>
-      <div class="other-tag">ИИ · Автоматизация</div>
-    </a>
-    <a class="other-card" href="https://b24.pro/prilozheniyastranitsa/geotrekker/">
-      <img class="other-icon" src="https://util.1c-bitrix.ru/upload/bx24vendor/209/0i7kp7gyeo7quxm18wy1h4oftqj95r7f/%D0%9E%D0%BF%D1%82%D0%B8%D0%BC%20%D0%B3%D0%B5%D0%BE%D1%82%D1%80%D0%B5%D0%BA%D0%B5%D1%80.png" alt="Геотрекер" onerror="this.style.opacity=0">
-      <div class="other-name">Оптим | Геотрекер</div>
-      <div class="other-tag">Управление командой · Мобильное</div>
-    </a>
-    <a class="other-card" href="https://b24.pro/prilozheniyastranitsa/passport/">
-      <img class="other-icon" src="https://util.1c-bitrix.ru/upload/bx24vendor/e0b/74f608ilmfw4e3yy50diwq0ftum2xarq/%D0%9E%D0%BF%D1%82%D0%B8%D0%BC%20%D0%B3%D0%B5%D0%BE%D1%82%D1%80%D0%B5%D0%BA%D0%B5%D1%80.png" alt="Распознавание Документов" onerror="this.style.opacity=0">
-      <div class="other-name">Распознавание Документов РФ</div>
-      <div class="other-tag">CRM · Автоматизация · ИИ</div>
-    </a>
-    <a class="other-card" href="https://b24.pro/prilozheniyastranitsa/translator/">
-      <img class="other-icon" src="https://util.1c-bitrix.ru/upload/bx24vendor/aef/o0c6ube2seax7oo17wjruh60wsu1vt4m/%D0%9E%D0%BF%D1%82%D0%B8%D0%BC%20%D0%BF%D0%B5%D1%80%D0%B5%D0%B2%D0%BE%D0%B4%D1%87%D0%B8%D0%BA.png" alt="Переводчик" onerror="this.style.opacity=0">
-      <div class="other-name">Оптим | Переводчик в ОЛ</div>
-      <div class="other-tag">Коммуникации · ИИ</div>
-    </a>
-    <a class="other-card" href="https://b24.pro/prilozheniyastranitsa/optimgpt/">
-      <img class="other-icon" src="https://util.1c-bitrix.ru/upload/bx24vendor/4da/52usp5c3dt5cgs4qzoq3936di0wzqrqg/Frame%2012.png" alt="OptimGPT" onerror="this.style.opacity=0">
-      <div class="other-name">OptimGPT</div>
-      <div class="other-tag">ИИ · Автоматизация</div>
-    </a>
-    <a class="other-card" href="https://b24.pro/prilozheniyastranitsa/geotrekker/">
-      <img class="other-icon" src="https://util.1c-bitrix.ru/upload/bx24vendor/209/0i7kp7gyeo7quxm18wy1h4oftqj95r7f/%D0%9E%D0%BF%D1%82%D0%B8%D0%BC%20%D0%B3%D0%B5%D0%BE%D1%82%D1%80%D0%B5%D0%BA%D0%B5%D1%80.png" alt="Геотрекер" onerror="this.style.opacity=0">
-      <div class="other-name">Оптим | Геотрекер</div>
-      <div class="other-tag">Управление командой · Мобильное</div>
-    </a>
-    <a class="other-card" href="https://b24.pro/prilozheniyastranitsa/passport/">
-      <img class="other-icon" src="https://util.1c-bitrix.ru/upload/bx24vendor/e0b/74f608ilmfw4e3yy50diwq0ftum2xarq/%D0%9E%D0%BF%D1%82%D0%B8%D0%BC%20%D0%B3%D0%B5%D0%BE%D1%82%D1%80%D0%B5%D0%BA%D0%B5%D1%80.png" alt="Распознавание Документов" onerror="this.style.opacity=0">
-      <div class="other-name">Распознавание Документов РФ</div>
-      <div class="other-tag">CRM · Автоматизация · ИИ</div>
-    </a>
-    <a class="other-card" href="https://b24.pro/prilozheniyastranitsa/translator/">
-      <img class="other-icon" src="https://util.1c-bitrix.ru/upload/bx24vendor/aef/o0c6ube2seax7oo17wjruh60wsu1vt4m/%D0%9E%D0%BF%D1%82%D0%B8%D0%BC%20%D0%BF%D0%B5%D1%80%D0%B5%D0%B2%D0%BE%D0%B4%D1%87%D0%B8%D0%BA.png" alt="Переводчик" onerror="this.style.opacity=0">
-      <div class="other-name">Оптим | Переводчик в ОЛ</div>
-      <div class="other-tag">Коммуникации · ИИ</div>
-    </a></div>
-    <button class="others-arrow others-arrow-r" id="othR"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg></button>
-  </div>
-</section>
-
-
-
-</div>
-
-<!-- FAQ -->

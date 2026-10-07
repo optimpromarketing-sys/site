@@ -598,7 +598,7 @@
       </div>
 
       
-      <div class="ba-toggle show-after reveal" id="baToggle">
+      <div class="ba-toggle show-after reveal" id="benefitToggle">
         <button type="button" data-ba="before">Было — до</button>
         <button type="button" data-ba="after" class="active">Стало — после</button>
         <span class="ba-slider"></span>
@@ -705,6 +705,25 @@ function countUp(el){
   nums.forEach(function(n){io.observe(n);});
 })();
 
+
+// Each benefits comparison owns its own state and controls.
+(function(){
+  var tg=document.getElementById('benefitToggle');
+  if(!tg) return;
+  function apply(state){
+    tg.classList.toggle('show-after',state==='after');
+    tg.querySelectorAll('button[data-ba]').forEach(function(btn){
+      var active=btn.getAttribute('data-ba')===state;
+      btn.classList.toggle('active',active);
+      btn.setAttribute('aria-pressed',String(active));
+    });
+  }
+  apply(tg.classList.contains('show-after')?'after':'before');
+  tg.querySelectorAll('button[data-ba]').forEach(function(btn){
+    btn.addEventListener('click',function(){apply(btn.getAttribute('data-ba'));});
+  });
+})();
+
 // BEFORE / AFTER TOGGLE + LINKED GROWTH CHART
 (function(){
   var tg=document.getElementById('baToggle');
@@ -805,7 +824,7 @@ function countUp(el){
 
 (function(){
   var list = document.getElementById('benefitList');
-  var tg = document.getElementById('baToggle');
+  var tg = document.getElementById('benefitToggle');
   if(!list || !tg) return;
   function apply(){ list.classList.toggle('show', tg.classList.contains('show-after')); }
   tg.querySelectorAll('button').forEach(function(b){ b.addEventListener('click', apply); });
