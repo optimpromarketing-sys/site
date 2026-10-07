@@ -1,0 +1,201 @@
+{
+  "verified_on": "2026-10-07",
+  "checks": {
+    "stage2-live-validation": [
+      {
+        "lid": "1444",
+        "file": "cases/100% ответов на звонки интеграция Битрикс24 в сеть автосервисов.html",
+        "toggles": "both work independently",
+        "errors": []
+      },
+      {
+        "lid": "1456",
+        "file": "cases/АРМ для массового найма и аутстаффинга на Битрикс24.html",
+        "toggles": "both work independently",
+        "errors": []
+      },
+      {
+        "lid": "1464",
+        "file": "cases/Автоматизация бронирования, продаж и клиентских коммуникаций санатория на Битрикс24.html",
+        "toggles": "both work independently",
+        "errors": []
+      },
+      {
+        "lid": "1460",
+        "file": "cases/Автоматизация производства, продаж и мониторинга оборудования на Битрикс24.html",
+        "toggles": "both work independently",
+        "errors": []
+      },
+      {
+        "lid": "1458",
+        "file": "cases/Автоматизация тендера и выбора экспедиторов в логистической компании.html",
+        "toggles": "both work independently",
+        "errors": []
+      },
+      {
+        "lid": "1446",
+        "file": "cases/Битрикс24 для девелопера полный цикл продаж и учёт недвижимости на 12 смарт-процессах.html",
+        "toggles": "both work independently",
+        "errors": []
+      },
+      {
+        "lid": "1588",
+        "file": "cases/Внедрение CRM и автоматизация бизнес-процессов торгово-промышленной компании на Битрикс24.html",
+        "toggles": "both work independently",
+        "errors": []
+      },
+      {
+        "lid": "1442",
+        "file": "cases/Интеграция Битрикс24 + МойСклад автоматизация продаж и производства шкафов управления.html",
+        "toggles": "both work independently",
+        "errors": []
+      },
+      {
+        "lid": "1438",
+        "file": "cases/Масштабная цифровизация производственной компании «Магикрот» на Битрикс24.html",
+        "toggles": "both work independently",
+        "errors": []
+      },
+      {
+        "lid": "1448",
+        "file": "cases/Согласование 8 типов договоров в 5 раз быстрее автоматизация документооборота на Битрикс24.html",
+        "toggles": "both work independently",
+        "errors": []
+      },
+      {
+        "lid": "1574",
+        "file": "apps/laborcost.html",
+        "mobile_width": 390,
+        "faq": "opens and closes",
+        "sections": 9,
+        "errors": []
+      }
+    ],
+    "stage3-live-validation": [
+      {
+        "file": "tools/Мессенджер.html",
+        "anchors": 2,
+        "errors": []
+      },
+      {
+        "file": "tools/Совместная работа.html",
+        "anchors": 2,
+        "errors": []
+      },
+      {
+        "file": "tools/Таск менеджер.html",
+        "anchors": 2,
+        "errors": []
+      },
+      {
+        "file": "tools/AI в Битрикс24.html",
+        "anchors": 5,
+        "errors": []
+      },
+      {
+        "file": "tools/Автоматизация и роботизация.html",
+        "anchors": 3,
+        "errors": []
+      },
+      {
+        "file": "tools/Конструктор сайтов.html",
+        "anchors": 2,
+        "errors": []
+      },
+      {
+        "file": "tools/Контакт-центр.html",
+        "errors": []
+      },
+      {
+        "file": "apps/telemost.html",
+        "errors": []
+      },
+      {
+        "file": "blocks/footer.html",
+        "errors": []
+      },
+      {
+        "file": "tools/Возможности с поиском.html",
+        "widths": {
+          "360": 360,
+          "390": 390,
+          "430": 430
+        },
+        "search": {
+          "before": 17,
+          "after": 3
+        },
+        "errors": []
+      }
+    ],
+    "stage4-live-validation": {
+      "live": true,
+      "main_blocks": 9,
+      "duplicate_ids": [],
+      "mobile_widths": {
+        "360": 360,
+        "390": 390,
+        "430": 430,
+        "1440": 1440
+      },
+      "faq": "opens/closes",
+      "certificates": "opens/escape closes",
+      "isolated_style_checks": 0,
+      "errors": []
+    },
+    "extra-live-validation": [
+      {
+        "lid": "1610",
+        "duplicate_ids": [],
+        "filters": "search, short-token search, categories, clear, reset",
+        "cards": 6,
+        "widths": {
+          "360": 360,
+          "390": 390,
+          "430": 430
+        },
+        "errors": []
+      },
+      {
+        "lid": "1022",
+        "duplicate_ids": [],
+        "legacy_sections": 4,
+        "certificates": "opens and closes",
+        "widths": {
+          "360": 360,
+          "390": 390,
+          "430": 430
+        },
+        "errors": []
+      }
+    ],
+    "catalog-live-validation": {
+      "live": true,
+      "dark_card_background": "rgba(13, 26, 46, 0.78)",
+      "light_card_background": "rgba(22, 34, 54, 0.79)",
+      "search_before": 17,
+      "search_after": 3,
+      "mobile_widths": {
+        "360": 360,
+        "390": 390,
+        "430": 430
+      },
+      "tab": "works",
+      "errors": []
+    },
+    "forms": [
+      {
+        "page": "main",
+        "widget_loaded": true,
+        "fields": 6,
+        "submission": "not performed"
+      },
+      {
+        "page": "laborcost",
+        "widget_loaded": true,
+        "fields": 6,
+        "submission": "not performed"
+      }
+    ]
+  }
+}

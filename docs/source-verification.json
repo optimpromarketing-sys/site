@@ -1,0 +1,321 @@
+{
+  "verified_on": "2026-10-07",
+  "normalization": "UTF-8, CRLF to LF, trailing whitespace removed",
+  "components": [
+    {
+      "file": "apps/apps-page.html",
+      "lid": 1610,
+      "block": 29058,
+      "equal": true,
+      "characters": 872153,
+      "published_sha256": "22918de1084de4bf7da986fb88fdd62eed233c678e75e64c9db0a827da4dfe01",
+      "source_sha256": "22918de1084de4bf7da986fb88fdd62eed233c678e75e64c9db0a827da4dfe01"
+    },
+    {
+      "file": "apps/laborcost.html",
+      "lid": 1574,
+      "block": 28688,
+      "equal": true,
+      "characters": 281261,
+      "published_sha256": "7a85a67eab7752e5635f95f31e35337181e17367d67bbc13e9afba856dd76451",
+      "source_sha256": "7a85a67eab7752e5635f95f31e35337181e17367d67bbc13e9afba856dd76451"
+    },
+    {
+      "file": "apps/telemost.html",
+      "lid": 1620,
+      "block": 29144,
+      "equal": true,
+      "characters": 486622,
+      "published_sha256": "153056b35a02c16e33f5dab28211d8f901b053fb7c2264ee5f357231f44967a8",
+      "source_sha256": "153056b35a02c16e33f5dab28211d8f901b053fb7c2264ee5f357231f44967a8"
+    },
+    {
+      "file": "apps/translator.html",
+      "lid": 1580,
+      "block": 28724,
+      "equal": true,
+      "characters": 358094,
+      "published_sha256": "31fb5ede965b40c47ee441dce1c6d9688d7db2c37d5f34ab22dc4ec790e06343",
+      "source_sha256": "31fb5ede965b40c47ee441dce1c6d9688d7db2c37d5f34ab22dc4ec790e06343"
+    },
+    {
+      "file": "blocks/block-01-hero.html",
+      "lid": 1604,
+      "block": 28988,
+      "equal": true,
+      "characters": 40648,
+      "published_sha256": "30f2c25b0325f2a810718bcc87e0bb0fb486f92cd0479bedef4d9241a745ffaf",
+      "source_sha256": "30f2c25b0325f2a810718bcc87e0bb0fb486f92cd0479bedef4d9241a745ffaf"
+    },
+    {
+      "file": "blocks/block-02-results.html",
+      "lid": 1604,
+      "block": 28996,
+      "equal": true,
+      "characters": 13745,
+      "published_sha256": "801ac967e168cffc07d9cd89724d4fee765e1f8e69b681559ecaa209c1cc3172",
+      "source_sha256": "801ac967e168cffc07d9cd89724d4fee765e1f8e69b681559ecaa209c1cc3172"
+    },
+    {
+      "file": "blocks/block-03-about.html",
+      "lid": 1604,
+      "block": 29156,
+      "equal": true,
+      "characters": 470132,
+      "published_sha256": "be6b26f957cbff67a4b95c7819b0e837ba63052e66d3ef548b1710f225a2a6c2",
+      "source_sha256": "be6b26f957cbff67a4b95c7819b0e837ba63052e66d3ef548b1710f225a2a6c2"
+    },
+    {
+      "file": "blocks/block-05-apps.html",
+      "lid": 1604,
+      "block": 28990,
+      "equal": true,
+      "characters": 44364,
+      "published_sha256": "482ac1f5862583ef3c0797b42524192180be1b7801a365b4601f02a16bf298bd",
+      "source_sha256": "482ac1f5862583ef3c0797b42524192180be1b7801a365b4601f02a16bf298bd"
+    },
+    {
+      "file": "blocks/block-06-pricing.html",
+      "lid": 1604,
+      "block": 29004,
+      "equal": true,
+      "characters": 35029,
+      "published_sha256": "7f5ada798ccdbf10853631f78b458646b3d2f547620f522022cc615df7bfac33",
+      "source_sha256": "7f5ada798ccdbf10853631f78b458646b3d2f547620f522022cc615df7bfac33"
+    },
+    {
+      "file": "blocks/block-07-project-map.html",
+      "lid": 1604,
+      "block": 29092,
+      "equal": true,
+      "characters": 31888,
+      "published_sha256": "89778e4e07ea46fbbc04f0f3a89b998189ba3f310b6a2fbd4cb5601047fb6a37",
+      "source_sha256": "89778e4e07ea46fbbc04f0f3a89b998189ba3f310b6a2fbd4cb5601047fb6a37"
+    },
+    {
+      "file": "blocks/block-08-certs.html",
+      "lid": 1604,
+      "block": 29006,
+      "equal": true,
+      "characters": 691506,
+      "published_sha256": "6df705759c1ed7696a1ac7903e96c2d8e4324a1a51369b95159618498127094a",
+      "source_sha256": "6df705759c1ed7696a1ac7903e96c2d8e4324a1a51369b95159618498127094a"
+    },
+    {
+      "file": "blocks/block-09-faq.html",
+      "lid": 1604,
+      "block": 29096,
+      "equal": true,
+      "characters": 15440,
+      "published_sha256": "6cfe4a44fc79308265c616b09232e71c6d8c08277f2cc93dcac52cf1ab7a5a41",
+      "source_sha256": "6cfe4a44fc79308265c616b09232e71c6d8c08277f2cc93dcac52cf1ab7a5a41"
+    },
+    {
+      "file": "blocks/block-10-form.html",
+      "lid": 1604,
+      "block": 29010,
+      "equal": true,
+      "characters": 33362,
+      "published_sha256": "fa626a2b8c30d81ef702875ed8e5a45d7827b2772b6a7a421efbed0ba5e0a396",
+      "source_sha256": "fa626a2b8c30d81ef702875ed8e5a45d7827b2772b6a7a421efbed0ba5e0a396"
+    },
+    {
+      "file": "blocks/footer.html",
+      "lid": 1026,
+      "block": 29068,
+      "equal": true,
+      "characters": 24657,
+      "published_sha256": "e70b2c14ed247050bd53839f6c4e44d84f09f30f9735befb71aa5e8d203456ad",
+      "source_sha256": "e70b2c14ed247050bd53839f6c4e44d84f09f30f9735befb71aa5e8d203456ad"
+    },
+    {
+      "file": "blocks/header.html",
+      "lid": 1024,
+      "block": 29136,
+      "equal": true,
+      "characters": 33602,
+      "published_sha256": "10294ea7a89e4d230341a6c938ab5ddb8d83c90080e3c8f3cc4ea90d3d041b5e",
+      "source_sha256": "10294ea7a89e4d230341a6c938ab5ddb8d83c90080e3c8f3cc4ea90d3d041b5e"
+    },
+    {
+      "file": "cases/100% ответов на звонки интеграция Битрикс24 в сеть автосервисов.html",
+      "lid": 1444,
+      "block": 27836,
+      "equal": true,
+      "characters": 332516,
+      "published_sha256": "1ce0d1f0424f7d1b318ab80ee722e870de1df4dd7a8d435fff77adfa7a2b6d87",
+      "source_sha256": "1ce0d1f0424f7d1b318ab80ee722e870de1df4dd7a8d435fff77adfa7a2b6d87"
+    },
+    {
+      "file": "cases/АРМ для массового найма и аутстаффинга на Битрикс24.html",
+      "lid": 1456,
+      "block": 27910,
+      "equal": true,
+      "characters": 65930,
+      "published_sha256": "1c5eec67d1aeab5b58d90112a1cf9efa59e140be889c648e741b3085e0bd6bf3",
+      "source_sha256": "1c5eec67d1aeab5b58d90112a1cf9efa59e140be889c648e741b3085e0bd6bf3"
+    },
+    {
+      "file": "cases/Автоматизация бронирования, продаж и клиентских коммуникаций санатория на Битрикс24.html",
+      "lid": 1464,
+      "block": 27934,
+      "equal": true,
+      "characters": 496489,
+      "published_sha256": "3f8c0f1aaca926a450cd1fc30d8f705f27f24ecfebd904e86842fbb77a3928e6",
+      "source_sha256": "3f8c0f1aaca926a450cd1fc30d8f705f27f24ecfebd904e86842fbb77a3928e6"
+    },
+    {
+      "file": "cases/Автоматизация производства, продаж и мониторинга оборудования на Битрикс24.html",
+      "lid": 1460,
+      "block": 27926,
+      "equal": true,
+      "characters": 408601,
+      "published_sha256": "d599a6f4b99e34d59bc66bebd0bc837775fcfbf659b74a7304a9616d8ffb594d",
+      "source_sha256": "d599a6f4b99e34d59bc66bebd0bc837775fcfbf659b74a7304a9616d8ffb594d"
+    },
+    {
+      "file": "cases/Автоматизация тендера и выбора экспедиторов в логистической компании.html",
+      "lid": 1458,
+      "block": 27914,
+      "equal": true,
+      "characters": 66377,
+      "published_sha256": "aaeb779e0de2dbf2fa3fbbe7f967ed4961f11c65d323e72fa4ad2d3fb213282a",
+      "source_sha256": "aaeb779e0de2dbf2fa3fbbe7f967ed4961f11c65d323e72fa4ad2d3fb213282a"
+    },
+    {
+      "file": "cases/Битрикс24 для девелопера полный цикл продаж и учёт недвижимости на 12 смарт-процессах.html",
+      "lid": 1446,
+      "block": 27840,
+      "equal": true,
+      "characters": 64990,
+      "published_sha256": "e2c46c7c82e2a3a5e4027b63812e38c3ea8eafd5ddde53005973f0c536d86264",
+      "source_sha256": "e2c46c7c82e2a3a5e4027b63812e38c3ea8eafd5ddde53005973f0c536d86264"
+    },
+    {
+      "file": "cases/Внедрение CRM и автоматизация бизнес-процессов торгово-промышленной компании на Битрикс24.html",
+      "lid": 1588,
+      "block": 28806,
+      "equal": true,
+      "characters": 215358,
+      "published_sha256": "f91dc2313c429757fd5f0e43f8cd988b35c9bfddd088d623de88f4957ba4277e",
+      "source_sha256": "f91dc2313c429757fd5f0e43f8cd988b35c9bfddd088d623de88f4957ba4277e"
+    },
+    {
+      "file": "cases/Интеграция Битрикс24 + МойСклад автоматизация продаж и производства шкафов управления.html",
+      "lid": 1442,
+      "block": 27832,
+      "equal": true,
+      "characters": 67816,
+      "published_sha256": "a3387aa114fdf9ef10063a7198a36e95e04983e6e3bba40ecbb45d7d7dc12c90",
+      "source_sha256": "a3387aa114fdf9ef10063a7198a36e95e04983e6e3bba40ecbb45d7d7dc12c90"
+    },
+    {
+      "file": "cases/Масштабная цифровизация производственной компании «Магикрот» на Битрикс24.html",
+      "lid": 1438,
+      "block": 27824,
+      "equal": true,
+      "characters": 63516,
+      "published_sha256": "adffb2966528e5641a6e5985f95e4bb5831527c711906140b48e7654612d15e7",
+      "source_sha256": "adffb2966528e5641a6e5985f95e4bb5831527c711906140b48e7654612d15e7"
+    },
+    {
+      "file": "cases/Согласование 8 типов договоров в 5 раз быстрее автоматизация документооборота на Битрикс24.html",
+      "lid": 1448,
+      "block": 27844,
+      "equal": true,
+      "characters": 65221,
+      "published_sha256": "f01604ee52dab2906897454da21d16aa2486f673a9841e0c3dbb8a1d62b4511f",
+      "source_sha256": "f01604ee52dab2906897454da21d16aa2486f673a9841e0c3dbb8a1d62b4511f"
+    },
+    {
+      "file": "tools/AI в Битрикс24.html",
+      "lid": 1474,
+      "block": 27954,
+      "equal": true,
+      "characters": 41472,
+      "published_sha256": "a47a24ed869b1843f8df60088772a08a5e433696b725e3357b22e1e87a150103",
+      "source_sha256": "a47a24ed869b1843f8df60088772a08a5e433696b725e3357b22e1e87a150103"
+    },
+    {
+      "file": "tools/Автоматизация и роботизация.html",
+      "lid": 1536,
+      "block": 28338,
+      "equal": true,
+      "characters": 47150,
+      "published_sha256": "ea376bc5c62244de36e5aa81b1d857d171327432dd1c67ec88baa149d8371459",
+      "source_sha256": "ea376bc5c62244de36e5aa81b1d857d171327432dd1c67ec88baa149d8371459"
+    },
+    {
+      "file": "tools/Возможности с поиском.html",
+      "lid": 1564,
+      "block": 28600,
+      "equal": true,
+      "characters": 112669,
+      "published_sha256": "083d2694b0b606fd47a8250fa97d10a0ce1255f659e38efbf702f7195b63d861",
+      "source_sha256": "083d2694b0b606fd47a8250fa97d10a0ce1255f659e38efbf702f7195b63d861"
+    },
+    {
+      "file": "tools/Конструктор сайтов.html",
+      "lid": 1542,
+      "block": 28350,
+      "equal": true,
+      "characters": 44705,
+      "published_sha256": "4a5e1a46acd7a66e121e069eb87a8a84f31167da29457ad83989cfccea04c0b9",
+      "source_sha256": "4a5e1a46acd7a66e121e069eb87a8a84f31167da29457ad83989cfccea04c0b9"
+    },
+    {
+      "file": "tools/Контакт-центр.html",
+      "lid": 1612,
+      "block": 29064,
+      "equal": true,
+      "characters": 46544,
+      "published_sha256": "e99447882224fdfeb2a925bca2bfee7e5e0781add1eb169bc6e1f9a7bfc09470",
+      "source_sha256": "e99447882224fdfeb2a925bca2bfee7e5e0781add1eb169bc6e1f9a7bfc09470"
+    },
+    {
+      "file": "tools/Мессенджер.html",
+      "lid": 1468,
+      "block": 28154,
+      "equal": true,
+      "characters": 78259,
+      "published_sha256": "15e49d438b30425d73564d7f7e99f1d5d647192873030b0fd17ab798e0bb2704",
+      "source_sha256": "15e49d438b30425d73564d7f7e99f1d5d647192873030b0fd17ab798e0bb2704"
+    },
+    {
+      "file": "tools/Потоки+AI.html",
+      "lid": 1532,
+      "block": 28330,
+      "equal": true,
+      "characters": 66823,
+      "published_sha256": "00563d1dd30df68b746f8e828dba36695aead0d71267ad3492fc7d17dfc70f48",
+      "source_sha256": "00563d1dd30df68b746f8e828dba36695aead0d71267ad3492fc7d17dfc70f48"
+    },
+    {
+      "file": "tools/Совместная работа.html",
+      "lid": 1502,
+      "block": 28182,
+      "equal": true,
+      "characters": 90286,
+      "published_sha256": "346862ea0c9450169c9aa14784e7958d87692108edc011d82eff55ca6ed29cb0",
+      "source_sha256": "346862ea0c9450169c9aa14784e7958d87692108edc011d82eff55ca6ed29cb0"
+    },
+    {
+      "file": "tools/Таск менеджер.html",
+      "lid": 1534,
+      "block": 28334,
+      "equal": true,
+      "characters": 76414,
+      "published_sha256": "af7b43a8a597767eae1aad8fe72013a04838c53d828c2a37a14edf8d6c90e879",
+      "source_sha256": "af7b43a8a597767eae1aad8fe72013a04838c53d828c2a37a14edf8d6c90e879"
+    },
+    {
+      "file": "legacy/home-1022.html",
+      "lid": 1022,
+      "block": 28906,
+      "equal": true,
+      "characters": 81617,
+      "published_sha256": "fa5da4e0f7c9057659a4db573a47ea33cbdb7de730aebf145bc4e925b2f632f7",
+      "source_sha256": "fa5da4e0f7c9057659a4db573a47ea33cbdb7de730aebf145bc4e925b2f632f7"
+    }
+  ]
+}
