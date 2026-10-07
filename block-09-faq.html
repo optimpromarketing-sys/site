@@ -1,0 +1,295 @@
+<script>(function(){var urls=['https://fonts.bunny.net/css?family=montserrat:400,600,700,800|open-sans:400,600,700&display=swap','https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;600;700&display=swap'];function tryLoad(i){if(i>=urls.length)return;var l=document.createElement('link');l.rel='stylesheet';l.href=urls[i];l.onerror=function(){tryLoad(i+1)};(document.head||document.body).appendChild(l)}tryLoad(0);})();</script>
+<div class="op-crm" id="op-block-faq">
+<style>
+#op-block-faq,#op-block-faq *,#op-block-faq *::before,#op-block-faq *::after{box-sizing:border-box}
+#op-block-faq{
+  --cyan:#2FC7F7;--blue:#2E7DF6;--violet:#7A5CFF;
+  --muted:#8A95B0;--line:rgba(255,255,255,.08);
+  --font-display:'Montserrat',system-ui,sans-serif;
+  --font-body:'Open Sans',system-ui,sans-serif;
+  font-family:var(--font-body);color:#E8EDF7;background:#080c17;
+  position:relative;overflow-x:hidden;-webkit-font-smoothing:antialiased
+}
+#op-block-faq .op-w{max-width:860px;margin:0 auto;padding:0 24px}
+#op-block-faq h2{font-family:var(--font-display);font-size:clamp(24px,3.5vw,40px);font-weight:800;line-height:1.15;letter-spacing:-.03em;color:#fff;margin:0 0 16px}
+
+/* ===== REVEAL ===== */
+#op-block-faq .op-rv{opacity:1;transform:none}
+#op-block-faq.op-js .op-rv{opacity:0;transform:translateY(24px);transition:opacity .6s cubic-bezier(.2,.8,.2,1),transform .55s cubic-bezier(.2,.8,.2,1)}
+#op-block-faq.op-js .op-rv.is-v{opacity:1;transform:none}
+#op-block-faq.op-js .op-rv[data-delay="1"]{transition-delay:.1s}
+#op-block-faq.op-js .op-rv[data-delay="2"]{transition-delay:.2s}
+
+/* ===== SECTION ===== */
+#op-block-faq .op-faq-sec{padding:80px 0;position:relative;overflow:hidden}
+#op-block-faq .op-faq-sec::before{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse 70% 60% at 50% 30%,rgba(122,92,255,.06),transparent 65%);
+  pointer-events:none}
+
+/* ===== HEADER ===== */
+#op-block-faq .op-sec-label{display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--cyan);
+  border:1px solid rgba(47,199,247,.25);border-radius:100px;padding:7px 16px;margin-bottom:20px;background:rgba(47,199,247,.06)}
+#op-block-faq .op-sec-label .dot{width:6px;height:6px;border-radius:50%;background:var(--cyan);box-shadow:0 0 10px var(--cyan);animation:faq-blink 2s ease-in-out infinite}
+@keyframes faq-blink{0%,100%{opacity:1}50%{opacity:.35}}
+#op-block-faq .op-faq-head{text-align:center;margin-bottom:12px}
+#op-block-faq .op-faq-sub{text-align:center;font-size:clamp(14px,2vw,16px);color:var(--muted);max-width:480px;margin:0 auto 48px;line-height:1.65}
+
+/* ===== ACCORDION ===== */
+#op-block-faq .op-faq-list{display:flex;flex-direction:column;gap:10px}
+
+#op-block-faq .op-faq-item{
+  border-radius:16px;
+  background:linear-gradient(160deg,rgba(20,30,58,.65),rgba(10,14,28,.8));
+  border:1px solid var(--line);
+  overflow:hidden;
+  transition:border-color .3s}
+#op-block-faq .op-faq-item.is-open{border-color:rgba(47,199,247,.25)}
+
+#op-block-faq .op-faq-q{
+  display:flex;align-items:center;justify-content:space-between;gap:16px;
+  padding:20px 24px;cursor:pointer;
+  background:transparent;border:none;width:100%;text-align:left;
+  font-family:var(--font-display);font-size:15px;font-weight:700;
+  color:#e8edf7;line-height:1.35;
+  transition:color .25s}
+#op-block-faq .op-faq-q:hover{color:#fff}
+#op-block-faq .op-faq-item.is-open .op-faq-q{color:var(--cyan)}
+
+#op-block-faq .op-faq-icon{
+  width:28px;height:28px;border-radius:8px;flex-shrink:0;
+  background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);
+  display:flex;align-items:center;justify-content:center;
+  transition:all .3s}
+#op-block-faq .op-faq-icon svg{width:14px;height:14px;stroke:#8A95B0;fill:none;stroke-width:2.5;stroke-linecap:round;transition:stroke .3s,transform .35s}
+#op-block-faq .op-faq-item.is-open .op-faq-icon{background:rgba(47,199,247,.1);border-color:rgba(47,199,247,.3)}
+#op-block-faq .op-faq-item.is-open .op-faq-icon svg{stroke:var(--cyan);transform:rotate(45deg)}
+
+#op-block-faq .op-faq-body{
+  display:grid;grid-template-rows:0fr;
+  transition:grid-template-rows .35s cubic-bezier(.4,0,.2,1)}
+#op-block-faq .op-faq-item.is-open .op-faq-body{grid-template-rows:1fr}
+#op-block-faq .op-faq-body-inner{overflow:hidden}
+
+#op-block-faq .op-faq-a{
+  padding:0 24px 22px;
+  font-size:14px;line-height:1.75;color:var(--muted);
+  border-top:1px solid var(--line)}
+#op-block-faq .op-faq-a p{margin-bottom:10px}
+#op-block-faq .op-faq-a p:last-child{margin-bottom:0}
+#op-block-faq .op-faq-a strong{color:#c8d4f0;font-weight:600}
+#op-block-faq .op-faq-a a{color:var(--cyan);text-decoration:none}
+#op-block-faq .op-faq-a a:hover{text-decoration:underline}
+
+/* CTA ===== */
+#op-block-faq .op-faq-cta{text-align:center;margin-top:44px}
+#op-block-faq .op-faq-cta-text{font-size:15px;color:var(--muted);margin-bottom:20px;line-height:1.6}
+#op-block-faq .op-faq-cta-text strong{color:#e8edf7}
+#op-block-faq .op-btn-cta{
+  display:inline-flex;align-items:center;gap:10px;
+  padding:16px 36px;border-radius:14px;
+  font-family:var(--font-display);font-size:15px;font-weight:700;
+  cursor:pointer;text-decoration:none!important;
+  background:linear-gradient(135deg,var(--blue),var(--cyan));
+  color:#fff!important;border:none;
+  transition:all .3s cubic-bezier(.4,0,.2,1);
+  box-shadow:0 8px 32px -8px rgba(46,125,246,.45)}
+#op-block-faq .op-btn-cta:hover{transform:translateY(-2px);box-shadow:0 14px 40px -8px rgba(46,125,246,.6)}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:640px){
+  #op-block-faq .op-faq-sec{padding:56px 0}
+  #op-block-faq .op-faq-q{font-size:14px;padding:16px 18px}
+  #op-block-faq .op-faq-a{padding:0 18px 18px}
+}
+@media(max-width:390px){#op-block-faq .op-w{padding:0 14px}}
+
+/* ===== OVERRIDES ===== */
+#op-block-faq{color:#E8EDF7!important;background:#080c17!important}
+#op-block-faq h2{color:#fff!important}
+#op-block-faq a,#op-block-faq a:hover,#op-block-faq a:visited{text-decoration:none!important}
+</style>
+
+<section class="op-faq-sec">
+  <div class="op-w">
+
+    <div class="op-faq-head op-rv">
+      <div class="op-sec-label"><span class="dot"></span>FAQ</div>
+      <h2>Ответы на вопросы,<br>которые задают до подписания</h2>
+    </div>
+    <p class="op-faq-sub op-rv" data-delay="1">При бюджете от 200 000 ₽ у каждого руководителя есть сомнения. Мы отвечаем честно.</p>
+
+    <div class="op-faq-list op-rv" data-delay="2">
+
+      <!-- Q1 -->
+      <div class="op-faq-item">
+        <button class="op-faq-q" type="button" aria-expanded="false">
+          Что если Битрикс24 нам не подойдёт?
+          <span class="op-faq-icon"><svg viewBox="0 0 14 14"><line x1="7" y1="2" x2="7" y2="12"/><line x1="2" y1="7" x2="12" y2="7"/></svg></span>
+        </button>
+        <div class="op-faq-body" role="region">
+          <div class="op-faq-body-inner">
+            <div class="op-faq-a">
+              <p>До старта мы проводим аналитику: разбираем ваши процессы и сценарии работы. Если система заведомо не закроет задачу — скажем об этом честно на этапе ТЗ, до оплаты работ.</p>
+              <p>Битрикс24 — <strong>№1 среди CRM в России</strong> (исследование J'Son & Partners, 2026) и покрывает 95% задач малого и среднего бизнеса: CRM, документооборот, задачи, коммуникации, склад, интеграции с 1С. Все данные из системы можно выгрузить через Excel или API — вы не заблокированы в платформе.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Q2 -->
+      <div class="op-faq-item">
+        <button class="op-faq-q" type="button" aria-expanded="false">
+          Сколько займёт внедрение?
+          <span class="op-faq-icon"><svg viewBox="0 0 14 14"><line x1="7" y1="2" x2="7" y2="12"/><line x1="2" y1="7" x2="12" y2="7"/></svg></span>
+        </button>
+        <div class="op-faq-body" role="region">
+          <div class="op-faq-body-inner">
+            <div class="op-faq-a">
+              <p><strong>Базовое внедрение</strong> (CRM, коммуникации, шаблоны документов, обучение) — <strong>3 недели</strong>. Уже через 21 день команда работает в системе.</p>
+              <p><strong>Комплексные проекты</strong> с интеграциями, смарт-процессами и автоматизацией — от 1,5 до 3 месяцев, в зависимости от объёма. Сроки фиксируются в договоре. Мы не затягиваем: каждый этап принимается отдельно по акту.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Q3 -->
+      <div class="op-faq-item">
+        <button class="op-faq-q" type="button" aria-expanded="false">
+          Нужно ли отдельно платить за лицензию Битрикс24?
+          <span class="op-faq-icon"><svg viewBox="0 0 14 14"><line x1="7" y1="2" x2="7" y2="12"/><line x1="2" y1="7" x2="12" y2="7"/></svg></span>
+        </button>
+        <div class="op-faq-body" role="region">
+          <div class="op-faq-body-inner">
+            <div class="op-faq-a">
+              <p>Битрикс24 — облачный сервис с ежегодной подпиской. <strong>Есть бесплатный тариф без ограничений по пользователям</strong> — он подходит для старта. Платные тарифы нужны при необходимости расширенной автоматизации, сквозной аналитики или повышенного объёма хранилища.</p>
+              <p>Лицензия оплачивается напрямую Битрикс24 — это отдельно от стоимости нашей работы. Мы помогаем выбрать оптимальный тариф и как Платиновый партнёр можем согласовать специальные условия.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Q4 -->
+      <div class="op-faq-item">
+        <button class="op-faq-q" type="button" aria-expanded="false">
+          Нужно ли нашим сотрудникам тратить время на проект?
+          <span class="op-faq-icon"><svg viewBox="0 0 14 14"><line x1="7" y1="2" x2="7" y2="12"/><line x1="2" y1="7" x2="12" y2="7"/></svg></span>
+        </button>
+        <div class="op-faq-body" role="region">
+          <div class="op-faq-body-inner">
+            <div class="op-faq-a">
+              <p>Минимально — да. Нам нужен <strong>ответственный от вашей стороны</strong> (руководитель или менеджер), который участвует в установочной встрече, проверяет промежуточные демо и подписывает акты. Это 2–4 часа в неделю.</p>
+              <p>Настройки, интеграции и документацию мы берём на себя. В конце — обучение команды с записью видео, которую сотрудники смогут пересмотреть в любой момент.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Q5 -->
+      <div class="op-faq-item">
+        <button class="op-faq-q" type="button" aria-expanded="false">
+          Что происходит после сдачи проекта?
+          <span class="op-faq-icon"><svg viewBox="0 0 14 14"><line x1="7" y1="2" x2="7" y2="12"/><line x1="2" y1="7" x2="12" y2="7"/></svg></span>
+        </button>
+        <div class="op-faq-body" role="region">
+          <div class="op-faq-body-inner">
+            <div class="op-faq-a">
+              <p>После подписания акта вы переходите в режим <strong>технического сопровождения</strong>. Мы остаёмся на связи: отвечаем на вопросы, помогаем с доработками, реагируем на изменения в бизнесе.</p>
+              <p>Вы не остаётесь один на один с системой. 100+ наших проектов работают под сопровождением — ни один не брошен после сдачи.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Q6 -->
+      <div class="op-faq-item">
+        <button class="op-faq-q" type="button" aria-expanded="false">
+          Почему интегратор, а не наш IT-отдел или штатный программист?
+          <span class="op-faq-icon"><svg viewBox="0 0 14 14"><line x1="7" y1="2" x2="7" y2="12"/><line x1="2" y1="7" x2="12" y2="7"/></svg></span>
+        </button>
+        <div class="op-faq-body" role="region">
+          <div class="op-faq-body-inner">
+            <div class="op-faq-a">
+              <p>IT-отдел умеет решать задачи вашего бизнеса — мы умеем решать задачи именно в Битрикс24. <strong>100+ проектов внедрений</strong> дают понимание, что работает, а что нет, ещё до начала настройки.</p>
+              <p>Штатный программист изучает систему за ваш счёт и ваше время. Мы уже знаем все нюансы: где стандартный функционал покрывает задачу, а где нужно наше приложение из маркетплейса. Это экономит 2–4 месяца и защищает от архитектурных ошибок, которые дорого исправлять потом.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Q7 -->
+      <div class="op-faq-item">
+        <button class="op-faq-q" type="button" aria-expanded="false">
+          Как мы поймём, что всё сделано правильно?
+          <span class="op-faq-icon"><svg viewBox="0 0 14 14"><line x1="7" y1="2" x2="7" y2="12"/><line x1="2" y1="7" x2="12" y2="7"/></svg></span>
+        </button>
+        <div class="op-faq-body" role="region">
+          <div class="op-faq-body-inner">
+            <div class="op-faq-a">
+              <p>Критерий приёмки — согласованное ТЗ. Вы принимаете не «в целом нормально», а конкретные блоки: CRM настроен по ТЗ → подписали акт. Интеграция с 1С работает по ТЗ → подписали акт.</p>
+              <p><strong>KPI фиксируются до старта</strong>: скорость обработки заявки, количество потерянных звонков, время согласования документа. После сдачи сверяемся с цифрами — так вы видите реальный результат, а не наше слово.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- CTA -->
+    <div class="op-faq-cta op-rv" data-delay="2">
+      <p class="op-faq-cta-text">Остался вопрос, которого нет в списке? <strong>Ответим напрямую — без скриптов и менеджеров по продажам.</strong></p>
+      <a class="op-btn-cta" href="https://b24.pro/#b28970" data-form-link>Задать вопрос</a>
+    </div>
+
+  </div>
+</section>
+
+<script>(function(){
+  var root = document.getElementById('op-block-faq');
+  if (!root) return;
+
+  /* ===== Reveal ===== */
+  var revEls = root.querySelectorAll('.op-rv');
+  if ('IntersectionObserver' in window) {
+    root.classList.add('op-js');
+    var rio = new IntersectionObserver(function(ee) {
+      ee.forEach(function(e) {
+        if (e.isIntersecting) { e.target.classList.add('is-v'); rio.unobserve(e.target); }
+      });
+    }, { threshold: .1, rootMargin: '0px 0px -40px 0px' });
+    revEls.forEach(function(el) { rio.observe(el); });
+    setTimeout(function() { revEls.forEach(function(el) { el.classList.add('is-v'); }); }, 3000);
+  }
+
+  /* ===== Smart form scroll ===== */
+  root.querySelectorAll('[data-form-link]').forEach(function(a) {
+    a.addEventListener('click', function(e) {
+      var target = document.getElementById('b28970');
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({behavior: 'smooth', block: 'start'});
+      }
+      // else — follow href normally (navigates to b24.pro/#b28970)
+    });
+  });
+
+  /* ===== Accordion ===== */
+  var items = root.querySelectorAll('.op-faq-item');
+  items.forEach(function(item) {
+    var btn = item.querySelector('.op-faq-q');
+    btn.addEventListener('click', function() {
+      var isOpen = item.classList.contains('is-open');
+      // Close all
+      items.forEach(function(i) {
+        i.classList.remove('is-open');
+        i.querySelector('.op-faq-q').setAttribute('aria-expanded', 'false');
+      });
+      // Open clicked if was closed
+      if (!isOpen) {
+        item.classList.add('is-open');
+        btn.setAttribute('aria-expanded', 'true');
+      }
+    });
+  });
+})();</script>
+</div>

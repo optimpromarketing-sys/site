@@ -1,0 +1,507 @@
+<div class="op-ftr-root">
+<style>
+/* ════════════════════════════════════════════
+   ОПТИМ ПРО · Футер · op-ftr-root v5
+   ════════════════════════════════════════════ */
+
+.op-ftr-root *,
+.op-ftr-root *::before,
+.op-ftr-root *::after { box-sizing:border-box; margin:0; padding:0; }
+
+.op-ftr-root {
+  --c-bg:    #080c17;
+  --c-bg2:   #0b1022;
+  --c-bg3:   #0f1628;
+  --c-line:  rgba(255,255,255,0.08);
+  --c-dim:   #64748b;
+  --c-mid:   #94a3b8;
+  --c-light: #cbd5e1;
+  --c-white: #ffffff;
+  --c-cyan:  #2FC7F7;
+  --c-blue:  #2E7DF6;
+  --ease:    cubic-bezier(.4,0,.2,1);
+  font-family:'Open Sans',Arial,sans-serif;
+}
+
+@font-face{font-family:'Montserrat';font-weight:700;font-display:swap;src:url(https://fonts.gstatic.com/s/montserrat/v29/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCuM70w-Y3tcoqK5.woff2) format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
+@font-face{font-family:'Montserrat';font-weight:700;font-display:swap;src:url(https://fonts.gstatic.com/s/montserrat/v29/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCuM73w-Y3tcoqK5.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131}
+@font-face{font-family:'Montserrat';font-weight:800;font-display:swap;src:url(https://fonts.gstatic.com/s/montserrat/v29/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCvr70w-Y3tcoqK5.woff2) format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
+@font-face{font-family:'Montserrat';font-weight:800;font-display:swap;src:url(https://fonts.gstatic.com/s/montserrat/v29/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCvr73w-Y3tcoqK5.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131}
+@font-face{font-family:'Open Sans';font-weight:400;font-display:swap;src:url(https://fonts.gstatic.com/s/opensans/v40/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsiH0C4nY1M2xLER.woff2) format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
+@font-face{font-family:'Open Sans';font-weight:400;font-display:swap;src:url(https://fonts.gstatic.com/s/opensans/v40/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsjZ0C4nY1M2xLER.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131}
+
+.op-ftr { background:var(--c-bg); border-top:1px solid var(--c-line); }
+.op-ftr__w { max-width:1200px; margin:0 auto; padding:0 24px; }
+
+.op-f-label {
+  display:block;
+  font-family:'Montserrat',Arial,sans-serif;
+  font-weight:700;
+  font-size:10px;
+  letter-spacing:1.4px;
+  text-transform:uppercase;
+  color:var(--c-cyan);
+  margin-bottom:16px;
+}
+
+/* ════════════════════════════════
+   ① HERO — телефон + CTA
+   ════════════════════════════════ */
+.op-ftr__hero {
+  position:relative;
+  padding:52px 0 48px;
+  border-bottom:1px solid var(--c-line);
+  overflow:hidden;
+}
+.op-ftr__hero::before {
+  content:'';
+  position:absolute;
+  left:-60px; top:50%;
+  transform:translateY(-50%);
+  width:640px; height:320px;
+  background:radial-gradient(ellipse at center,rgba(47,199,247,.13) 0%,transparent 68%);
+  pointer-events:none;
+}
+.op-ftr__hero-inner {
+  position:relative;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:32px;
+  flex-wrap:wrap;
+}
+.op-ftr__hero-left { display:flex; flex-direction:column; gap:10px; }
+
+.op-ftr__phone {
+  display:flex; align-items:center; gap:18px;
+  text-decoration:none;
+  color:var(--c-white);
+  font-family:'Montserrat',Arial,sans-serif;
+  font-weight:800;
+  font-size:clamp(32px,4.8vw,58px);
+  letter-spacing:-2px;
+  line-height:1;
+  transition:color .2s var(--ease);
+}
+.op-ftr__phone:hover { color:var(--c-cyan); }
+.op-ftr__phone-btn {
+  width:56px; height:56px; border-radius:16px;
+  background:linear-gradient(135deg,var(--c-cyan),var(--c-blue));
+  display:flex; align-items:center; justify-content:center; flex-shrink:0;
+  box-shadow:0 4px 20px rgba(47,199,247,.35);
+  transition:transform .2s var(--ease),box-shadow .2s var(--ease);
+}
+.op-ftr__phone:hover .op-ftr__phone-btn { transform:scale(1.07); box-shadow:0 8px 32px rgba(47,199,247,.5); }
+.op-ftr__hero-meta { font-size:14px; color:var(--c-mid); padding-left:74px; }
+
+.op-ftr__hero-cta {
+  display:inline-flex; align-items:center; gap:12px;
+  padding:20px 40px; border-radius:16px;
+  background:linear-gradient(135deg,var(--c-cyan),var(--c-blue));
+  font-family:'Montserrat',Arial,sans-serif; font-weight:800; font-size:17px;
+  color:#fff; text-decoration:none;
+  box-shadow:0 6px 28px rgba(47,199,247,.32);
+  transition:transform .2s var(--ease),box-shadow .2s var(--ease);
+  white-space:nowrap;
+}
+.op-ftr__hero-cta:hover { transform:translateY(-3px); box-shadow:0 12px 40px rgba(47,199,247,.46); }
+.op-ftr__hero-cta svg { transition:transform .2s var(--ease); }
+.op-ftr__hero-cta:hover svg { transform:translateX(4px); }
+
+/* ════════════════════════════════
+   ② ТЕЛО — каналы + почты
+   ════════════════════════════════ */
+.op-ftr__body {
+  padding:48px 0 52px;
+  border-bottom:1px solid var(--c-line);
+}
+.op-ftr__body-grid {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:48px 72px;
+  align-items:start;
+}
+
+/* ── Каналы прямой связи ── */
+.op-ftr__channels { display:flex; flex-direction:column; gap:10px; }
+
+.op-ftr__ch {
+  display:flex; align-items:center; gap:16px;
+  padding:17px 20px; border-radius:16px;
+  text-decoration:none;
+  border:1.5px solid var(--c-line); background:var(--c-bg3);
+  transition:border-color .2s var(--ease),background .2s var(--ease),transform .2s var(--ease),box-shadow .2s var(--ease);
+}
+.op-ftr__ch:hover { transform:translateY(-3px); }
+.op-ftr__ch--email:hover { border-color:rgba(47,199,247,.5); background:rgba(47,199,247,.07); box-shadow:0 8px 28px rgba(47,199,247,.12); }
+.op-ftr__ch--bot:hover   { border-color:rgba(41,182,246,.5); background:rgba(41,182,246,.07); box-shadow:0 8px 28px rgba(41,182,246,.12); }
+
+.op-ftr__ch-ico {
+  width:46px; height:46px; border-radius:13px;
+  display:flex; align-items:center; justify-content:center; flex-shrink:0;
+}
+.op-ftr__ch--email .op-ftr__ch-ico { background:rgba(47,199,247,.14); }
+.op-ftr__ch--bot   .op-ftr__ch-ico { background:linear-gradient(135deg,#29b6f6,#0077c2); }
+
+.op-ftr__ch-text { display:flex; flex-direction:column; gap:3px; }
+.op-ftr__ch-hint {
+  font-family:'Montserrat',Arial,sans-serif; font-weight:700;
+  font-size:10px; letter-spacing:.8px; text-transform:uppercase; color:var(--c-dim);
+}
+.op-ftr__ch-val {
+  font-family:'Montserrat',Arial,sans-serif; font-weight:800;
+  font-size:clamp(14px,1.5vw,18px); color:var(--c-white); letter-spacing:-0.3px; line-height:1.1;
+}
+
+/* Разделитель «Мы в сетях» */
+.op-ftr__divider {
+  display:flex; align-items:center; gap:12px;
+  margin:24px 0 14px;
+}
+.op-ftr__divider-line { flex:1; height:1px; background:var(--c-line); }
+.op-ftr__divider-text {
+  font-family:'Montserrat',Arial,sans-serif; font-weight:700;
+  font-size:10px; letter-spacing:1.2px; text-transform:uppercase; color:var(--c-dim);
+  white-space:nowrap;
+}
+
+/* Соцсети — три пилюли */
+.op-ftr__socials { display:flex; gap:8px; flex-wrap:wrap; }
+
+.op-ftr__soc-pill {
+  display:flex; align-items:center; gap:9px;
+  padding:9px 16px 9px 10px; border-radius:50px;
+  border:1px solid var(--c-line); background:var(--c-bg3);
+  text-decoration:none;
+  transition:border-color .2s var(--ease),background .2s var(--ease),transform .2s var(--ease);
+}
+.op-ftr__soc-pill:hover { transform:translateY(-2px); }
+.op-ftr__soc-pill--tg:hover { border-color:#29b6f6; background:rgba(41,182,246,.1); }
+.op-ftr__soc-pill--vk:hover { border-color:#0077ff; background:rgba(0,119,255,.1); }
+.op-ftr__soc-pill--yt:hover { border-color:#ff2222; background:rgba(255,34,34,.08); }
+
+.op-ftr__soc-ico {
+  width:28px; height:28px; border-radius:50%;
+  display:flex; align-items:center; justify-content:center; flex-shrink:0;
+}
+.op-ftr__soc-pill--tg .op-ftr__soc-ico { background:linear-gradient(135deg,#29b6f6,#0077c2); }
+.op-ftr__soc-pill--vk .op-ftr__soc-ico { background:#0077ff; }
+.op-ftr__soc-pill--yt .op-ftr__soc-ico { background:#ff2222; }
+
+.op-ftr__soc-name {
+  font-family:'Montserrat',Arial,sans-serif; font-weight:700;
+  font-size:13px; color:var(--c-white);
+}
+
+/* ── Почты 2×2 ── */
+.op-ftr__emails-grid {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px;
+  margin-bottom:16px;
+}
+
+.op-ftr__em {
+  display:flex; flex-direction:column; justify-content:space-between;
+  padding:20px 20px 18px;
+  border-radius:16px;
+  border:1px solid var(--c-line); background:var(--c-bg3);
+  text-decoration:none; min-height:120px;
+  position:relative; overflow:hidden;
+  transition:border-color .2s var(--ease),background .2s var(--ease),transform .2s var(--ease);
+}
+/* Левый акцент при hover */
+.op-ftr__em::before {
+  content:'';
+  position:absolute; left:0; top:0; bottom:0; width:3px;
+  background:linear-gradient(180deg,var(--c-cyan),var(--c-blue));
+  border-radius:3px 0 0 3px;
+  transform:scaleY(0); transform-origin:center;
+  transition:transform .2s var(--ease);
+}
+.op-ftr__em:hover { border-color:rgba(47,199,247,.4); background:rgba(47,199,247,.05); transform:translateY(-2px); }
+.op-ftr__em:hover::before { transform:scaleY(1); }
+
+.op-ftr__em-top { display:flex; align-items:center; justify-content:space-between; }
+.op-ftr__em-ico {
+  width:40px; height:40px; border-radius:11px;
+  background:rgba(47,199,247,.1);
+  display:flex; align-items:center; justify-content:center;
+  transition:background .2s var(--ease);
+}
+.op-ftr__em:hover .op-ftr__em-ico { background:rgba(47,199,247,.18); }
+
+.op-ftr__em-arr {
+  color:var(--c-dim); opacity:0; transform:translateX(-6px) translateY(6px);
+  transition:opacity .2s var(--ease),transform .2s var(--ease);
+}
+.op-ftr__em:hover .op-ftr__em-arr { opacity:1; transform:translateX(0) translateY(0); }
+
+.op-ftr__em-bottom { display:flex; flex-direction:column; gap:4px; }
+.op-ftr__em-role {
+  font-family:'Montserrat',Arial,sans-serif; font-weight:700;
+  font-size:10px; letter-spacing:.7px; text-transform:uppercase; color:var(--c-dim);
+}
+.op-ftr__em-addr {
+  font-family:'Montserrat',Arial,sans-serif; font-weight:800;
+  font-size:clamp(13px,1.3vw,16px); color:var(--c-white); letter-spacing:-0.3px;
+  transition:color .2s var(--ease);
+}
+.op-ftr__em:hover .op-ftr__em-addr { color:var(--c-cyan); }
+
+/* Плашка «Ответим в N часов» */
+.op-ftr__reply-badge {
+  display:inline-flex; align-items:center; gap:8px;
+  padding:8px 14px; border-radius:50px;
+  background:rgba(47,199,247,.08); border:1px solid rgba(47,199,247,.2);
+  font-family:'Montserrat',Arial,sans-serif; font-weight:700;
+  font-size:12px; color:var(--c-cyan);
+  margin-bottom:14px;
+}
+.op-ftr__reply-badge::before {
+  content:'';
+  width:7px; height:7px; border-radius:50%;
+  background:var(--c-cyan);
+  animation:op-pulse 1.8s ease-in-out infinite;
+  flex-shrink:0;
+}
+@keyframes op-pulse {
+  0%,100% { opacity:1; transform:scale(1); }
+  50%      { opacity:.4; transform:scale(.7); }
+}
+
+/* CTA под почтами */
+.op-ftr__sub-cta {
+  display:flex; align-items:center; gap:10px;
+  padding:14px 24px; border-radius:12px;
+  background:transparent;
+  border:1.5px solid rgba(47,199,247,.35);
+  font-family:'Montserrat',Arial,sans-serif; font-weight:800; font-size:14px;
+  color:var(--c-cyan); text-decoration:none;
+  transition:border-color .2s var(--ease),background .2s var(--ease),transform .2s var(--ease);
+  width:fit-content;
+}
+.op-ftr__sub-cta:hover { border-color:var(--c-cyan); background:rgba(47,199,247,.08); transform:translateY(-2px); }
+.op-ftr__sub-cta svg { transition:transform .2s var(--ease); }
+.op-ftr__sub-cta:hover svg { transform:translateX(4px); }
+
+/* ════════════════════════════════
+   ③ РЕКВИЗИТЫ
+   ════════════════════════════════ */
+.op-ftr__bar { padding:24px 0; background:var(--c-bg2); }
+.op-ftr__bar-inner {
+  display:flex; align-items:center; justify-content:space-between;
+  gap:16px; flex-wrap:wrap;
+}
+.op-ftr__legal { display:flex; flex-direction:column; gap:4px; }
+.op-ftr__legal-name {
+  font-family:'Montserrat',Arial,sans-serif; font-weight:700;
+  font-size:13px; color:var(--c-light);
+}
+.op-ftr__legal-row { font-size:12px; color:var(--c-dim); line-height:1.5; }
+.op-ftr__copy { font-size:12px; color:var(--c-dim); white-space:nowrap; }
+
+/* ── Адаптив ── */
+@media(max-width:900px){
+  .op-ftr__body-grid { grid-template-columns:1fr; gap:40px; }
+  .op-ftr__hero-inner { flex-direction:column; align-items:flex-start; }
+  .op-ftr__hero-cta { width:100%; justify-content:center; }
+}
+@media(max-width:540px){
+  .op-ftr__emails-grid { grid-template-columns:1fr; }
+  .op-ftr__phone { font-size:clamp(26px,7.5vw,38px); letter-spacing:-1px; }
+  .op-ftr__hero-meta { padding-left:0; }
+  .op-ftr__bar-inner { flex-direction:column; align-items:flex-start; }
+}
+</style>
+
+<footer class="op-ftr">
+
+  <!-- ① ГЕРОЙ: ТЕЛЕФОН ─────────────────────────────── -->
+  <div class="op-ftr__hero">
+    <div class="op-ftr__w">
+      <div class="op-ftr__hero-inner">
+
+        <div class="op-ftr__hero-left">
+          <span class="op-f-label" style="margin-bottom:8px">Платиновый партнёр Битрикс24 · с 2017 года</span>
+          <a href="tel:+74957242010" class="op-ftr__phone">
+            <div class="op-ftr__phone-btn">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.71 12 19.79 19.79 0 0 1 1.61 3.4 2 2 0 0 1 3.6 1.22h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            </div>
+            +7 (495) 724-20-10
+          </a>
+          <div class="op-ftr__hero-meta">Пн–Пт, 9:00–18:00 МСК</div>
+        </div>
+
+        <a href="https://b24.pro/#b28970" class="op-ftr__hero-cta">
+          Оставить заявку
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ② КАНАЛЫ И ПОЧТЫ ─────────────────────────────── -->
+  <div class="op-ftr__body">
+    <div class="op-ftr__w">
+      <div class="op-ftr__body-grid">
+
+        <!-- ЛЕВАЯ: прямой контакт + соцсети -->
+        <div>
+          <span class="op-f-label">Написать напрямую</span>
+
+          <div class="op-ftr__channels">
+
+            <!-- Email -->
+            <a href="mailto:sales@b24.pro" class="op-ftr__ch op-ftr__ch--email">
+              <div class="op-ftr__ch-ico">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--c-cyan)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 7 10-7"/></svg>
+              </div>
+              <div class="op-ftr__ch-text">
+                <span class="op-ftr__ch-hint">Электронная почта</span>
+                <span class="op-ftr__ch-val">sales@b24.pro</span>
+              </div>
+            </a>
+
+            <!-- Telegram-бот — прямой контакт, другой вес -->
+            <a href="https://t.me/optim_b24pro" class="op-ftr__ch op-ftr__ch--bot" target="_blank" rel="noopener">
+              <div class="op-ftr__ch-ico">
+                <!-- иконка бота (шестерня + TG) -->
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="#fff"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+              </div>
+              <div class="op-ftr__ch-text">
+                <!-- заменить ссылку на реального бота -->
+                <span class="op-ftr__ch-hint">Telegram-бот · быстрые вопросы</span>
+                <span class="op-ftr__ch-val">@optim_b24pro</span>
+              </div>
+            </a>
+
+          </div>
+
+          <!-- Разделитель -->
+          <div class="op-ftr__divider">
+            <div class="op-ftr__divider-line"></div>
+            <span class="op-ftr__divider-text">Следить за нами</span>
+            <div class="op-ftr__divider-line"></div>
+          </div>
+
+          <!-- Соцсети: TG-канал, VK, YT -->
+          <div class="op-ftr__socials">
+
+            <a href="https://t.me/optim_b24pro" class="op-ftr__soc-pill op-ftr__soc-pill--tg" target="_blank" rel="noopener">
+              <div class="op-ftr__soc-ico">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="#fff"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+              </div>
+              <span class="op-ftr__soc-name">Telegram-канал</span>
+            </a>
+
+            <a href="https://vk.ru/optim_b24pro" class="op-ftr__soc-pill op-ftr__soc-pill--vk" target="_blank" rel="noopener">
+              <div class="op-ftr__soc-ico">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="#fff"><path d="M15.684 0H8.316C1.592 0 0 1.592 0 8.316v7.368C0 22.408 1.592 24 8.316 24h7.368C22.408 24 24 22.408 24 15.684V8.316C24 1.592 22.391 0 15.684 0zm3.692 17.123h-1.744c-.66 0-.862-.523-2.049-1.713-1.033-1-1.49-1.135-1.744-1.135-.356 0-.458.102-.458.593v1.575c0 .424-.135.678-1.253.678-1.846 0-3.896-1.118-5.335-3.202C5.029 10.956 4.47 8.98 4.47 8.59c0-.254.102-.491.593-.491h1.744c.44 0 .61.203.78.677.863 2.49 2.303 4.675 2.896 4.675.22 0 .322-.102.322-.66V9.803c-.068-1.186-.695-1.287-.695-1.71 0-.204.17-.407.44-.407h2.744c.373 0 .508.203.508.643v3.473c0 .373.17.508.271.508.22 0 .407-.135.813-.542 1.254-1.406 2.151-3.574 2.151-3.574.119-.254.322-.491.762-.491h1.744c.525 0 .643.27.525.643-.22 1.017-2.354 4.031-2.354 4.031-.186.305-.254.44 0 .78.186.254.796.779 1.203 1.253.745.847 1.32 1.558 1.473 2.049.17.474-.085.716-.576.716z"/></svg>
+              </div>
+              <span class="op-ftr__soc-name">ВКонтакте</span>
+            </a>
+
+            <a href="https://youtube.com/@optimpro-o9c" class="op-ftr__soc-pill op-ftr__soc-pill--yt" target="_blank" rel="noopener">
+              <div class="op-ftr__soc-ico">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="#fff"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+              </div>
+              <span class="op-ftr__soc-name">YouTube</span>
+            </a>
+
+          </div>
+        </div>
+
+        <!-- ПРАВАЯ: почты 2×2 + значок + CTA -->
+        <div>
+          <span class="op-f-label">Пишите напрямую по теме</span>
+
+          <!-- Плашка времени ответа -->
+          <div class="op-ftr__reply-badge" style="margin-bottom:14px">
+            Ответим в течение 2 часов
+          </div>
+
+          <div class="op-ftr__emails-grid">
+
+            <a href="mailto:sales@b24.pro" class="op-ftr__em">
+              <div class="op-ftr__em-top">
+                <div class="op-ftr__em-ico">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--c-cyan)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+                </div>
+                <svg class="op-ftr__em-arr" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--c-cyan)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </div>
+              <div class="op-ftr__em-bottom">
+                <span class="op-ftr__em-role">Продажи и покупка</span>
+                <span class="op-ftr__em-addr">sales@b24.pro</span>
+              </div>
+            </a>
+
+            <a href="mailto:partners@b24.pro" class="op-ftr__em">
+              <div class="op-ftr__em-top">
+                <div class="op-ftr__em-ico">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--c-cyan)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                </div>
+                <svg class="op-ftr__em-arr" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--c-cyan)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </div>
+              <div class="op-ftr__em-bottom">
+                <span class="op-ftr__em-role">Партнёрство</span>
+                <span class="op-ftr__em-addr">partners@b24.pro</span>
+              </div>
+            </a>
+
+            <a href="mailto:hr@b24.pro" class="op-ftr__em">
+              <div class="op-ftr__em-top">
+                <div class="op-ftr__em-ico">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--c-cyan)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                </div>
+                <svg class="op-ftr__em-arr" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--c-cyan)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </div>
+              <div class="op-ftr__em-bottom">
+                <span class="op-ftr__em-role">Работа у нас</span>
+                <span class="op-ftr__em-addr">hr@b24.pro</span>
+              </div>
+            </a>
+
+            <a href="mailto:info@b24.pro" class="op-ftr__em">
+              <div class="op-ftr__em-top">
+                <div class="op-ftr__em-ico">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--c-cyan)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                </div>
+                <svg class="op-ftr__em-arr" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--c-cyan)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </div>
+              <div class="op-ftr__em-bottom">
+                <span class="op-ftr__em-role">Общие вопросы</span>
+                <span class="op-ftr__em-addr">info@b24.pro</span>
+              </div>
+            </a>
+
+          </div>
+
+          <!-- Повторный CTA под почтами -->
+          <a href="https://b24.pro/#b28970" class="op-ftr__sub-cta">
+            Или оставьте заявку — перезвоним
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ③ РЕКВИЗИТЫ ────────────────────────────────────── -->
+  <div class="op-ftr__bar">
+    <div class="op-ftr__w">
+      <div class="op-ftr__bar-inner">
+        <div class="op-ftr__legal">
+          <div class="op-ftr__legal-name">ООО «Оптим ПРО»</div>
+          <div class="op-ftr__legal-row">ИНН 0800016850 · ОГРН 1240800002960 · КПП 080001001 · Республика Калмыкия, г. Элиста, 1 мкр., д. 41, оф. 28</div>
+          <div class="op-ftr__legal-row">ОКВЭД 62.01 — Разработка ПО · 62.02 — Консультационная деятельность в области ИТ</div>
+        </div>
+        <div class="op-ftr__copy">© 2025 All rights reserved.</div>
+      </div>
+    </div>
+  </div>
+
+</footer>
+</div>

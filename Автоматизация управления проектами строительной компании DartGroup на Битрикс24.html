@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Автоматизация управления проектами в строительной компании на Битрикс24 — DartGroup</title>
+<style>
+@font-face{font-family:'Montserrat';font-style:normal;font-weight:800;font-display:swap;src:url(https://fonts.gstatic.com/s/montserrat/v29/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCvr70w-Y3tcoqK5.woff2) format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
+@font-face{font-family:'Montserrat';font-style:normal;font-weight:800;font-display:swap;src:url(https://fonts.gstatic.com/s/montserrat/v29/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCvr73w-Y3tcoqK5.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'Open Sans';font-style:normal;font-weight:400;font-display:swap;src:url(https://fonts.gstatic.com/s/opensans/v40/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsiH0C4nY1M2xLER.woff2) format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
+@font-face{font-family:'Open Sans';font-style:normal;font-weight:400;font-display:swap;src:url(https://fonts.gstatic.com/s/opensans/v40/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsjZ0C4nY1M2xLER.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'Open Sans';font-style:normal;font-weight:700;font-display:swap;src:url(https://fonts.gstatic.com/s/opensans/v40/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsg-1y4nY1M2xLER.woff2) format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
+@font-face{font-family:'Open Sans';font-style:normal;font-weight:700;font-display:swap;src:url(https://fonts.gstatic.com/s/opensans/v40/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsg-1S4nY1M2xLER.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+.case-page {
+  --bg: linear-gradient(180deg, #0d1b2e 0%, #0a1422 100%);
+  --surface: rgba(255,255,255,0.04);
+  --surface-2: rgba(255,255,255,0.03);
+  --border: rgba(255,255,255,0.1);
+  --border-hover: rgba(47,199,247,0.55);
+  --shadow: 0 2px 14px rgba(0,0,0,0.3);
+  --shadow-hover: 0 16px 46px rgba(0,0,0,0.5);
+  --title: #ffffff;
+  --eyebrow: #2FC7F7;
+  --heading: #ffffff;
+  --text: rgba(255,255,255,0.62);
+  --text-strong: #eaf2ff;
+  --muted: rgba(255,255,255,0.42);
+  --accent: #2FC7F7;
+  --accent-2: #2FC7F7;
+  --divider: rgba(255,255,255,0.1);
+  --glow: rgba(47,199,247,0.16);
+  --chip-bg: rgba(255,255,255,0.05);
+  --chip-border: rgba(255,255,255,0.14);
+  --toggle-bg: rgba(255,255,255,0.06);
+  --toggle-border: rgba(255,255,255,0.16);
+  --bad: rgba(255,255,255,0.45);
+  --good: #2FC7F7;
+  --track: rgba(255,255,255,0.08);
+  --quote-bg: linear-gradient(135deg, rgba(47,199,247,0.1), rgba(0,102,204,0.06));
+}
+
+body { background: #0a1422; }
+
+.case-page {
+  font-family: 'Open Sans', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+  padding-top: 100pt;
+  transition: background 0.45s ease, color 0.45s ease;
+}
+
+#bg-canvas { position: fixed; inset: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; }
+
+.wrap { max-width: 1040px; margin: 0 auto; padding: 0 24px; position: relative; z-index: 1; }
+
+h1, h2, h3, .sec-title, .cta h2, .ft-brand { font-family: 'Montserrat', sans-serif; font-weight: 600; }
+
+.case-topbar { position: relative; z-index: 2; display: flex; justify-content: space-between; align-items: center; gap: 16px; max-width: 1040px; margin: 0 auto; padding: 0 24px 8px; }
+.back-link { display: inline-flex; align-items: center; gap: 8px; font-family: 'Montserrat', sans-serif; font-size: 14px; font-weight: 700; color: var(--accent); text-decoration: none; transition: gap 0.25s ease, color 0.25s ease; }
+.back-link:hover { gap: 12px; color: var(--accent-2); }
+.back-link svg { width: 16px; height: 16px; }
+
+.hero { padding: 30px 0 60px; }
+.tagrow { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 22px; }
+.tag { font-family: 'Montserrat', sans-serif; font-size: 12px; font-weight: 600; color: var(--accent); background: var(--chip-bg); border: 1px solid var(--chip-border); border-radius: 999px; padding: 6px 14px; }
+.hero h1 { font-size: clamp(31px, 5vw, 50px); line-height: 1.1; color: var(--title); letter-spacing: -0.015em; max-width: 900px; }
+.hero .lead { margin-top: 20px; font-size: clamp(16px, 2vw, 19px); line-height: 1.65; color: var(--text); max-width: 720px; }
+.hero-grid { margin-top: 40px; display: grid; grid-template-columns: 1fr 1fr 0.95fr; gap: 18px; align-items: stretch; }
+.ps-card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 24px; box-shadow: var(--shadow); transition: transform 0.35s cubic-bezier(.23,1,.32,1), box-shadow 0.35s ease, border-color 0.35s ease; }
+.ps-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-hover); border-color: var(--border-hover); }
+.ps-card .ps-label { font-family: 'Montserrat', sans-serif; font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 10px; }
+.ps-card.problem .ps-label { color: var(--bad); }
+.ps-card.solution .ps-label { color: var(--good); }
+.ps-card p { font-size: 15px; line-height: 1.6; color: var(--text-strong); }
+.hero-stat { background: linear-gradient(120deg, #0066CC, #2FC7F7 90%); background-size: 200% 200%; animation: shimmer 7s ease infinite; border-radius: 10px; padding: 28px 24px; color: #fff; display: flex; flex-direction: column; justify-content: center; box-shadow: 0 14px 36px rgba(0,102,204,0.3); }
+.hero-stat .num { font-family: 'Open Sans', sans-serif; font-weight: 800; font-size: 52px; line-height: 1; }
+.hero-stat .cap { margin-top: 8px; font-size: 14px; line-height: 1.45; opacity: 0.95; }
+@keyframes shimmer { 0%{background-position:0% 50%} 50%{background-position:100% 50%} 100%{background-position:0% 50%} }
+
+section.block { padding: 56px 0; }
+.sec-eyebrow { font-family: 'Montserrat', sans-serif; font-size: 12px; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; color: var(--eyebrow); margin-bottom: 12px; }
+.sec-title { font-size: clamp(24px, 3.4vw, 34px); line-height: 1.18; color: var(--heading); max-width: 760px; }
+.prose { margin-top: 18px; font-size: 16px; line-height: 1.7; color: var(--text); max-width: 760px; }
+.prose b, .prose strong { color: var(--text-strong); font-weight: 700; }
+
+.figure { margin-top: 28px; border-radius: 10px; overflow: hidden; border: 1px solid var(--border); background: var(--surface-2); box-shadow: var(--shadow); transition: transform 0.35s cubic-bezier(.23,1,.32,1), box-shadow 0.35s ease, border-color 0.35s ease; }
+.figure:hover { transform: translateY(-4px) scale(1.005); box-shadow: var(--shadow-hover); border-color: var(--border-hover); }
+.figure img { display: block; width: 100%; height: auto; }
+.figcap { padding: 12px 16px; font-size: 13px; color: var(--muted); border-top: 1px solid var(--divider); font-family: 'Montserrat', sans-serif; font-weight: 600; }
+.fig-2 { margin-top: 20px; display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+
+.cards-3 { margin-top: 32px; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; }
+.info-card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 24px; box-shadow: var(--shadow); transition: transform 0.35s cubic-bezier(0.23,1,0.32,1), box-shadow 0.35s ease, border-color 0.35s ease; }
+.info-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-hover); border-color: var(--border-hover); }
+.info-card .ic-ico { width: 44px; height: 44px; border-radius: 10px; display: flex; align-items: center; justify-content: center; background: var(--quote-bg); color: var(--accent-2); margin-bottom: 16px; transition: transform 0.35s ease; }
+.info-card:hover .ic-ico { transform: scale(1.12) rotate(-6deg); }
+.info-card .ic-ico svg { width: 22px; height: 22px; }
+.info-card h3 { font-size: 17px; color: var(--heading); margin-bottom: 8px; }
+.info-card p { font-size: 14px; line-height: 1.6; color: var(--text); }
+
+.quote { margin-top: 32px; background: var(--quote-bg); border: 1px solid var(--border); border-left: 4px solid var(--accent-2); border-radius: 8px; padding: 24px 26px; }
+.quote .q-label { font-family: 'Montserrat', sans-serif; font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; color: var(--accent); margin-bottom: 8px; }
+.quote p { font-size: 17px; line-height: 1.55; color: var(--text-strong); font-style: italic; }
+
+.steps { margin-top: 32px; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; }
+.step { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 24px; box-shadow: var(--shadow); transition: transform 0.35s cubic-bezier(0.23,1,0.32,1), box-shadow 0.35s ease, border-color 0.35s ease; }
+.step:hover { transform: translateY(-6px); box-shadow: var(--shadow-hover); border-color: var(--border-hover); }
+.step .step-n { font-family: 'Open Sans', sans-serif; font-weight: 800; font-size: 28px; background: linear-gradient(135deg, #0066CC, #2FC7F7); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; line-height: 1; margin-bottom: 12px; }
+.step h3 { font-size: 16px; color: var(--heading); margin-bottom: 8px; }
+.step p { font-size: 14px; line-height: 1.6; color: var(--text); }
+
+.proc-wrap { margin-top: 32px; }
+.proc-wrap .pw-label { font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: 13px; color: var(--heading); margin-bottom: 14px; }
+.badges { display: flex; flex-wrap: wrap; gap: 12px; }
+.badge { display: inline-flex; align-items: center; gap: 8px; font-family: 'Montserrat', sans-serif; font-size: 14px; font-weight: 600; color: var(--text-strong); background: var(--surface); border: 1px solid var(--border); border-radius: 999px; padding: 10px 18px; transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease; }
+.badge:hover { transform: translateY(-4px); border-color: var(--border-hover); box-shadow: var(--shadow); }
+.badge .dot { width: 8px; height: 8px; border-radius: 50%; background: linear-gradient(135deg, #0066CC, #2FC7F7); }
+
+.results { margin-top: 32px; display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 18px; }
+.result { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 26px 22px; box-shadow: var(--shadow); transition: transform 0.35s cubic-bezier(.23,1,.32,1), box-shadow 0.35s ease, border-color 0.35s ease; }
+.result:hover { transform: translateY(-6px); box-shadow: var(--shadow-hover); border-color: var(--border-hover); }
+.result .r-num { font-family: 'Open Sans', sans-serif; font-weight: 800; font-size: clamp(36px, 6vw, 52px); line-height: 1; background: linear-gradient(135deg, #0066CC, #2FC7F7); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+.result .r-cap { margin-top: 10px; font-size: 14px; line-height: 1.4; color: var(--text); font-family: 'Montserrat', sans-serif; font-weight: 600; }
+
+.ba-toggle { margin-top: 30px; position: relative; display: inline-flex; width: 360px; max-width: 100%; background: var(--track); border-radius: 999px; padding: 5px; overflow: hidden; }
+.ba-toggle button { flex: 1 1 0; text-align: center; white-space: nowrap; position: relative; z-index: 1; border: none; background: none; cursor: pointer; font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 14px; padding: 10px 18px; border-radius: 999px; color: var(--text); transition: color 0.3s ease; }
+.ba-toggle button:focus, .ba-toggle button:focus-visible { outline: none; }
+.ba-toggle button.active { color: #fff; }
+.ba-slider { position: absolute; top: 5px; left: 5px; height: calc(100% - 10px); width: calc(50% - 5px); border-radius: 999px; background: linear-gradient(135deg, #0066CC, #2FC7F7); transition: transform 1.4s cubic-bezier(.2,.85,.25,1); z-index: 0; }
+.ba-toggle.show-after .ba-slider { transform: translateX(100%); }
+.ba-panels { position: relative; margin-top: 22px; }
+.ba-panel { display: none; }
+.ba-panel.active { display: block; }
+.ba-panel ul { list-style: none; display: grid; gap: 14px; }
+.ba-panel li { display: flex; gap: 14px; align-items: flex-start; background: var(--surface); border: 1px solid var(--border); border-left: 4px solid; border-radius: 8px; padding: 18px 20px; font-size: 15.5px; line-height: 1.55; color: var(--text-strong); opacity: 0; transform: translateY(14px); }
+.ba-panel.active li { animation: baIn 0.5s cubic-bezier(.23,1,.32,1) forwards; }
+.ba-panel.active li:nth-child(1){animation-delay:.04s} .ba-panel.active li:nth-child(2){animation-delay:.13s} .ba-panel.active li:nth-child(3){animation-delay:.22s}
+@keyframes baIn { to { opacity:1; transform:none; } }
+.ba-panel.before li { border-left-color: var(--bad); }
+.ba-panel.after li { border-left-color: var(--good); }
+.ba-panel li .mk { flex-shrink: 0; font-weight: 800; font-size: 17px; }
+.ba-panel.before li .mk { color: var(--bad); }
+.ba-panel.after li .mk { color: var(--good); }
+
+.final-stat { margin-top: 40px; text-align: center; background: linear-gradient(120deg, #0066CC, #2FC7F7 95%); background-size: 200% 200%; animation: shimmer 8s ease infinite; border-radius: 14px; padding: 50px 24px; color: #fff; box-shadow: 0 16px 44px rgba(0,102,204,0.3); }
+.final-stat .num { font-family: 'Open Sans', sans-serif; font-weight: 800; font-size: clamp(44px, 10vw, 90px); line-height: 1; }
+.final-stat .cap { margin-top: 10px; font-size: 17px; opacity: 0.95; }
+
+.cta-block { padding: 64px 0; }
+.cta { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 48px 40px; text-align: center; box-shadow: var(--shadow); }
+.cta h2 { font-size: clamp(22px, 3.2vw, 30px); color: var(--heading); max-width: 640px; margin: 0 auto; line-height: 1.25; }
+.cta p { margin: 18px auto 28px; max-width: 620px; font-size: 16px; line-height: 1.65; color: var(--text); }
+
+.reveal { opacity: 0; transform: translateY(26px); transition: opacity 0.7s cubic-bezier(.23,1,.32,1), transform 0.7s cubic-bezier(.23,1,.32,1); }
+.reveal.in { opacity: 1; transform: none; }
+.cards-3 > .reveal:nth-child(2), .steps > .reveal:nth-child(2), .results > .reveal:nth-child(2) { transition-delay: .08s; }
+.cards-3 > .reveal:nth-child(3), .steps > .reveal:nth-child(3), .results > .reveal:nth-child(3) { transition-delay: .16s; }
+.steps > .reveal:nth-child(4), .results > .reveal:nth-child(4) { transition-delay: .24s; }
+
+#optim-case { font-family: 'Open Sans', Arial, sans-serif !important; }
+#optim-case h1, #optim-case h2, #optim-case h3,
+#optim-case .sec-title, #optim-case .cta h2, #optim-case .chart-head,
+#optim-case .info-card h3, #optim-case .step h3 {
+  font-family: 'Montserrat', 'Open Sans', Arial, sans-serif !important;
+  font-weight: 600 !important;
+}
+#optim-case .sec-eyebrow, #optim-case .ps-label, #optim-case .q-label,
+#optim-case .pw-label, #optim-case .ba-toggle button, #optim-case .badge { font-weight: 600 !important; }
+#optim-case a, #optim-case button { outline: none !important; }
+#optim-case { --bg: radial-gradient(1200px 620px at 82% -10%, rgba(47,199,247,0.16), transparent 60%), radial-gradient(900px 520px at -5% 8%, rgba(0,102,204,0.12), transparent 55%), linear-gradient(180deg, #0d1b2e 0%, #0a1422 100%) !important; }
+#optim-case .sec-eyebrow { color: #2FC7F7 !important; }
+#optim-case .tag { color: var(--accent); border-color: rgba(0,102,204,0.35); }
+#optim-case .quote { border-left-color: var(--accent-2); }
+#optim-case .hero-stat, #optim-case .final-stat { background-image: linear-gradient(120deg, #0066CC, #2FC7F7 90%) !important; }
+#optim-case .ba-slider { background-image: linear-gradient(135deg, #0066CC, #2FC7F7) !important; }
+#optim-case .step-n, #optim-case .result .r-num { background-image: linear-gradient(135deg, #0066CC, #2FC7F7) !important; -webkit-background-clip: text !important; background-clip: text !important; -webkit-text-fill-color: transparent !important; }
+#optim-case .ps-card.problem { border-top: 2px solid var(--bad); }
+#optim-case .ps-card.problem .ps-label { color: var(--bad) !important; }
+#optim-case .ba-panel.before li { border-left-color: var(--bad) !important; }
+#optim-case .ba-panel.before li .mk { color: var(--bad) !important; }
+#optim-case .info-card:hover, #optim-case .step:hover, #optim-case .result:hover,
+#optim-case .figure:hover, #optim-case .ps-card:hover {
+  box-shadow: 0 0 0 1px rgba(47,199,247,0.40), 0 16px 46px rgba(0,102,204,0.28) !important;
+  border-color: rgba(47,199,247,0.50) !important;
+}
+#optim-case .hero h1 { text-shadow: 0 0 30px rgba(47,199,247,0.35); }
+#optim-case .hero-stat, #optim-case .final-stat { box-shadow: 0 0 0 1px rgba(47,199,247,0.35), 0 16px 50px rgba(0,102,204,0.40) !important; }
+#optim-case .badge { border-color: rgba(47,199,247,0.30); }
+
+#optim-case .client-strip { margin-top: 36px; display: flex; align-items: center; gap: 20px; background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 20px 24px; box-shadow: var(--shadow); transition: border-color 0.35s ease; }
+#optim-case .client-strip:hover { border-color: var(--border-hover); }
+#optim-case .client-meta { display: flex; flex-direction: column; gap: 6px; }
+#optim-case .client-label { font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.10em; color: var(--muted); }
+#optim-case .client-name { font-family: 'Montserrat', sans-serif; font-size: 17px; font-weight: 700; color: var(--heading); }
+#optim-case .client-desc { font-size: 14px; line-height: 1.55; color: var(--text); max-width: 680px; }
+#optim-case .client-chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 6px; }
+#optim-case .client-chip { font-family: 'Montserrat', sans-serif; font-size: 12px; font-weight: 600; color: var(--accent); background: var(--chip-bg); border: 1px solid rgba(0,102,204,0.2); border-radius: 999px; padding: 4px 12px; }
+@media (max-width: 620px) { #optim-case .client-strip { flex-direction: column; align-items: flex-start; } }
+
+#optim-case .summary-block { padding: 10px 0 0; }
+#optim-case .summary { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+#optim-case .sum-card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 26px; box-shadow: var(--shadow); transition: transform 0.35s cubic-bezier(.23,1,.32,1), box-shadow 0.35s ease, border-color 0.35s ease; }
+#optim-case .sum-card:hover { box-shadow: 0 0 0 1px rgba(47,199,247,0.40), 0 16px 46px rgba(0,102,204,0.28) !important; border-color: rgba(47,199,247,0.50) !important; transform: translateY(-5px) !important; }
+#optim-case .sum-card h3 { font-family: 'Montserrat', sans-serif; font-weight: 600 !important; font-size: 13px; text-transform: uppercase; letter-spacing: .08em; color: var(--accent); margin-bottom: 16px; }
+#optim-case .sum-list { list-style: none; display: grid; gap: 12px; }
+#optim-case .sum-list li { display: flex; gap: 12px; font-size: 15px; line-height: 1.5; color: var(--text-strong); }
+#optim-case .sum-list li svg { flex-shrink: 0; width: 20px; height: 20px; color: var(--accent-2); margin-top: 1px; }
+@media (max-width: 880px) { #optim-case .summary { grid-template-columns: 1fr; } .hero-grid { grid-template-columns: 1fr; } .fig-2 { grid-template-columns: 1fr; } }
+@media (max-width: 560px) { .case-page { padding-top: 70pt; } section.block { padding: 44px 0; } .cta { padding: 36px 22px; } .ba-toggle button { padding: 10px 12px; font-size: 13px; } }
+
+.b24-form-wrapper{background:transparent!important;border:none!important;box-shadow:none!important;padding:0!important}.b24-form{background:#111827!important;border:1px solid rgba(255,255,255,.09)!important;border-radius:16px!important;overflow:hidden!important;box-shadow:0 24px 60px rgba(0,0,0,.4)!important}
+.b24-form-header{background:#111827!important;border-bottom:1px solid rgba(255,255,255,.08)!important}
+.b24-form-header-title,.b24-form-header *{color:#fff!important}
+.b24-form-body{background:#111827!important}
+.b24-form-control-container .b24-form-control,.b24-form-field .b24-form-control{background:rgba(255,255,255,.06)!important;border:1px solid rgba(255,255,255,.12)!important;border-radius:10px!important;color:#E8EDF7!important}
+.b24-form-control::placeholder{color:#8A95B0!important}
+.b24-form-control:focus{border-color:rgba(47,199,247,.5)!important;outline:none!important;box-shadow:0 0 0 3px rgba(47,199,247,.12)!important}
+.b24-form-field-label,.b24-form-field-label *{color:#c8d5f0!important}
+.b24-form-btn-container .b24-form-btn{background:linear-gradient(135deg,#2E7DF6,#7A5CFF)!important;border:none!important;border-radius:12px!important;color:#fff!important;font-weight:700!important;box-shadow:0 8px 24px rgba(46,125,246,.4)!important}
+.b24-form-sign,.b24-form-sign *,.b24-form-field-agree,.b24-form-field-agree *{color:#8A95B0!important}
+.b24-form-field-agreement a{color:#2FC7F7!important}
+.b24-form *:not(input):not(textarea):not(select):not(button){color:#E8EDF7!important}
+.b24-form input,.b24-form textarea,.b24-form select{color:#E8EDF7!important}
+.b24-form-btn,.b24-form-btn *{color:#fff!important}
+.cta-block .cta { padding: 40px !important; }
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal { opacity: 1; transform: none; transition: none; }
+  .hero-stat, .final-stat { animation: none; }
+  .ba-panel.active li { animation: none; opacity: 1; transform: none; }
+  .info-card:hover, .step:hover, .badge:hover, .result:hover, .ps-card:hover, .figure:hover { transform: none; }
+}
+
+.figure { position: relative; }
+.figure img { cursor: zoom-in; }
+.fig-zoom-ico { position: absolute; top: 12px; right: 12px; width: 34px; height: 34px; border-radius: 8px; background: rgba(13,27,46,0.55); color: #fff; display: flex; align-items: center; justify-content: center; opacity: 0; transform: scale(.9); transition: opacity .3s ease, transform .3s ease; pointer-events: none; backdrop-filter: blur(4px); z-index: 3; }
+.figure:hover .fig-zoom-ico { opacity: 1; transform: none; }
+.fig-zoom-ico svg { width: 18px; height: 18px; }
+.lightbox { position: fixed; inset: 0; z-index: 1000; display: none; align-items: center; justify-content: center; padding: 4vh 4vw; background: rgba(6,12,22,0.93); backdrop-filter: blur(8px); }
+.lightbox.open { display: flex; animation: lbFade .25s ease; }
+@keyframes lbFade { from { opacity: 0; } to { opacity: 1; } }
+.lb-figure { margin: 0; max-width: 100%; max-height: 100%; display: flex; flex-direction: column; gap: 14px; align-items: center; animation: lbZoom .3s cubic-bezier(.2,.9,.3,1); }
+@keyframes lbZoom { from { transform: scale(.92); opacity: 0; } to { transform: none; opacity: 1; } }
+.lb-figure img { max-width: 92vw; max-height: 80vh; border-radius: 10px; box-shadow: 0 24px 70px rgba(0,0,0,.55); object-fit: contain; }
+.lb-cap { color: rgba(255,255,255,.86); font-family: 'Montserrat', sans-serif; font-weight: 600; font-size: 14px; display: flex; gap: 12px; align-items: center; text-align: center; flex-wrap: wrap; justify-content: center; }
+.lb-count { color: rgba(255,255,255,.5); font-weight: 600; }
+.lb-close { position: absolute; top: 18px; right: 18px; width: 46px; height: 46px; border-radius: 10px; border: 1px solid rgba(255,255,255,.2); background: rgba(255,255,255,.08); color: #fff; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: background .2s ease, transform .15s ease; }
+.lb-close:hover { background: rgba(255,255,255,.18); }
+.lb-close:active { transform: scale(.92); }
+.lb-close svg { width: 22px; height: 22px; }
+.lb-nav { position: absolute; top: 50%; transform: translateY(-50%); width: 52px; height: 52px; border-radius: 50%; border: 1px solid rgba(255,255,255,.2); background: rgba(255,255,255,.08); color: #fff; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: background .2s ease; }
+.lb-nav:hover { background: rgba(255,255,255,.2); }
+.lb-nav svg { width: 24px; height: 24px; }
+.lb-prev { left: 18px; } .lb-next { right: 18px; }
+</style>
+</head>
+<body>
+<div class="case-page" id="optim-case">
+  <canvas id="bg-canvas"></canvas>
+
+  <div class="case-topbar">
+    <a class="back-link" href="https://b24.pro/cases/#">
+      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 8H3M7 4L3 8l4 4"/></svg>
+      Все кейсы
+    </a>
+  </div>
+
+  <header class="hero">
+    <div class="wrap">
+      <div class="tagrow reveal">
+        <span class="tag">Строительство</span>
+        <span class="tag">Управление проектами</span>
+        <span class="tag">Смарт-процессы Битрикс24</span>
+        <span class="tag">Автоматизация задач</span>
+      </div>
+      <h1 class="reveal">DartGroup: 1 клик — и проект запущен. Автоматизация управления проектами на Битрикс24</h1>
+      <p class="lead reveal">Строительная компания избавила руководителей от ручного контроля: теперь один запуск проекта автоматически расставляет задачи, уведомляет участников и ведёт процесс до завершения.</p>
+      <div class="client-strip reveal">
+        <div class="client-meta">
+          <span class="client-label">О клиенте</span>
+          <span class="client-name">ИП Катаев Д.В. — DartGroup</span>
+          <span class="client-desc">Строительная компания (10–50 сотрудников). Руководители Данил и Артур тратили значительное время на ручное управление каждым проектом: постановку задач, контроль исполнения и уведомление участников.</span>
+          <div class="client-chips">
+            <span class="client-chip">Строительство</span>
+            <span class="client-chip">10–50 сотрудников</span>
+            <span class="client-chip">Битрикс24</span>
+            <span class="client-chip">Смарт-процессы</span>
+          </div>
+        </div>
+      </div>
+      <div class="hero-grid">
+        <div class="ps-card problem reveal"><div class="ps-label">Проблема</div><p>Руководители вручную контролировали каждый проект: создавали задачи, отслеживали статусы и уведомляли исполнителей. Огромные потери времени и человеческий фактор.</p></div>
+        <div class="ps-card solution reveal"><div class="ps-label">Решение</div><p>Смарт-процесс «Проекты» на Битрикс24: один клик — и система сама создаёт задачи, переводит проект по стадиям и уведомляет участников через MAX.</p></div>
+        <div class="hero-stat reveal"><span class="num">1 клик</span><span class="cap">— запуск проекта. Задачи, уведомления и контроль — автоматически</span></div>
+      </div>
+    </div>
+  </header>
+
+  <section class="summary-block">
+    <div class="wrap">
+      <div class="summary">
+        <div class="sum-card reveal">
+          <h3>Что сделали</h3>
+          <ul class="sum-list">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6"/></svg><span>Реализовали общее внедрение Битрикс24 под задачи компании</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6"/></svg><span>Создали смарт-процесс «Проекты» с автоматическим формированием последовательных задач</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6"/></svg><span>Настроили автопереход проекта на следующую стадию при закрытии задачи</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6"/></svg><span>Подключили мессенджер MAX через Chat-app и настроили права доступа</span></li>
+          </ul>
+        </div>
+        <div class="sum-card reveal">
+          <h3>Технологии и инструменты</h3>
+          <div class="badges">
+            <span class="badge"><span class="dot"></span>Битрикс24</span>
+            <span class="badge"><span class="dot"></span>Смарт-процессы</span>
+            <span class="badge"><span class="dot"></span>Задачи и проекты</span>
+            <span class="badge"><span class="dot"></span>Мессенджер MAX</span>
+            <span class="badge"><span class="dot"></span>Chat-app</span>
+            <span class="badge"><span class="dot"></span>Права доступа</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="wrap">
+      <div class="sec-eyebrow reveal">01 — Ситуация и вызовы</div>
+      <h2 class="sec-title reveal">Каждый проект требовал ручного участия руководителя</h2>
+      <p class="prose reveal">В DartGroup запуск нового строительного проекта превращался в <b>серию ручных действий</b>: создать задачи, распределить по исполнителям, отследить выполнение каждого этапа и уведомить следующего участника. Два руководителя — Данил и Артур — проводили часы в роли диспетчеров вместо того, чтобы управлять бизнесом.</p>
+
+      <div class="cards-3">
+        <div class="info-card reveal">
+          <div class="ic-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="1"/><path d="M9 12h6M9 16h4"/></svg></div>
+          <h3>Ручное создание задач</h3>
+          <p>На каждый новый проект руководитель вручную создавал задачи, назначал исполнителей и расставлял сроки — это занимало часы при каждом запуске.</p>
+        </div>
+        <div class="info-card reveal">
+          <div class="ic-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg></div>
+          <h3>Постоянный ручной контроль</h3>
+          <p>Руководители следили за выполнением задач вручную и сами переводили проект на следующий этап — риск ошибки и задержки на каждом шаге.</p>
+        </div>
+        <div class="info-card reveal">
+          <div class="ic-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4 2 2 0 0 1 3.6 1.22h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.16 6.16l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
+          <h3>Уведомления вручную</h3>
+          <p>Сообщать исполнителям о начале их этапа тоже приходилось вручную: звонки, сообщения в мессенджерах, потеря информации.</p>
+        </div>
+      </div>
+
+      <div class="quote reveal">
+        <div class="q-label">Запрос клиента</div>
+        <p>«Создать проект, заполнить основные параметры, нажать запуск — дальше система сама уведомляет участников, ставит задачи и контролирует выполнение»</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="wrap">
+      <div class="sec-eyebrow reveal">02 — Решение</div>
+      <h2 class="sec-title reveal">Смарт-процесс «Проекты»: один запуск — система делает всё остальное</h2>
+      <p class="prose reveal">Выстроили <b>сквозной процесс управления проектами</b> на базе смарт-процессов Битрикс24. Теперь руководителю достаточно заполнить карточку проекта и нажать «Запуск» — дальше система работает самостоятельно.</p>
+
+      <div class="steps">
+        <div class="step reveal">
+          <div class="step-n">01</div>
+          <h3>Запуск проекта</h3>
+          <p>Руководитель создаёт элемент в смарт-процессе «Проекты», заполняет ключевые параметры и нажимает «Запустить». Система автоматически проверяет заполненность обязательных полей.</p>
+        </div>
+        <div class="step reveal">
+          <div class="step-n">02</div>
+          <h3>Автоматические задачи</h3>
+          <p>При запуске проекта Битрикс24 автоматически формирует последовательные задачи: каждая назначена нужному исполнителю, с правильным порядком выполнения.</p>
+        </div>
+        <div class="step reveal">
+          <div class="step-n">03</div>
+          <h3>Контроль и переходы</h3>
+          <p>При закрытии задачи элемент «Проект» автоматически переходит на следующую стадию. Участники получают уведомления в мессенджере MAX — без звонков и ручных напоминаний.</p>
+        </div>
+        <div class="step reveal">
+          <div class="step-n">04</div>
+          <h3>Права и аналитика</h3>
+          <p>Настроены гибкие права доступа: каждый видит только своё. Корректные поля смарт-процесса обеспечивают прозрачность на каждом этапе.</p>
+        </div>
+      </div>
+
+      <div class="proc-wrap reveal">
+        <div class="pw-label">Что задействовали</div>
+        <div class="badges">
+          <span class="badge"><span class="dot"></span>Смарт-процесс «Проекты»</span>
+          <span class="badge"><span class="dot"></span>Автосоздание задач</span>
+          <span class="badge"><span class="dot"></span>Последовательные стадии</span>
+          <span class="badge"><span class="dot"></span>Мессенджер MAX</span>
+          <span class="badge"><span class="dot"></span>Chat-app</span>
+          <span class="badge"><span class="dot"></span>Права доступа</span>
+          <span class="badge"><span class="dot"></span>Настройка полей СП</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="wrap">
+      <div class="sec-eyebrow reveal">03 — Скриншоты</div>
+      <h2 class="sec-title reveal">Как это выглядит в системе</h2>
+      <div class="fig-2">
+        <div class="figure reveal">
+          <span class="fig-zoom-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></span>
+          <img src="https://drive.google.com/thumbnail?id=1tJjVKBURPXyGwrFa32kBOIBO2TMSFE89&sz=w1200" alt="Смарт-процесс Проекты в Битрикс24 — DartGroup" loading="eager">
+          <div class="figcap">Смарт-процесс «Проекты»: карточка с автоматическими задачами</div>
+        </div>
+        <div class="figure reveal">
+          <span class="fig-zoom-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></span>
+          <img src="https://drive.google.com/thumbnail?id=15tFes-gkA7Ko_M0Gjby0o8GoWhyQT_Me&sz=w1200" alt="Стадии проекта и задачи в Битрикс24 — DartGroup" loading="eager">
+          <div class="figcap">Автопереходы по стадиям при закрытии задачи</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="wrap">
+      <div class="sec-eyebrow reveal">04 — Результат</div>
+      <h2 class="sec-title reveal">Проект стартует в один клик. Руководители управляют, а не диспетчируют</h2>
+      <p class="prose reveal">Задачи выставляются <b>автоматически сразу после запуска проекта</b>. Процесс продвигается только по факту выполнения каждой задачи — без ручного вмешательства. Данил и Артур перестали быть диспетчерами и вернулись к управленческой роли.</p>
+
+      <div class="results">
+        <div class="result reveal"><div class="r-num">1</div><div class="r-cap">клик — запуск проекта со всеми задачами</div></div>
+        <div class="result reveal"><div class="r-num">0</div><div class="r-cap">ручных задач — всё создаётся автоматически</div></div>
+        <div class="result reveal"><div class="r-num">3</div><div class="r-cap">месяца до полного результата</div></div>
+      </div>
+
+      <div class="ba-toggle show-after reveal" id="baToggle">
+        <button type="button" data-ba="before">Было — до</button>
+        <button type="button" data-ba="after" class="active">Стало — после</button>
+        <span class="ba-slider"></span>
+      </div>
+      <div class="ba-panels">
+        <div class="ba-panel before" id="panel-before">
+          <ul>
+            <li><span class="mk">✕</span><span>Руководитель вручную создаёт задачи при запуске каждого проекта.</span></li>
+            <li><span class="mk">✕</span><span>Переход на следующую стадию — только после ручной проверки и обзвона.</span></li>
+            <li><span class="mk">✕</span><span>Уведомления исполнителям — звонки, сообщения в мессенджерах вручную.</span></li>
+          </ul>
+        </div>
+        <div class="ba-panel after active" id="panel-after">
+          <ul>
+            <li><span class="mk">✓</span><span>Один клик — и система автоматически формирует все задачи по проекту.</span></li>
+            <li><span class="mk">✓</span><span>Проект переходит на следующую стадию автоматически при закрытии задачи.</span></li>
+            <li><span class="mk">✓</span><span>Уведомления в MAX уходят участникам мгновенно, без участия руководителя.</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="final-stat reveal">
+        <div class="num">1 клик</div>
+        <div class="cap">— и проект живёт сам: задачи расставлены, исполнители уведомлены, стадии переключаются автоматически. Руководители DartGroup теперь управляют бизнесом, а не процессами.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-block">
+    <div class="wrap">
+      <div class="cta reveal">
+        <h2>Ваши руководители тратят время на контроль вместо управления?</h2>
+        <p>Мы строим смарт-процессы Битрикс24 для строительных и производственных компаний, которые автоматизируют рутину и освобождают время руководителей. Закажите бесплатную консультацию.</p>
+        <script data-b24-form="inline/246/bgv07m" data-skip-moving="true">
+(function(w,d,u){
+var s=d.createElement('script');s.async=true;s.src=u+'?'+(Date.now()/180000|0);
+var h=d.getElementsByTagName('script')[0];h.parentNode.insertBefore(s,h);
+})(window,document,'https://cdn-ru.bitrix24.ru/b1445091/crm/form/loader_246.js');
+</script>
+      </div>
+    </div>
+  </section>
+
+  <div class="lightbox" id="lightbox" aria-hidden="true" role="dialog" aria-modal="true">
+    <button class="lb-close" id="lbClose" type="button" aria-label="Закрыть"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+    <button class="lb-nav lb-prev" id="lbPrev" type="button" aria-label="Предыдущее"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg></button>
+    <button class="lb-nav lb-next" id="lbNext" type="button" aria-label="Следующее"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg></button>
+    <figure class="lb-figure"><img loading="eager" fetchpriority="high" id="lbImg" src="" alt=""><figcaption class="lb-cap"><span id="lbCap"></span><span class="lb-count" id="lbCount"></span></figcaption></figure>
+  </div>
+
+</div>
+
+<script>
+// BEFORE/AFTER TOGGLE
+(function(){
+  var tg = document.getElementById('baToggle');
+  if(!tg) return;
+  var panelBefore = document.getElementById('panel-before');
+  var panelAfter = document.getElementById('panel-after');
+  tg.querySelectorAll('button').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var ba = btn.getAttribute('data-ba');
+      tg.querySelectorAll('button').forEach(function(b){ b.classList.toggle('active', b===btn); });
+      tg.classList.toggle('show-after', ba==='after');
+      if(ba==='before'){
+        panelAfter.classList.remove('active');
+        panelBefore.classList.add('active');
+      } else {
+        panelBefore.classList.remove('active');
+        panelAfter.classList.add('active');
+      }
+    });
+  });
+})();
+
+// PARTICLES
+(function(){
+  var canvas = document.getElementById('bg-canvas'), ctx = canvas.getContext('2d');
+  var W, H, ps, mouse = {x:-999,y:-999};
+  function resize(){ W=canvas.width=window.innerWidth; H=canvas.height=window.innerHeight; }
+  function mk(){ return {x:Math.random()*W,y:Math.random()*H,r:Math.random()*1.6+0.5,vx:(Math.random()-0.5)*0.3,vy:(Math.random()-0.5)*0.3,alpha:Math.random()*0.4+0.15,pulse:Math.random()*Math.PI*2,ps:Math.random()*0.02+0.005}; }
+  function init(){ resize(); ps=Array.from({length:95},mk); }
+  function draw(){
+    ctx.clearRect(0,0,W,H);
+    var g=ctx.createRadialGradient(mouse.x,mouse.y,0,mouse.x,mouse.y,220);
+    g.addColorStop(0,'rgba(47,199,247,0.16)'); g.addColorStop(1,'rgba(47,199,247,0)');
+    ctx.fillStyle=g; ctx.fillRect(0,0,W,H);
+    ps.forEach(function(p){
+      p.x+=p.vx; p.y+=p.vy; p.pulse+=p.ps;
+      if(p.x<0)p.x=W; if(p.x>W)p.x=0; if(p.y<0)p.y=H; if(p.y>H)p.y=0;
+      var a=p.alpha*(0.7+0.3*Math.sin(p.pulse));
+      ctx.beginPath(); ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
+      var tones=['47,199,247','0,102,204','0,49,153'];
+      ctx.fillStyle='rgba('+tones[Math.floor(p.alpha*tones.length)%tones.length]+','+a+')';
+      ctx.fill();
+    });
+    for(var i=0;i<ps.length;i++){
+      for(var j=i+1;j<ps.length;j++){
+        var dx=ps[i].x-ps[j].x,dy=ps[i].y-ps[j].y,d=Math.sqrt(dx*dx+dy*dy);
+        if(d<120){
+          ctx.beginPath(); ctx.moveTo(ps[i].x,ps[i].y); ctx.lineTo(ps[j].x,ps[j].y);
+          ctx.strokeStyle='rgba(47,199,247,'+(0.12*(1-d/120))+')';
+          ctx.lineWidth=0.6; ctx.stroke();
+        }
+      }
+    }
+    requestAnimationFrame(draw);
+  }
+  init();
+  window.addEventListener('resize',function(){resize(); ps=Array.from({length:95},mk);},{passive:true});
+  document.addEventListener('mousemove',function(e){mouse.x=e.clientX;mouse.y=e.clientY;},{passive:true});
+  draw();
+})();
+
+// SCROLL REVEAL
+(function(){
+  var io = new IntersectionObserver(function(ee){
+    ee.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, {threshold:0.08});
+  document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+})();
+
+// LIGHTBOX
+(function(){
+  var lb=document.getElementById('lightbox'),lbImg=document.getElementById('lbImg'),lbCap=document.getElementById('lbCap'),lbCount=document.getElementById('lbCount');
+  var imgs=[],cur=0;
+  document.querySelectorAll('.figure img').forEach(function(img,i){
+    imgs.push({src:img.src,alt:img.alt,cap:img.closest('.figure').querySelector('.figcap')?img.closest('.figure').querySelector('.figcap').textContent:''});
+    img.addEventListener('click',function(){ open(i); });
+  });
+  function open(i){
+    cur=i; lbImg.src=imgs[i].src; lbImg.alt=imgs[i].alt; lbCap.textContent=imgs[i].cap;
+    lbCount.textContent=imgs.length>1?'('+(i+1)+' / '+imgs.length+')':'';
+    lb.classList.add('open'); lb.setAttribute('aria-hidden','false');
+    document.body.style.overflow='hidden';
+  }
+  function close(){ lb.classList.remove('open'); lb.setAttribute('aria-hidden','true'); document.body.style.overflow=''; }
+  document.getElementById('lbClose').addEventListener('click',close);
+  document.getElementById('lbPrev').addEventListener('click',function(){ open((cur-1+imgs.length)%imgs.length); });
+  document.getElementById('lbNext').addEventListener('click',function(){ open((cur+1)%imgs.length); });
+  lb.addEventListener('click',function(e){ if(e.target===lb) close(); });
+  document.addEventListener('keydown',function(e){ if(!lb.classList.contains('open')) return; if(e.key==='Escape') close(); if(e.key==='ArrowLeft') open((cur-1+imgs.length)%imgs.length); if(e.key==='ArrowRight') open((cur+1)%imgs.length); });
+})();
+</script>
+</body>
+</html>

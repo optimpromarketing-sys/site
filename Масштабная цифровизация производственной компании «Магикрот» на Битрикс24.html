@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>«Магикрот»: полная автоматизация промышленной компании на Битрикс24 + 1С</title>
+<style>
+@font-face{font-family:'Montserrat';font-style:normal;font-weight:800;font-display:swap;src:url(https://fonts.gstatic.com/s/montserrat/v29/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCvr70w-Y3tcoqK5.woff2) format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
+@font-face{font-family:'Montserrat';font-style:normal;font-weight:800;font-display:swap;src:url(https://fonts.gstatic.com/s/montserrat/v29/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCvr73w-Y3tcoqK5.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'Open Sans';font-style:normal;font-weight:400;font-display:swap;src:url(https://fonts.gstatic.com/s/opensans/v40/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsiH0C4nY1M2xLER.woff2) format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
+@font-face{font-family:'Open Sans';font-style:normal;font-weight:400;font-display:swap;src:url(https://fonts.gstatic.com/s/opensans/v40/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsjZ0C4nY1M2xLER.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'Open Sans';font-style:normal;font-weight:700;font-display:swap;src:url(https://fonts.gstatic.com/s/opensans/v40/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsg-1y4nY1M2xLER.woff2) format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
+@font-face{font-family:'Open Sans';font-style:normal;font-weight:700;font-display:swap;src:url(https://fonts.gstatic.com/s/opensans/v40/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsg-1S4nY1M2xLER.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  .case-page {
+    --bg: linear-gradient(180deg, #ffffff 0%, #eef7fd 100%);
+    --surface: #ffffff;
+    --surface-2: #f5fafe;
+    --border: rgba(0,49,153,0.1);
+    --border-hover: rgba(47,199,247,0.55);
+    --shadow: 0 2px 14px rgba(0,102,204,0.06);
+    --shadow-hover: 0 16px 40px rgba(0,102,204,0.16);
+    --title: #003199;
+    --eyebrow: #2FC7F7;
+    --heading: #003199;
+    --text: #44525f;
+    --text-strong: #1b2a3a;
+    --muted: #8a98a8;
+    --accent: #0066CC;
+    --accent-2: #2FC7F7;
+    --divider: rgba(0,49,153,0.1);
+    --glow: rgba(47,199,247,0.12);
+    --chip-bg: #ffffff;
+    --chip-border: rgba(0,49,153,0.15);
+    --toggle-bg: #ffffff;
+    --toggle-border: rgba(0,49,153,0.15);
+    --bad: #7c8a99;
+    --good: #0066CC;
+    --track: rgba(0,49,153,0.07);
+    --quote-bg: linear-gradient(135deg, rgba(0,102,204,0.06), rgba(47,199,247,0.08));
+  }
+.case-page {
+    --bg: linear-gradient(180deg, #0d1b2e 0%, #0a1422 100%);
+    --surface: rgba(255,255,255,0.04);
+    --surface-2: rgba(255,255,255,0.03);
+    --border: rgba(255,255,255,0.1);
+    --border-hover: rgba(47,199,247,0.55);
+    --shadow: 0 2px 14px rgba(0,0,0,0.3);
+    --shadow-hover: 0 16px 46px rgba(0,0,0,0.5);
+    --title: #ffffff;
+    --eyebrow: #2FC7F7;
+    --heading: #ffffff;
+    --text: rgba(255,255,255,0.62);
+    --text-strong: #eaf2ff;
+    --muted: rgba(255,255,255,0.42);
+    --accent: #2FC7F7;
+    --accent-2: #2FC7F7;
+    --divider: rgba(255,255,255,0.1);
+    --glow: rgba(47,199,247,0.16);
+    --chip-bg: rgba(255,255,255,0.05);
+    --chip-border: rgba(255,255,255,0.14);
+    --toggle-bg: rgba(255,255,255,0.06);
+    --toggle-border: rgba(255,255,255,0.16);
+    --bad: rgba(255,255,255,0.45);
+    --good: #2FC7F7;
+    --track: rgba(255,255,255,0.08);
+    --quote-bg: linear-gradient(135deg, rgba(47,199,247,0.1), rgba(0,102,204,0.06));
+  }
+
+  body { background: #0a1422; }
+
+  .case-page {
+    font-family: 'Open Sans', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
+    padding-top: 100pt;
+    transition: background 0.45s ease, color 0.45s ease;
+  }
+
+  #bg-canvas { position: fixed; inset: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; }
+
+  .wrap { max-width: 1040px; margin: 0 auto; padding: 0 24px; position: relative; z-index: 1; }
+
+  h1, h2, h3, .sec-title, .cta h2, .ft-brand { font-family: 'Montserrat', sans-serif; font-weight: 600; }
+
+  /* TOP BAR */
+  .case-topbar { position: relative; z-index: 2; display: flex; justify-content: space-between; align-items: center; gap: 16px; max-width: 1040px; margin: 0 auto; padding: 0 24px 8px; }
+  .back-link { display: inline-flex; align-items: center; gap: 8px; font-family: 'Montserrat', sans-serif; font-size: 14px; font-weight: 700; color: var(--accent); text-decoration: none; transition: gap 0.25s ease, color 0.25s ease; }
+  .back-link:hover { gap: 12px; color: var(--accent-2); }
+  .back-link svg { width: 16px; height: 16px; }
+
+  /* HERO */
+  .hero { padding: 30px 0 60px; }
+  .tagrow { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 22px; }
+  .tag { font-family: 'Montserrat', sans-serif; font-size: 12px; font-weight: 600; color: var(--accent); background: var(--chip-bg); border: 1px solid var(--chip-border); border-radius: 999px; padding: 6px 14px; }
+  .hero h1 { font-size: clamp(31px, 5vw, 50px); line-height: 1.1; color: var(--title); letter-spacing: -0.015em; max-width: 900px; transition: color 0.4s ease; }
+  .hero .lead { margin-top: 20px; font-size: clamp(16px, 2vw, 19px); line-height: 1.65; color: var(--text); max-width: 720px; }
+  .hero-grid { margin-top: 40px; display: grid; grid-template-columns: 1fr 1fr 0.95fr; gap: 18px; align-items: stretch; }
+  .ps-card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 24px; box-shadow: var(--shadow); transition: transform 0.35s cubic-bezier(.23,1,.32,1), box-shadow 0.35s ease, border-color 0.35s ease; }
+  .ps-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-hover); border-color: var(--border-hover); }
+  .ps-card .ps-label { font-family: 'Montserrat', sans-serif; font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 10px; }
+  .ps-card.problem .ps-label { color: var(--bad); }
+  .ps-card.solution .ps-label { color: var(--good); }
+  .ps-card p { font-size: 15px; line-height: 1.6; color: var(--text-strong); }
+  .hero-stat { background: linear-gradient(120deg, #0066CC, #2FC7F7 90%); background-size: 200% 200%; animation: shimmer 7s ease infinite; border-radius: 10px; padding: 28px 24px; color: #fff; display: flex; flex-direction: column; justify-content: center; box-shadow: 0 14px 36px rgba(0,102,204,0.3); }
+  .hero-stat .num { font-family: 'Open Sans', sans-serif; font-weight: 800; font-size: 58px; line-height: 1; }
+  .hero-stat .cap { margin-top: 8px; font-size: 14px; line-height: 1.45; opacity: 0.95; }
+  @keyframes shimmer { 0%{background-position:0% 50%} 50%{background-position:100% 50%} 100%{background-position:0% 50%} }
+
+  /* SECTIONS */
+  section.block { padding: 56px 0; }
+  .sec-eyebrow { font-family: 'Montserrat', sans-serif; font-size: 12px; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; color: var(--eyebrow); margin-bottom: 12px; }
+  .sec-title { font-size: clamp(24px, 3.4vw, 34px); line-height: 1.18; color: var(--heading); max-width: 760px; transition: color 0.4s ease; }
+  .prose { margin-top: 18px; font-size: 16px; line-height: 1.7; color: var(--text); max-width: 760px; }
+  .prose b, .prose strong { color: var(--text-strong); font-weight: 700; }
+
+  .figure { margin-top: 28px; border-radius: 10px; overflow: hidden; border: 1px solid var(--border); background: var(--surface-2); box-shadow: var(--shadow); transition: transform 0.35s cubic-bezier(.23,1,.32,1), box-shadow 0.35s ease, border-color 0.35s ease; }
+  .figure:hover { transform: translateY(-4px) scale(1.005); box-shadow: var(--shadow-hover); border-color: var(--border-hover); }
+  .figure img { display: block; width: 100%; height: auto; }
+  .figcap { padding: 12px 16px; font-size: 13px; color: var(--muted); border-top: 1px solid var(--divider); font-family: 'Montserrat', sans-serif; font-weight: 600; }
+  .fig-2 { margin-top: 20px; display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .en-note { margin-top: 14px; font-size: 13px; color: var(--muted); }
+
+  .cards-3 { margin-top: 32px; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; }
+  .info-card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 24px; box-shadow: var(--shadow); transition: transform 0.35s cubic-bezier(0.23,1,0.32,1), box-shadow 0.35s ease, border-color 0.35s ease; }
+  .info-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-hover); border-color: var(--border-hover); }
+  .info-card .ic-ico { width: 44px; height: 44px; border-radius: 10px; display: flex; align-items: center; justify-content: center; background: var(--quote-bg); color: var(--accent-2); margin-bottom: 16px; transition: transform 0.35s ease; }
+  .info-card:hover .ic-ico { transform: scale(1.12) rotate(-6deg); }
+  .info-card .ic-ico svg { width: 22px; height: 22px; }
+  .info-card h3 { font-size: 17px; color: var(--heading); margin-bottom: 8px; }
+  .info-card p { font-size: 14px; line-height: 1.6; color: var(--text); }
+
+  .quote { margin-top: 32px; background: var(--quote-bg); border: 1px solid var(--border); border-left: 4px solid var(--accent-2); border-radius: 8px; padding: 24px 26px; }
+  .quote .q-label { font-family: 'Montserrat', sans-serif; font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; color: var(--accent); margin-bottom: 8px; }
+  .quote p { font-size: 17px; line-height: 1.55; color: var(--text-strong); font-style: italic; }
+
+  .qlist { margin-top: 28px; display: flex; flex-direction: column; gap: 12px; max-width: 760px; }
+  .qlist li { list-style: none; display: flex; gap: 14px; align-items: flex-start; background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 16px 18px; font-size: 15px; line-height: 1.5; color: var(--text-strong); transition: transform 0.3s ease, border-color 0.3s ease; }
+  .qlist li:hover { transform: translateX(6px); border-color: var(--border-hover); }
+  .qlist .qmark { flex-shrink: 0; font-family: 'Montserrat', sans-serif; font-weight: 800; color: var(--accent-2); width: 26px; height: 26px; display: flex; align-items: center; justify-content: center; }
+
+  .steps { margin-top: 32px; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; }
+  .step { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 24px; box-shadow: var(--shadow); transition: transform 0.35s cubic-bezier(0.23,1,0.32,1), box-shadow 0.35s ease, border-color 0.35s ease; }
+  .step:hover { transform: translateY(-6px); box-shadow: var(--shadow-hover); border-color: var(--border-hover); }
+  .step .step-n { font-family: 'Open Sans', sans-serif; font-weight: 800; font-size: 28px; background: linear-gradient(135deg, #0066CC, #2FC7F7); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; line-height: 1; margin-bottom: 12px; }
+  .step h3 { font-size: 16px; color: var(--heading); margin-bottom: 8px; }
+  .step p { font-size: 14px; line-height: 1.6; color: var(--text); }
+
+  .proc-wrap { margin-top: 32px; }
+  .proc-wrap .pw-label { font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: 13px; color: var(--heading); margin-bottom: 14px; }
+  .badges { display: flex; flex-wrap: wrap; gap: 12px; }
+  .badge { display: inline-flex; align-items: center; gap: 8px; font-family: 'Montserrat', sans-serif; font-size: 14px; font-weight: 600; color: var(--text-strong); background: var(--surface); border: 1px solid var(--border); border-radius: 999px; padding: 10px 18px; transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease; }
+  .badge:hover { transform: translateY(-4px); border-color: var(--border-hover); box-shadow: var(--shadow); }
+  .badge .dot { width: 8px; height: 8px; border-radius: 50%; background: linear-gradient(135deg, #0066CC, #2FC7F7); }
+
+  /* BIG NUMERIC RESULTS */
+  .results { margin-top: 32px; display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 18px; }
+  .result { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 26px 22px; box-shadow: var(--shadow); transition: transform 0.35s cubic-bezier(.23,1,.32,1), box-shadow 0.35s ease, border-color 0.35s ease; }
+  .result:hover { transform: translateY(-6px); box-shadow: var(--shadow-hover); border-color: var(--border-hover); }
+  .result .r-num { font-family: 'Open Sans', sans-serif; font-weight: 800; font-size: clamp(40px, 7vw, 58px); line-height: 1; background: linear-gradient(135deg, #0066CC, #2FC7F7); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+  .result .r-cap { margin-top: 10px; font-size: 14px; line-height: 1.4; color: var(--text); font-family: 'Montserrat', sans-serif; font-weight: 600; }
+
+  /* BEFORE / AFTER TOGGLE */
+  .ba-toggle { margin-top: 30px; position: relative; display: inline-flex; width: 360px; max-width: 100%; background: var(--track); border-radius: 999px; padding: 5px; overflow: hidden; }
+  .ba-toggle button { flex: 1 1 0; text-align: center; white-space: nowrap; position: relative; z-index: 1; border: none; background: none; cursor: pointer; font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 14px; padding: 10px 18px; border-radius: 999px; color: var(--text); transition: color 0.3s ease; }
+  .ba-toggle button:focus, .ba-toggle button:focus-visible { outline: none; }
+  .ba-toggle button.active { color: #fff; }
+  .ba-slider { position: absolute; top: 5px; left: 5px; height: calc(100% - 10px); width: calc(50% - 5px); border-radius: 999px; background: linear-gradient(135deg, #0066CC, #2FC7F7); transition: transform 1.4s cubic-bezier(.2,.85,.25,1); z-index: 0; }
+  .ba-toggle.show-after .ba-slider { transform: translateX(100%); }
+  .ba-panels { position: relative; margin-top: 22px; }
+  .ba-panel { display: none; }
+  .ba-panel.active { display: block; }
+  .ba-panel ul { list-style: none; display: grid; gap: 14px; }
+  .ba-panel li { display: flex; gap: 14px; align-items: flex-start; background: var(--surface); border: 1px solid var(--border); border-left: 4px solid; border-radius: 8px; padding: 18px 20px; font-size: 15.5px; line-height: 1.55; color: var(--text-strong); opacity: 0; transform: translateY(14px); }
+  .ba-panel.active li { animation: baIn 0.5s cubic-bezier(.23,1,.32,1) forwards; }
+  .ba-panel.active li:nth-child(1){animation-delay:.04s} .ba-panel.active li:nth-child(2){animation-delay:.13s} .ba-panel.active li:nth-child(3){animation-delay:.22s}
+  @keyframes baIn { to { opacity:1; transform:none; } }
+  .ba-panel.before li { border-left-color: var(--bad); }
+  .ba-panel.after li { border-left-color: var(--good); }
+  .ba-panel li .mk { flex-shrink: 0; font-weight: 800; font-size: 17px; }
+  .ba-panel.before li .mk { color: var(--bad); }
+  .ba-panel.after li .mk { color: var(--good); }
+
+  /* GROWTH CHART */
+  .chart-card { margin-top: 36px; background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 30px 26px 24px; box-shadow: var(--shadow); }
+  .chart-head { font-family: 'Montserrat', sans-serif; font-weight: 600; font-size: 16px; color: var(--heading); margin-bottom: 4px; }
+  .chart-sub { font-size: 13px; color: var(--muted); margin-bottom: 26px; }
+  .bars { display: flex; align-items: flex-end; justify-content: space-around; gap: 16px; height: 260px; border-bottom: 2px solid var(--divider); position: relative; }
+  .bars::before, .bars::after { content:''; position:absolute; left:0; right:0; border-top:1px dashed var(--divider); }
+  .bars::before { top: 0; } .bars::after { top: 50%; }
+  .bar-group { flex: 1; max-width: 110px; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: flex-end; }
+  .bar { width: 100%; max-width: 84px; height: 0; border-radius: 8px 8px 0 0; background: linear-gradient(180deg, #2FC7F7, #0066CC); position: relative; transition: height 1.4s cubic-bezier(.2,.85,.25,1); box-shadow: 0 -2px 18px rgba(47,199,247,0.35) inset; }
+  .bar .bar-num { position: absolute; top: -30px; left: 50%; transform: translateX(-50%); font-family: 'Open Sans', sans-serif; font-weight: 800; font-size: 22px; color: var(--accent); white-space: nowrap; }
+  .bar .was { position: absolute; bottom: 6px; left: 50%; transform: translateX(-50%); font-size: 10px; color: rgba(255,255,255,0.85); font-family:'Montserrat',sans-serif; font-weight:600; }
+  .bar-label { margin-top: 14px; font-family: 'Montserrat', sans-serif; font-weight: 600; font-size: 13px; text-align: center; color: var(--text); line-height: 1.3; }
+
+  /* FINAL STAT */
+  .final-stat { margin-top: 40px; text-align: center; background: linear-gradient(120deg, #0066CC, #2FC7F7 95%); background-size: 200% 200%; animation: shimmer 8s ease infinite; border-radius: 14px; padding: 50px 24px; color: #fff; box-shadow: 0 16px 44px rgba(0,102,204,0.3); }
+  .final-stat .num { font-family: 'Open Sans', sans-serif; font-weight: 800; font-size: clamp(64px, 14vw, 120px); line-height: 1; }
+  .final-stat .cap { margin-top: 10px; font-size: 17px; opacity: 0.95; }
+
+  /* CTA */
+  .cta-block { padding: 64px 0; }
+  .cta { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 48px 40px; text-align: center; box-shadow: var(--shadow); }
+  .cta h2 { font-size: clamp(22px, 3.2vw, 30px); color: var(--heading); max-width: 640px; margin: 0 auto; line-height: 1.25; }
+  .cta p { margin: 18px auto 28px; max-width: 620px; font-size: 16px; line-height: 1.65; color: var(--text); }
+  .btn { display: inline-flex; align-items: center; gap: 10px; background: linear-gradient(135deg, #0066CC 0%, #2FC7F7 100%); color: #fff; font-family: 'Montserrat', sans-serif; font-size: 15px; font-weight: 600; padding: 16px 34px; border-radius: 10px; text-decoration: none; box-shadow: 0 8px 22px rgba(0,102,204,0.3); transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease; }
+  .btn:hover { transform: translateY(-2px); filter: brightness(1.06); box-shadow: 0 12px 30px rgba(47,199,247,0.42); }
+  .btn:focus, .btn:focus-visible { outline: none; }
+  .btn svg { width: 18px; height: 18px; transition: transform 0.3s; }
+  .btn:hover svg { transform: translateX(4px); }
+
+  /* FOOTER */
+  .case-footer { border-top: 1px solid var(--divider); padding: 36px 0 56px; }
+  .ft-row { display: flex; flex-wrap: wrap; gap: 24px 40px; align-items: baseline; }
+  .ft-brand { color: var(--heading); font-size: 16px; }
+  .ft-item { font-size: 14px; color: var(--text); }
+  .ft-item a { color: var(--accent); text-decoration: none; font-weight: 600; }
+  .ft-item a:hover { color: var(--accent-2); }
+  .ft-legal { margin-top: 16px; font-size: 12px; color: var(--muted); }
+
+  /* SCROLL REVEAL + STAGGER */
+  .reveal { opacity: 0; transform: translateY(26px); transition: opacity 0.7s cubic-bezier(.23,1,.32,1), transform 0.7s cubic-bezier(.23,1,.32,1); }
+  .reveal.in { opacity: 1; transform: none; }
+  .cards-3 > .reveal:nth-child(2), .steps > .reveal:nth-child(2), .results > .reveal:nth-child(2) { transition-delay: .08s; }
+  .cards-3 > .reveal:nth-child(3), .steps > .reveal:nth-child(3), .results > .reveal:nth-child(3) { transition-delay: .16s; }
+  .steps > .reveal:nth-child(4), .results > .reveal:nth-child(4) { transition-delay: .24s; }
+
+  @media (max-width: 880px) { .hero-grid { grid-template-columns: 1fr; } .fig-2 { grid-template-columns: 1fr; } }
+  @media (max-width: 560px) { .case-page { padding-top: 70pt; } section.block { padding: 44px 0; } .cta { padding: 36px 22px; } .bars { height: 220px; } .bar .bar-num { font-size: 18px; } .ba-toggle button { padding: 10px 12px; font-size: 13px; } }
+  @media (prefers-reduced-motion: reduce) {
+    .reveal { opacity: 1; transform: none; transition: none; }
+    .hero-stat, .final-stat { animation: none; }
+    .ba-panel.active li { animation: none; opacity: 1; transform: none; }
+    .bar { transition: none; }
+    .info-card:hover, .step:hover, .badge:hover, .result:hover, .ps-card:hover, .figure:hover, .qlist li:hover { transform: none; }
+  }  /* IMAGE ZOOM / LIGHTBOX */
+  .figure { position: relative; }
+  .figure img { cursor: zoom-in; }
+  .fig-zoom-ico { position: absolute; top: 12px; right: 12px; width: 34px; height: 34px; border-radius: 8px; background: rgba(13,27,46,0.55); color: #fff; display: flex; align-items: center; justify-content: center; opacity: 0; transform: scale(.9); transition: opacity .3s ease, transform .3s ease; pointer-events: none; backdrop-filter: blur(4px); z-index: 3; }
+  .figure:hover .fig-zoom-ico { opacity: 1; transform: none; }
+  .fig-zoom-ico svg { width: 18px; height: 18px; }
+
+  .lightbox { position: fixed; inset: 0; z-index: 1000; display: none; align-items: center; justify-content: center; padding: 4vh 4vw; background: rgba(6,12,22,0.93); backdrop-filter: blur(8px); }
+  .lightbox.open { display: flex; animation: lbFade .25s ease; }
+  @keyframes lbFade { from { opacity: 0; } to { opacity: 1; } }
+  .lb-figure { margin: 0; max-width: 100%; max-height: 100%; display: flex; flex-direction: column; gap: 14px; align-items: center; animation: lbZoom .3s cubic-bezier(.2,.9,.3,1); }
+  @keyframes lbZoom { from { transform: scale(.92); opacity: 0; } to { transform: none; opacity: 1; } }
+  .lb-figure img { max-width: 92vw; max-height: 80vh; border-radius: 10px; box-shadow: 0 24px 70px rgba(0,0,0,.55); object-fit: contain; }
+  .lb-cap { color: rgba(255,255,255,.86); font-family: 'Montserrat', sans-serif; font-weight: 600; font-size: 14px; display: flex; gap: 12px; align-items: center; text-align: center; flex-wrap: wrap; justify-content: center; }
+  .lb-count { color: rgba(255,255,255,.5); font-weight: 600; }
+  .lb-close { position: absolute; top: 18px; right: 18px; width: 46px; height: 46px; border-radius: 10px; border: 1px solid rgba(255,255,255,.2); background: rgba(255,255,255,.08); color: #fff; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: background .2s ease, transform .15s ease; }
+  .lb-close:hover { background: rgba(255,255,255,.18); }
+  .lb-close:active { transform: scale(.92); }
+  .lb-close svg { width: 22px; height: 22px; }
+  .lb-nav { position: absolute; top: 50%; transform: translateY(-50%); width: 52px; height: 52px; border-radius: 50%; border: 1px solid rgba(255,255,255,.2); background: rgba(255,255,255,.08); color: #fff; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: background .2s ease; }
+  .lb-nav:hover { background: rgba(255,255,255,.2); }
+  .lb-nav svg { width: 24px; height: 24px; }
+  .lb-prev { left: 18px; } .lb-next { right: 18px; }
+  @media (max-width: 560px) { .lb-nav { width: 42px; height: 42px; } .lb-figure img { max-height: 72vh; } }
+  /* ===== BITRIX THEME OVERRIDE HARDENING =====
+     id-scoped + !important so the site theme's CSS cannot override these. */
+  #optim-case, #optim-case *, #optim-case *::before, #optim-case *::after { box-sizing: border-box; }
+  #optim-case { font-family: 'Open Sans', Arial, sans-serif !important; }
+  #optim-case h1, #optim-case h2, #optim-case h3,
+  #optim-case .sec-title, #optim-case .cta h2, #optim-case .chart-head,
+  #optim-case .info-card h3, #optim-case .step h3 {
+    font-family: 'Montserrat', 'Open Sans', Arial, sans-serif !important;
+    font-weight: 600 !important;
+  }
+  #optim-case .sec-eyebrow, #optim-case .ps-label, #optim-case .q-label,
+  #optim-case .pw-label, #optim-case .ba-toggle button, #optim-case .badge { font-weight: 600 !important; }
+  #optim-case a, #optim-case button { outline: none !important; }
+  #optim-case a:focus, #optim-case a:focus-visible,
+  #optim-case button:focus, #optim-case button:focus-visible,
+    outline: none !important; box-shadow: none !important;
+  }
+  #optim-case .ba-toggle { overflow: hidden !important; }
+  #optim-case .btn {
+    border: 0 !important;
+    text-decoration: none !important;
+    background-image: linear-gradient(135deg, #0066CC 0%, #2FC7F7 100%) !important;
+    box-shadow: 0 8px 22px rgba(0,102,204,0.3) !important;
+  }
+  #optim-case .btn::before, #optim-case .btn::after { content: none !important; display: none !important; border: 0 !important; background: none !important; }
+  /* ===== BRAND ACCENTS (blue + cyan only) ===== */
+#optim-case { --bg: radial-gradient(1200px 620px at 82% -10%, rgba(47,199,247,0.16), transparent 60%), radial-gradient(900px 520px at -5% 8%, rgba(0,102,204,0.12), transparent 55%), linear-gradient(180deg, #0d1b2e 0%, #0a1422 100%) !important; }
+
+  #optim-case .sec-eyebrow { color: #2FC7F7 !important; }
+  #optim-case .tag { color: var(--accent); border-color: rgba(0,102,204,0.35); }
+  #optim-case .quote { border-left-color: var(--accent-2); }
+
+  #optim-case .hero-stat, #optim-case .final-stat { background-image: linear-gradient(120deg, #0066CC, #2FC7F7 90%) !important; }
+  #optim-case .btn { background-image: linear-gradient(135deg, #0066CC 0%, #2FC7F7 100%) !important; box-shadow: 0 8px 26px rgba(0,102,204,0.35) !important; }
+  #optim-case .btn:hover { box-shadow: 0 12px 34px rgba(47,199,247,0.45), 0 0 0 1px rgba(47,199,247,0.45) !important; }
+  #optim-case .ba-slider { background-image: linear-gradient(135deg, #0066CC, #2FC7F7) !important; }
+  #optim-case .bar { background-image: linear-gradient(180deg, #2FC7F7 0%, #0066CC 100%) !important; box-shadow: 0 0 20px rgba(0,102,204,0.30) inset, 0 0 16px rgba(47,199,247,0.20) !important; }
+  #optim-case .bar .bar-num { color: var(--accent); }
+  #optim-case .step-n, #optim-case .result .r-num { background-image: linear-gradient(135deg, #0066CC, #2FC7F7) !important; -webkit-background-clip: text !important; background-clip: text !important; -webkit-text-fill-color: transparent !important; }
+
+  /* problem / "before" states use the neutral grey (no red) */
+  #optim-case .ps-card.problem { border-top: 2px solid var(--bad); }
+  #optim-case .ps-card.problem .ps-label { color: var(--bad) !important; }
+  #optim-case .ba-panel.before li { border-left-color: var(--bad) !important; }
+  #optim-case .ba-panel.before li .mk { color: var(--bad) !important; }
+
+  /* brand glows in dark theme */
+#optim-case .info-card:hover,  #optim-case .step:hover,
+#optim-case .result:hover,  #optim-case .sum-card:hover,
+#optim-case .figure:hover,  #optim-case .ps-card:hover {
+    box-shadow: 0 0 0 1px rgba(47,199,247,0.40), 0 16px 46px rgba(0,102,204,0.28) !important;
+    border-color: rgba(47,199,247,0.50) !important;
+  }
+#optim-case .hero h1 { text-shadow: 0 0 30px rgba(47,199,247,0.35); }
+#optim-case .hero-stat,  #optim-case .final-stat { box-shadow: 0 0 0 1px rgba(47,199,247,0.35), 0 16px 50px rgba(0,102,204,0.40) !important; }
+#optim-case .badge { border-color: rgba(47,199,247,0.30); }
+
+  #optim-case .client-strip { margin-top: 36px; display: flex; align-items: center; gap: 20px; background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 20px 24px; box-shadow: var(--shadow); transition: border-color 0.35s ease; }
+  #optim-case .client-strip:hover { border-color: var(--border-hover); }
+  #optim-case .client-meta { display: flex; flex-direction: column; gap: 6px; }
+  #optim-case .client-label { font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.10em; color: var(--muted); }
+  #optim-case .client-name { font-family: 'Montserrat', sans-serif; font-size: 17px; font-weight: 700; color: var(--heading); }
+  #optim-case .client-desc { font-size: 14px; line-height: 1.55; color: var(--text); max-width: 680px; }
+  #optim-case .client-chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 6px; }
+  #optim-case .client-chip { font-family: 'Montserrat', sans-serif; font-size: 12px; font-weight: 600; color: var(--accent); background: var(--chip-bg); border: 1px solid rgba(0,102,204,0.2); border-radius: 999px; padding: 4px 12px; }
+  @media (max-width: 620px) { #optim-case .client-strip { flex-direction: column; align-items: flex-start; } }
+
+  /* B24 FORM */
+  .b24-form-wrapper{background:transparent!important;border:none!important;box-shadow:none!important;padding:0!important}.b24-form{background:#111827!important;border:1px solid rgba(255,255,255,.09)!important;border-radius:16px!important;overflow:hidden!important;box-shadow:0 24px 60px rgba(0,0,0,.4)!important}
+  .b24-form-header{background:#111827!important;border-bottom:1px solid rgba(255,255,255,.08)!important}
+  .b24-form-header-title,.b24-form-header *{color:#fff!important}
+  .b24-form-body{background:#111827!important}
+  .b24-form-control-container .b24-form-control,.b24-form-field .b24-form-control{background:rgba(255,255,255,.06)!important;border:1px solid rgba(255,255,255,.12)!important;border-radius:10px!important;color:#E8EDF7!important}
+  .b24-form-control::placeholder{color:#8A95B0!important}
+  .b24-form-control:focus{border-color:rgba(47,199,247,.5)!important;outline:none!important;box-shadow:0 0 0 3px rgba(47,199,247,.12)!important}
+  .b24-form-field-label,.b24-form-field-label *{color:#c8d5f0!important}
+  .b24-form-btn-container .b24-form-btn{background:linear-gradient(135deg,#2E7DF6,#7A5CFF)!important;border:none!important;border-radius:12px!important;color:#fff!important;font-weight:700!important;box-shadow:0 8px 24px rgba(46,125,246,.4)!important}
+  .b24-form-sign,.b24-form-sign *,.b24-form-field-agree,.b24-form-field-agree *{color:#8A95B0!important}
+  .b24-form-field-agreement a{color:#2FC7F7!important}
+  .b24-form *:not(input):not(textarea):not(select):not(button){color:#E8EDF7!important}
+  .b24-form input,.b24-form textarea,.b24-form select{color:#E8EDF7!important}
+  .b24-form-btn,.b24-form-btn *{color:#fff!important}
+
+  /* cta keeps glass bg, remove extra padding around B24 form */
+  .cta-block .cta { padding: 40px !important; }
+</style>
+<style>
+  #optim-case .summary-block { padding: 10px 0 0; }
+  #optim-case .summary { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  #optim-case .sum-card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 26px; box-shadow: var(--shadow); transition: transform .35s cubic-bezier(.23,1,.32,1), box-shadow .35s ease, border-color .35s ease; }
+  #optim-case .sum-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-hover); border-color: var(--border-hover); }
+  #optim-case .sum-card h3 { font-family: 'Montserrat', sans-serif; font-weight: 600 !important; font-size: 13px; text-transform: uppercase; letter-spacing: .08em; color: var(--accent); margin-bottom: 16px; }
+  #optim-case .sum-list { list-style: none; display: grid; gap: 12px; }
+  #optim-case .sum-list li { display: flex; gap: 12px; font-size: 15px; line-height: 1.5; color: var(--text-strong); }
+  #optim-case .sum-list li svg { flex-shrink: 0; width: 20px; height: 20px; color: var(--accent-2); margin-top: 1px; }
+  @media (max-width: 880px) { #optim-case .summary { grid-template-columns: 1fr; } }
+
+  /* ---- benefits styled like the question blocks (.qlist): white blocks ---- */
+  #optim-case .benefits { grid-template-columns: 1fr; gap: 12px; }
+  #optim-case .benefit { display: flex; gap: 14px; align-items: center; background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 16px 18px; box-shadow: none; transition: transform 0.35s cubic-bezier(.23,1,.32,1), box-shadow 0.35s ease, border-color 0.35s ease; }
+  #optim-case .benefit:hover { transform: translateX(6px); border-color: var(--border-hover); box-shadow: none; }
+  #optim-case .benefit .b-ico { width: 24px; height: 24px; margin: 0; flex-shrink: 0; color: var(--accent-2); }
+  #optim-case .benefit p { font-size: 15px; line-height: 1.5; color: var(--text-strong); }
+
+  /* ---- dynamic morph infographic (driven by the Было/Стало toggle) ---- */
+  #optim-case .morph { position: relative; max-width: 600px; margin: 18px auto 4px; height: 340px; --s: 1; }
+  #optim-case .morph-orbit { position: absolute; left: 50%; top: 50%; width: calc(360px * var(--s)); height: calc(252px * var(--s)); border: 1.5px dashed var(--border); border-radius: 50%; transform: translate(-50%,-50%) scale(.6); opacity: 0; transition: opacity .7s .15s ease, transform .9s .15s cubic-bezier(.2,.9,.3,1); }
+  #optim-case .morph.is-after .morph-orbit { opacity: 1; transform: translate(-50%,-50%) scale(1); }
+  #optim-case .morph-core { position: absolute; left: 50%; top: 50%; width: calc(150px * var(--s)); height: calc(150px * var(--s)); border-radius: 50%; background: linear-gradient(135deg, #0066CC, #2FC7F7); background-size: 200% 200%; animation: shimmer 7s ease infinite; box-shadow: 0 16px 42px rgba(0,102,204,.4); display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; color: #fff; opacity: 0; transform: translate(-50%,-50%) scale(.4); transition: opacity .6s .25s ease, transform .8s .25s cubic-bezier(.2,1.25,.4,1); z-index: 2; }
+  #optim-case .morph.is-after .morph-core { opacity: 1; transform: translate(-50%,-50%) scale(1); }
+  #optim-case .morph-core b { font-family: 'Open Sans', sans-serif; font-weight: 800; font-size: calc(18px * var(--s)); line-height: 1.1; }
+  #optim-case .morph-core small { font-size: calc(11px * var(--s)); opacity: .92; margin-top: 4px; }
+  #optim-case .morph-node { position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%) translate(calc(var(--x) * var(--s)), calc(var(--y) * var(--s))); transition: transform 1s cubic-bezier(.45,1.05,.35,1); z-index: 3; }
+  #optim-case .morph-node span { display: block; background: var(--surface); border: 1px solid var(--border); border-left: 3px solid var(--bad); border-radius: 999px; padding: calc(8px * var(--s)) calc(15px * var(--s)); font-family: 'Montserrat', sans-serif; font-weight: 600; font-size: calc(12.5px * var(--s)); color: var(--text-strong); white-space: nowrap; box-shadow: var(--shadow); animation: floaty 4.5s ease-in-out infinite; }
+  #optim-case .morph.is-after .morph-node span { border-left-color: var(--accent-2); animation: none; }
+  @keyframes floaty { 0%,100% { transform: translateY(-5px); } 50% { transform: translateY(5px); } }
+  #optim-case .morph-node[data-i="0"]{ --x:-210px; --y:-112px; } #optim-case .morph-node[data-i="0"] span{ animation-delay:0s; }
+  #optim-case .morph-node[data-i="1"]{ --x:198px;  --y:-128px; } #optim-case .morph-node[data-i="1"] span{ animation-delay:.4s; }
+  #optim-case .morph-node[data-i="2"]{ --x:214px;  --y:96px; }   #optim-case .morph-node[data-i="2"] span{ animation-delay:.8s; }
+  #optim-case .morph-node[data-i="3"]{ --x:-58px;  --y:138px; }  #optim-case .morph-node[data-i="3"] span{ animation-delay:1.2s; }
+  #optim-case .morph-node[data-i="4"]{ --x:-224px; --y:62px; }   #optim-case .morph-node[data-i="4"] span{ animation-delay:1.6s; }
+  #optim-case .morph-node[data-i="5"]{ --x:96px;   --y:-34px; }  #optim-case .morph-node[data-i="5"] span{ animation-delay:2s; }
+  #optim-case .morph.is-after .morph-node[data-i="0"]{ --x:0px;    --y:-112px; }
+  #optim-case .morph.is-after .morph-node[data-i="1"]{ --x:148px;  --y:-58px; }
+  #optim-case .morph.is-after .morph-node[data-i="2"]{ --x:148px;  --y:58px; }
+  #optim-case .morph.is-after .morph-node[data-i="3"]{ --x:0px;    --y:112px; }
+  #optim-case .morph.is-after .morph-node[data-i="4"]{ --x:-148px; --y:58px; }
+  #optim-case .morph.is-after .morph-node[data-i="5"]{ --x:-148px; --y:-58px; }
+  @media (max-width: 600px) { #optim-case .morph { --s: .56; height: 270px; } }
+  @media (prefers-reduced-motion: reduce) { #optim-case .morph-node span { animation: none; } #optim-case .morph-node, #optim-case .morph-core, #optim-case .morph-orbit { transition: none; } }
+  #optim-case #benefitList { display: none; }
+  #optim-case #benefitList.show { display: grid; grid-template-columns: 1fr; gap: 12px; margin-top: 28px; }
+  #optim-case #benefitList.show .benefit { animation: benefitIn .5s cubic-bezier(.23,1,.32,1) backwards; }
+  #optim-case #benefitList.show .benefit:nth-child(2) { animation-delay: .08s; }
+  #optim-case #benefitList.show .benefit:nth-child(3) { animation-delay: .16s; }
+  @keyframes benefitIn { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+</style>
+</head>
+<body>
+<div class="case-page" id="optim-case">
+  <canvas id="bg-canvas"></canvas>
+
+  <div class="case-topbar">
+    <a class="back-link" href="https://b24.pro/cases/#">
+      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 8H3M7 4L3 8l4 4"/></svg>
+      Все кейсы
+    </a>
+  </div>
+
+  <header class="hero">
+    <div class="wrap">
+      <div class="tagrow reveal">
+        <span class="tag">Промышленность</span>
+        <span class="tag">Смарт-процессы Битрикс24</span>
+        <span class="tag">Интеграция с 1С</span>
+      </div>
+      <h1 class="reveal">«Магикрот»: производственная компания — 4 контура бизнеса в единой системе Битрикс24</h1>
+      <p class="lead reveal">Создали единую цифровую экосистему — от продаж и тендеров до охраны труда и финансов, с интеграцией в 1С. Все процессы стали прозрачными и управляемыми из одного контура.</p>
+      <div class="client-strip reveal">
+        <div class="client-meta">
+          <span class="client-label">О клиенте</span>
+          <span class="client-name">«Магикрот»</span>
+          <span class="client-desc">Индустриальный сервис для предприятий нефтепереработки, нефтехимии, химической и газовой промышленности — химическая промывка, гидроструйная и механическая очистка оборудования. Более 17 лет на рынке, присутствие в России, Казахстане и Индии, выручка свыше 620 млн ₽. Большой парк оборудования, обширный штат с требованиями охраны труда и разветвлённая документация.</span>
+          <div class="client-chips">
+            <span class="client-chip">Промышленность</span>
+            <span class="client-chip">Производство</span>
+            <span class="client-chip">Охрана труда</span>
+            <span class="client-chip">Интеграция 1С</span>
+            <span class="client-chip">Россия</span>
+          </div>
+        </div>
+      </div>
+      <div class="hero-grid">
+        <div class="ps-card problem reveal"><div class="ps-label">Проблема</div><p>Разрозненные процессы: данные о сотрудниках, договоры и закупки — вручную и в почте, без единой картины.</p></div>
+        <div class="ps-card solution reveal"><div class="ps-label">Решение</div><p>Единая среда на Битрикс24 с интеграцией в 1С: CRM, HR, охрана труда, документооборот и дашборд.</p></div>
+        <div class="hero-stat reveal"><span class="num"><span class="countup" data-to="4">0</span></span><span class="cap">контура в одной системе: HR, продажи, производство, финансы</span></div>
+      </div>
+    </div>
+  </header>
+
+  <section class="summary-block">
+    <div class="wrap">
+      <div class="summary">
+        <div class="sum-card reveal">
+          <h3>Что сделали</h3>
+          <ul class="sum-list">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6"/></svg><span>Объединили продажи, тендеры, HR, охрану труда, финансы и закупки в одном контуре</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6"/></svg><span>Настроили смарт-процессы HR и охраны труда с проактивным контролем сроков</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6"/></svg><span>Перевели согласование договоров, оплат и авансовых отчётов в цифру</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6"/></svg><span>Связали Битрикс24 с 1С в единое бесшовное IT-пространство</span></li>
+          </ul>
+        </div>
+        <div class="sum-card reveal">
+          <h3>Какие технологии использовали</h3>
+          <div class="badges">
+            <span class="badge"><span class="dot"></span>Битрикс24</span>
+            <span class="badge"><span class="dot"></span>Смарт-процессы (СП)</span>
+            <span class="badge"><span class="dot"></span>CRM: «Продажи» и «Тендеры»</span>
+            <span class="badge"><span class="dot"></span>Интеграция с 1С</span>
+            <span class="badge"><span class="dot"></span>Права доступа</span>
+            <span class="badge"><span class="dot"></span>Единый дашборд</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="wrap">
+      <div class="sec-eyebrow reveal">Было — стало</div>
+      <div class="ba-toggle show-after reveal" id="baToggle2">
+        <button type="button" data-ba="before">Было — до</button>
+        <button type="button" data-ba="after" class="active">Стало — после</button>
+        <span class="ba-slider"></span>
+      </div>
+      <div class="chart-card reveal" id="growthChart">
+      <div class="chart-head">Из разрозненных систем — в единый контур</div>
+      <div class="chart-sub">Переключите «Было / Стало» выше: разрозненные процессы разлетаются по экрану — и снова собираются в единую систему Битрикс24 + 1С.</div>
+      <div class="morph" id="morphStage">
+      <div class="morph-orbit"></div>
+      <div class="morph-core"><b>Битрикс24<br>+ 1С</b><small>единый контур</small></div>
+      <div class="morph-node" data-i="0"><span>HR и кадры</span></div>
+      <div class="morph-node" data-i="1"><span>Охрана труда</span></div>
+      <div class="morph-node" data-i="2"><span>Продажи</span></div>
+      <div class="morph-node" data-i="3"><span>Тендеры</span></div>
+      <div class="morph-node" data-i="4"><span>Финансы и документы</span></div>
+      <div class="morph-node" data-i="5"><span>Оборудование</span></div>
+      </div>
+      </div>
+    </div>
+  </section>
+
+        <section class="block">
+          <div class="wrap">
+            <div class="sec-eyebrow reveal">01 — Ситуация и вызовы</div>
+            <h2 class="sec-title reveal">От разрозненности — к единому контуру</h2>
+            <p class="prose reveal">«Магикрот» — крупная промышленная компания: продажи услуг, большой парк оборудования, обширный штат. Но процессы были разрознены — данные по сотрудникам, договоры, закупки и финансы обрабатывались в разных системах или вручную через почту. <b>Руководство не видело полной картины и не могло управлять рисками.</b></p>
+
+            <div class="cards-3">
+              <div class="info-card reveal"><div class="ic-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 4v5c0 5-3.5 7.5-8 9-4.5-1.5-8-4-8-9V7z"/><path d="M9 12l2 2 4-4"/></svg></div><h3>Охрана труда без контроля</h3><p>Сроки удостоверений, медосмотров и износа спецодежды отслеживались вручную. Единого «личного дела» сотрудника не было.</p></div>
+              <div class="info-card reveal"><div class="ic-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h9l4 4v14H6z"/><path d="M14 3v5h5M9 13h7M9 17h7"/></svg></div><h3>Неуправляемый документооборот</h3><p>Договоры и тендеры согласовывались через почту, без архива. Чувствительные коммерческие данные хранились небезопасно.</p></div>
+              <div class="info-card reveal"><div class="ic-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 14l3-3 3 3 5-6"/></svg></div><h3>Нет сквозного планирования</h3><p>Разрозненность не давала планировать ресурсы — персонал и оборудование — и лишала руководство единой отчётности.</p></div>
+            </div>
+
+            <div class="quote reveal"><div class="q-label">Цель клиента</div><p>Создать единую бесшовную IT-инфраструктуру на Битрикс24 с интеграцией в 1С — от CRM и HR до контроля оборудования и финансов — для полной прозрачности и управляемости.</p></div>
+          </div>
+        </section>
+
+        <section class="block">
+          <div class="wrap">
+            <div class="sec-eyebrow reveal">02 — Решение</div>
+            <h2 class="sec-title reveal">Путь к порядку: единая среда на Битрикс24 + 1С</h2>
+            <p class="prose reveal">Чтобы собрать разрозненные процессы в один оперативный контур, мы взяли под контроль ключевые вопросы и спроектировали систему на смарт-процессах с интеграцией в 1С:</p>
+            <ul class="qlist">
+              <li class="reveal"><span class="qmark">?</span><span>Как создать единую среду для ведения сделок и проектов?</span></li>
+              <li class="reveal"><span class="qmark">?</span><span>Как автоматизировать жизненный цикл сотрудника — медосмотры, допуски, спецодежда?</span></li>
+              <li class="reveal"><span class="qmark">?</span><span>Как обеспечить сквозной процесс «Сделка → Договор → Оплата»?</span></li>
+              <li class="reveal"><span class="qmark">?</span><span>Как перевести согласование заявок на оплату, авансовых отчётов и закупок в цифру?</span></li>
+              <li class="reveal"><span class="qmark">?</span><span>Как собрать единый дашборд управленческой отчётности?</span></li>
+            </ul>
+            <div class="steps">
+              <div class="step reveal"><div class="step-n">01</div><h3>HR и охрана труда</h3><p>Смарт-процессы «Личное дело сотрудника» и «Допуски и Аттестации»: централизация данных, автовыдача спецодежды, проактивный контроль сроков.</p></div>
+              <div class="step reveal"><div class="step-n">02</div><h3>Документооборот</h3><p>Сквозные СП «Заявка на оплату», «Авансовый отчёт» и «Согласование договоров»: цифровой архив и контроль движения средств.</p></div>
+              <div class="step reveal"><div class="step-n">03</div><h3>Контур продаж</h3><p>Две воронки CRM — «Продажи» и «Тендеры» — с правами доступа к чувствительным коммерческим данным.</p></div>
+              <div class="step reveal"><div class="step-n">04</div><h3>Управленческий контроль</h3><p>«Единый дашборд» и сводные отчёты для стратегического контроля и быстрых решений руководства.</p></div>
+            </div>
+            <div class="proc-wrap reveal">
+              <div class="pw-label">Смарт-процессы и контуры</div>
+              <div class="badges">
+                <span class="badge"><span class="dot"></span>CRM: Продажи + Тендеры</span>
+                <span class="badge"><span class="dot"></span>Личное дело сотрудника</span>
+                <span class="badge"><span class="dot"></span>Допуски и Аттестации</span>
+                <span class="badge"><span class="dot"></span>Заявка на оплату</span>
+                <span class="badge"><span class="dot"></span>Авансовый отчёт</span>
+                <span class="badge"><span class="dot"></span>Согласование договоров</span>
+                <span class="badge"><span class="dot"></span>Интеграция с 1С</span>
+                <span class="badge"><span class="dot"></span>Единый дашборд</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="block">
+          <div class="wrap">
+            <div class="sec-eyebrow reveal">03 — Результат</div>
+            <h2 class="sec-title reveal">Управляемость всех контуров бизнеса</h2>
+            <p class="prose reveal">Внедрение и интеграция Битрикс24 дали полную автоматизацию производственных, коммерческих и поддерживающих процессов. <b>Риски ручного контроля и разрозненности данных устранены.</b></p>
+
+            <div class="results">
+              <div class="result reveal"><div class="r-num"><span class="countup" data-to="4">0</span></div><div class="r-cap">контура бизнеса в одной системе</div></div>
+              <div class="result reveal"><div class="r-num"><span class="countup" data-to="2">0</span></div><div class="r-cap">воронки CRM: продажи и тендеры</div></div>
+              <div class="result reveal"><div class="r-num"><span class="countup" data-to="0">0</span></div><div class="r-cap">ручного контроля сроков охраны труда</div></div>
+              <div class="result reveal"><div class="r-num">1С</div><div class="r-cap">бесшовная интеграция учётных систем</div></div>
+            </div>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="wrap">
+      <div class="sec-eyebrow reveal">Было — стало</div>
+      
+
+      
+
+      
+            <div class="ba-toggle show-after reveal" id="baToggle">
+      <button type="button" data-ba="before">Было — до</button>
+      <button type="button" data-ba="after" class="active">Стало — после</button>
+      <span class="ba-slider"></span>
+      </div>
+      <div class="ba-panels">
+      <div class="ba-panel before" id="panel-before">
+      <ul>
+      <li><span class="mk">✕</span><span>Риск нарушений: ручной контроль сроков медосмотров и допусков.</span></li>
+      <li><span class="mk">✕</span><span>Хаос в документах: согласование договоров и оплат в почте.</span></li>
+      <li><span class="mk">✕</span><span>Слепая зона: нет единой управленческой отчётности.</span></li>
+      </ul>
+      </div>
+      <div class="ba-panel after active" id="panel-after">
+      <ul>
+      <li><span class="mk">✓</span><span>Автоматизация охраны труда: смарт-процесс «Допуски и Аттестации».</span></li>
+      <li><span class="mk">✓</span><span>Цифровой документооборот: сквозные смарт-процессы согласования.</span></li>
+      <li><span class="mk">✓</span><span>Панель руководителя: единая панель управления (дашборд).</span></li>
+      </ul>
+      </div>
+      </div>
+      
+      
+      
+      <div class="benefits" id="benefitList">
+      <div class="benefit"><div class="b-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 4v5c0 5-3.5 7.5-8 9-4.5-1.5-8-4-8-9V7z"/><path d="M9 12l2 2 4-4"/></svg></div><p><b>Снижение юридических рисков</b> и штрафов.</p></div>
+      <div class="benefit"><div class="b-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div><p><b>Сокращение времени</b> на согласование и централизованный архив.</p></div>
+      <div class="benefit"><div class="b-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 14l3-3 3 3 5-6"/></svg></div><p><b>Стратегический контроль</b> и быстрое принятие решений.</p></div>
+      </div>
+
+      
+      <div class="ba-toggle show-after reveal" id="baToggle">
+        <button type="button" data-ba="before">Было — до</button>
+        <button type="button" data-ba="after" class="active">Стало — после</button>
+        <span class="ba-slider"></span>
+      </div>
+
+      <div class="final-stat reveal"><div class="num"><span class="countup" data-to="100">0</span>%</div><div class="cap">ключевых процессов — в едином управляемом контуре Битрикс24 + 1С</div></div>
+    </div>
+  </section>
+
+  <section class="cta-block">
+    <div class="wrap">
+      <div class="cta reveal">
+        <h2>Сложно справляться с производственными процессами?</h2>
+        <p>Большой парк оборудования, штат и сложные процессы? Не давайте ручному контролю создавать риски. Объединим продажи, HR, производство и финансы в единую управляемую экосистему на Битрикс24 с интеграцией в 1С.</p>
+        <script data-b24-form="inline/246/bgv07m" data-skip-moving="true">
+(function(w,d,u){
+var s=d.createElement('script');s.async=true;s.src=u+'?'+(Date.now()/180000|0);
+var h=d.getElementsByTagName('script')[0];h.parentNode.insertBefore(s,h);
+})(window,document,'https://cdn-ru.bitrix24.ru/b1445091/crm/form/loader_246.js');
+</script>
+      </div>
+    </div>
+  </section>
+
+  <div class="lightbox" id="lightbox" aria-hidden="true" role="dialog" aria-modal="true">
+    <button class="lb-close" id="lbClose" type="button" aria-label="Закрыть"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+    <button class="lb-nav lb-prev" id="lbPrev" type="button" aria-label="Предыдущее"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg></button>
+    <button class="lb-nav lb-next" id="lbNext" type="button" aria-label="Следующее"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg></button>
+    <figure class="lb-figure">
+      <img loading="eager" fetchpriority="high" id="lbImg" src="" alt="">
+      <figcaption class="lb-cap"><span id="lbCap"></span><span class="lb-count" id="lbCount"></span></figcaption>
+    </figure>
+  </div>
+
+</div>
+
+<script>
+// TOGGLE2 — самостоятельный переключатель для верхней инфографики
+(function(){
+  var tg2 = document.getElementById('baToggle2');
+  if(!tg2) return;
+  tg2.querySelectorAll('button').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var ba = btn.getAttribute('data-ba');
+      tg2.querySelectorAll('button').forEach(function(b){ b.classList.toggle('active', b===btn); });
+      tg2.classList.toggle('show-after', ba==='after');
+    });
+  });
+})();
+
+var page = document.querySelector('.case-page');
+var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+// PARTICLES
+(function(){
+  var canvas = document.getElementById('bg-canvas'), ctx = canvas.getContext('2d');
+  var W, H, ps, mouse = {x:-999,y:-999};
+  var PAL = { light:['47,199,247','0,102,204','0,49,153'], dark:['47,199,247','0,102,204','0,49,153'] };
+  function resize(){ W=canvas.width=window.innerWidth; H=canvas.height=window.innerHeight; }
+  function mk(){ return {x:Math.random()*W,y:Math.random()*H,r:Math.random()*1.6+0.5,vx:(Math.random()-0.5)*0.3,vy:(Math.random()-0.5)*0.3,alpha:Math.random()*0.4+0.15,tone:Math.random()<0.5?0:(Math.random()<0.64?1:2),pulse:Math.random()*Math.PI*2,ps:Math.random()*0.02+0.005}; }
+  function init(){ resize(); ps=Array.from({length:95},mk); }
+  function draw(){
+    ctx.clearRect(0,0,W,H);
+    var pal=PAL.dark, line='47,199,247', glow='47,199,247', ga=0.16;
+    var g=ctx.createRadialGradient(mouse.x,mouse.y,0,mouse.x,mouse.y,220);
+    g.addColorStop(0,'rgba('+glow+','+ga+')'); g.addColorStop(1,'rgba('+glow+',0)');
+    ctx.fillStyle=g; ctx.fillRect(0,0,W,H);
+    ps.forEach(function(p){
+      p.pulse+=p.ps; var a=p.alpha*(0.7+0.3*Math.sin(p.pulse));
+      var dx=mouse.x-p.x,dy=mouse.y-p.y,d=Math.sqrt(dx*dx+dy*dy);
+      if(d<200){p.vx+=dx/d*0.012;p.vy+=dy/d*0.012;}
+      p.vx*=0.98;p.vy*=0.98;p.x+=p.vx;p.y+=p.vy;
+      if(p.x<0)p.x=W; if(p.x>W)p.x=0; if(p.y<0)p.y=H; if(p.y>H)p.y=0;
+      ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);ctx.fillStyle='rgba('+pal[p.tone]+','+a+')';ctx.fill();
+      ps.forEach(function(q){var dd=Math.sqrt((q.x-p.x)*(q.x-p.x)+(q.y-p.y)*(q.y-p.y));if(dd<110&&dd>0){ctx.beginPath();ctx.moveTo(p.x,p.y);ctx.lineTo(q.x,q.y);ctx.strokeStyle='rgba('+line+','+(0.07*(1-dd/110))+')';ctx.lineWidth=0.5;ctx.stroke();}});
+    });
+    requestAnimationFrame(draw);
+  }
+  window.addEventListener('mousemove',function(e){mouse.x=e.clientX;mouse.y=e.clientY;});
+  window.addEventListener('mouseout',function(){mouse.x=-999;mouse.y=-999;});
+  window.addEventListener('resize',resize);
+  init(); if(!reduced) draw(); else ctx.clearRect(0,0,W,H);
+})();
+
+// REVEAL
+(function(){
+  var els=document.querySelectorAll('.reveal');
+  if(!('IntersectionObserver' in window)||reduced){els.forEach(function(e){e.classList.add('in');});return;}
+  var io=new IntersectionObserver(function(en){en.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target);}});},{threshold:0.12});
+  els.forEach(function(e){io.observe(e);});
+})();
+
+// COUNT-UP
+function countUp(el){
+  var to=parseInt(el.getAttribute('data-to'),10), start=null, dur=1300;
+  if(reduced){ el.textContent=to; return; }
+  function step(ts){ if(!start)start=ts; var p=Math.min((ts-start)/dur,1); el.textContent=Math.round((1-Math.pow(1-p,3))*to); if(p<1)requestAnimationFrame(step); }
+  requestAnimationFrame(step);
+}
+(function(){
+  var nums=document.querySelectorAll('.countup');
+  if(!('IntersectionObserver' in window)){nums.forEach(function(n){n.textContent=n.getAttribute('data-to');});return;}
+  var io=new IntersectionObserver(function(en){en.forEach(function(x){if(x.isIntersecting){countUp(x.target);io.unobserve(x.target);}});},{threshold:0.6});
+  nums.forEach(function(n){io.observe(n);});
+})();
+
+// BEFORE / AFTER TOGGLE + LINKED GROWTH CHART
+(function(){
+  var tg=document.getElementById('baToggle');
+  var pb=document.getElementById('panel-before'), pa=document.getElementById('panel-after');
+  var chart=document.getElementById('growthChart');
+  var bars=chart?chart.querySelectorAll('.bar'):[];
+  var sub=document.getElementById('chartSub');
+  var state='after', chartSeen=false;
+
+  function animNum(el,to){
+    var from=parseFloat(el.textContent)||0;
+    if(reduced){el.textContent=to;return;}
+    var start=null,dur=900;
+    function step(ts){if(!start)start=ts;var p=Math.min((ts-start)/dur,1);el.textContent=Math.round(from+(to-from)*(1-Math.pow(1-p,3)));if(p<1)requestAnimationFrame(step);}
+    requestAnimationFrame(step);
+  }
+  function setChart(s){
+    state=s;
+    bars.forEach(function(b){
+      var v=parseFloat(b.getAttribute('data-'+s))||0;
+      b.style.height=v+'%';
+      var n=b.querySelector('.bar-val'); if(n) animNum(n,v);
+    });
+    if(sub) sub.textContent = (s==='after')
+      ? 'После запуска смарт-процессов — рост по ключевым показателям.'
+      : 'До внедрения автоматизации все показатели были на нуле.';
+  }
+
+  tg.querySelectorAll('button').forEach(function(btn){
+    btn.addEventListener('click',function(){
+      var ba=btn.getAttribute('data-ba');
+      tg.querySelectorAll('button').forEach(function(b){b.classList.toggle('active',b===btn);});
+      tg.classList.toggle('show-after', ba==='after');
+      var show=ba==='after'?pa:pb, hide=ba==='after'?pb:pa;
+      hide.classList.remove('active');
+      show.classList.remove('active'); void show.offsetWidth; show.classList.add('active');
+      if(chartSeen) setChart(ba); else state=ba;
+    });
+  });
+
+  if(chart){
+    if(!('IntersectionObserver' in window)||reduced){ chartSeen=true; setChart(state); }
+    else {
+      var io=new IntersectionObserver(function(en){en.forEach(function(x){if(x.isIntersecting){chartSeen=true; setChart(state); io.unobserve(x.target);}});},{threshold:0.35});
+      io.observe(chart);
+    }
+  }
+})();
+// IMAGE LIGHTBOX (fullscreen zoom + gallery)
+(function(){
+  var imgs = Array.prototype.slice.call(document.querySelectorAll('.figure img'));
+  if(!imgs.length) return;
+  var lb=document.getElementById('lightbox'), lbImg=document.getElementById('lbImg'),
+      lbCap=document.getElementById('lbCap'), lbCount=document.getElementById('lbCount');
+  var idx=0;
+
+  function capFor(i){ var f=imgs[i].closest('.figure'); var c=f?f.querySelector('.figcap'):null; return c?c.textContent.trim():''; }
+  function show(i){ idx=(i+imgs.length)%imgs.length; lbImg.src=imgs[idx].src; lbImg.alt=imgs[idx].alt||''; lbCap.textContent=capFor(idx); lbCount.textContent=(idx+1)+' / '+imgs.length; }
+  function open(i){ show(i); lb.classList.add('open'); lb.setAttribute('aria-hidden','false'); document.body.style.overflow='hidden'; }
+  function close(){ lb.classList.remove('open'); lb.setAttribute('aria-hidden','true'); document.body.style.overflow=''; }
+
+  imgs.forEach(function(im,i){
+    var fig=im.closest('.figure');
+    if(fig && !fig.querySelector('.fig-zoom-ico')){
+      var ic=document.createElement('span'); ic.className='fig-zoom-ico';
+      ic.innerHTML='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3M11 8.5v5M8.5 11h5"/></svg>';
+      fig.appendChild(ic);
+    }
+    im.addEventListener('click', function(){ open(i); });
+  });
+
+  document.getElementById('lbClose').addEventListener('click', close);
+  document.getElementById('lbPrev').addEventListener('click', function(e){ e.stopPropagation(); show(idx-1); });
+  document.getElementById('lbNext').addEventListener('click', function(e){ e.stopPropagation(); show(idx+1); });
+  lb.addEventListener('click', function(e){ if(e.target===lb) close(); });
+  document.addEventListener('keydown', function(e){
+    if(!lb.classList.contains('open')) return;
+    if(e.key==='Escape') close();
+    else if(e.key==='ArrowLeft') show(idx-1);
+    else if(e.key==='ArrowRight') show(idx+1);
+  });
+})();
+
+(function(){
+  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var stage = document.getElementById('morphStage');
+  var tg = document.getElementById('baToggle2');
+  if(!stage || !tg) return;
+  function apply(){ stage.classList.toggle('is-after', tg.classList.contains('show-after')); }
+  tg.querySelectorAll('button').forEach(function(b){ b.addEventListener('click', apply); });
+  if(('IntersectionObserver' in window) && !reduced){
+    var io = new IntersectionObserver(function(en){ en.forEach(function(x){ if(x.isIntersecting){ apply(); io.unobserve(x.target); } }); }, { threshold: .4 });
+    io.observe(stage);
+  } else {
+    apply();
+  }
+})();
+
+(function(){
+  var list = document.getElementById('benefitList');
+  var tg = document.getElementById('baToggle');
+  if(!list || !tg) return;
+  function apply(){ list.classList.toggle('show', tg.classList.contains('show-after')); }
+  tg.querySelectorAll('button').forEach(function(b){ b.addEventListener('click', apply); });
+  apply();
+})();
+
+</script>
+</body>
+</html>

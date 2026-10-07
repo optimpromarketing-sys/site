@@ -1,0 +1,676 @@
+<div class="op-hdr-root">
+
+
+
+<style>
+/* ════════════════════════════════════════════
+   ОПТИМ ПРО · Шапка · op-hdr-root
+   ════════════════════════════════════════════ */
+
+.op-hdr-root *,
+.op-hdr-root *::before,
+.op-hdr-root *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+/* ── CSS-переменные (тёмная тема — по умолчанию) ── */
+.op-hdr-root {
+  --h-bg:           rgba(8, 12, 23, 0.88);
+  --h-border:       rgba(255,255,255,0.07);
+  --h-shadow:       none;
+  --h-text:         #b0bcd8;
+  --h-text-hover:   #ffffff;
+  --h-accent:       #2FC7F7;
+  --h-drop-bg:      #0d1526;
+  --h-drop-border:  rgba(47,199,247,0.14);
+  --h-drop-shadow:  0 20px 60px rgba(0,0,0,0.5);
+  --h-logo-main:    #ffffff;
+  --h-logo-accent:  #2FC7F7;
+  --h-badge-bg:     #2FC7F7;
+  --h-badge-text:   #080c17;
+  --h-btn-bg:       linear-gradient(135deg, #2FC7F7, #2E7DF6);
+  --h-btn-shadow:   0 4px 18px rgba(47,199,247,0.35);
+  --h-ico-bg:       rgba(255,255,255,0.07);
+  --h-ico-border:   rgba(255,255,255,0.11);
+  --h-mob-bg:       #080c17;
+  --h-mob-border:   rgba(255,255,255,0.08);
+  --h-font:         'Montserrat', Arial, sans-serif;
+  --h-font-d:       'Montserrat', Arial, sans-serif;
+}
+
+/* ── Базовая шапка ── */
+.op-hdr {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 9000;
+  height: 64px;
+  background: var(--h-bg);
+  border-bottom: 1px solid var(--h-border);
+  box-shadow: var(--h-shadow);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  font-family: var(--h-font);
+  transition: background .4s ease, border-color .4s ease, box-shadow .4s ease;
+}
+
+.op-hdr__inner {
+  max-width: 1300px;
+  margin: 0 auto;
+  height: 100%;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* ── ЛОГО ── */
+.op-hdr__logo {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  text-decoration: none !important;
+  flex-shrink: 0;
+  margin-right: 12px;
+}
+.op-hdr__logo-text {
+  font-family: var(--h-font-d);
+  font-weight: 800;
+  font-size: 17px;
+  line-height: 1;
+  letter-spacing: -.3px;
+  white-space: nowrap;
+}
+.op-hdr__logo-main   { color: var(--h-logo-main);   transition: color .35s }
+.op-hdr__logo-accent { color: var(--h-logo-accent); transition: color .35s }
+.op-hdr__logo-badge {
+  font-size: 9px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase;
+  background: var(--h-badge-bg);
+  color: var(--h-badge-text);
+  padding: 3px 6px;
+  border-radius: 5px;
+  transition: background .35s, color .35s;
+}
+.op-hdr__logo:hover .op-hdr__logo-accent { opacity: .8 }
+
+/* ── DESKTOP NAV ── */
+.op-hdr__nav {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  gap: 1px;
+  overflow: visible;
+}
+.op-nav-item { position: relative }
+
+.op-nav-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 6px 11px;
+  font-size: 12px; font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  color: var(--h-text);
+  text-decoration: none !important;
+  border-radius: 8px;
+  border: none; background: none; cursor: pointer;
+  font-family: var(--h-font);
+  white-space: nowrap;
+  transition: color .2s, background .2s;
+}
+.op-nav-link:hover { color: var(--h-text-hover); background: rgba(47,199,247,.07) }
+.op-nav-link svg {
+  width: 12px; height: 12px;
+  stroke: currentColor; fill: none;
+  stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round;
+  transition: transform .25s;
+  flex-shrink: 0;
+}
+.op-nav-item.is-open > .op-nav-link svg { transform: rotate(180deg) }
+.op-nav-link:focus, .op-nav-link:focus-visible { outline: none }
+
+/* ── ДРОПДАУН (база) ── */
+.op-drop {
+  position: absolute;
+  top: calc(100% + 10px);
+  background: var(--h-drop-bg);
+  border: 1px solid var(--h-drop-border);
+  border-radius: 14px;
+  padding: 8px;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-6px);
+  transition: opacity .22s ease, transform .22s ease;
+  z-index: 100;
+  box-shadow: var(--h-drop-shadow);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+.op-nav-item.is-open > .op-drop {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+/* Обычный дропдаун */
+.op-drop--simple { left: 0; min-width: 260px }
+
+.op-drop-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  font-size: 14px; font-weight: 600;
+  color: var(--h-text);
+  text-decoration: none !important;
+  border-radius: 8px;
+  transition: background .18s, color .18s;
+  white-space: nowrap;
+}
+.op-drop-link:hover { background: rgba(47,199,247,.1); color: var(--h-accent) }
+
+
+
+.op-drop-divider {
+  height: 1px;
+  background: var(--h-drop-border);
+  margin: 6px 4px;
+}
+
+.op-drop-all {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 9px 12px;
+  font-size: 13px; font-weight: 700;
+  color: var(--h-accent);
+  text-decoration: none !important;
+  border-radius: 8px;
+  transition: background .18s;
+  white-space: nowrap;
+}
+.op-drop-all:hover { background: rgba(47,199,247,.08) }
+.op-drop-all svg { stroke: currentColor; fill: none; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round }
+
+/* Мега-меню (Инструменты) */
+.op-drop--mega {
+  left: 50%;
+  transform: translateX(-50%) translateY(-6px);
+  min-width: 780px;
+  padding: 20px 16px;
+}
+.op-nav-item.is-open > .op-drop--mega {
+  transform: translateX(-50%) translateY(0);
+}
+
+.op-mega-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0 12px;
+}
+.op-mega-col-title {
+  font-size: 11px; font-weight: 700; letter-spacing: .09em; text-transform: uppercase;
+  color: var(--h-accent);
+  padding: 4px 10px 8px;
+  opacity: .85;
+}
+.op-drop-link--mega { padding: 8px 12px; font-size: 14px }
+
+/* ── CSS HOVER FALLBACK (работает без JS) ── */
+@media (hover: hover) and (pointer: fine) {
+  .op-nav-item.has-drop:hover > .op-drop--simple {
+    opacity: 1; pointer-events: auto; transform: translateY(0);
+  }
+  .op-nav-item.has-drop:hover > .op-drop--mega {
+    opacity: 1; pointer-events: auto; transform: translateX(-50%) translateY(0);
+  }
+}
+
+/* ── ACTIONS ── */
+.op-hdr__actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-left: auto;
+  flex-shrink: 0;
+}
+
+/* Кнопка темы */
+
+/* CTA */
+.op-hdr__cta {
+  display: inline-flex; align-items: center;
+  padding: 8px 20px;
+  border-radius: 9px;
+  background: var(--h-btn-bg);
+  color: #ffffff !important;
+  font-size: 13px; font-weight: 700;
+  font-family: var(--h-font);
+  text-decoration: none !important;
+  white-space: nowrap;
+  box-shadow: var(--h-btn-shadow);
+  transition: opacity .2s, transform .2s, box-shadow .2s;
+}
+.op-hdr__cta:hover { opacity: .88; transform: translateY(-1px); box-shadow: 0 8px 28px rgba(47,199,247,.45) }
+
+/* Бургер */
+.op-burger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  width: 36px; height: 36px;
+  border-radius: 9px;
+  border: 1px solid var(--h-ico-border);
+  background: var(--h-ico-bg);
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: border-color .2s, background .35s;
+}
+.op-burger:focus, .op-burger:focus-visible { outline: none }
+.op-burger span {
+  display: block;
+  width: 18px; height: 2px;
+  background: var(--h-text);
+  border-radius: 2px;
+  transition: transform .3s ease, opacity .3s ease, background .35s;
+}
+
+/* ── МОБИЛЬНОЕ МЕНЮ ── */
+.op-mob {
+  display: none;
+  position: fixed;
+  top: 64px; left: 0; right: 0; bottom: 0;
+  background: var(--h-mob-bg);
+  overflow-y: auto;
+  padding: 8px 12px 40px;
+  z-index: 8999;
+  border-top: 1px solid var(--h-mob-border);
+  transform: translateX(100%);
+  transition: transform .35s cubic-bezier(.4,0,.2,1);
+  font-family: var(--h-font);
+}
+.op-mob.is-open { transform: translateX(0) }
+
+/* Обычная ссылка */
+.op-mob-link {
+  display: flex;
+  align-items: center;
+  padding: 13px 16px;
+  font-size: 13px; font-weight: 700;
+  font-family: var(--h-font);
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  color: var(--h-text);
+  text-decoration: none !important;
+  border-radius: 10px;
+  border-left: 2px solid transparent;
+  transition: background .18s, color .18s, border-color .18s;
+}
+.op-mob-link:hover, .op-mob-link:active {
+  background: rgba(47,199,247,.08);
+  color: var(--h-accent);
+  border-left-color: var(--h-accent);
+}
+
+/* Секция (аккордеон) */
+.op-mob-section { margin-bottom: 2px }
+.op-mob-section-title {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 13px 16px;
+  font-size: 13px; font-weight: 700;
+  font-family: var(--h-font);
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  color: var(--h-text);
+  cursor: pointer;
+  border-radius: 10px;
+  border-left: 2px solid transparent;
+  transition: background .18s, color .18s, border-color .18s;
+  user-select: none;
+}
+.op-mob-section-title:hover {
+  background: rgba(47,199,247,.08);
+  color: var(--h-accent);
+  border-left-color: var(--h-accent);
+}
+.op-mob-section.is-open .op-mob-section-title {
+  color: var(--h-accent);
+  border-left-color: var(--h-accent);
+  background: rgba(47,199,247,.06);
+}
+.op-mob-section-title svg {
+  width: 14px; height: 14px;
+  stroke: currentColor; fill: none;
+  stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round;
+  transition: transform .28s ease;
+  flex-shrink: 0;
+}
+.op-mob-section.is-open .op-mob-section-title svg { transform: rotate(180deg) }
+
+/* Раскрывающийся список */
+.op-mob-items {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height .4s ease;
+  margin: 2px 0 2px 12px;
+  border-left: 1px solid var(--h-mob-border);
+  padding-left: 4px;
+}
+.op-mob-section.is-open .op-mob-items { max-height: 1400px }
+
+/* Подпункты — обычный регистр */
+.op-mob-items .op-mob-link {
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: none;
+  letter-spacing: 0;
+  padding: 10px 14px;
+  border-radius: 8px;
+}
+
+/* Разделитель */
+.op-mob-divider {
+  height: 1px;
+  background: var(--h-mob-border);
+  margin: 12px 8px;
+}
+
+/* CTA */
+.op-mob-cta {
+  display: block;
+  text-align: center;
+  padding: 16px;
+  margin-top: 20px;
+  background: var(--h-btn-bg);
+  color: #ffffff !important;
+  font-size: 15px; font-weight: 700;
+  font-family: var(--h-font);
+  letter-spacing: .03em;
+  border-radius: 12px;
+  text-decoration: none !important;
+  box-shadow: var(--h-btn-shadow);
+  transition: opacity .2s, transform .2s;
+}
+.op-mob-cta:hover { opacity: .88; transform: translateY(-1px) }
+
+/* ── АДАПТИВ ── */
+@media (max-width: 1000px) {
+  .op-hdr__nav { display: none }
+  .op-hdr__cta { display: none }
+  .op-burger { display: flex }
+  .op-mob   { display: block }
+}
+@media (min-width: 1001px) {
+  .op-mob            { display: none !important }
+  .op-burger         { display: none !important }
+}
+</style>
+
+<!-- ═══════════════ ШАПКА ═══════════════ -->
+<header class="op-hdr" id="opHdr">
+  <div class="op-hdr__inner">
+
+    <!-- ЛОГО -->
+    <a href="https://b24.pro/optimpro/" class="op-hdr__logo" title="Оптим Про — главная">
+      <img src="data:image/webp;base64,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" alt="Оптим Про" height="32" style="display:block;max-width:200px">
+    </a>
+
+    <!-- DESKTOP НАВИГАЦИЯ -->
+    <nav class="op-hdr__nav" aria-label="Основная навигация">
+
+      <a href="https://b24.pro/optimpro/" class="op-nav-link">О нас</a>
+      <a href="https://b24.pro/#services" class="op-nav-link">Услуги</a>
+
+      <!-- ИНСТРУМЕНТЫ — мега-меню -->
+      <div class="op-nav-item has-drop">
+        <button class="op-nav-link drop-trigger" aria-haspopup="true">
+          Инструменты
+          <svg viewBox="0 0 14 14"><path d="M2 5l5 4 5-4"/></svg>
+        </button>
+        <div class="op-drop op-drop--mega" role="menu">
+          <div class="op-mega-grid">
+
+            <!-- Колонка 1 -->
+            <div>
+              <div class="op-mega-col-title">CRM · AI · Аналитика</div>
+              <a href="https://b24.pro/instrumenty/CRM/" class="op-drop-link op-drop-link--mega">CRM</a>
+              <a href="https://b24.pro/instrumenty/AIinBitrix24/" class="op-drop-link op-drop-link--mega">AI в Битрикс24</a>
+              <a href="https://b24.pro/instrumenty/AIinBitrix24_xwfb/" class="op-drop-link op-drop-link--mega">AI агенты</a>
+              <a href="https://b24.pro/instrumenty/bi_full/" class="op-drop-link op-drop-link--mega">BI Конструктор</a>
+              <a href="https://b24.pro/instrumenty/AIinBitrix24_MCP/" class="op-drop-link op-drop-link--mega">MCP</a>
+              <a href="https://b24.pro/instrumenty/flowAI/" class="op-drop-link op-drop-link--mega">Потоки + AI</a>
+              <a href="https://b24.pro/instrumenty/robotization/" class="op-drop-link op-drop-link--mega">Автоматизация</a>
+              <a href="https://b24.pro/instrumenty/analytics/" class="op-drop-link op-drop-link--mega">Сквозная аналитика</a>
+              <a href="https://b24.pro/instrumenty/Warehouse_accounting/" class="op-drop-link op-drop-link--mega">Складской учёт</a>
+            </div>
+
+            <!-- Колонка 2 -->
+            <div>
+              <div class="op-mega-col-title">Коммуникации · Сервисы</div>
+              <a href="https://b24.pro/instrumenty/Messenger/" class="op-drop-link op-drop-link--mega">Мессенджер</a>
+              <a href="https://b24.pro/instrumenty/contact-center/" class="op-drop-link op-drop-link--mega">Контакт-центр</a>
+              <a href="https://b24.pro/instrumenty/Videocalls/" class="op-drop-link op-drop-link--mega">Видеозвонки</a>
+              <a href="https://b24.pro/instrumenty/Collaboration/" class="op-drop-link op-drop-link--mega">Совместная работа</a>
+              <a href="https://b24.pro/instrumenty/Collaborations/" class="op-drop-link op-drop-link--mega">Коллабы</a>
+              <a href="https://b24.pro/instrumenty/mobile/" class="op-drop-link op-drop-link--mega">Мобильное приложение</a>
+              <a href="https://b24.pro/instrumenty/booking_full/" class="op-drop-link op-drop-link--mega">Онлайн запись</a>
+              <a href="https://b24.pro/instrumenty/Website_Builder/" class="op-drop-link op-drop-link--mega">Конструктор сайтов</a>
+              <a href="https://b24.pro/instrumenty/BitrixGPT+Marketplace/" class="op-drop-link op-drop-link--mega">Маркетплейс</a>
+              <a href="https://b24.pro/instrumenty/1C/" class="op-drop-link op-drop-link--mega">1С</a>
+            </div>
+
+            <!-- Колонка 3 -->
+            <div>
+              <div class="op-mega-col-title">Управление · Прочее</div>
+              <a href="https://b24.pro/instrumenty/KEDO/" class="op-drop-link op-drop-link--mega">КЭДО</a>
+              <a href="https://b24.pro/instrumenty/tasks/" class="op-drop-link op-drop-link--mega">Таск-менеджер</a>
+              <a href="https://b24.pro/instrumenty/scrum/" class="op-drop-link op-drop-link--mega">Скрам</a>
+              <a href="https://b24.pro/instrumenty/Digital_Workplace/" class="op-drop-link op-drop-link--mega">Цифровое рабочее место</a>
+              <div class="op-drop-divider"></div>
+              <a href="https://b24.pro/instrumenty/All/" class="op-drop-all">
+                Все инструменты
+                <svg viewBox="0 0 14 14" width="14" height="14"><path d="M3 7h8M7 3l4 4-4 4"/></svg>
+              </a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <a href="https://b24.pro/#b28970" class="op-nav-link">Лицензии</a>
+      <a href="https://b24.pro/cases/" class="op-nav-link">Кейсы</a>
+
+      <!-- ПРИЛОЖЕНИЯ — обычный дропдаун -->
+      <div class="op-nav-item has-drop">
+        <button class="op-nav-link drop-trigger" aria-haspopup="true">
+          Приложения
+          <svg viewBox="0 0 14 14"><path d="M2 5l5 4 5-4"/></svg>
+        </button>
+        <div class="op-drop op-drop--simple" role="menu">
+          <a href="https://b24.pro/prilozheniyastranitsa/optimgpt/" class="op-drop-link">
+            OptimGPT
+          </a>
+          <a href="https://b24.pro/prilozheniyastranitsa/geotrekker/" class="op-drop-link">
+            Геотрекер
+          </a>
+          <a href="https://b24.pro/prilozheniyastranitsa/laborcost/" class="op-drop-link">
+            Трудозатраты
+          </a>
+          <a href="https://b24.pro/prilozheniyastranitsa/passport/" class="op-drop-link">
+            Распознавание документов
+          </a>
+          <a href="https://b24.pro/prilozheniyastranitsa/translator/" class="op-drop-link">
+            Переводчик
+          </a>
+          <div class="op-drop-divider"></div>
+          <a href="https://b24.pro/prilozheniyastranitsa/apps-page_woqe/" class="op-drop-all">
+            Все приложения
+            <svg viewBox="0 0 14 14" width="14" height="14"><path d="M3 7h8M7 3l4 4-4 4"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <a href="https://b24.pro/blog_hqom/" class="op-nav-link">Блог</a>
+      <a href="https://b24.pro/#b28970" class="op-nav-link">Контакты</a>
+
+    </nav>
+
+    <!-- ACTIONS -->
+    <div class="op-hdr__actions">
+      <!-- CTA -->
+      <a href="https://b24.pro/#b28970" class="op-hdr__cta">Оставить заявку</a>
+      <!-- Бургер -->
+      <button class="op-burger" id="opBurger" aria-label="Открыть меню">
+        <span id="opBL1"></span>
+        <span id="opBL2"></span>
+        <span id="opBL3"></span>
+      </button>
+
+    </div>
+  </div>
+</header>
+
+<!-- ═══════════════ МОБИЛЬНОЕ МЕНЮ ═══════════════ -->
+<nav class="op-mob" id="opMob" aria-label="Мобильная навигация">
+
+  <a href="https://b24.pro/optimpro/" class="op-mob-link">О нас</a>
+  <a href="https://b24.pro/#services" class="op-mob-link">Услуги</a>
+
+  <!-- Инструменты (аккордеон) -->
+  <div class="op-mob-section">
+    <div class="op-mob-section-title mob-trigger">
+      Инструменты
+      <svg viewBox="0 0 14 14"><path d="M2 5l5 4 5-4"/></svg>
+    </div>
+    <div class="op-mob-items">
+      <a href="https://b24.pro/instrumenty/CRM/"                class="op-mob-link">CRM</a>
+      <a href="https://b24.pro/instrumenty/AIinBitrix24/"      class="op-mob-link">AI в Битрикс24</a>
+      <a href="https://b24.pro/instrumenty/AIinBitrix24_xwfb/"           class="op-mob-link">AI агенты</a>
+      <a href="https://b24.pro/instrumenty/bi_full/"       class="op-mob-link">BI Конструктор</a>
+      <a href="https://b24.pro/instrumenty/AIinBitrix24_MCP/"                 class="op-mob-link">MCP</a>
+      <a href="https://b24.pro/instrumenty/flowAI/"           class="op-mob-link">Потоки + AI</a>
+      <a href="https://b24.pro/instrumenty/robotization/"     class="op-mob-link">Автоматизация</a>
+      <a href="https://b24.pro/instrumenty/analytics/" class="op-mob-link">Сквозная аналитика</a>
+      <a href="https://b24.pro/instrumenty/Warehouse_accounting/"     class="op-mob-link">Складской учёт</a>
+      <a href="https://b24.pro/instrumenty/Messenger/"           class="op-mob-link">Мессенджер</a>
+      <a href="https://b24.pro/instrumenty/contact-center/"      class="op-mob-link">Контакт-центр</a>
+      <a href="https://b24.pro/instrumenty/Videocalls/"            class="op-mob-link">Видеозвонки</a>
+      <a href="https://b24.pro/instrumenty/Collaboration/"  class="op-mob-link">Совместная работа</a>
+      <a href="https://b24.pro/instrumenty/Collaborations/"              class="op-mob-link">Коллабы</a>
+      <a href="https://b24.pro/instrumenty/mobile/" class="op-mob-link">Мобильное приложение</a>
+      <a href="https://b24.pro/instrumenty/booking_full/"        class="op-mob-link">Онлайн запись</a>
+      <a href="https://b24.pro/instrumenty/Website_Builder/"  class="op-mob-link">Конструктор сайтов</a>
+      <a href="https://b24.pro/instrumenty/BitrixGPT+Marketplace/"         class="op-mob-link">Маркетплейс</a>
+      <a href="https://b24.pro/instrumenty/1C/"                  class="op-mob-link">1С</a>
+      <a href="https://b24.pro/instrumenty/KEDO/"               class="op-mob-link">КЭДО</a>
+      <a href="https://b24.pro/instrumenty/tasks/"      class="op-mob-link">Таск-менеджер</a>
+      <a href="https://b24.pro/instrumenty/scrum/"               class="op-mob-link">Скрам</a>
+      <a href="https://b24.pro/instrumenty/Digital_Workplace/" class="op-mob-link">Цифровое рабочее место</a>
+      <a href="https://b24.pro/instrumenty/All/" class="op-mob-link" style="color:var(--h-accent);font-weight:700">→ Все инструменты</a>
+    </div>
+  </div>
+
+  <a href="https://b24.pro/#b28970" class="op-mob-link">Лицензии</a>
+  <a href="https://b24.pro/cases/"  class="op-mob-link">Кейсы</a>
+
+  <!-- Приложения (аккордеон) -->
+  <div class="op-mob-section">
+    <div class="op-mob-section-title mob-trigger">
+      Приложения
+      <svg viewBox="0 0 14 14"><path d="M2 5l5 4 5-4"/></svg>
+    </div>
+    <div class="op-mob-items">
+      <a href="https://b24.pro/prilozheniyastranitsa/optimgpt/"    class="op-mob-link">OptimGPT</a>
+      <a href="https://b24.pro/prilozheniyastranitsa/geotrekker/"  class="op-mob-link">Геотрекер</a>
+      <a href="https://b24.pro/prilozheniyastranitsa/laborcost/"   class="op-mob-link">Трудозатраты</a>
+      <a href="https://b24.pro/prilozheniyastranitsa/passport/"    class="op-mob-link">Распознавание документов</a>
+      <a href="https://b24.pro/prilozheniyastranitsa/translator/"  class="op-mob-link">Переводчик</a>
+      <a href="https://b24.pro/prilozheniyastranitsa/apps-page_woqe/"   class="op-mob-link" style="color:var(--h-accent);font-weight:700">→ Все приложения</a>
+    </div>
+  </div>
+
+  <a href="https://b24.pro/blog_hqom/" class="op-mob-link">Блог</a>
+  <a href="https://b24.pro/#b28970"    class="op-mob-link">Контакты</a>
+
+  <div class="op-mob-divider"></div>
+  <a href="https://b24.pro/#b28970" class="op-mob-cta">Оставить заявку</a>
+
+</nav>
+
+<script>
+/* ── ОПТИМ ПРО · Шапка · JS ── */
+
+/* 2. EVENT DELEGATION — вешаем на document, не на конкретные элементы.
+      Это работает даже если Битрикс вставляет блок после выполнения скрипта. */
+document.addEventListener('click', function(e) {
+  /* ── Desktop дропдаун ── */
+  var dropTrigger = e.target.closest('.drop-trigger');
+  if (dropTrigger) {
+    e.stopPropagation();
+    var item = dropTrigger.closest('.op-nav-item');
+    var wasOpen = item && item.classList.contains('is-open');
+    document.querySelectorAll('.op-nav-item.has-drop').forEach(function(d) {
+      d.classList.remove('is-open');
+    });
+    if (item && !wasOpen) item.classList.add('is-open');
+    return;
+  }
+
+  /* ── Бургер ── */
+  var burgerBtn = e.target.closest('#opBurger');
+  if (burgerBtn) {
+    e.stopPropagation();
+    var mob = document.getElementById('opMob');
+    var isOpen = mob && mob.classList.contains('is-open');
+    if (mob) mob.classList.toggle('is-open', !isOpen);
+    var bl1 = document.getElementById('opBL1');
+    var bl2 = document.getElementById('opBL2');
+    var bl3 = document.getElementById('opBL3');
+    if (bl1 && bl2 && bl3) {
+      if (!isOpen) {
+        bl1.style.transform = 'translateY(7px) rotate(45deg)';
+        bl2.style.opacity = '0';
+        bl3.style.transform = 'translateY(-7px) rotate(-45deg)';
+      } else {
+        bl1.style.transform = bl2.style.opacity = bl3.style.transform = '';
+      }
+    }
+    return;
+  }
+
+  /* ── Мобильный аккордеон ── */
+  var mobTrigger = e.target.closest('.mob-trigger');
+  if (mobTrigger) {
+    var sec = mobTrigger.closest('.op-mob-section');
+    var items = sec && sec.querySelector('.op-mob-items');
+    var wasOpenSec = sec && sec.classList.contains('is-open');
+    document.querySelectorAll('.op-mob-section').forEach(function(s) {
+      s.classList.remove('is-open');
+      var it = s.querySelector('.op-mob-items');
+      if (it) it.style.maxHeight = '0';
+    });
+    if (sec && !wasOpenSec) {
+      sec.classList.add('is-open');
+      if (items) items.style.maxHeight = items.scrollHeight + 'px';
+    }
+    return;
+  }
+
+  /* ── Клик вне — закрыть всё ── */
+  document.querySelectorAll('.op-nav-item.has-drop').forEach(function(d) {
+    d.classList.remove('is-open');
+  });
+  var mob2 = document.getElementById('opMob');
+  var burger2 = document.getElementById('opBurger');
+  if (mob2 && mob2.classList.contains('is-open') &&
+      !mob2.contains(e.target) && (!burger2 || !burger2.contains(e.target))) {
+    mob2.classList.remove('is-open');
+    var bl1b = document.getElementById('opBL1');
+    var bl2b = document.getElementById('opBL2');
+    var bl3b = document.getElementById('opBL3');
+    if (bl1b) bl1b.style.transform = bl2b.style.opacity = bl3b.style.transform = '';
+  }
+});
+</script>
+
+</div>

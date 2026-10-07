@@ -1,0 +1,760 @@
+<!-- ОПТИМ ПРО · Автоматизация и роботизация · для Битрикс24.Сайты -->
+<div class="op-crm">
+<style>
+@font-face{font-family:'Montserrat';font-style:normal;font-weight:700;font-display:swap;src:url(https://fonts.gstatic.com/s/montserrat/v29/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCuM70w-Y3tcoqK5.woff2) format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
+@font-face{font-family:'Montserrat';font-style:normal;font-weight:700;font-display:swap;src:url(https://fonts.gstatic.com/s/montserrat/v29/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCuM73w-Y3tcoqK5.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'Montserrat';font-style:normal;font-weight:800;font-display:swap;src:url(https://fonts.gstatic.com/s/montserrat/v29/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCvr70w-Y3tcoqK5.woff2) format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
+@font-face{font-family:'Montserrat';font-style:normal;font-weight:800;font-display:swap;src:url(https://fonts.gstatic.com/s/montserrat/v29/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCvr73w-Y3tcoqK5.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'Open Sans';font-style:normal;font-weight:400;font-display:swap;src:url(https://fonts.gstatic.com/s/opensans/v40/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsiH0C4nY1M2xLER.woff2) format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
+@font-face{font-family:'Open Sans';font-style:normal;font-weight:400;font-display:swap;src:url(https://fonts.gstatic.com/s/opensans/v40/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsjZ0C4nY1M2xLER.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'Open Sans';font-style:normal;font-weight:700;font-display:swap;src:url(https://fonts.gstatic.com/s/opensans/v40/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsg-1y4nY1M2xLER.woff2) format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
+@font-face{font-family:'Open Sans';font-style:normal;font-weight:700;font-display:swap;src:url(https://fonts.gstatic.com/s/opensans/v40/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsg-1S4nY1M2xLER.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+
+/* Reset & base */
+.op-crm,.op-crm *,.op-crm *::before,.op-crm *::after{box-sizing:border-box;margin:0;padding:0}
+.op-crm{-webkit-tap-highlight-color:transparent;font-family:'Open Sans',Arial,sans-serif;color:#dce6f8;line-height:1.6}
+.op-crm *:focus,.op-crm *:focus-visible,.op-crm *:active{outline:none!important}
+.op-crm{--cyan:#2FC7F7;--blue:#0066CC;--navy:#003199;--yellow:#FAB400;--soft:#F4F8FF;--line:#E3ECF7;--muted:#8a9bbf;--radius:12px}
+.op-crm a{color:var(--cyan);text-decoration:none}
+
+/* Dark theme */
+.op-crm{color:#dce6f8;background:#080c17}
+.op-crm h2{color:#f0f5fc}
+.op-crm h3{color:#dce6f8}
+.op-crm a{color:var(--cyan)}
+.op-crm .op-lead{color:#a0b4d0}
+
+/* Layout */
+.op-w{max-width:1200px;margin:0 auto;padding:0 24px}
+.op-sec{padding:72px 0;position:relative;z-index:2}
+.op-sec+.op-sec{padding-top:0}
+
+/* Typography */
+.op-crm h2{font-family:'Montserrat',Arial,sans-serif;font-weight:800;color:#f0f5fc;line-height:1.14;letter-spacing:-.5px;font-size:clamp(26px,3.6vw,42px)}
+.op-crm h3{font-family:'Montserrat',Arial,sans-serif;font-weight:800;color:#f0f5fc;line-height:1.2;font-size:clamp(18px,2vw,24px)}
+.op-lead{max-width:720px;font-size:17px;color:var(--muted);line-height:1.65}
+
+/* Scroll reveal */
+.op-rv{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease}
+.op-rv.is-v{opacity:1;transform:none}
+
+/* Buttons */
+.op-btn{display:inline-flex;align-items:center;justify-content:center;padding:14px 32px;border-radius:var(--radius);font-family:'Open Sans',Arial,sans-serif;font-weight:800;font-size:15px;cursor:pointer;border:none;transition:transform .2s,box-shadow .2s;text-decoration:none}
+.op-btn:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(0,102,204,.25)}
+.op-btn-blue{background:#2fc7f7;color:#fff!important}
+.op-btn-link{background:transparent;border:1.5px solid #2fc7f7;color:#2fc7f7!important;padding:14px 26px}
+.op-btn-link:hover{background:rgba(47,199,247,.08);transform:translateY(-2px);box-shadow:none!important}
+
+/* Hero */
+.op-hero{padding:200px 0 48px;text-align:center;position:relative;z-index:2}
+.op-hero h1{font-family:'Montserrat',Arial,sans-serif;font-weight:800;font-size:clamp(40px,5.5vw,72px);color:#f0f5fc;line-height:1.08;letter-spacing:-1.2px;margin-bottom:28px}
+.op-hero .op-lead{margin:0 auto 36px;max-width:700px;font-family:'Montserrat',Arial,sans-serif;font-size:19px;font-weight:500}
+.op-hero__img{margin-top:44px;border-radius:20px;overflow:hidden;box-shadow:0 24px 60px rgba(0,49,153,.14)}
+.op-hero__img img{display:block;width:100%;height:auto}
+
+/* Icon benefits strip */
+.op-icons__row{display:flex;flex-wrap:wrap;gap:16px;margin-top:40px;justify-content:center}
+.op-icons__item{display:flex;align-items:center;gap:12px;background:var(--soft);border:1px solid var(--line);border-radius:14px;padding:14px 20px;flex:1;min-width:180px}
+.op-icons__icon{width:36px;height:36px;flex:none;background:linear-gradient(135deg,var(--cyan) 0%,var(--blue) 100%);border-radius:10px;display:flex;align-items:center;justify-content:center}
+.op-icons__icon svg{width:18px;height:18px;fill:none;stroke:#fff;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.op-icons__name{font-weight:700;font-size:14px;color:#f0f5fc;line-height:1.3}
+.op-icons__item{background:rgba(13,21,38,.7);border-color:rgba(255,255,255,.08)}
+.op-icons__name{color:#dce6f8}
+
+/* Half-media */
+.op-hm{display:grid;grid-template-columns:1fr 1.15fr;gap:48px;align-items:center}
+.op-hm_right .op-hm__media{order:-1}
+.op-hm__text h2{margin-bottom:16px}
+.op-hm__text .op-lead{margin-bottom:24px}
+.op-hm__media{border-radius:20px;overflow:hidden}
+.op-hm__media img{display:block;width:100%;height:auto;border-radius:20px;transform:scale(1.04)}
+.op-hm__btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px;align-items:center}
+
+/* Accordion */
+.op-dd-list{margin-top:20px;display:flex;flex-direction:column;gap:4px}
+.op-dd-item{border:1px solid var(--line);border-radius:14px;overflow:hidden;transition:border-color .3s}
+.op-dd-item.is-open{border-color:var(--cyan)}
+.op-dd-head{display:flex;align-items:center;justify-content:space-between;padding:16px 20px;cursor:pointer;font-family:'Open Sans',Arial,sans-serif;font-weight:700;font-size:16px;color:#f0f5fc;gap:12px;user-select:none;background:none;border:none;width:100%;text-align:left}
+.op-dd-arrow{width:24px;height:24px;flex:none;transition:transform .35s;display:flex;align-items:center;justify-content:center}
+.op-dd-arrow svg{width:14px;height:14px;stroke:#dce6f8;fill:none;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
+.op-dd-item.is-open .op-dd-arrow{transform:rotate(180deg)}
+.op-dd-body{max-height:0;overflow:hidden;transition:max-height .4s ease}
+.op-dd-body__inner{padding:0 20px 20px;color:var(--muted);font-size:15px;line-height:1.6;display:flex;flex-direction:column;align-items:flex-start;gap:10px}
+.op-dd-item{border-color:rgba(255,255,255,.08);background:rgba(13,21,38,.5)}
+.op-dd-item.is-open{border-color:var(--cyan)}
+.op-dd-head{color:#f0f5fc}
+.op-dd-arrow svg{stroke:#dce6f8}
+.op-dd-body__inner{color:#a0b4d0}
+
+/* Section title */
+.op-section-title{text-align:center;margin-bottom:0}
+.op-section-title h2{margin-bottom:12px}
+.op-section-title .op-lead{margin:0 auto}
+
+/* 2-col cards */
+.op-cards{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+.op-card{background:#fff;border:1px solid var(--line);border-radius:20px;overflow:hidden;transition:box-shadow .3s,transform .3s;display:flex;flex-direction:column;position:relative}
+.op-card:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(0,49,153,.1)}
+.op-card__media img{display:block;width:100%;height:auto}
+.op-card__body{padding:28px;display:flex;flex-direction:column;gap:12px;flex:1}
+.op-card__body h3{margin-bottom:0}
+.op-card__body p{font-size:15px;color:var(--muted);line-height:1.6;flex:1}
+.op-card{background:rgba(13,21,38,.7);border-color:rgba(255,255,255,.08)}
+.op-card__body p{color:#a0b4d0}
+
+/* Slider */
+.op-slider{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:32px}
+.op-slide{background:var(--soft);border:1px solid var(--line);border-radius:20px;overflow:hidden;display:flex;flex-direction:column;position:relative}
+.op-slide__body{padding:28px 28px 32px;display:flex;flex-direction:column;gap:12px;flex:1}
+.op-slide__body h3{margin-bottom:0}
+.op-slide__body p{font-size:15px;color:var(--muted);line-height:1.6;flex:1}
+.op-slide{background:rgba(13,21,38,.7);border-color:rgba(255,255,255,.08)}
+.op-slide__body p{color:#a0b4d0}
+
+/* AI Slider */
+.op-ai-slider{margin-top:40px}
+.op-ai-slider__chips{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:28px;justify-content:center}
+.op-ai-chip{position:relative;padding:10px 20px;border-radius:24px;background:var(--soft);border:1px solid var(--line);font-family:'Open Sans',Arial,sans-serif;font-weight:700;font-size:14px;color:#f0f5fc;cursor:pointer;overflow:hidden;transition:border-color .3s,color .3s;user-select:none}
+.op-ai-chip.is-active{border-color:var(--cyan);color:var(--cyan)}
+.op-ai-chip__progress{position:absolute;bottom:0;left:0;height:3px;width:0%;background:var(--cyan);border-radius:0 0 24px 24px;transition:width linear}
+.op-ai-slider__images{position:relative;border-radius:20px;overflow:hidden}
+.op-ai-slider__slide{display:none}
+.op-ai-slider__slide.is-active{display:block}
+.op-ai-slider__slide img{display:block;width:100%;height:auto;border-radius:20px}
+.op-ai-chip{background:rgba(13,21,38,.7);border-color:rgba(255,255,255,.08);color:#dce6f8}
+.op-ai-chip.is-active{border-color:var(--cyan);color:var(--cyan)}
+
+/* Glow */
+.op-feat-glow{position:absolute;width:600px;height:600px;border-radius:50%;pointer-events:none;z-index:0;opacity:0;top:0;left:0;transform:translate(var(--gx,50%),var(--gy,50%)) translate(-50%,-50%);background:radial-gradient(circle,rgba(47,199,247,.13) 0%,rgba(46,125,246,.07) 40%,transparent 70%);filter:blur(40px);transition:opacity .3s ease}
+.op-slide:hover .op-feat-glow,.op-card:hover .op-feat-glow{opacity:1}
+
+/* FAQ */
+.op-faq{max-width:800px;margin:0 auto}
+.op-faq h2{text-align:center;margin-bottom:40px}
+.op-faq-item{border-bottom:1px solid var(--line);padding:4px 0}
+.op-faq-q{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:20px 4px;cursor:pointer;font-weight:700;font-size:16px;color:#f0f5fc;user-select:none}
+.op-faq-arrow{width:32px;height:32px;flex:none;border-radius:50%;background:var(--soft);display:flex;align-items:center;justify-content:center;transition:transform .35s,background .25s}
+.op-faq-arrow svg{width:14px;height:14px;stroke:#dce6f8;fill:none;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;transition:stroke .25s}
+.op-faq-item.is-open .op-faq-arrow{transform:rotate(180deg);background:var(--cyan)}
+.op-faq-item.is-open .op-faq-arrow svg{stroke:#fff}
+.op-faq-a{max-height:0;overflow:hidden;transition:max-height .4s ease}
+.op-faq-a__inner{padding:0 4px 20px;color:var(--muted);font-size:15px;line-height:1.65}
+.op-faq-item{border-bottom-color:rgba(255,255,255,.08)}
+.op-faq-q{color:#f0f5fc}
+.op-faq-arrow{background:rgba(255,255,255,.08)}
+.op-faq-arrow svg{stroke:#dce6f8}
+.op-faq-a__inner{color:#a0b4d0}
+
+/* Bottom cards */
+.op-bottom{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.op-bottom-card{border-radius:20px;padding:36px 32px;background-color:var(--soft);background-size:cover;background-position:center;position:relative;overflow:hidden;display:flex;flex-direction:column;gap:12px}
+.op-bottom-card::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(0,49,153,.82) 0%,rgba(0,49,153,.60) 100%)}
+.op-bottom-card>*{position:relative;z-index:1}
+.op-bottom-card h3{font-family:'Montserrat',Arial,sans-serif;font-weight:800;color:#fff;font-size:20px}
+.op-bottom-card p{font-size:14px;color:rgba(255,255,255,.82);line-height:1.5;flex:1}
+
+/* CTA */
+.op-cta{padding:72px 0;position:relative;z-index:2}
+.op-cta-inner{position:relative;z-index:2;border-radius:32px;padding:56px 48px;text-align:center;background:rgba(13,21,38,.65);border:1px solid rgba(255,255,255,.1);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);box-shadow:0 40px 100px -30px rgba(0,6,30,.7)}
+.op-cta-inner h2{color:#f0f5fc;margin-bottom:16px}
+.op-cta-inner p{color:rgba(232,237,248,.7);font-size:17px;max-width:560px;margin:0 auto 32px}
+.op-cta-btns{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+.op-cta-btn--ghost{background:transparent;border:1.5px solid #2fc7f7;color:#2fc7f7!important;padding:14px 26px}
+
+/* Particles & glow */
+.op-particles-bg{position:fixed;top:0;left:0;pointer-events:none;z-index:0;opacity:.6}
+.op-page-glow{position:fixed;top:0;left:0;width:700px;height:700px;border-radius:50%;pointer-events:none;z-index:1;background:radial-gradient(circle,rgba(47,199,247,.13) 0%,rgba(46,125,246,.07) 40%,transparent 70%);filter:blur(40px);will-change:transform}
+
+/* Responsive */
+@media(max-width:960px){
+  .op-hm{grid-template-columns:1fr;gap:32px}
+  .op-hm_right .op-hm__media{order:0}
+  .op-slider{grid-template-columns:1fr}
+  .op-cards{grid-template-columns:1fr}
+  .op-bottom{grid-template-columns:1fr}
+  .op-hero{padding:140px 0 32px}
+  .op-icons__row{gap:10px}
+  .op-icons__item{min-width:140px}
+}
+@media(max-width:640px){
+  .op-hero{padding:120px 0 24px}
+  .op-cta-inner{padding:40px 24px;border-radius:20px}
+  .op-cta-btns{flex-direction:column;align-items:stretch}
+  .op-ai-slider__chips{gap:8px}
+  .op-ai-chip{font-size:13px;padding:8px 14px}
+}
+@media(prefers-reduced-motion:reduce){
+  .op-rv{transition:none;opacity:1;transform:none}
+  .op-particles-bg,.op-page-glow,.op-feat-glow{display:none}
+}
+
+/* === DARK THEME EXTRA FIXES === */
+.op-faq-arrow{background:rgba(255,255,255,.08)}
+.op-faq-arrow svg{stroke:#dce6f8}
+.op-dd-arrow svg{stroke:#dce6f8}
+.op-dd-body__inner{color:#a0b4d0}
+.op-faq-a__inner{color:#a0b4d0}
+.op-faq-a__inner a{color:var(--cyan)}
+.op-btn-grey{background:rgba(255,255,255,.08);color:#dce6f8}
+.op-bottom-card{background-color:#0d1931}
+.op-feat3-card{background:rgba(13,21,38,.7);border-color:rgba(255,255,255,.08)}
+.op-feat3-card h3{color:#f0f5fc}
+.op-soft-card{background:rgba(13,21,38,.5)}
+.op-feat{background:rgba(13,21,38,.6);border-color:rgba(255,255,255,.08)}
+.op-cards4-item{background:rgba(13,21,38,.6);border-color:rgba(255,255,255,.08)}
+.op-cards4-item h3{color:#f0f5fc}
+.op-sec2-card{background:rgba(13,21,38,.5);border-color:rgba(255,255,255,.08)}
+.op-sec-full{background:rgba(13,21,38,.5);border-color:rgba(255,255,255,.08)}
+.op-crm a{color:var(--cyan)}
+.op-crm a.op-btn-blue, .op-crm a.op-btn-green, .op-crm a.op-cta-buy, .op-crm a.op-btn-grey{color:#fff}
+.op-crm .op-lead{color:#a0b4d0}
+.op-crm h3{color:#f0f5fc}
+.op-slide{background:rgba(13,21,38,.6);border-color:rgba(255,255,255,.08)}
+.op-slide h3{color:#f0f5fc}
+
+/* === DARK THEME COMPREHENSIVE FIX === */
+.op-conf__tab{background:rgba(13,21,38,.7);border-color:rgba(255,255,255,.12);color:#dce6f8}
+.op-conf__tab.is-act{background:var(--cyan);color:#fff}
+.op-conf__list li{background:rgba(13,21,38,.6);border-color:rgba(255,255,255,.1);color:#dce6f8}
+.op-ai-chip{background:rgba(13,21,38,.7);border-color:rgba(255,255,255,.1);color:#dce6f8}
+.op-ai-chip__bar{background:rgba(255,255,255,.08)}
+.op-badge-50{background:rgba(13,21,38,.7);border-color:rgba(255,255,255,.12);color:#f0f5fc}
+.op-toggle-btn{background:rgba(47,199,247,.15);color:var(--cyan)}
+.op-cta .op-btn-blue{background:#2fc7f7;color:#fff!important}
+.op-plat__item{background:rgba(13,21,38,.6);border-color:rgba(255,255,255,.08)}
+.op-plat__item h3{color:#f0f5fc}
+.op-plat__check{background:rgba(13,21,38,.5)}
+
+  .b24-form-wrapper{background:transparent!important;border:none!important;box-shadow:none!important;padding:0!important}
+  .b24-form{background:#111827!important;border:1px solid rgba(255,255,255,.09)!important;border-radius:16px!important;overflow:hidden!important;box-shadow:0 24px 60px rgba(0,0,0,.4)!important}
+  .b24-form-header{background:#111827!important;border-bottom:1px solid rgba(255,255,255,.08)!important}
+  .b24-form-header-title,.b24-form-header *{color:#fff!important}
+  .b24-form-body{background:#111827!important;padding:24px!important}
+  .b24-form-field{border-bottom:none!important;border-top:none!important;padding:0!important;margin-bottom:8px!important}
+  .b24-form-control-container .b24-form-control,.b24-form-field .b24-form-control,.b24-form input:not([type=checkbox]):not([type=radio]),.b24-form textarea,.b24-form select{background:rgba(255,255,255,.06)!important;border:1px solid rgba(255,255,255,.12)!important;border-radius:10px!important;color:#E8EDF7!important;font-family:'Open Sans',sans-serif!important}
+  .b24-form-control::placeholder,.b24-form input::placeholder,.b24-form textarea::placeholder{color:#8A95B0!important}
+  .b24-form-control:focus,.b24-form input:focus,.b24-form textarea:focus{border-color:rgba(47,199,247,.5)!important;outline:none!important;box-shadow:0 0 0 3px rgba(47,199,247,.12)!important;background:rgba(255,255,255,.09)!important}
+  .b24-form-field-label,.b24-form-field-label *{color:#c8d5f0!important}
+  .b24-form-btn-container .b24-form-btn{background:linear-gradient(135deg,#2E7DF6,#7A5CFF)!important;border:none!important;border-radius:12px!important;color:#fff!important;font-weight:700!important;font-family:'Montserrat',sans-serif!important;box-shadow:0 8px 24px rgba(46,125,246,.4)!important;transition:opacity .2s,transform .2s!important}
+  .b24-form-btn-container .b24-form-btn:hover{opacity:.9!important;transform:translateY(-1px)!important}
+  .b24-form-sign,.b24-form-sign *,.b24-form-field-agree,.b24-form-field-agree *{color:#8A95B0!important}
+  .b24-form-field-agreement a{color:#2FC7F7!important}
+  .b24-form *:not(input):not(textarea):not(select):not(button){color:#E8EDF7!important}
+  .b24-form input,.b24-form textarea,.b24-form select{color:#E8EDF7!important}
+  .b24-form-btn,.b24-form-btn *{color:#fff!important}
+</style>
+
+<!-- HERO -->
+<section class="op-hero">
+<div class="op-w">
+  <h1>Автоматизация и роботизация</h1>
+  <p class="op-lead">Автоматизируйте работу сотрудников и целых подразделений в Битрикс24 — без кода и долгих настроек. Искусственный интеллект возьмёт на себя рутину, ускорит выполнение задач и поможет командам работать продуктивнее.</p>
+  <a class="op-btn op-btn-green" href="https://www.bitrix24.ru/create.php?p=6860675&p1=sales">Начать бесплатно</a>
+  <div class="op-hero__img">
+    <img loading="eager" fetchpriority="high" src="https://www.bitrix24.ru/upload/optimizer/converted/images/content_ru/features/automatization/1.1900w.png" alt="Автоматизация и роботизация в Битрикс24">
+  </div>
+</div>
+</section>
+
+<!-- Больше автоматизации — меньше ручной работы -->
+<section class="op-sec op-rv">
+<div class="op-w">
+  <h2>Больше автоматизации — меньше ручной работы</h2>
+  <p class="op-lead">Роботы сделают всё, что вы им скажете: поставят задачу, отправят письмо или уведомление, проконтролируют согласование документа — и это лишь малая часть.</p>
+  <div class="op-icons__row">
+    <div class="op-icons__item">
+      <div class="op-icons__icon">
+        <svg viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+      </div>
+      <span class="op-icons__name">Делайте больше с&nbsp;меньшими усилиями</span>
+    </div>
+    <div class="op-icons__item">
+      <div class="op-icons__icon">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+      </div>
+      <span class="op-icons__name">Освободитесь от рутины</span>
+    </div>
+    <div class="op-icons__item">
+      <div class="op-icons__icon">
+        <svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><path d="M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0z"/></svg>
+      </div>
+      <span class="op-icons__name">Минимизируйте ошибки</span>
+    </div>
+    <div class="op-icons__item">
+      <div class="op-icons__icon">
+        <svg viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+      </div>
+      <span class="op-icons__name">Сделайте работу прозрачнее</span>
+    </div>
+    <div class="op-icons__item">
+      <div class="op-icons__icon">
+        <svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+      </div>
+      <span class="op-icons__name">Повысьте общую производительность</span>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- Персональная автоматизация -->
+<section class="op-sec op-rv">
+<div class="op-w">
+  <div class="op-hm op-hm_right">
+    <div class="op-hm__text">
+      <h2>Персональная автоматизация</h2>
+      <p class="op-lead">Освободите сотрудников от рутины и помогите им успевать больше.</p>
+      <div class="op-dd-list" data-accordion>
+        <div class="op-dd-item" data-dropdown>
+          <div class="op-dd-head" data-dropdown-header>AI-ускорение работы<span class="op-dd-arrow"><svg viewBox="0 0 14 14"><path d="M2 5l5 4 5-4"/></svg></span></div>
+          <div class="op-dd-body"><div class="op-dd-body__inner">BitrixGPT напишет тексты, обработает данные, подготовит отчёт и выделит главное из длинных документов.<a class="op-btn op-btn-green" href="https://www.bitrix24.ru/create.php?p=6860675&p1=sales">Начать бесплатно</a><a class="op-btn op-btn-link" href="https://b24.pro/instrumenty/AIinBitrix24/">Узнать больше</a></div></div>
+        </div>
+        <div class="op-dd-item" data-dropdown>
+          <div class="op-dd-head" data-dropdown-header>Регулярные задачи<span class="op-dd-arrow"><svg viewBox="0 0 14 14"><path d="M2 5l5 4 5-4"/></svg></span></div>
+          <div class="op-dd-body"><div class="op-dd-body__inner">Повторяющиеся задачи создаются автоматически по шаблону — с нужными сроками, описанием и ответственными.<a class="op-btn op-btn-green" href="https://www.bitrix24.ru/create.php?p=6860675&p1=sales">Начать бесплатно</a></div></div>
+        </div>
+        <div class="op-dd-item" data-dropdown>
+          <div class="op-dd-head" data-dropdown-header>Контроль сроков и напоминания<span class="op-dd-arrow"><svg viewBox="0 0 14 14"><path d="M2 5l5 4 5-4"/></svg></span></div>
+          <div class="op-dd-body"><div class="op-dd-body__inner">Система сама напомнит о дедлайне и вовремя уведомит руководителя о просрочках.<a class="op-btn op-btn-green" href="https://www.bitrix24.ru/create.php?p=6860675&p1=sales">Начать бесплатно</a></div></div>
+        </div>
+        <div class="op-dd-item" data-dropdown>
+          <div class="op-dd-head" data-dropdown-header>Экономия времени<span class="op-dd-arrow"><svg viewBox="0 0 14 14"><path d="M2 5l5 4 5-4"/></svg></span></div>
+          <div class="op-dd-body"><div class="op-dd-body__inner">Роботы автоматически рассылают письма, запускают рекламу, добавляют товары на сайт, расшифровывают звонки и выполняют десятки других операций.<a class="op-btn op-btn-green" href="https://www.bitrix24.ru/create.php?p=6860675&p1=sales">Начать бесплатно</a></div></div>
+        </div>
+      </div>
+    </div>
+    <div class="op-hm__media">
+      <img loading="lazy" src="https://www.bitrix24.ru/upload/optimizer/converted/images/content_ru/features/automatization/2.1440w.png" alt="Персональная автоматизация">
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- Автоматизация рабочих процессов -->
+<section class="op-sec op-rv">
+<div class="op-w">
+  <div class="op-hm">
+    <div class="op-hm__text">
+      <h2>Автоматизация рабочих процессов</h2>
+      <p class="op-lead">Стандартизируйте бизнес-процессы и забудьте о проволочках и задержках.</p>
+      <div class="op-dd-list" data-accordion>
+        <div class="op-dd-item" data-dropdown>
+          <div class="op-dd-head" data-dropdown-header>Операционные процессы<span class="op-dd-arrow"><svg viewBox="0 0 14 14"><path d="M2 5l5 4 5-4"/></svg></span></div>
+          <div class="op-dd-body"><div class="op-dd-body__inner">Битрикс24 избавит сотрудников от операционки. Счета формируются и отправляются клиентам автоматически, задачи распределяются с учётом загруженности.<a class="op-btn op-btn-green" href="https://www.bitrix24.ru/create.php?p=6860675&p1=sales">Начать бесплатно</a></div></div>
+        </div>
+        <div class="op-dd-item" data-dropdown>
+          <div class="op-dd-head" data-dropdown-header>Управленческие процессы<span class="op-dd-arrow"><svg viewBox="0 0 14 14"><path d="M2 5l5 4 5-4"/></svg></span></div>
+          <div class="op-dd-body"><div class="op-dd-body__inner">Автоматизация ускорит принятие решений. Руководитель видит полную картину в реальном времени и может оперативно реагировать на отклонения.<a class="op-btn op-btn-green" href="https://www.bitrix24.ru/create.php?p=6860675&p1=sales">Начать бесплатно</a></div></div>
+        </div>
+        <div class="op-dd-item" data-dropdown>
+          <div class="op-dd-head" data-dropdown-header>Цифровые рабочие места<span class="op-dd-arrow"><svg viewBox="0 0 14 14"><path d="M2 5l5 4 5-4"/></svg></span></div>
+          <div class="op-dd-body"><div class="op-dd-body__inner">Создавайте стандартизированные процессы и рабочие места для каждого подразделения компании.<a class="op-btn op-btn-green" href="https://www.bitrix24.ru/create.php?p=6860675&p1=sales">Начать бесплатно</a><a class="op-btn op-btn-link" href="https://b24.pro/instrumenty/Digital_Workplace/">Узнать больше</a></div></div>
+        </div>
+        <div class="op-dd-item" data-dropdown>
+          <div class="op-dd-head" data-dropdown-header>Электронная очередь задач<span class="op-dd-arrow"><svg viewBox="0 0 14 14"><path d="M2 5l5 4 5-4"/></svg></span></div>
+          <div class="op-dd-body"><div class="op-dd-body__inner">Организуйте работу юридического отдела, IT-служб и сервисных команд через единую электронную очередь задач с автоматическим распределением.<a class="op-btn op-btn-green" href="https://www.bitrix24.ru/create.php?p=6860675&p1=sales">Начать бесплатно</a><a class="op-btn op-btn-link" href="https://b24.pro/instrumenty/flowAI/">Узнать больше</a></div></div>
+        </div>
+      </div>
+    </div>
+    <div class="op-hm__media">
+      <img loading="lazy" src="https://www.bitrix24.ru/upload/optimizer/converted/images/content_ru/features/automatization/3.1440w.png" alt="Автоматизация рабочих процессов">
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- Направления автоматизации -->
+<section class="op-sec op-rv">
+<div class="op-w">
+  <div class="op-section-title" style="text-align:center;margin-bottom:32px">
+    <h2>Автоматизируемые направления в Битрикс24</h2>
+  </div>
+  <div class="op-cards">
+    <div class="op-card">
+      <div class="op-feat-glow"></div>
+      <div class="op-card__media"><img loading="lazy" src="https://www.bitrix24.ru/upload/optimizer/converted/images/content_ru/features/automatization/4.1176w.png" alt="CRM и продажи"></div>
+      <div class="op-card__body">
+        <h3>CRM и продажи</h3>
+        <p>Автоматизация продаж на всех этапах воронки — от первого контакта до закрытия сделки и повторных продаж.</p>
+      </div>
+    </div>
+    <div class="op-card">
+      <div class="op-feat-glow"></div>
+      <div class="op-card__media"><img loading="lazy" src="https://www.bitrix24.ru/upload/optimizer/converted/images/content_ru/features/automatization/5.1176w.png" alt="Задачи и проекты"></div>
+      <div class="op-card__body">
+        <h3>Задачи и проекты</h3>
+        <p>Роботы ставят задачи, контролируют сроки и уведомляют исполнителей — без участия менеджера.</p>
+      </div>
+    </div>
+  </div>
+  <div class="op-cards" style="margin-top:28px">
+    <div class="op-card">
+      <div class="op-feat-glow"></div>
+      <div class="op-card__media"><img loading="lazy" src="https://www.bitrix24.ru/upload/optimizer/converted/images/content_ru/features/automatization/6.1176w.png" alt="Маркетинг"></div>
+      <div class="op-card__body">
+        <h3>Маркетинг</h3>
+        <p>Битрикс24 сам придумает идею рекламной кампании, напишет тексты и запустит рассылку по нужному сегменту.</p>
+      </div>
+    </div>
+    <div class="op-card">
+      <div class="op-feat-glow"></div>
+      <div class="op-card__media"><img loading="lazy" src="https://www.bitrix24.ru/upload/optimizer/converted/images/content_ru/features/automatization/7.1176w.png" alt="Аналитика"></div>
+      <div class="op-card__body">
+        <h3>Аналитика</h3>
+        <p>Система собирает и анализирует данные из разных источников и предоставляет готовые отчёты руководителю.</p>
+      </div>
+    </div>
+  </div>
+  <div class="op-cards" style="margin-top:28px">
+    <div class="op-card">
+      <div class="op-feat-glow"></div>
+      <div class="op-card__media"><img loading="lazy" src="https://www.bitrix24.ru/upload/optimizer/converted/images/content_ru/features/automatization/8.1176w.png" alt="Бизнес-процессы"></div>
+      <div class="op-card__body">
+        <h3>Бизнес-процессы и&nbsp;согласования</h3>
+        <p>Автоматизация типовых процессов — от согласования документов и оплаты счетов до оформления командировок.</p>
+      </div>
+    </div>
+    <div class="op-card">
+      <div class="op-feat-glow"></div>
+      <div class="op-card__media"><img loading="lazy" src="https://www.bitrix24.ru/upload/optimizer/converted/images/content_ru/features/automatization/9.1176w.png" alt="КЭДО"></div>
+      <div class="op-card__body">
+        <h3>Кадровый документооборот (КЭДО)</h3>
+        <p>Создание, отправка и массовое подписание кадровых документов проходят автоматически — без бумаги и походов в HR.</p>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- Оркестрация бизнеса -->
+<section class="op-sec op-rv">
+<div class="op-w">
+  <div style="text-align:center;margin-bottom:32px">
+    <h2>Оркестрация бизнеса</h2>
+    <p class="op-lead" style="margin:12px auto 0">Свяжите людей, процессы и системы в единое управляемое пространство.</p>
+  </div>
+  <div class="op-slider">
+    <div class="op-slide">
+      <div class="op-feat-glow"></div>
+      <div class="op-slide__body">
+        <h3>Интеграция с&nbsp;внешними сервисами</h3>
+        <p>Подключайте 1С, телефонию, сервисы оплаты, мессенджеры, аналитику и другие инструменты напрямую к Битрикс24 — и управляйте всем из одного окна.</p>
+      </div>
+    </div>
+    <div class="op-slide">
+      <div class="op-feat-glow"></div>
+      <div class="op-slide__body">
+        <h3>Полный контроль этапов работы</h3>
+        <p>Система автоматически отслеживает передачу задач между отделами, фиксирует отклонения и уведомляет ответственных.</p>
+      </div>
+    </div>
+    <div class="op-slide">
+      <div class="op-feat-glow"></div>
+      <div class="op-slide__body">
+        <h3>Прозрачность и координация</h3>
+        <p>Руководители в любой момент видят полную картину процессов и могут оперативно принимать решения.</p>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- Автоматизация с AI -->
+<section class="op-sec op-rv">
+<div class="op-w">
+  <div style="text-align:center">
+    <h2>Автоматизация с AI</h2>
+    <p class="op-lead" style="margin:12px auto 0">Встроенный в Битрикс24 интеллектуальный ассистент расшифровывает звонки, заполняет CRM, анализирует разговоры менеджеров, генерирует описания товаров и документы, а также даёт рекомендации по оптимизации процессов.</p>
+  </div>
+  <div class="op-ai-slider" data-ai-slider>
+    <div class="op-ai-slider__chips">
+      <div class="op-ai-chip is-active" data-ai-chip data-duration="4000">AI в чате<div class="op-ai-chip__progress"></div></div>
+      <div class="op-ai-chip" data-ai-chip data-duration="4000">AI в видеозвонках<div class="op-ai-chip__progress"></div></div>
+      <div class="op-ai-chip" data-ai-chip data-duration="4000">AI в CRM<div class="op-ai-chip__progress"></div></div>
+      <div class="op-ai-chip" data-ai-chip data-duration="4000">AI в сайтах<div class="op-ai-chip__progress"></div></div>
+      <div class="op-ai-chip" data-ai-chip data-duration="4000">AI в задачах<div class="op-ai-chip__progress"></div></div>
+    </div>
+    <div class="op-ai-slider__images">
+      <div class="op-ai-slider__slide is-active" data-ai-slide><img loading="lazy" src="https://www.bitrix24.ru/upload/optimizer/converted/images/content_ru/features/automatization/10.1900w.png" alt="AI в чате"></div>
+      <div class="op-ai-slider__slide" data-ai-slide><img loading="lazy" src="https://www.bitrix24.ru/upload/optimizer/converted/images/content_ru/features/automatization/11.1840w.png" alt="AI в видеозвонках"></div>
+      <div class="op-ai-slider__slide" data-ai-slide><img loading="lazy" src="https://www.bitrix24.ru/upload/optimizer/converted/images/content_ru/features/automatization/12.1900w.png" alt="AI в CRM"></div>
+      <div class="op-ai-slider__slide" data-ai-slide><img loading="lazy" src="https://www.bitrix24.ru/upload/optimizer/converted/images/content_ru/features/automatization/13.1900w.png" alt="AI в сайтах"></div>
+      <div class="op-ai-slider__slide" data-ai-slide><img loading="lazy" src="https://www.bitrix24.ru/upload/optimizer/converted/images/content_ru/features/automatization/14.1900w.png" alt="AI в задачах"></div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- AI-агенты -->
+<section class="op-sec op-rv">
+<div class="op-w">
+  <div class="op-hm">
+    <div class="op-hm__text">
+      <h2>AI-агенты — новая рабочая сила</h2>
+      <p class="op-lead">Искусственный интеллект в Битрикс24 помогает легко настраивать бизнес-процессы любой сложности. AI-агенты работают внутри системы, в интернете и во внешних сервисах, включая интеграцию с 1С.</p>
+      <p class="op-lead" style="margin-top:12px">Они могут общаться в чатах и Открытых линиях, использовать вашу базу знаний и автоматизировать задачи в бизнес-процессах, коллабах или отделах — чтобы работа шла быстрее и эффективнее.</p>
+      <div class="op-hm__btns">
+        <a class="op-btn op-btn-green" href="https://www.bitrix24.ru/create.php?p=6860675&p1=sales">Начать бесплатно</a>
+      </div>
+    </div>
+    <div class="op-hm__media">
+      <img loading="lazy" src="https://www.bitrix24.ru/upload/optimizer/converted/images/content_ru/features/automatization/ai%20fin.1440w.png" alt="AI-агенты">
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- Конструктор БП 2.0 -->
+<section class="op-sec op-rv">
+<div class="op-w">
+  <div class="op-hm op-hm_right">
+    <div class="op-hm__text">
+      <h2>Новый конструктор бизнес-процессов 2.0 с&nbsp;AI-агентами</h2>
+      <p class="op-lead">Выполняйте типовые задачи в несколько раз быстрее с помощью AI. Настройте процессы в простом конструкторе.</p>
+      <div class="op-hm__btns">
+        <a class="op-btn op-btn-green" href="https://www.bitrix24.ru/create.php?p=6860675&p1=sales">Начать бесплатно</a>
+      </div>
+    </div>
+    <div class="op-hm__media">
+      <img loading="lazy" src="https://www.bitrix24.ru/upload/optimizer/converted/images/content_ru/features/automatization/ia%20agent%202.1440w.png" alt="Конструктор бизнес-процессов 2.0">
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- Роботизация RPA -->
+<section class="op-sec op-rv">
+<div class="op-w">
+  <div class="op-hm">
+    <div class="op-hm__text">
+      <h2>Роботизация бизнеса RPA</h2>
+      <p class="op-lead">Автоматизируйте процессы без программирования — с помощью роботов в Битрикс24. Все как в конструкторе: вы указываете действия и порядок их выполнения — роботы делают всё сами.</p>
+      <p class="op-lead" style="margin-top:12px">Они могут двигать задачи по нужным этапам, отслеживать дедлайны и напоминать о них сотрудникам, отправлять документы на согласование и многое другое. Все это — без кода и без участия разработчиков.</p>
+      <div class="op-hm__btns">
+        <a class="op-btn op-btn-green" href="https://www.bitrix24.ru/create.php?p=6860675&p1=sales">Начать бесплатно</a>
+      </div>
+    </div>
+    <div class="op-hm__media">
+      <img loading="lazy" src="https://www.bitrix24.ru/upload/optimizer/converted/images/content_ru/features/automatization/15.1440w.png" alt="Роботизация бизнеса RPA">
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- FAQ -->
+<section class="op-sec op-rv">
+<div class="op-w">
+  <div class="op-faq">
+    <h2>Частые вопросы</h2>
+    <div class="op-faq-item" data-faq>
+      <div class="op-faq-q">Что такое автоматизация в Битрикс24 и чем она отличается от RPA?<span class="op-faq-arrow"><svg viewBox="0 0 14 14"><path d="M2 5l5 4 5-4"/></svg></span></div>
+      <div class="op-faq-a"><div class="op-faq-a__inner">Автоматизация — это набор правил, триггеров и AI-инструментов, которые запускают нужные действия автоматически. RPA (Robotic Process Automation) — визуальный конструктор для создания роботов, которые выполняют последовательности действий без участия сотрудников.</div></div>
+    </div>
+    <div class="op-faq-item" data-faq>
+      <div class="op-faq-q">Какие процессы можно автоматизировать?<span class="op-faq-arrow"><svg viewBox="0 0 14 14"><path d="M2 5l5 4 5-4"/></svg></span></div>
+      <div class="op-faq-a"><div class="op-faq-a__inner">Практически все ключевые направления: CRM-воронку, задачи и проекты, маркетинг-рассылки, аналитику, кадровый документооборот, согласования и операционные процессы.</div></div>
+    </div>
+    <div class="op-faq-item" data-faq>
+      <div class="op-faq-q">Нужны ли навыки программирования, чтобы настроить роботов?<span class="op-faq-arrow"><svg viewBox="0 0 14 14"><path d="M2 5l5 4 5-4"/></svg></span></div>
+      <div class="op-faq-a"><div class="op-faq-a__inner">Нет. RPA и no-code-конструктор полностью визуальны: блоки перетягиваются мышью, логика настраивается парой кликов.</div></div>
+    </div>
+    <div class="op-faq-item" data-faq>
+      <div class="op-faq-q">Как быстро запустить готового робота?<span class="op-faq-arrow"><svg viewBox="0 0 14 14"><path d="M2 5l5 4 5-4"/></svg></span></div>
+      <div class="op-faq-a"><div class="op-faq-a__inner">В Битрикс24 Маркетплейсе есть сотни готовых шаблонов — выберите подходящий, установите и настройте под свои нужды.</div></div>
+    </div>
+    <div class="op-faq-item" data-faq>
+      <div class="op-faq-q">Как измерить эффективность автоматизации?<span class="op-faq-arrow"><svg viewBox="0 0 14 14"><path d="M2 5l5 4 5-4"/></svg></span></div>
+      <div class="op-faq-a"><div class="op-faq-a__inner">Встроенная аналитика показывает, сколько задач или сделок закрыто роботами, сколько времени сэкономлено и где есть узкие места в процессах.</div></div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- Bottom cards -->
+<section class="op-sec op-rv">
+<div class="op-w">
+  <div class="op-bottom">
+    <div class="op-bottom-card" style="background-image:url('https://www.bitrix24.ru/images/content_common/apps/market-1.png')">
+      <h3>6 080+ интеграций</h3>
+      <p>Телефония, 1С, онлайн-банки, доставка и ещё больше тысячи готовых интеграций уже внутри Битрикс24.</p>
+      <a class="op-btn op-btn-blue" href="https://www.bitrix24.ru/apps/" target="_blank" rel="noopener">Узнать больше</a>
+    </div>
+    <div class="op-bottom-card" style="background-image:url('https://www.bitrix24.ru/images/content_common/apps/market-2.png')">
+      <h3>Коробочная версия</h3>
+      <p>Работает на вашем сервере с дополнительным функционалом и возможностью доработки.</p>
+      <a class="op-btn op-btn-blue" href="https://www.bitrix24.ru/self-hosted/" target="_blank" rel="noopener">Узнать больше</a>
+    </div>
+    <div class="op-bottom-card" style="background-image:url('https://www.bitrix24.ru/images/content_common/apps/market-3.png')">
+      <h3>Для крупных организаций</h3>
+      <p>Битрикс24 Enterprise для крупных территориально-распределённых компаний или холдингов.</p>
+      <a class="op-btn op-btn-blue" href="https://www.bitrix24.ru/enterprise/" target="_blank" rel="noopener">Узнать больше</a>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- CTA -->
+<section class="op-cta op-rv">
+<div class="op-w">
+  <div class="op-cta-inner">
+    <h2>Единая платформа для работы компании</h2>
+    <p>Вместо десятков сервисов и приложений</p>
+    <div class="op-cta-btns">
+      <a class="op-btn op-btn-green" href="https://www.bitrix24.ru/create.php?p=6860675&p1=sales">Получить бесплатно</a>
+      <a class="op-btn op-cta-btn--ghost" href="#cta-form">Получить консультацию</a>
+    </div>
+  </div>
+</div>
+</section>
+<!-- CONSULTATION FORM -->
+<section class="op-cta op-rv" id="cta-form" style="padding-top:0">
+<div class="op-w">
+  <div style="max-width:700px;margin:0 auto;text-align:center;padding:0 0 24px">
+    <div style="display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:#2FC7F7;border:1px solid rgba(47,199,247,.25);border-radius:100px;padding:7px 16px;margin-bottom:20px;background:rgba(47,199,247,.06)"><span style="width:6px;height:6px;border-radius:50%;background:#2FC7F7;box-shadow:0 0 10px #2FC7F7"></span>Бесплатная консультация</div>
+    <h2 style="font-family:'Montserrat',sans-serif;font-size:clamp(22px,3vw,32px);font-weight:800;color:#fff;margin:0 0 12px;line-height:1.2">Нужно под ваши процессы — настроим</h2>
+    <p style="font-size:16px;line-height:1.7;color:#8A95B0;max-width:560px;margin:0 auto 32px">Расскажите задачу — разберём вашу ситуацию и предложим конкретное решение на Битрикс24.</p>
+  </div>
+  <div style="max-width:700px;margin:0 auto">
+    <script data-b24-form="inline/242/eb3sji" data-skip-moving="true">
+(function(w,d,u){
+var s=d.createElement('script');s.async=true;s.src=u+'?'+(Date.now()/180000|0);
+var h=d.getElementsByTagName('script')[0];h.parentNode.insertBefore(s,h);
+})(window,document,'https://cdn-ru.bitrix24.ru/b1445091/crm/form/loader_242.js');
+</script>
+  </div>
+</div>
+</section>
+
+
+<script>
+(function(){
+var root=document.currentScript?document.currentScript.closest('.op-crm'):document.querySelector('.op-crm');
+if(!root)return;
+
+/* Scroll reveal */
+var els=root.querySelectorAll('.op-rv');
+if('IntersectionObserver' in window){
+  var io=new IntersectionObserver(function(ee){
+    ee.forEach(function(e){if(e.isIntersecting){e.target.classList.add('is-v');io.unobserve(e.target)}});
+  },{threshold:.08});
+  els.forEach(function(el){io.observe(el)});
+  setTimeout(function(){els.forEach(function(el){el.classList.add('is-v')})},600);
+}else{els.forEach(function(el){el.classList.add('is-v')})}
+
+/* Canvas particles */
+var pc=document.createElement('canvas');
+pc.className='op-particles-bg';pc.setAttribute('aria-hidden','true');
+document.body.appendChild(pc);
+var ctx=pc.getContext('2d');
+var pts=[],W=0,H=0;
+function resizePc(){
+  W=pc.width=window.innerWidth;
+  H=pc.height=Math.max(document.body.scrollHeight,window.innerHeight);
+  pc.style.width=W+'px';pc.style.height=H+'px';
+}
+function initPts(){
+  pts=[];
+  var n=Math.floor(W*H/18000);
+  for(var i=0;i<n;i++)pts.push({x:Math.random()*W,y:Math.random()*H,vx:(Math.random()-.5)*.35,vy:(Math.random()-.5)*.35,r:Math.random()*1.5+.5,a:Math.random()*.5+.15});
+}
+function drawPts(){
+  ctx.clearRect(0,0,W,H);
+  var col='rgba(47,199,247,';
+  pts.forEach(function(p){
+    p.x+=p.vx;p.y+=p.vy;
+    if(p.x<0)p.x=W;if(p.x>W)p.x=0;
+    if(p.y<0)p.y=H;if(p.y>H)p.y=0;
+    ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
+    ctx.fillStyle=col+p.a+')';ctx.fill();
+  });
+  requestAnimationFrame(drawPts);
+}
+resizePc();initPts();drawPts();
+window.addEventListener('resize',function(){resizePc();initPts()},{passive:true});
+
+/* Cursor glow */
+var pg=document.createElement('div');
+pg.className='op-page-glow';pg.setAttribute('aria-hidden','true');
+document.body.appendChild(pg);
+var pgX=window.innerWidth/2,pgY=window.innerHeight/2,pgRaf=null;
+function movePg(tx,ty){
+  pgX+=(tx-pgX)*.1;pgY+=(ty-pgY)*.1;
+  pg.style.transform='translate('+pgX+'px,'+pgY+'px) translate(-50%,-50%)';
+  pgRaf=requestAnimationFrame(function(){movePg(tx,ty)});
+}
+document.addEventListener('mousemove',function(e){
+  if(pgRaf)cancelAnimationFrame(pgRaf);
+  movePg(e.clientX,e.clientY);
+},{passive:true});
+
+/* Per-card glow */
+root.querySelectorAll('.op-slide,.op-card').forEach(function(c){
+  var g=c.querySelector('.op-feat-glow');
+  if(!g)return;
+  c.addEventListener('mousemove',function(e){
+    var r=c.getBoundingClientRect();
+    g.style.setProperty('--gx',(e.clientX-r.left)+'px');
+    g.style.setProperty('--gy',(e.clientY-r.top)+'px');
+  },{passive:true});
+});
+
+/* Accordion */
+root.querySelectorAll('[data-accordion]').forEach(function(acc){
+  acc.querySelectorAll('[data-dropdown]').forEach(function(item){
+    var head=item.querySelector('[data-dropdown-header]'),body=item.querySelector('.op-dd-body');
+    if(!head||!body)return;
+    head.addEventListener('click',function(){
+      var w=item.classList.contains('is-open');
+      acc.querySelectorAll('.op-dd-item').forEach(function(it){it.classList.remove('is-open');var b=it.querySelector('.op-dd-body');if(b)b.style.maxHeight='0'});
+      if(!w){item.classList.add('is-open');body.style.maxHeight=body.scrollHeight+'px'}
+    });
+  });
+});
+
+/* FAQ */
+root.querySelectorAll('[data-faq]').forEach(function(item){
+  var q=item.querySelector('.op-faq-q'),a=item.querySelector('.op-faq-a');
+  if(!q||!a)return;
+  q.addEventListener('click',function(){
+    var w=item.classList.contains('is-open');
+    root.querySelectorAll('.op-faq-item').forEach(function(it){it.classList.remove('is-open');var b=it.querySelector('.op-faq-a');if(b)b.style.maxHeight='0'});
+    if(!w){item.classList.add('is-open');a.style.maxHeight=a.scrollHeight+'px'}
+  });
+});
+
+/* AI Slider */
+var aiSlider=root.querySelector('[data-ai-slider]');
+if(aiSlider){
+  var chips=Array.from(aiSlider.querySelectorAll('[data-ai-chip]'));
+  var slides=Array.from(aiSlider.querySelectorAll('[data-ai-slide]'));
+  var cur=0,timer=null,startT=null,animId=null;
+  function activateChip(idx){
+    chips.forEach(function(c,i){
+      c.classList.toggle('is-active',i===idx);
+      var p=c.querySelector('.op-ai-chip__progress');
+      if(p){p.style.transition='none';p.style.width='0%'}
+    });
+    slides.forEach(function(s,i){s.classList.toggle('is-active',i===idx)});
+    cur=idx;
+    var dur=parseInt(chips[idx].dataset.duration)||4000;
+    var prog=chips[idx].querySelector('.op-ai-chip__progress');
+    if(prog){
+      requestAnimationFrame(function(){
+        requestAnimationFrame(function(){
+          prog.style.transition='width '+dur+'ms linear';
+          prog.style.width='100%';
+        });
+      });
+    }
+    clearTimeout(timer);
+    timer=setTimeout(function(){activateChip((cur+1)%chips.length)},dur);
+  }
+  chips.forEach(function(c,i){
+    c.addEventListener('click',function(){activateChip(i)});
+  });
+  activateChip(0);
+}
+
+})();
+</script>
+
+</div>

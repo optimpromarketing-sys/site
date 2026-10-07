@@ -1,0 +1,159 @@
+<script>(function(){var urls=['https://fonts.bunny.net/css?family=montserrat:400,600,700,800|open-sans:400,600,700&display=swap','https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;600;700&display=swap'];function tryLoad(i){if(i>=urls.length)return;var l=document.createElement('link');l.rel='stylesheet';l.href=urls[i];l.onerror=function(){tryLoad(i+1)};(document.head||document.body).appendChild(l)}tryLoad(0);})();</script>
+<div class="op-crm" id="op-block-08">
+<style>
+.op-crm*,.op-crm*::before,.op-crm*::after{box-sizing:border-box;margin:0;padding:0}
+.op-crm{
+  --cyan:#2FC7F7;--blue:#2E7DF6;--violet:#7A5CFF;--navy:#0A2A6B;
+  --yellow:#FAB400;--pain:#FF5A6E;--muted:#8A95B0;--line:rgba(255,255,255,.08);
+  --radius:18px;
+  --font-display:'Montserrat',system-ui,sans-serif;
+  --font-body:'Open Sans',system-ui,sans-serif;
+  font-family:var(--font-body);color:#E8EDF7;background:#080c17;
+  position:relative;overflow-x:hidden;-webkit-font-smoothing:antialiased
+}
+
+/* ===== BG ===== */
+.op-bg{position:fixed;inset:0;z-index:0;overflow:hidden;pointer-events:none}
+.op-blob{position:absolute;border-radius:50%;filter:blur(80px);opacity:.45;mix-blend-mode:screen}
+.op-blob.b1{width:520px;height:520px;background:radial-gradient(circle,var(--blue),transparent 70%);top:-120px;left:-80px;animation:f1 18s ease-in-out infinite}
+.op-blob.b2{width:600px;height:600px;background:radial-gradient(circle,var(--cyan),transparent 70%);top:40%;right:-160px;animation:f2 22s ease-in-out infinite}
+.op-blob.b3{width:480px;height:480px;background:radial-gradient(circle,var(--violet),transparent 70%);bottom:5%;left:25%;animation:f3 26s ease-in-out infinite}
+@keyframes f1{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(40px,30px) scale(1.08)}}
+@keyframes f2{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(-30px,40px) scale(1.06)}}
+@keyframes f3{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(20px,-30px) scale(1.1)}}
+
+/* ===== GRID OVERLAY ===== */
+.op-grid-ov{position:fixed;inset:0;z-index:0;pointer-events:none;
+  background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);
+  background-size:48px 48px}
+
+/* ===== LAYOUT ===== */
+.op-main{position:relative;z-index:1}
+.op-w{max-width:1200px;margin:0 auto;padding:0 24px}
+.op-sec{padding:100px 0}
+
+/* ===== REVEAL ===== */
+.op-rv{opacity:1;transform:none;transition:opacity .6s ease,transform .6s ease}
+.op-js .op-rv{opacity:0;transform:translateY(28px)}
+.op-js .op-rv.is-v{opacity:1;transform:none}
+
+/* ===== SECTION HEAD ===== */
+.op-sec-head{text-align:center;margin-bottom:20px}
+.op-sec-label{display:inline-flex;align-items:center;gap:8px;font-family:var(--font-display);font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--cyan);margin-bottom:16px}
+.op-sec-label .dot{width:6px;height:6px;border-radius:50%;background:var(--cyan);flex-shrink:0}
+.op-sec-head h2{font-family:var(--font-display);font-size:clamp(26px,4vw,40px);font-weight:800;color:#fff;margin-bottom:16px;line-height:1.15}
+.op-lead{font-size:17px;color:var(--muted);line-height:1.65}
+
+/* ===== STEPS ===== */
+.op-steps{position:relative;display:grid;grid-template-columns:repeat(6,1fr);gap:0;margin-top:52px;padding-bottom:8px}
+.op-steps__track{position:absolute;top:42px;left:calc(100%/12);right:calc(100%/12);height:2px;background:linear-gradient(90deg,#2E7DF6,#2fc7f7);opacity:.25;z-index:0}
+.op-step{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;text-align:center;padding:0 10px}
+.op-step__num{width:28px;height:28px;border-radius:50%;background:linear-gradient(135deg,#2E7DF6,#2fc7f7);display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-size:12px;font-weight:800;color:#fff;margin-bottom:14px;flex-shrink:0;box-shadow:0 0 16px rgba(47,199,247,.35)}
+.op-step__icon{width:68px;height:68px;border-radius:18px;background:rgba(46,125,246,.1);border:1px solid rgba(47,199,247,.18);display:flex;align-items:center;justify-content:center;margin-bottom:16px;transition:all .3s}
+.op-step__icon svg{width:26px;height:26px;stroke:var(--cyan);opacity:.85}
+.op-step:hover .op-step__icon{background:rgba(46,125,246,.18);border-color:rgba(47,199,247,.35);transform:translateY(-3px);box-shadow:0 12px 30px rgba(47,199,247,.15)}
+.op-step__title{font-family:var(--font-display);font-size:14px;font-weight:700;color:#e8edf8;margin-bottom:8px;letter-spacing:.01em}
+.op-step__desc{font-size:13px;color:var(--muted);line-height:1.55}
+@media(max-width:900px){
+  .op-steps{grid-template-columns:repeat(3,1fr);gap:32px 0}
+  .op-steps__track{display:none}
+}
+@media(max-width:560px){
+  .op-steps{grid-template-columns:repeat(2,1fr);gap:28px 0}
+}
+</style>
+
+<div class="op-bg">
+  <div class="op-blob b1"></div>
+  <div class="op-blob b2"></div>
+  <div class="op-blob b3"></div>
+</div>
+<div class="op-grid-ov"></div>
+
+<div class="op-main">
+  <section class="op-sec op-rv" id="how-we-work">
+    <div class="op-w">
+      <div class="op-sec-head">
+        <div class="op-sec-label"><span class="dot"></span>Как мы работаем</div>
+        <h2>От заявки до результата — прозрачно</h2>
+        <p class="op-lead" style="max-width:520px;margin:0 auto">Никаких сюрпризов: каждый этап фиксируется, каждый шаг согласован</p>
+      </div>
+
+      <div class="op-steps">
+        <div class="op-steps__track"></div>
+
+        <div class="op-step">
+          <div class="op-step__num">1</div>
+          <div class="op-step__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          </div>
+          <div class="op-step__title">Заявка</div>
+          <div class="op-step__desc">Оставляете заявку — менеджер связывается в течение часа в рабочее время</div>
+        </div>
+
+        <div class="op-step">
+          <div class="op-step__num">2</div>
+          <div class="op-step__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          </div>
+          <div class="op-step__title">Брифинг</div>
+          <div class="op-step__desc">Разбираем задачу, изучаем процессы компании, определяем цели и ожидаемый результат</div>
+        </div>
+
+        <div class="op-step">
+          <div class="op-step__num">3</div>
+          <div class="op-step__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+          </div>
+          <div class="op-step__title">Предложение</div>
+          <div class="op-step__desc">Готовим техническое решение и смету. Согласовываем состав работ и стоимость</div>
+        </div>
+
+        <div class="op-step">
+          <div class="op-step__num">4</div>
+          <div class="op-step__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></svg>
+          </div>
+          <div class="op-step__title">Договор</div>
+          <div class="op-step__desc">Фиксируем условия, сроки и результат. Работаем только по договору с актом сдачи</div>
+        </div>
+
+        <div class="op-step">
+          <div class="op-step__num">5</div>
+          <div class="op-step__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8m-4-4v4"/></svg>
+          </div>
+          <div class="op-step__title">Реализация</div>
+          <div class="op-step__desc">Работаем по согласованному плану. Показываем промежуточные результаты, вносим правки</div>
+        </div>
+
+        <div class="op-step">
+          <div class="op-step__num">6</div>
+          <div class="op-step__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          </div>
+          <div class="op-step__title">Запуск</div>
+          <div class="op-step__desc">Принимаете работу, подписываем акт. Обучаем команду и сопровождаем после старта</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+</div>
+
+</div>
+
+<script>(function(){
+  var root=document.getElementById('op-block-08');
+  if(!root)return;
+  var els=root.querySelectorAll('.op-rv');
+  if(!els.length)return;
+  var revealAll=function(){els.forEach(function(el){el.classList.add('is-v')});};
+  if('IntersectionObserver' in window){
+    root.classList.add('op-js');
+    els.forEach(function(el){var r=el.getBoundingClientRect();if(r.top<window.innerHeight&&r.bottom>0)el.classList.add('is-v');});
+    var io=new IntersectionObserver(function(ee){ee.forEach(function(e){if(e.isIntersecting){e.target.classList.add('is-v');io.unobserve(e.target);}});},{threshold:0,rootMargin:'0px 0px -60px 0px'});
+    els.forEach(function(el){if(!el.classList.contains('is-v'))io.observe(el);});
+    setTimeout(revealAll,3000);
+  }
+})();</script>

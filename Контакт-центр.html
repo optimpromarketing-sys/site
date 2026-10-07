@@ -1,0 +1,739 @@
+<!-- ОПТИМ ПРО · Контакт-центр · для Битрикс24.Сайты -->
+<div class="op-crm">
+<style>
+@font-face{font-family:'Montserrat';font-style:normal;font-weight:700;font-display:swap;src:url(https://fonts.gstatic.com/s/montserrat/v29/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCuM70w-Y3tcoqK5.woff2) format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
+@font-face{font-family:'Montserrat';font-style:normal;font-weight:700;font-display:swap;src:url(https://fonts.gstatic.com/s/montserrat/v29/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCuM73w-Y3tcoqK5.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'Montserrat';font-style:normal;font-weight:800;font-display:swap;src:url(https://fonts.gstatic.com/s/montserrat/v29/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCvr70w-Y3tcoqK5.woff2) format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
+@font-face{font-family:'Montserrat';font-style:normal;font-weight:800;font-display:swap;src:url(https://fonts.gstatic.com/s/montserrat/v29/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCvr73w-Y3tcoqK5.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'Open Sans';font-style:normal;font-weight:400;font-display:swap;src:url(https://fonts.gstatic.com/s/opensans/v40/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsiH0C4nY1M2xLER.woff2) format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
+@font-face{font-family:'Open Sans';font-style:normal;font-weight:400;font-display:swap;src:url(https://fonts.gstatic.com/s/opensans/v40/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsjZ0C4nY1M2xLER.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'Open Sans';font-style:normal;font-weight:700;font-display:swap;src:url(https://fonts.gstatic.com/s/opensans/v40/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsg-1y4nY1M2xLER.woff2) format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
+@font-face{font-family:'Open Sans';font-style:normal;font-weight:700;font-display:swap;src:url(https://fonts.gstatic.com/s/opensans/v40/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsg-1S4nY1M2xLER.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+
+/* Reset & base */
+.op-crm,.op-crm *,.op-crm *::before,.op-crm *::after{box-sizing:border-box;margin:0;padding:0}
+.op-crm{-webkit-tap-highlight-color:transparent;font-family:'Open Sans',Arial,sans-serif;color:#dce6f8;line-height:1.6}
+.op-crm *:focus,.op-crm *:focus-visible,.op-crm *:active{outline:none!important}
+.op-crm{--cyan:#2FC7F7;--blue:#0066CC;--navy:#003199;--yellow:#FAB400;--soft:#F4F8FF;--line:#E3ECF7;--muted:#8a9bbf;--radius:12px}
+.op-crm a{color:var(--cyan);text-decoration:none}
+
+/* Dark theme */
+.op-crm{color:#dce6f8;background:#080c17}
+.op-crm h2{color:#f0f5fc}
+.op-crm h3{color:#dce6f8}
+.op-crm a{color:var(--cyan)}
+.op-crm .op-lead{color:#a0b4d0}
+
+/* Layout */
+.op-w{max-width:1200px;margin:0 auto;padding:0 24px}
+.op-sec{padding:72px 0;position:relative;z-index:2}
+.op-sec+.op-sec{padding-top:0}
+
+/* Typography */
+.op-crm h2{font-family:'Montserrat',Arial,sans-serif;font-weight:800;color:#f0f5fc;line-height:1.14;letter-spacing:-.5px;font-size:clamp(26px,3.6vw,42px)}
+.op-crm h3{font-family:'Montserrat',Arial,sans-serif;font-weight:800;color:#f0f5fc;line-height:1.2;font-size:clamp(18px,2vw,24px)}
+.op-lead{max-width:720px;font-size:17px;color:var(--muted);line-height:1.65}
+
+/* Scroll reveal */
+.op-rv{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease}
+.op-rv.is-v{opacity:1;transform:none}
+
+/* Buttons */
+.op-btn{display:inline-flex;align-items:center;justify-content:center;padding:14px 32px;border-radius:var(--radius);font-family:'Open Sans',Arial,sans-serif;font-weight:800;font-size:15px;cursor:pointer;border:none;transition:transform .2s,box-shadow .2s;text-decoration:none}
+.op-btn:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(0,102,204,.25)}
+.op-btn-blue{background:#2fc7f7;color:#fff!important}
+.op-btn-white{background:#fff;color:#f0f5fc!important;font-weight:800}
+.op-btn-link{background:transparent;border:1.5px solid #2fc7f7;color:#2fc7f7!important;padding:14px 26px}
+.op-btn-link:hover{background:rgba(47,199,247,.08);transform:translateY(-2px);box-shadow:none!important}
+
+/* Hero */
+.op-hero{padding:200px 0 48px;text-align:center;position:relative;z-index:2}
+.op-hero h1{font-family:'Montserrat',Arial,sans-serif;font-weight:800;font-size:clamp(40px,5.5vw,72px);color:#f0f5fc;line-height:1.08;letter-spacing:-1.2px;margin-bottom:28px}
+.op-hero .op-lead{margin:0 auto 36px;max-width:700px;font-family:'Montserrat',Arial,sans-serif;font-size:19px;font-weight:500}
+.op-hero__img{margin-top:44px;border-radius:20px;overflow:hidden;box-shadow:0 24px 60px rgba(0,49,153,.14)}
+.op-hero__img img{display:block;width:100%;height:auto}
+
+/* Half-media */
+.op-hm{display:grid;grid-template-columns:1fr 1.15fr;gap:48px;align-items:center}
+.op-hm_right .op-hm__media{order:-1}
+.op-hm__text h2{margin-bottom:16px}
+.op-hm__text .op-lead{margin-bottom:24px}
+.op-hm__media{border-radius:20px;overflow:hidden}
+.op-hm__media img{display:block;width:100%;height:auto;border-radius:20px;transform:scale(1.04)}
+.op-hm__btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px;align-items:center}
+
+/* Fullwidth */
+.op-fw{text-align:center}
+.op-fw h2{margin-bottom:16px}
+.op-fw .op-lead{margin:0 auto 24px}
+.op-fw__media{border-radius:20px;overflow:hidden;box-shadow:0 20px 50px rgba(0,49,153,.12);margin-top:32px}
+.op-fw__media img{display:block;width:100%;height:auto}
+
+/* Cards */
+.op-cards{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+.op-card{background:#fff;border:1px solid var(--line);border-radius:20px;overflow:hidden;transition:box-shadow .3s,transform .3s;display:flex;flex-direction:column;position:relative}
+.op-card:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(0,49,153,.1)}
+.op-card__media img{display:block;width:100%;height:auto}
+.op-card__body{padding:28px;display:flex;flex-direction:column;gap:12px;flex:1}
+.op-card__body h3{margin-bottom:0}
+.op-card__body p{font-size:15px;color:var(--muted);line-height:1.6;flex:1}
+.op-card{background:rgba(13,21,38,.7);border-color:rgba(255,255,255,.08)}
+.op-card__body p{color:#a0b4d0}
+
+/* Slider */
+.op-slider{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:32px}
+.op-slide{background:var(--soft);border:1px solid var(--line);border-radius:20px;overflow:hidden;display:flex;flex-direction:column;position:relative}
+.op-slide__media img{display:block;width:100%;height:auto}
+.op-slide__body{padding:28px 28px 32px;display:flex;flex-direction:column;gap:12px;flex:1}
+.op-slide__body h3{margin-bottom:0}
+.op-slide__body p{font-size:15px;color:var(--muted);line-height:1.6;flex:1}
+.op-slide{background:rgba(13,21,38,.7);border-color:rgba(255,255,255,.08)}
+.op-slide__body p{color:#a0b4d0}
+
+/* Accordion */
+.op-dd-list{margin-top:20px;display:flex;flex-direction:column;gap:4px}
+.op-dd-item{border:1px solid var(--line);border-radius:14px;overflow:hidden;transition:border-color .3s}
+.op-dd-item.is-open{border-color:var(--cyan)}
+.op-dd-head{display:flex;align-items:center;justify-content:space-between;padding:16px 20px;cursor:pointer;font-family:'Open Sans',Arial,sans-serif;font-weight:700;font-size:16px;color:#f0f5fc;gap:12px;user-select:none;background:none;border:none;width:100%;text-align:left}
+.op-dd-arrow{width:24px;height:24px;flex:none;transition:transform .35s;display:flex;align-items:center;justify-content:center}
+.op-dd-arrow svg{width:14px;height:14px;stroke:#dce6f8;fill:none;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
+.op-dd-item.is-open .op-dd-arrow{transform:rotate(180deg)}
+.op-dd-body{max-height:0;overflow:hidden;transition:max-height .4s ease}
+.op-dd-body__inner{padding:0 20px 20px;color:var(--muted);font-size:15px;line-height:1.6;display:flex;flex-direction:column;align-items:flex-start;gap:10px}
+.op-dd-item{border-color:rgba(255,255,255,.08);background:rgba(13,21,38,.5)}
+.op-dd-item.is-open{border-color:var(--cyan)}
+.op-dd-head{color:#f0f5fc}
+.op-dd-arrow svg{stroke:#dce6f8}
+.op-dd-body__inner{color:#a0b4d0}
+
+/* UC banner */
+.op-uc{background:linear-gradient(135deg,var(--navy) 0%,#0055cc 100%);border-radius:32px;padding:56px 48px;text-align:center}
+.op-uc h2{color:#fff;margin-bottom:16px}
+.op-uc p{color:rgba(255,255,255,.75);font-size:17px;max-width:600px;margin:0 auto 28px}
+
+/* Bottom cards */
+.op-bottom{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.op-bottom-card{border-radius:20px;padding:36px 32px;background-color:var(--soft);background-size:cover;background-position:center;position:relative;overflow:hidden;display:flex;flex-direction:column;gap:12px}
+.op-bottom-card::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(0,49,153,.82) 0%,rgba(0,49,153,.60) 100%)}
+.op-bottom-card>*{position:relative;z-index:1}
+.op-bottom-card h3{font-family:'Montserrat',Arial,sans-serif;font-weight:800;color:#fff;font-size:20px}
+.op-bottom-card p{font-size:14px;color:rgba(255,255,255,.82);line-height:1.5;flex:1}
+
+/* FAQ */
+.op-faq{max-width:800px;margin:0 auto}
+.op-faq h2{text-align:center;margin-bottom:40px}
+.op-faq-item{border-bottom:1px solid var(--line);padding:4px 0}
+.op-faq-q{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:20px 4px;cursor:pointer;font-weight:700;font-size:16px;color:#f0f5fc;user-select:none}
+.op-faq-arrow{width:32px;height:32px;flex:none;border-radius:50%;background:var(--soft);display:flex;align-items:center;justify-content:center;transition:transform .35s,background .25s}
+.op-faq-arrow svg{width:14px;height:14px;stroke:#dce6f8;fill:none;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;transition:stroke .25s}
+.op-faq-item.is-open .op-faq-arrow{transform:rotate(180deg);background:var(--cyan)}
+.op-faq-item.is-open .op-faq-arrow svg{stroke:#fff}
+.op-faq-a{max-height:0;overflow:hidden;transition:max-height .4s ease}
+.op-faq-a__inner{padding:0 4px 20px;color:var(--muted);font-size:15px;line-height:1.65}
+.op-faq-item{border-bottom-color:rgba(255,255,255,.08)}
+.op-faq-q{color:#f0f5fc}
+.op-faq-arrow{background:rgba(255,255,255,.08)}
+.op-faq-arrow svg{stroke:#dce6f8}
+.op-faq-a__inner{color:#a0b4d0}
+
+/* Glow */
+.op-feat-glow{position:absolute;width:600px;height:600px;border-radius:50%;pointer-events:none;z-index:0;opacity:0;top:0;left:0;transform:translate(var(--gx,50%),var(--gy,50%)) translate(-50%,-50%);background:radial-gradient(circle,rgba(47,199,247,.13) 0%,rgba(46,125,246,.07) 40%,transparent 70%);filter:blur(40px);transition:opacity .3s ease}
+.op-slide:hover .op-feat-glow,.op-card:hover .op-feat-glow{opacity:1}
+
+/* CTA */
+.op-cta{padding:72px 0;position:relative;z-index:2}
+.op-cta-inner{position:relative;z-index:2;border-radius:32px;padding:56px 48px;text-align:center;background:rgba(13,21,38,.65);border:1px solid rgba(255,255,255,.1);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);box-shadow:0 40px 100px -30px rgba(0,6,30,.7)}
+.op-cta-inner h2{color:#f0f5fc;margin-bottom:16px}
+.op-cta-inner p{color:rgba(232,237,248,.7);font-size:17px;max-width:560px;margin:0 auto 32px}
+.op-cta-btns{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+.op-cta-btn--ghost{background:transparent;border:1.5px solid #2fc7f7;color:#2fc7f7!important;padding:14px 26px}
+
+/* Particles & glow */
+.op-particles-bg{position:fixed;top:0;left:0;pointer-events:none;z-index:0;opacity:.6}
+.op-page-glow{position:fixed;top:0;left:0;width:700px;height:700px;border-radius:50%;pointer-events:none;z-index:1;background:radial-gradient(circle,rgba(47,199,247,.13) 0%,rgba(46,125,246,.07) 40%,transparent 70%);filter:blur(40px);will-change:transform}
+
+/* Checklist */
+.op-checklist{list-style:none;display:flex;flex-direction:column;gap:12px;margin-top:8px}
+.op-checklist li{position:relative;padding-left:32px;color:#a0b4d0;font-size:15px;line-height:1.6}
+.op-checklist li::before{content:'';position:absolute;left:0;top:4px;width:20px;height:20px;border-radius:6px;background:var(--cyan);background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M6 10l3 3 5-6' fill='none' stroke='%23fff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")}
+
+/* 4-column feature icons */
+.op-feat4{text-align:center;padding-top:0}
+.op-feat4-head{margin-bottom:48px}
+.op-feat4-head__icon{font-size:40px;line-height:1;margin-bottom:16px}
+.op-feat4-head h2{margin-bottom:0}
+.op-feat4-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:32px}
+.op-feat4-item{display:flex;flex-direction:column;align-items:center;gap:16px;text-align:center}
+.op-feat4-ico{width:72px;height:72px;border-radius:18px;background:linear-gradient(135deg,#29b6f6,#0077c2);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.op-feat4-ico svg{width:36px;height:36px;fill:#fff}
+.op-feat4-item p{font-size:14px;color:#a0b4d0;line-height:1.55;font-weight:600;max-width:200px}
+@media(max-width:760px){.op-feat4-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:420px){.op-feat4-grid{grid-template-columns:1fr}}
+
+/* Auto-advance showcase */
+.op-auto-bullets{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:16px}
+.op-auto-bullet{background:rgba(11,16,34,.75);border:1.5px solid rgba(255,255,255,.08);border-radius:16px;cursor:pointer;padding:18px 18px 0;text-align:left;overflow:hidden;transition:border-color .25s,background .25s;position:relative}
+.op-auto-bullet.is-active{background:rgba(47,199,247,.07);border-color:rgba(47,199,247,.45)}
+.op-auto-bullet__label{display:flex;align-items:center;gap:10px;font-family:'Open Sans',Arial,sans-serif;font-weight:700;font-size:15px;color:#475569;margin-bottom:16px;transition:color .25s;line-height:1.3}
+.op-auto-bullet.is-active .op-auto-bullet__label{color:#f0f5fc}
+.op-auto-bullet__label svg{flex-shrink:0;color:#64748b;transition:color .25s}
+.op-auto-bullet.is-active .op-auto-bullet__label svg{color:var(--cyan)}
+.op-auto-bullet__bar{display:block;height:3px;background:rgba(255,255,255,.08);margin:0 -18px}
+.op-auto-bullet__fill{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--cyan),#2E7DF6)}
+.op-auto-bullet.is-active .op-auto-bullet__fill{animation:op-fill-prog 5s linear forwards}
+@keyframes op-fill-prog{from{width:0}to{width:100%}}
+.op-auto-img-grid{display:grid;border-radius:20px;overflow:hidden;box-shadow:0 24px 60px rgba(0,10,40,.45)}
+.op-auto-pane{grid-column:1;grid-row:1;opacity:0;transition:opacity .55s ease;pointer-events:none}
+.op-auto-pane.is-active{opacity:1;pointer-events:auto}
+.op-auto-pane img{display:block;width:100%;height:auto}
+@media(max-width:700px){.op-auto-bullets{grid-template-columns:1fr;gap:8px}.op-auto-bullet__label{font-size:14px}}
+
+/* Responsive */
+@media(max-width:960px){
+  .op-hm{grid-template-columns:1fr;gap:32px}
+  .op-hm_right .op-hm__media{order:0}
+  .op-slider{grid-template-columns:1fr}
+  .op-cards{grid-template-columns:1fr}
+  .op-bottom{grid-template-columns:1fr}
+  .op-hero{padding:140px 0 32px}
+}
+@media(max-width:640px){
+  .op-hero{padding:120px 0 24px}
+  .op-cta-inner{padding:40px 24px;border-radius:20px}
+  .op-cta-btns{flex-direction:column;align-items:stretch}
+  .op-uc{padding:40px 24px;border-radius:20px}
+  .op-slide__body{padding:20px 20px 24px}
+}
+@media(prefers-reduced-motion:reduce){
+  .op-rv{transition:none;opacity:1;transform:none}
+  .op-particles-bg,.op-page-glow,.op-feat-glow{display:none}
+}
+
+/* Dark theme extra fixes */
+.op-faq-arrow{background:rgba(255,255,255,.08)}
+.op-faq-arrow svg{stroke:#dce6f8}
+.op-dd-arrow svg{stroke:#dce6f8}
+.op-dd-body__inner{color:#a0b4d0}
+.op-faq-a__inner{color:#a0b4d0}
+.op-faq-a__inner a{color:var(--cyan)}
+.op-btn-grey{background:rgba(255,255,255,.08);color:#dce6f8}
+.op-bottom-card{background-color:#0d1931}
+.op-crm a{color:var(--cyan)}
+.op-crm a.op-btn-blue,.op-crm a.op-btn-green,.op-crm a.op-cta-buy,.op-crm a.op-btn-grey{color:#fff}
+.op-crm .op-lead{color:#a0b4d0}
+.op-crm h3{color:#f0f5fc}
+.op-slide{background:rgba(13,21,38,.6);border-color:rgba(255,255,255,.08)}
+.op-slide h3{color:#f0f5fc}
+.op-uc{background:rgba(13,21,38,.7)!important;border:1px solid rgba(255,255,255,.08);border-radius:28px}
+.op-uc h2{color:#f0f5fc}
+.op-uc p{color:#a0b4d0}
+.op-hm{background:transparent}
+  .b24-form-wrapper{background:transparent!important;border:none!important;box-shadow:none!important;padding:0!important}
+  .b24-form{background:#111827!important;border:1px solid rgba(255,255,255,.09)!important;border-radius:16px!important;overflow:hidden!important;box-shadow:0 24px 60px rgba(0,0,0,.4)!important}
+  .b24-form-header{background:#111827!important;border-bottom:1px solid rgba(255,255,255,.08)!important}
+  .b24-form-header-title,.b24-form-header *{color:#fff!important}
+  .b24-form-body{background:#111827!important;padding:24px!important}
+  .b24-form-field{border-bottom:none!important;border-top:none!important;padding:0!important;margin-bottom:8px!important}
+  .b24-form-control-container .b24-form-control,.b24-form-field .b24-form-control,.b24-form input:not([type=checkbox]):not([type=radio]),.b24-form textarea,.b24-form select{background:rgba(255,255,255,.06)!important;border:1px solid rgba(255,255,255,.12)!important;border-radius:10px!important;color:#E8EDF7!important;font-family:'Open Sans',sans-serif!important}
+  .b24-form-control::placeholder,.b24-form input::placeholder,.b24-form textarea::placeholder{color:#8A95B0!important}
+  .b24-form-control:focus,.b24-form input:focus,.b24-form textarea:focus{border-color:rgba(47,199,247,.5)!important;outline:none!important;box-shadow:0 0 0 3px rgba(47,199,247,.12)!important;background:rgba(255,255,255,.09)!important}
+  .b24-form-field-label,.b24-form-field-label *{color:#c8d5f0!important}
+  .b24-form-btn-container .b24-form-btn{background:linear-gradient(135deg,#2E7DF6,#7A5CFF)!important;border:none!important;border-radius:12px!important;color:#fff!important;font-weight:700!important;font-family:'Montserrat',sans-serif!important;box-shadow:0 8px 24px rgba(46,125,246,.4)!important;transition:opacity .2s,transform .2s!important}
+  .b24-form-btn-container .b24-form-btn:hover{opacity:.9!important;transform:translateY(-1px)!important}
+  .b24-form-sign,.b24-form-sign *,.b24-form-field-agree,.b24-form-field-agree *{color:#8A95B0!important}
+  .b24-form-field-agreement a{color:#2FC7F7!important}
+  .b24-form *:not(input):not(textarea):not(select):not(button){color:#E8EDF7!important}
+  .b24-form input,.b24-form textarea,.b24-form select{color:#E8EDF7!important}
+  .b24-form-btn,.b24-form-btn *{color:#fff!important}
+</style>
+
+<!-- HERO -->
+<section class="op-hero">
+<div class="op-w">
+  <h1>Все коммуникации<br>в одном месте</h1>
+  <p class="op-lead">В контакт-центре доступны все необходимые инструменты для взаимодействия с клиентами: телефон, email, чат на сайте, ВКонтакте, WhatsApp и другие.</p>
+  <a class="op-btn op-btn-green" href="https://www.bitrix24.ru/create.php?p=6860675&p1=sales">Получить бесплатно</a>
+  <div class="op-hero__img">
+    <img loading="eager" fetchpriority="high" src="https://www.bitrix24.ru/upload/optimizer/converted/images/content_ru/features/crm/contact-center/1.1900w.png" alt="Контакт-центр Битрикс24">
+  </div>
+</div>
+</section>
+
+<!-- Помогает любить клиентов — 4 иконки -->
+<section class="op-sec op-rv">
+<div class="op-w op-feat4">
+  <div class="op-feat4-head">
+    <div class="op-feat4-head__icon">🧡</div>
+    <h2>Контакт-центр помогает любить клиентов</h2>
+  </div>
+  <div class="op-feat4-grid">
+    <div class="op-feat4-item">
+      <div class="op-feat4-ico">
+        <!-- broadcast / antenna -->
+        <svg viewBox="0 0 36 36" xmlns="http://www.w3.org/2000/svg"><path d="M18 22a4 4 0 1 0 0-8 4 4 0 0 0 0 8z"/><path d="M11.5 24.5a10 10 0 0 1 0-13M24.5 11.5a10 10 0 0 1 0 13"/><path d="M8 27a15 15 0 0 1 0-18M28 9a15 15 0 0 1 0 18"/></svg>
+      </div>
+      <p>Почта, мессенджеры, телефон и соцсети подключены к Битрикс24</p>
+    </div>
+    <div class="op-feat4-item">
+      <div class="op-feat4-ico">
+        <!-- chat bubble with lines -->
+        <svg viewBox="0 0 36 36" xmlns="http://www.w3.org/2000/svg"><path d="M30 6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4v4l6-4h14a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2z"/><path d="M11 15h14M11 20h8" stroke-width="2.5" stroke="#fff" fill="none" stroke-linecap="round"/></svg>
+      </div>
+      <p>Контакты, переписка и записи разговоров сохраняются в CRM</p>
+    </div>
+    <div class="op-feat4-item">
+      <div class="op-feat4-ico">
+        <!-- shield check -->
+        <svg viewBox="0 0 36 36" xmlns="http://www.w3.org/2000/svg"><path d="M18 3l13 5v9c0 7.18-5.5 13.9-13 16C11.5 30.9 6 24.18 6 17V8l12-5z"/><path d="M13 18l3 3 7-7" stroke-width="2.5" stroke="#fff" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <p>Ни один потенциальный клиент не будет потерян</p>
+    </div>
+    <div class="op-feat4-item">
+      <div class="op-feat4-ico">
+        <!-- star / lightning -->
+        <svg viewBox="0 0 36 36" xmlns="http://www.w3.org/2000/svg"><path d="M18 3l3.9 8.3L31 12.7l-6.5 6.3 1.5 9L18 23.5 10 28l1.5-9L5 12.7l9.1-1.4L18 3z"/></svg>
+      </div>
+      <p>Вы отвечаете клиентам быстро и там, где им удобно</p>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- Телефония — текст СЛЕВА, фото СПРАВА -->
+<section class="op-sec op-rv">
+<div class="op-w">
+  <div class="op-hm">
+    <div class="op-hm__text">
+      <h2>Отвечайте на звонки прямо в Битрикс24</h2>
+      <div class="op-dd-list" data-accordion>
+        <div class="op-dd-item" data-dropdown>
+          <div class="op-dd-head" data-dropdown-header>Телефония<span class="op-dd-arrow"><svg viewBox="0 0 14 14"><path d="M2 5l5 4 5-4"/></svg></span></div>
+          <div class="op-dd-body"><div class="op-dd-body__inner">Арендуйте телефонный номер или подключите собственную АТС. Настройте свой сценарий развития событий при обращении клиента.
+            <a href="https://b24.pro/instrumenty/telephoniya/" class="op-btn-link">Аренда номера →</a>
+            <a class="op-btn op-btn-green" href="https://www.bitrix24.ru/create.php?p=6860675&p1=sales">Создать бесплатно</a>
+          </div></div>
+        </div>
+        <div class="op-dd-item" data-dropdown>
+          <div class="op-dd-head" data-dropdown-header>Распределение звонков и сообщений<span class="op-dd-arrow"><svg viewBox="0 0 14 14"><path d="M2 5l5 4 5-4"/></svg></span></div>
+          <div class="op-dd-body"><div class="op-dd-body__inner">Звонки и сообщения из подключённых каналов попадают в ваш Контакт-центр и распределяются между сотрудниками по правилам очереди. Вся история общения с клиентом сохранится в Битрикс24.
+            <a class="op-btn op-btn-green" href="https://www.bitrix24.ru/create.php?p=6860675&p1=sales">Создать бесплатно</a>
+          </div></div>
+        </div>
+        <div class="op-dd-item" data-dropdown>
+          <div class="op-dd-head" data-dropdown-header>Автоответчик<span class="op-dd-arrow"><svg viewBox="0 0 14 14"><path d="M2 5l5 4 5-4"/></svg></span></div>
+          <div class="op-dd-body"><div class="op-dd-body__inner">Клиент, который обратился в нерабочее время или во время большой загруженности, получит информацию об этом от автоответчика.
+            <a class="op-btn op-btn-green" href="https://www.bitrix24.ru/create.php?p=6860675&p1=sales">Создать бесплатно</a>
+          </div></div>
+        </div>
+      </div>
+    </div>
+    <div class="op-hm__media">
+      <img loading="lazy" src="https://www.bitrix24.ru/upload/optimizer/converted/images/content_ru/features/crm/contact-center/3.1440w.png" alt="Телефония Битрикс24">
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- Открытые линии — фото СЛЕВА, текст СПРАВА -->
+<section class="op-sec op-rv">
+<div class="op-w">
+  <div class="op-hm op-hm_right">
+    <div class="op-hm__text">
+      <h2>Открытые линии</h2>
+      <p class="op-lead">Подключите ВКонтакте, Авито, Telegram и другие цифровые каналы за несколько минут. Все сообщения из чата будут приходить в Битрикс24. Из диалога автоматически создастся сделка, а вся история общения сохранится в CRM.</p>
+      <div class="op-dd-list" data-accordion>
+        <div class="op-dd-item" data-dropdown>
+          <div class="op-dd-head" data-dropdown-header>Бесплатный чат на сайте<span class="op-dd-arrow"><svg viewBox="0 0 14 14"><path d="M2 5l5 4 5-4"/></svg></span></div>
+          <div class="op-dd-body"><div class="op-dd-body__inner">Установите чат на свой сайт и отвечайте клиентам в режиме реального времени. Их контакты станут вашим трофеем в борьбе за конверсию в продажах.
+            <a class="op-btn op-btn-green" href="https://www.bitrix24.ru/create.php?p=6860675&p1=sales">Создать бесплатно</a>
+          </div></div>
+        </div>
+        <div class="op-dd-item" data-dropdown>
+          <div class="op-dd-head" data-dropdown-header>Интеграция с WhatsApp<span class="op-dd-arrow"><svg viewBox="0 0 14 14"><path d="M2 5l5 4 5-4"/></svg></span></div>
+          <div class="op-dd-body"><div class="op-dd-body__inner">Пишите клиентам первыми в WhatsApp без риска бана. Возьмите готовые шаблоны сообщений из CRM или создавайте свои. Вся история переписки сохранится в карточке CRM.
+            <a class="op-btn op-btn-green" href="https://www.bitrix24.ru/create.php?p=6860675&p1=sales">Создать бесплатно</a>
+          </div></div>
+        </div>
+        <div class="op-dd-item" data-dropdown>
+          <div class="op-dd-head" data-dropdown-header>Интернет-магазин внутри Telegram<span class="op-dd-arrow"><svg viewBox="0 0 14 14"><path d="M2 5l5 4 5-4"/></svg></span></div>
+          <div class="op-dd-body"><div class="op-dd-body__inner">Показывайте товары в удобном каталоге, быстро оформляйте заказы и принимайте оплату прямо в чате. Покупатель проходит весь путь покупки, не выходя из мессенджера.
+            <a class="op-btn op-btn-green" href="https://www.bitrix24.ru/create.php?p=6860675&p1=sales">Создать бесплатно</a>
+          </div></div>
+        </div>
+      </div>
+    </div>
+    <div class="op-hm__media">
+      <img loading="lazy" src="https://www.bitrix24.ru/upload/optimizer/converted/images/content_ru/features/crm/contact-center/4.1440w.png" alt="Открытые линии">
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- Почта — текст СЛЕВА, фото СПРАВА -->
+<section class="op-sec op-rv">
+<div class="op-w">
+  <div class="op-hm">
+    <div class="op-hm__text">
+      <h2>Почта</h2>
+      <ul class="op-checklist">
+        <li>В Битрикс24 можно добавить до десяти почтовых ящиков на одного сотрудника. Обмен письмами между почтовыми агентами происходит автоматически.</li>
+        <li>Права доступа к почтовым ящикам можно выдать только нужным сотрудникам.</li>
+        <li>Письма можно сохранять в CRM, добавлять в задачи, встречи, обсуждать в чате или ленте новостей.</li>
+      </ul>
+      <div class="op-hm__btns">
+        <a class="op-btn op-btn-green" href="https://www.bitrix24.ru/create.php?p=6860675&p1=sales">Создать бесплатно</a>
+      </div>
+    </div>
+    <div class="op-hm__media">
+      <img loading="lazy" src="https://www.bitrix24.ru/upload/optimizer/converted/images/content_ru/features/crm/contact-center/5.1440w.png" alt="Почта в Битрикс24">
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- CRM-формы — фото СЛЕВА, текст СПРАВА -->
+<section class="op-sec op-rv">
+<div class="op-w">
+  <div class="op-hm op-hm_right">
+    <div class="op-hm__text">
+      <h2>CRM-формы</h2>
+      <p class="op-lead">Собирайте контакты, продвигайтесь в соцсетях, увеличивайте продажи с помощью CRM-форм.</p>
+      <div class="op-dd-list" data-accordion>
+        <div class="op-dd-item" data-dropdown>
+          <div class="op-dd-head" data-dropdown-header>Возможности CRM-форм в Битрикс24<span class="op-dd-arrow"><svg viewBox="0 0 14 14"><path d="M2 5l5 4 5-4"/></svg></span></div>
+          <div class="op-dd-body"><div class="op-dd-body__inner">
+            <ul class="op-checklist" style="margin-top:0">
+              <li>Формы можно установить на любые сайты</li>
+              <li>Все контакты клиентов из форм сохраняются в CRM</li>
+              <li>Поддерживают автозаполнение полей и персональные формы</li>
+              <li>Интегрируются со Сквозной аналитикой и Яндекс.Метрикой</li>
+              <li>Формы в Битрикс24 соответствуют ФЗ-152</li>
+            </ul>
+            <a class="op-btn op-btn-green" href="https://www.bitrix24.ru/create.php?p=6860675&p1=sales" style="margin-top:8px">Создать бесплатно</a>
+          </div></div>
+        </div>
+        <div class="op-dd-item" data-dropdown>
+          <div class="op-dd-head" data-dropdown-header>CRM-формы в соцсетях<span class="op-dd-arrow"><svg viewBox="0 0 14 14"><path d="M2 5l5 4 5-4"/></svg></span></div>
+          <div class="op-dd-body"><div class="op-dd-body__inner">Ваш клиент без труда заполнит заявку или обращение, не покидая новостную ленту своей соцсети. При нажатии на кнопку рекламного объявления во ВКонтакте ему откроется форма с уже заполненными полями. Все данные автоматически попадут в CRM.
+            <a class="op-btn op-btn-green" href="https://www.bitrix24.ru/create.php?p=6860675&p1=sales">Создать бесплатно</a>
+          </div></div>
+        </div>
+        <div class="op-dd-item" data-dropdown>
+          <div class="op-dd-head" data-dropdown-header>CRM-формы на сайте<span class="op-dd-arrow"><svg viewBox="0 0 14 14"><path d="M2 5l5 4 5-4"/></svg></span></div>
+          <div class="op-dd-body"><div class="op-dd-body__inner">Размещайте на своём сайте анкеты, приглашения, формы регистрации. Вся информация из форм сразу же попадает в CRM-систему. Создать красивую форму легко, даже без знания кода и дизайна.
+            <a class="op-btn op-btn-green" href="https://www.bitrix24.ru/create.php?p=6860675&p1=sales">Создать бесплатно</a>
+          </div></div>
+        </div>
+      </div>
+    </div>
+    <div class="op-hm__media">
+      <img loading="lazy" src="https://www.bitrix24.ru/upload/optimizer/converted/images/content_ru/features/crm/contact-center/2.1476w.png" alt="CRM-формы в Битрикс24">
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- Все коммуникации — бегущая строка-прогресс -->
+<section class="op-sec op-rv">
+<div class="op-w">
+  <h2 style="text-align:center;margin-bottom:12px">Все коммуникации в одном месте</h2>
+  <p class="op-lead" style="text-align:center;margin:0 auto 28px;max-width:660px">В контакт-центре доступны все необходимые инструменты для взаимодействия с клиентами: телефон, email, чат на сайте, ВКонтакте, WhatsApp и другие.</p>
+
+  <!-- Буллиты с бегущей строкой — ВЫШЕ картинки -->
+  <div class="op-auto-bullets">
+
+    <button class="op-auto-bullet is-active" data-idx="0">
+      <span class="op-auto-bullet__label">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 7 10-7"/></svg>
+        Телефония и почта
+      </span>
+      <span class="op-auto-bullet__bar"><span class="op-auto-bullet__fill"></span></span>
+    </button>
+
+    <button class="op-auto-bullet" data-idx="1">
+      <span class="op-auto-bullet__label">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        Мессенджеры и соц.сети
+      </span>
+      <span class="op-auto-bullet__bar"><span class="op-auto-bullet__fill"></span></span>
+    </button>
+
+    <button class="op-auto-bullet" data-idx="2">
+      <span class="op-auto-bullet__label">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+        Коллтрекинг и отчёты
+      </span>
+      <span class="op-auto-bullet__bar"><span class="op-auto-bullet__fill"></span></span>
+    </button>
+
+  </div>
+
+  <!-- Стопка изображений — все в одной ячейке грида, НИЖЕ буллитов -->
+  <div class="op-auto-img-grid">
+    <div class="op-auto-pane is-active" data-pane="0">
+      <img loading="lazy" src="https://www.bitrix24.ru/upload/optimizer/converted/images/content_ru/features/crm/contact-center/6.1898w.png" alt="Телефония и почта">
+    </div>
+    <div class="op-auto-pane" data-pane="1">
+      <img loading="lazy" src="https://www.bitrix24.ru/upload/optimizer/converted/images/content_ru/features/crm/contact-center/7.1900w.png" alt="Мессенджеры и соцсети">
+    </div>
+    <div class="op-auto-pane" data-pane="2">
+      <img loading="lazy" src="https://www.bitrix24.ru/upload/optimizer/converted/images/content_ru/features/crm/contact-center/8.1900w.png" alt="Коллтрекинг и отчёты">
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- Аналитика — 3 текстовые карточки без фото -->
+<section class="op-sec op-rv">
+<div class="op-w">
+  <div class="op-slider">
+    <div class="op-slide">
+      <div class="op-feat-glow"></div>
+      <div class="op-slide__body">
+        <h3>Бесплатный коллтрекинг</h3>
+        <p>Инструмент внутри Битрикс24 CRM, который умеет отслеживать звонки с рекламы и оценивать её эффективность. Распределите номера телефонов по разным рекламным каналам и узнайте, откуда клиентов придёт больше, какая реклама приносит деньги.</p>
+      </div>
+    </div>
+    <div class="op-slide">
+      <div class="op-feat-glow"></div>
+      <div class="op-slide__body">
+        <h3>Аналитические отчёты по звонкам</h3>
+        <p>В статистике звонков в телефонии Битрикс24 вы можете получить информацию о количестве звонков и нагрузке сотрудников. Формируйте отчёты, чтобы оценивать распределение звонков между сотрудниками и сравнивать показатели call-центра за разные периоды.</p>
+      </div>
+    </div>
+    <div class="op-slide">
+      <div class="op-feat-glow"></div>
+      <div class="op-slide__body">
+        <h3>Статистика диалогов</h3>
+        <p>В одном месте наглядно представлены все основные показатели коммуникаций в Открытых линиях: какой канал популярный у клиентов, довольны ли клиенты вашей работой, как быстро отвечают ваши операторы, в какое время приходится основная нагрузка на операторов.</p>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- FAQ -->
+<section class="op-sec op-rv">
+<div class="op-w">
+  <div class="op-faq">
+    <h2>Частые вопросы</h2>
+    <div class="op-faq-item" data-faq>
+      <div class="op-faq-q">Что такое Контакт-центр Битрикс24?<span class="op-faq-arrow"><svg viewBox="0 0 14 14"><path d="M2 5l5 4 5-4"/></svg></span></div>
+      <div class="op-faq-a"><div class="op-faq-a__inner">Контакт-центр Битрикс24 — это единое окно для общения с клиентами во всех популярных каналах: телефонии, онлайн-чате, мессенджерах, почте и соцсетях. Все обращения автоматически сохраняются в CRM.</div></div>
+    </div>
+    <div class="op-faq-item" data-faq>
+      <div class="op-faq-q">Какие каналы связи поддерживает Контакт-центр?<span class="op-faq-arrow"><svg viewBox="0 0 14 14"><path d="M2 5l5 4 5-4"/></svg></span></div>
+      <div class="op-faq-a"><div class="op-faq-a__inner">Вы можете подключить телефонию, email, онлайн-чат на сайте, ВКонтакте, WhatsApp, Telegram, а также чат-боты и виджеты. Все обращения фиксируются в CRM-системе.</div></div>
+    </div>
+    <div class="op-faq-item" data-faq>
+      <div class="op-faq-q">Нужно ли платить за использование Контакт-центра?<span class="op-faq-arrow"><svg viewBox="0 0 14 14"><path d="M2 5l5 4 5-4"/></svg></span></div>
+      <div class="op-faq-a"><div class="op-faq-a__inner">Контакт-центр доступен бесплатно в облачной версии Битрикс24. Для некоторых расширенных функций может требоваться платный тариф.</div></div>
+    </div>
+    <div class="op-faq-item" data-faq>
+      <div class="op-faq-q">Как подключить WhatsApp или Telegram к Битрикс24?<span class="op-faq-arrow"><svg viewBox="0 0 14 14"><path d="M2 5l5 4 5-4"/></svg></span></div>
+      <div class="op-faq-a"><div class="op-faq-a__inner">Интеграция осуществляется через готовые коннекторы в маркетплейсе Битрикс24 или с помощью партнёрских решений. Подключение занимает всего несколько минут.</div></div>
+    </div>
+    <div class="op-faq-item" data-faq>
+      <div class="op-faq-q">Можно ли использовать Контакт-центр без CRM?<span class="op-faq-arrow"><svg viewBox="0 0 14 14"><path d="M2 5l5 4 5-4"/></svg></span></div>
+      <div class="op-faq-a"><div class="op-faq-a__inner">Контакт-центр тесно интегрирован с CRM Битрикс24 — вы можете обрабатывать обращения, автоматически создавать лиды, сделки и сохранять историю коммуникации. Использование без CRM не рекомендуется.</div></div>
+    </div>
+    <div class="op-faq-item" data-faq>
+      <div class="op-faq-q">Поддерживает ли Контакт-центр распределение обращений между сотрудниками?<span class="op-faq-arrow"><svg viewBox="0 0 14 14"><path d="M2 5l5 4 5-4"/></svg></span></div>
+      <div class="op-faq-a"><div class="op-faq-a__inner">Да, вы можете настроить правила распределения, очереди, автоответчики и чат-ботов для автоматизации работы с клиентами.</div></div>
+    </div>
+    <div class="op-faq-item" data-faq>
+      <div class="op-faq-q">Подходит ли Контакт-центр для интернет-магазина?<span class="op-faq-arrow"><svg viewBox="0 0 14 14"><path d="M2 5l5 4 5-4"/></svg></span></div>
+      <div class="op-faq-a"><div class="op-faq-a__inner">Да, особенно если вы хотите быстро отвечать клиентам из разных каналов, подключить виджет на сайт, обрабатывать заказы и сохранять данные в CRM.</div></div>
+    </div>
+    <div class="op-faq-item" data-faq>
+      <div class="op-faq-q">Есть ли мобильное приложение для работы с обращениями?<span class="op-faq-arrow"><svg viewBox="0 0 14 14"><path d="M2 5l5 4 5-4"/></svg></span></div>
+      <div class="op-faq-a"><div class="op-faq-a__inner">Да, в мобильном приложении Битрикс24 вы можете просматривать и обрабатывать обращения, звонить клиентам, отвечать в чатах и работать с CRM.</div></div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- Bottom cards -->
+<section class="op-sec op-rv">
+<div class="op-w">
+  <div class="op-bottom">
+    <div class="op-bottom-card" style="background-image:url('https://www.bitrix24.ru/images/content_common/apps/market-1.png')">
+      <h3>6 260+ интеграций</h3>
+      <p>Телефония, 1С, онлайн-банки, доставка и ещё больше тысячи готовых интеграций уже внутри Битрикс24.</p>
+      <a class="op-btn op-btn-blue" href="https://www.bitrix24.ru/apps/" target="_blank" rel="noopener">Узнать больше</a>
+    </div>
+    <div class="op-bottom-card" style="background-image:url('https://www.bitrix24.ru/images/content_common/apps/market-2.png')">
+      <h3>Коробочная версия</h3>
+      <p>Работает на вашем сервере с дополнительным функционалом и возможностью доработки.</p>
+      <a class="op-btn op-btn-blue" href="https://www.bitrix24.ru/self-hosted/" target="_blank" rel="noopener">Узнать больше</a>
+    </div>
+    <div class="op-bottom-card" style="background-image:url('https://www.bitrix24.ru/images/content_common/apps/market-3.png')">
+      <h3>Для крупных организаций</h3>
+      <p>Битрикс24 Enterprise для крупных территориально-распределённых компаний или холдингов.</p>
+      <a class="op-btn op-btn-blue" href="https://www.bitrix24.ru/enterprise/" target="_blank" rel="noopener">Узнать больше</a>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- CTA -->
+<section class="op-cta op-rv">
+<div class="op-w">
+  <div class="op-cta-inner">
+    <h2>Единая платформа для работы компании</h2>
+    <p>Вместо десятков сервисов и приложений — все каналы коммуникации с клиентами в одном окне.</p>
+    <div class="op-cta-btns">
+      <a class="op-btn op-btn-green" href="https://www.bitrix24.ru/create.php?p=6860675&p1=sales">Получить бесплатно</a>
+      <a class="op-btn op-cta-btn--ghost" href="#cta-form">Получить консультацию</a>
+    </div>
+  </div>
+</div>
+</section>
+<!-- CONSULTATION FORM -->
+<section class="op-cta op-rv" id="cta-form" style="padding-top:0">
+<div class="op-w">
+  <div style="max-width:700px;margin:0 auto;text-align:center;padding:0 0 24px">
+    <div style="display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:#2FC7F7;border:1px solid rgba(47,199,247,.25);border-radius:100px;padding:7px 16px;margin-bottom:20px;background:rgba(47,199,247,.06)"><span style="width:6px;height:6px;border-radius:50%;background:#2FC7F7;box-shadow:0 0 10px #2FC7F7"></span>Бесплатная консультация</div>
+    <h2 style="font-family:'Montserrat',sans-serif;font-size:clamp(22px,3vw,32px);font-weight:800;color:#fff;margin:0 0 12px;line-height:1.2">Нужно под ваши процессы — настроим</h2>
+    <p style="font-size:16px;line-height:1.7;color:#8A95B0;max-width:560px;margin:0 auto 32px">Расскажите задачу — разберём вашу ситуацию и предложим конкретное решение на Битрикс24.</p>
+  </div>
+  <div style="max-width:700px;margin:0 auto">
+    <script data-b24-form="inline/242/eb3sji" data-skip-moving="true">
+(function(w,d,u){
+var s=d.createElement('script');s.async=true;s.src=u+'?'+(Date.now()/180000|0);
+var h=d.getElementsByTagName('script')[0];h.parentNode.insertBefore(s,h);
+})(window,document,'https://cdn-ru.bitrix24.ru/b1445091/crm/form/loader_242.js');
+</script>
+  </div>
+</div>
+</section>
+
+
+<script>
+(function(){
+var root=document.currentScript?document.currentScript.closest('.op-crm'):document.querySelector('.op-crm');
+if(!root)return;
+
+/* Scroll reveal */
+var els=root.querySelectorAll('.op-rv');
+if('IntersectionObserver' in window){
+  var io=new IntersectionObserver(function(ee){
+    ee.forEach(function(e){if(e.isIntersecting){e.target.classList.add('is-v');io.unobserve(e.target)}});
+  },{threshold:.08});
+  els.forEach(function(el){io.observe(el)});
+  setTimeout(function(){els.forEach(function(el){el.classList.add('is-v')})},600);
+}else{els.forEach(function(el){el.classList.add('is-v')})}
+
+/* Canvas particles */
+var pc=document.createElement('canvas');
+pc.className='op-particles-bg';pc.setAttribute('aria-hidden','true');
+document.body.appendChild(pc);
+var ctx=pc.getContext('2d');
+var pts=[],W=0,H=0;
+function resizePc(){
+  W=pc.width=window.innerWidth;
+  H=pc.height=Math.max(document.body.scrollHeight,window.innerHeight);
+  pc.style.width=W+'px';pc.style.height=H+'px';
+}
+function initPts(){
+  pts=[];
+  var n=Math.floor(W*H/18000);
+  for(var i=0;i<n;i++)pts.push({x:Math.random()*W,y:Math.random()*H,vx:(Math.random()-.5)*.35,vy:(Math.random()-.5)*.35,r:Math.random()*1.5+.5,a:Math.random()*.5+.15});
+}
+function drawPts(){
+  ctx.clearRect(0,0,W,H);
+  var col='rgba(47,199,247,';
+  pts.forEach(function(p){
+    p.x+=p.vx;p.y+=p.vy;
+    if(p.x<0)p.x=W;if(p.x>W)p.x=0;
+    if(p.y<0)p.y=H;if(p.y>H)p.y=0;
+    ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
+    ctx.fillStyle=col+p.a+')';ctx.fill();
+  });
+  requestAnimationFrame(drawPts);
+}
+resizePc();initPts();drawPts();
+window.addEventListener('resize',function(){resizePc();initPts()},{passive:true});
+
+/* Global cursor glow */
+var pg=document.createElement('div');
+pg.className='op-page-glow';pg.setAttribute('aria-hidden','true');
+document.body.appendChild(pg);
+var pgX=window.innerWidth/2,pgY=window.innerHeight/2,pgRaf=null;
+function movePg(tx,ty){
+  pgX+=(tx-pgX)*.1;pgY+=(ty-pgY)*.1;
+  pg.style.transform='translate('+pgX+'px,'+pgY+'px) translate(-50%,-50%)';
+  pgRaf=requestAnimationFrame(function(){movePg(tx,ty)});
+}
+document.addEventListener('mousemove',function(e){
+  if(pgRaf)cancelAnimationFrame(pgRaf);
+  movePg(e.clientX,e.clientY);
+},{passive:true});
+
+/* Per-card glow */
+root.querySelectorAll('.op-slide,.op-card').forEach(function(c){
+  var g=c.querySelector('.op-feat-glow');
+  if(!g)return;
+  c.addEventListener('mousemove',function(e){
+    var r=c.getBoundingClientRect();
+    g.style.setProperty('--gx',(e.clientX-r.left)+'px');
+    g.style.setProperty('--gy',(e.clientY-r.top)+'px');
+  },{passive:true});
+});
+
+/* Accordion */
+root.querySelectorAll('[data-accordion]').forEach(function(acc){
+  acc.querySelectorAll('[data-dropdown]').forEach(function(item){
+    var head=item.querySelector('[data-dropdown-header]'),body=item.querySelector('.op-dd-body');
+    if(!head||!body)return;
+    head.addEventListener('click',function(){
+      var w=item.classList.contains('is-open');
+      acc.querySelectorAll('.op-dd-item').forEach(function(it){it.classList.remove('is-open');var b=it.querySelector('.op-dd-body');if(b)b.style.maxHeight='0'});
+      if(!w){item.classList.add('is-open');body.style.maxHeight=body.scrollHeight+'px'}
+    });
+  });
+});
+
+/* FAQ */
+root.querySelectorAll('[data-faq]').forEach(function(item){
+  var q=item.querySelector('.op-faq-q'),a=item.querySelector('.op-faq-a');
+  if(!q||!a)return;
+  q.addEventListener('click',function(){
+    var w=item.classList.contains('is-open');
+    root.querySelectorAll('.op-faq-item').forEach(function(it){it.classList.remove('is-open');var b=it.querySelector('.op-faq-a');if(b)b.style.maxHeight='0'});
+    if(!w){item.classList.add('is-open');a.style.maxHeight=a.scrollHeight+'px'}
+  });
+});
+
+/* Auto-advance showcase */
+(function(){
+  var bullets=root.querySelectorAll('.op-auto-bullet');
+  var panes=root.querySelectorAll('.op-auto-pane');
+  if(!bullets.length)return;
+  var cur=0,timer=null;
+  var DUR=5000; /* должно совпадать с duration в @keyframes op-fill-prog */
+
+  function goTo(idx){
+    clearTimeout(timer);
+    bullets.forEach(function(b){b.classList.remove('is-active')});
+    panes.forEach(function(p){p.classList.remove('is-active')});
+    cur=idx;
+    bullets[cur].classList.add('is-active');
+    panes[cur].classList.add('is-active');
+    /* перезапустить анимацию бегущей строки */
+    var fill=bullets[cur].querySelector('.op-auto-bullet__fill');
+    if(fill){fill.style.animation='none';void fill.offsetWidth;fill.style.animation=''}
+    timer=setTimeout(function(){goTo((cur+1)%bullets.length)},DUR);
+  }
+
+  bullets.forEach(function(btn,i){
+    btn.addEventListener('click',function(){goTo(i)});
+  });
+
+  goTo(0);
+})();
+
+})();
+</script>
+
+</div>

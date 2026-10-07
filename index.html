@@ -1,0 +1,450 @@
+<!-- ОПТИМ ПРО · Блог · для Битрикс24.Сайты -->
+<div class="op-crm">
+<style>
+@font-face{font-family:'Montserrat';font-style:normal;font-weight:700;font-display:swap;src:url(https://fonts.gstatic.com/s/montserrat/v29/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCuM70w-Y3tcoqK5.woff2) format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
+@font-face{font-family:'Montserrat';font-style:normal;font-weight:700;font-display:swap;src:url(https://fonts.gstatic.com/s/montserrat/v29/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCuM73w-Y3tcoqK5.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'Montserrat';font-style:normal;font-weight:800;font-display:swap;src:url(https://fonts.gstatic.com/s/montserrat/v29/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCvr70w-Y3tcoqK5.woff2) format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
+@font-face{font-family:'Montserrat';font-style:normal;font-weight:800;font-display:swap;src:url(https://fonts.gstatic.com/s/montserrat/v29/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCvr73w-Y3tcoqK5.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'Open Sans';font-style:normal;font-weight:400;font-display:swap;src:url(https://fonts.gstatic.com/s/opensans/v40/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsiH0C4nY1M2xLER.woff2) format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
+@font-face{font-family:'Open Sans';font-style:normal;font-weight:400;font-display:swap;src:url(https://fonts.gstatic.com/s/opensans/v40/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsjZ0C4nY1M2xLER.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'Open Sans';font-style:normal;font-weight:700;font-display:swap;src:url(https://fonts.gstatic.com/s/opensans/v40/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsg-1y4nY1M2xLER.woff2) format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
+@font-face{font-family:'Open Sans';font-style:normal;font-weight:700;font-display:swap;src:url(https://fonts.gstatic.com/s/opensans/v40/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsg-1S4nY1M2xLER.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+
+/* === Reset & Base === */
+.op-crm,.op-crm *,.op-crm *::before,.op-crm *::after{box-sizing:border-box;margin:0;padding:0}
+.op-crm{-webkit-tap-highlight-color:transparent;font-family:'Open Sans',Arial,sans-serif;color:#dce6f8;line-height:1.6}
+.op-crm *:focus,.op-crm *:focus-visible,.op-crm *:active{outline:none!important}
+.op-crm{--cyan:#2FC7F7;--blue:#0066CC;--navy:#003199;--soft:#F4F8FF;--line:#E3ECF7;--muted:#8a9bbf;--radius:12px}
+.op-crm a{color:var(--cyan);text-decoration:none}
+
+/* === Dark Theme === */
+body{background:#080c17}
+.op-crm{color:#dce6f8;background:#080c17}
+.op-crm h2{color:#f0f5fc}
+.op-crm h3{color:#f0f5fc}
+.op-crm a{color:var(--cyan)}
+.op-crm .op-lead{color:#a0b4d0}
+
+/* === Layout === */
+.op-w{max-width:1200px;margin:0 auto;padding:0 24px}
+.op-sec{padding:72px 0;position:relative;z-index:2}
+.op-sec+.op-sec{padding-top:0}
+
+/* === Typography === */
+.op-crm h1{font-family:'Montserrat',Arial,sans-serif;font-weight:800;color:#f0f5fc;line-height:1.1;letter-spacing:-1px;font-size:clamp(32px,5vw,60px);margin-bottom:20px}
+.op-crm h1{color:#f0f5fc}
+.op-crm h2{font-family:'Montserrat',Arial,sans-serif;font-weight:800;color:#f0f5fc;line-height:1.14;letter-spacing:-.5px;font-size:clamp(26px,3.6vw,42px)}
+.op-crm h2{color:#f0f5fc}
+.op-lead{font-size:17px;color:var(--muted);line-height:1.65}
+.op-lead{color:#a0b4d0}
+
+/* === Scroll Reveal === */
+.op-rv{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
+.op-rv.is-v{opacity:1;transform:none}
+
+/* === Buttons === */
+.op-btn{display:inline-flex;align-items:center;justify-content:center;padding:14px 32px;border-radius:var(--radius);font-family:'Open Sans',Arial,sans-serif;font-weight:800;font-size:15px;cursor:pointer;border:none;transition:transform .2s,box-shadow .2s;text-decoration:none}
+.op-btn:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(0,102,204,.25)}
+.op-btn-blue{background:#2fc7f7;color:#fff!important}
+.op-btn-green{background:#2fc7f7;color:#fff!important}
+
+/* === CTA === */
+.op-cta{padding:72px 0;position:relative;z-index:2}
+.op-cta-inner{border-radius:32px;padding:56px 48px;text-align:center;background:rgba(13,21,38,.65);border:1px solid rgba(255,255,255,.1);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px)}
+.op-cta-inner h2{color:#f0f5fc;margin-bottom:16px}
+.op-cta-inner p{color:rgba(220,230,248,.75);font-size:17px;max-width:520px;margin:0 auto 32px}
+.op-cta-btns{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+
+/* ═══════════════════════════════
+   BLOG STYLES
+   ═══════════════════════════════ */
+
+/* Hero */
+.blog-hero{padding:200px 0 48px;text-align:center;position:relative;z-index:2}
+
+.blog-hero-label{display:block;font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--cyan);margin-bottom:14px}
+
+.blog-hero h1{margin-bottom:18px}
+
+.blog-hero .op-lead{max-width:620px;margin:0 auto 36px}
+
+/* Category Filters */
+.blog-filters{display:flex;flex-wrap:wrap;gap:8px;justify-content:center}
+.blog-filter{padding:9px 20px;border-radius:100px;border:1.5px solid var(--line);background:none;font-family:'Open Sans',Arial,sans-serif;font-size:13px;font-weight:700;cursor:pointer;color:var(--muted);transition:all .22s;letter-spacing:.1px}
+.blog-filter.is-active,.blog-filter:hover{background:var(--cyan);color:#fff;border-color:var(--cyan)}
+.blog-filter{border-color:rgba(255,255,255,.12);color:#8a9bbf;background:rgba(13,21,38,.4)}
+.blog-filter.is-active,
+.blog-filter:hover{background:var(--cyan);color:#fff;border-color:var(--cyan)}
+
+/* Grid */
+.blog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+
+/* Card */
+.blog-card{background:#fff;border:1px solid var(--line);border-radius:20px;overflow:hidden;display:flex;flex-direction:column;transition:transform .3s,box-shadow .3s;text-decoration:none;color:inherit}
+.blog-card:hover{transform:translateY(-5px);box-shadow:0 20px 48px rgba(0,49,153,.12)}
+.blog-card{background:rgba(13,21,38,.65);border-color:rgba(255,255,255,.08)}
+.blog-card:hover{box-shadow:0 20px 48px rgba(47,199,247,.1);border-color:rgba(47,199,247,.2)}
+
+/* Card Cover */
+.blog-card__cover{aspect-ratio:520/416;position:relative;overflow:hidden;flex-shrink:0}
+.blog-card__cover img{width:100%;height:100%;object-fit:cover;object-position:top left;display:block;transition:transform .4s ease}
+.blog-card:hover .blog-card__cover img{transform:scale(1.04)}
+
+/* Card Body */
+.blog-card__body{padding:24px;display:flex;flex-direction:column;gap:10px;flex:1}
+
+/* Tag */
+.blog-tag{display:inline-flex;align-items:center;font-size:11px;font-weight:700;letter-spacing:.7px;text-transform:uppercase;color:var(--cyan);background:rgba(0,102,204,.08);border-radius:100px;padding:4px 12px;width:fit-content}
+.blog-tag{background:rgba(47,199,247,.12);color:var(--cyan)}
+
+/* Card Title */
+.blog-card__title{font-family:'Montserrat',Arial,sans-serif;font-weight:800;font-size:16px;color:#f0f5fc;line-height:1.35;flex:1;transition:color .2s}
+.blog-card:hover .blog-card__title{color:var(--cyan)}
+.blog-card__title{color:#f0f5fc}
+.blog-card:hover .blog-card__title{color:var(--cyan)}
+
+/* Excerpt */
+.blog-card__excerpt{font-size:13px;color:var(--muted);line-height:1.6;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.blog-card__excerpt{color:#8a9bbf}
+
+/* Card Footer */
+.blog-card__footer{display:flex;align-items:center;justify-content:space-between;padding-top:14px;border-top:1px solid var(--line);font-size:12px;color:var(--muted);margin-top:auto}
+.blog-card__footer{border-top-color:rgba(255,255,255,.07);color:#6a7a9a}
+
+/* Read Arrow */
+.blog-read-more{display:inline-flex;align-items:center;gap:4px;color:var(--cyan);font-weight:700;font-size:13px;transition:gap .2s}
+.blog-card:hover .blog-read-more{gap:8px}
+.blog-read-more{color:var(--cyan)}
+
+/* No results */
+.blog-no-results{grid-column:1/-1;text-align:center;padding:60px 20px;color:var(--muted);font-size:16px}
+.blog-no-results{color:#6a7a9a}
+
+/* Particles & page glow */
+.op-particles-bg{position:fixed;top:0;left:0;pointer-events:none;z-index:0;opacity:.6}
+.op-page-glow{position:fixed;top:0;left:0;width:700px;height:700px;border-radius:50%;pointer-events:none;z-index:1;background:radial-gradient(circle,rgba(47,199,247,.13) 0%,rgba(46,125,246,.07) 40%,transparent 70%);filter:blur(40px);will-change:transform}
+
+/* Responsive */
+@media(max-width:960px){
+  .blog-grid{grid-template-columns:1fr 1fr;gap:20px}
+  .blog-hero{padding:140px 0 36px}
+}
+@media(max-width:640px){
+  .blog-grid{grid-template-columns:1fr}
+  .blog-hero{padding:120px 0 28px}
+  .op-cta-inner{padding:40px 24px;border-radius:20px}
+}
+@media(prefers-reduced-motion:reduce){
+  .op-rv{transition:none;opacity:1;transform:none}
+  .blog-card{transition:none}
+  .blog-card__cover img{transition:none}
+  .op-particles-bg,.op-page-glow{display:none}
+}
+</style>
+
+<!-- HERO -->
+<section class="blog-hero op-rv">
+<div class="op-w">
+  <span class="blog-hero-label">Блог</span>
+  <h1>Статьи и кейсы</h1>
+  <p class="op-lead">Делимся опытом внедрения и автоматизации Битрикс24 — от сертифицированного партнёра.</p>
+  <div class="blog-filters" id="blog-filters">
+    <button class="blog-filter is-active" data-filter="all">Все статьи</button>
+    <button class="blog-filter" data-filter="portal">HR-портал</button>
+    <button class="blog-filter" data-filter="onboarding">Адаптация</button>
+    <button class="blog-filter" data-filter="hiring">Найм</button>
+    <button class="blog-filter" data-filter="webinar">Вебинары</button>
+  </div>
+</div>
+</section>
+
+<!-- POSTS GRID -->
+<section class="op-sec op-rv">
+<div class="op-w">
+
+<!--
+╔══════════════════════════════════════════════════════════════╗
+║  ✦  КАК ДОБАВИТЬ НОВЫЙ ПОСТ                                  ║
+║                                                              ║
+║  1. Скопируй блок карточки ниже (между ▼▼ и ▲▲)             ║
+║  2. Вставь его ПЕРВЫМ в сетку (сразу после <!-- START GRID →)║
+║  3. Заполни: data-cat, цвет обложки, тег, заголовок,         ║
+║     анонс, дату и href на страницу поста                     ║
+║  4. Создай страницу в Битрикс24, используй _шаблон-поста.html║
+║                                                              ║
+║  data-cat: all | portal | onboarding | hiring | webinar      ║
+╚══════════════════════════════════════════════════════════════╝
+
+▼▼ ШАБЛОН КАРТОЧКИ (скопируй и заполни) ▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼
+
+<div class="blog-card" data-cat="КАТЕГОРИЯ">
+  <a href="URL_СТРАНИЦЫ_ПОСТА" style="display:contents;color:inherit;text-decoration:none">
+    <div class="blog-card__cover" style="background:linear-gradient(135deg,#003199 0%,#0055cc 100%)">
+      (если нужна картинка: добавь img src="URL" alt="Описание" loading="lazy")
+    </div>
+    <div class="blog-card__body">
+      <span class="blog-tag">Тема</span>
+      <div class="blog-card__title">Заголовок статьи — чёткий и конкретный</div>
+      <div class="blog-card__excerpt">Краткий анонс — о чём статья, 1–2 предложения.</div>
+      <div class="blog-card__footer">
+        <span>ДД Мес. 202Г</span>
+        <span class="blog-read-more">Читать <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 7h10M7 2l5 5-5 5"/></svg></span>
+      </div>
+    </div>
+  </a>
+</div>
+
+▲▲ КОНЕЦ ШАБЛОНА ▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲
+-->
+
+<!-- START GRID -->
+<div class="blog-grid" id="blog-grid">
+
+  <!-- ПОСТ 1 -->
+  <div class="blog-card" data-cat="portal">
+    <a href="https://b24.pro/blog/post_qsdc_reib/" style="display:contents;color:inherit;text-decoration:none">
+      <div class="blog-card__cover">
+        <img src="https://cdn-ru.bitrix24.ru/b1445091/landing/b58/b58eed1023766385150a725232a19a15/89eh6n5kfuwd_af_bppkaaunodlqhb1liqtlg7bdpru61fkh1b8qk8d2cx2kzlzzmop_kxqznelpalebipqqpz_s_1x.jpg" alt="HR-портал на Битрикс24" loading="eager">
+      </div>
+      <div class="blog-card__body">
+        <span class="blog-tag">HR-портал</span>
+        <div class="blog-card__title">HR-портал — это дорого и долго. Нам пока не нужно</div>
+        <div class="blog-card__excerpt">Слышим это регулярно. Давайте разберём по частям — почему это убеждение стоит компаниям больше, чем они думают.</div>
+        <div class="blog-card__footer">
+          <span>Читать пост</span>
+          <span class="blog-read-more">Читать <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 7h10M7 2l5 5-5 5"/></svg></span>
+        </div>
+      </div>
+    </a>
+  </div>
+
+  <!-- ПОСТ 2 -->
+  <div class="blog-card" data-cat="onboarding">
+    <a href="https://b24.pro/blog/post_qsdc_bgdk_thec_dymn/" style="display:contents;color:inherit;text-decoration:none">
+      <div class="blog-card__cover">
+        <img src="https://cdn-ru.bitrix24.ru/b1445091/landing/e1e/e1e836ae039ace495b23c7339db60e18/idsplzzq06fsv4ppfoyhgeisvfn6rhgfxk8pdn5t7k5hv35tmxyeouhac3xr3nnvf2ju_jwaf9jom_hjcjtsqty9_1x.jpg" alt="Адаптация сотрудников" loading="lazy">
+      </div>
+      <div class="blog-card__body">
+        <span class="blog-tag">Адаптация</span>
+        <div class="blog-card__title">Зарплата идет, работы нет. Почему так происходит?</div>
+        <div class="blog-card__excerpt">Когда новички долго «раскачиваются» — это не лень, а отсутствие системы адаптации. Разбираем, как это исправить.</div>
+        <div class="blog-card__footer">
+          <span>Читать пост</span>
+          <span class="blog-read-more">Читать <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 7h10M7 2l5 5-5 5"/></svg></span>
+        </div>
+      </div>
+    </a>
+  </div>
+
+  <!-- ПОСТ 3 -->
+  <div class="blog-card" data-cat="onboarding">
+    <a href="https://b24.pro/blog/post_qsdc_bgdk_thec_dymn_hvcq/" style="display:contents;color:inherit;text-decoration:none">
+      <div class="blog-card__cover">
+        <img src="https://cdn-ru.bitrix24.ru/b1445091/landing/d75/d758739c9615eb81bbad905a030e8015/kj654irsbjvbisdgovh_meeklwrwbharp_uxeekjv1n4v9ivwoqzfgrpjz0gsfb1lyq3rkpirwdwyukfj5syecjn_1x.jpg" alt="Зумеры и смена работы" loading="lazy">
+      </div>
+      <div class="blog-card__body">
+        <span class="blog-tag">Адаптация</span>
+        <div class="blog-card__title">Каждый второй зумер меняет работу раз в год</div>
+        <div class="blog-card__excerpt">Средний срок на одном месте у поколения Z — меньше года. Почему это происходит и что с этим делать работодателям.</div>
+        <div class="blog-card__footer">
+          <span>Читать пост</span>
+          <span class="blog-read-more">Читать <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 7h10M7 2l5 5-5 5"/></svg></span>
+        </div>
+      </div>
+    </a>
+  </div>
+
+  <!-- ПОСТ 4 -->
+  <div class="blog-card" data-cat="portal">
+    <a href="https://b24.pro/blog/post_qsdc_bgdk/" style="display:contents;color:inherit;text-decoration:none">
+      <div class="blog-card__cover">
+        <img src="https://cdn-ru.bitrix24.ru/b1445091/landing/d2d/d2d1a71b60d5ea011a03f7331a42b19c/94a77c74_e62d_4348_bc9c_c10b72e9133d_1x.png" alt="Сотрудник вышел, доступов нет" loading="lazy">
+      </div>
+      <div class="blog-card__body">
+        <span class="blog-tag">HR-портал</span>
+        <div class="blog-card__title">Сотрудник вышел, а доступов нет</div>
+        <div class="blog-card__excerpt">Это не жалоба — это норма в большинстве компаний. Как выдать доступы в первый день без хаоса и ручных запросов.</div>
+        <div class="blog-card__footer">
+          <span>Читать пост</span>
+          <span class="blog-read-more">Читать <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 7h10M7 2l5 5-5 5"/></svg></span>
+        </div>
+      </div>
+    </a>
+  </div>
+
+  <!-- ПОСТ 5 -->
+  <div class="blog-card" data-cat="portal">
+    <a href="https://b24.pro/blog/post_qsdc/" style="display:contents;color:inherit;text-decoration:none">
+      <div class="blog-card__cover">
+        <img src="https://cdn-ru.bitrix24.ru/b1445091/landing/1d2/1d28baec38975cc4da88dd224e206908/518eeabe_838c_4e80_86aa_3ca8b3d42871_1x.png" alt="5 точек потерь HR-процесса" loading="lazy">
+      </div>
+      <div class="blog-card__body">
+        <span class="blog-tag">HR-портал</span>
+        <div class="blog-card__title">5 точек, где HR-процесс теряет деньги прямо сейчас</div>
+        <div class="blog-card__excerpt">Не «оптимизируйте расходы». Просто почитайте — про новых сотрудников, которые не могут работать в первый день.</div>
+        <div class="blog-card__footer">
+          <span>Читать пост</span>
+          <span class="blog-read-more">Читать <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 7h10M7 2l5 5-5 5"/></svg></span>
+        </div>
+      </div>
+    </a>
+  </div>
+
+  <!-- ПОСТ 6 -->
+  <div class="blog-card" data-cat="onboarding">
+    <a href="https://b24.pro/blog/post_qsdc_bgdk_thec/" style="display:contents;color:inherit;text-decoration:none">
+      <div class="blog-card__cover">
+        <img src="https://cdn-ru.bitrix24.ru/b1445091/landing/962/962c46884a6ef51bbab96c4d55c73594/unymu7we8ptrgrytodqwrcj8w_hyhr3sme52ifiyk7fkollimob7ahkbessz9ss82zfzzzha_mkmelkkvenr4dif_1x.jpg" alt="25% сотрудников увольняются на испытательном" loading="lazy">
+      </div>
+      <div class="blog-card__body">
+        <span class="blog-tag">Адаптация</span>
+        <div class="blog-card__title">25% сотрудников увольняются на испытательном</div>
+        <div class="blog-card__excerpt">Каждый четвёртый новый сотрудник уходит до конца испытательного срока. Почему — и как это остановить.</div>
+        <div class="blog-card__footer">
+          <span>Читать пост</span>
+          <span class="blog-read-more">Читать <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 7h10M7 2l5 5-5 5"/></svg></span>
+        </div>
+      </div>
+    </a>
+  </div>
+
+  <!-- ПОСТ 7 -->
+  <div class="blog-card" data-cat="hiring">
+    <a href="https://b24.pro/blog/post_qsdc_reib_cygu_gfyo_vdca_ifsx/" style="display:contents;color:inherit;text-decoration:none">
+      <div class="blog-card__cover">
+        <img src="https://cdn-ru.bitrix24.ru/b1445091/landing/d50/d50f75dad8a13a6aa4cfdff14c02262b/kalnnqzcfv_dhpbycb69c51hchexrqox3jtpy9siyvnmjhk9r2rajx5sqpwk49mn29ewupuztfiqrowms_e_nn4z_1x.jpg" alt="99% работодателей с накруткой опыта" loading="lazy">
+      </div>
+      <div class="blog-card__body">
+        <span class="blog-tag">Найм</span>
+        <div class="blog-card__title">99% работодателей сталкивались с накруткой опыта в резюме</div>
+        <div class="blog-card__excerpt">Именно такие цифры показало исследование HR-Клуба АПКИТ + Хабр.Карьера. Как защититься и проверить кандидата.</div>
+        <div class="blog-card__footer">
+          <span>Читать пост</span>
+          <span class="blog-read-more">Читать <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 7h10M7 2l5 5-5 5"/></svg></span>
+        </div>
+      </div>
+    </a>
+  </div>
+
+  <!-- ПОСТ 8 -->
+  <div class="blog-card" data-cat="webinar">
+    <a href="https://b24.pro/blog/post_qsdc_reib_cygu_gfyo_vdca_ifsx_nyiv/" style="display:contents;color:inherit;text-decoration:none">
+      <div class="blog-card__cover">
+        <img src="https://cdn-ru.bitrix24.ru/b1445091/landing/ead/eadec004629698a113908ef51253edbc/42y9hltlgo8tsqglwekp6_gozi8ihipfivmx_22rn6cyrw_asdvzxsrnoftq5gz8da3gsrinw8u_3mtgy2oiekzy_1x.jpg" alt="Вебинар Цифровой HR-портал" loading="lazy">
+      </div>
+      <div class="blog-card__body">
+        <span class="blog-tag">Вебинар</span>
+        <div class="blog-card__title">Запись вебинара: Цифровой HR-портал</div>
+        <div class="blog-card__excerpt">Как найм, адаптация и обучение сотрудников решаются в едином HR-портале на Битрикс24 — разбор с демонстрацией.</div>
+        <div class="blog-card__footer">
+          <span>Смотреть запись</span>
+          <span class="blog-read-more">Читать <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 7h10M7 2l5 5-5 5"/></svg></span>
+        </div>
+      </div>
+    </a>
+  </div>
+
+</div><!-- end blog-grid -->
+</div>
+</section>
+
+<!-- CTA -->
+<section class="op-cta op-rv">
+<div class="op-w">
+  <div class="op-cta-inner">
+    <h2>Нужна помощь с Битрикс24?</h2>
+    <p>Оставьте заявку — наш менеджер свяжется с вами и поможет подобрать решение под задачи бизнеса.</p>
+    <div class="op-cta-btns">
+      <a class="op-btn op-btn-blue" href="https://b24.pro/optimpro/#b27814">Оставить заявку</a>
+    </div>
+  </div>
+</div>
+</section>
+
+<script>
+(function(){
+var root=document.currentScript?document.currentScript.closest('.op-crm'):document.querySelector('.op-crm');
+if(!root)return;
+
+/* Scroll reveal */
+var els=root.querySelectorAll('.op-rv');
+if('IntersectionObserver' in window){
+  var io=new IntersectionObserver(function(ee){
+    ee.forEach(function(e){if(e.isIntersecting){e.target.classList.add('is-v');io.unobserve(e.target)}});
+  },{threshold:.08});
+  els.forEach(function(el){io.observe(el)});
+  setTimeout(function(){els.forEach(function(el){el.classList.add('is-v')})},600);
+}else{els.forEach(function(el){el.classList.add('is-v')})}
+
+/* Canvas particles */
+var pc=document.createElement('canvas');
+pc.className='op-particles-bg';pc.setAttribute('aria-hidden','true');
+document.body.appendChild(pc);
+var ctx=pc.getContext('2d');
+var pts=[],W=0,H=0;
+function resizePc(){
+  W=pc.width=window.innerWidth;
+  H=pc.height=Math.max(document.body.scrollHeight,window.innerHeight);
+  pc.style.width=W+'px';pc.style.height=H+'px';
+}
+function initPts(){
+  pts=[];
+  var n=Math.floor(W*H/18000);
+  for(var i=0;i<n;i++)pts.push({x:Math.random()*W,y:Math.random()*H,vx:(Math.random()-.5)*.35,vy:(Math.random()-.5)*.35,r:Math.random()*1.5+.5,a:Math.random()*.5+.15});
+}
+function drawPts(){
+  ctx.clearRect(0,0,W,H);
+  var dark = true;
+  var col=dark?'rgba(47,199,247,':'rgba(0,102,204,';
+  pts.forEach(function(p){
+    p.x+=p.vx;p.y+=p.vy;
+    if(p.x<0)p.x=W;if(p.x>W)p.x=0;
+    if(p.y<0)p.y=H;if(p.y>H)p.y=0;
+    ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
+    ctx.fillStyle=col+p.a+')';ctx.fill();
+  });
+  requestAnimationFrame(drawPts);
+}
+resizePc();initPts();drawPts();
+window.addEventListener('resize',function(){resizePc();initPts()},{passive:true});
+
+/* Global cursor glow */
+var pg=document.createElement('div');
+pg.className='op-page-glow';pg.setAttribute('aria-hidden','true');
+document.body.appendChild(pg);
+var pgX=window.innerWidth/2,pgY=window.innerHeight/2,pgRaf=null;
+function movePg(tx,ty){
+  pgX+=(tx-pgX)*.1;pgY+=(ty-pgY)*.1;
+  pg.style.transform='translate('+pgX+'px,'+pgY+'px) translate(-50%,-50%)';
+  pgRaf=requestAnimationFrame(function(){movePg(tx,ty)});
+}
+document.addEventListener('mousemove',function(e){
+  if(pgRaf)cancelAnimationFrame(pgRaf);
+  movePg(e.clientX,e.clientY);
+},{passive:true});
+
+/* Category filter */
+var filters=root.querySelectorAll('.blog-filter');
+var cards=root.querySelectorAll('.blog-card');
+var grid=root.querySelector('#blog-grid');
+filters.forEach(function(btn){
+  btn.addEventListener('click',function(){
+    var cat=btn.getAttribute('data-filter');
+    filters.forEach(function(b){b.classList.remove('is-active')});
+    btn.classList.add('is-active');
+    var visible=0;
+    cards.forEach(function(card){
+      var show=cat==='all'||card.getAttribute('data-cat')===cat;
+      card.style.display=show?'':'none';
+      if(show)visible++;
+    });
+    var noRes=root.querySelector('.blog-no-results');
+    if(visible===0){
+      if(!noRes){noRes=document.createElement('div');noRes.className='blog-no-results';noRes.textContent='Статей в этой категории пока нет.';grid.appendChild(noRes);}
+    }else{if(noRes)noRes.remove();}
+  });
+});
+
+})();
+</script>
+</div>

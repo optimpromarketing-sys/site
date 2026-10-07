@@ -1,0 +1,710 @@
+<div class="op-crm">
+<style>
+@font-face{font-family:'Montserrat';font-style:normal;font-weight:700;font-display:swap;src:url(https://fonts.gstatic.com/s/montserrat/v29/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCuM70w-Y3tcoqK5.woff2) format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
+@font-face{font-family:'Montserrat';font-style:normal;font-weight:700;font-display:swap;src:url(https://fonts.gstatic.com/s/montserrat/v29/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCuM73w-Y3tcoqK5.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'Montserrat';font-style:normal;font-weight:800;font-display:swap;src:url(https://fonts.gstatic.com/s/montserrat/v29/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCvr70w-Y3tcoqK5.woff2) format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
+@font-face{font-family:'Montserrat';font-style:normal;font-weight:800;font-display:swap;src:url(https://fonts.gstatic.com/s/montserrat/v29/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCvr73w-Y3tcoqK5.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'Open Sans';font-style:normal;font-weight:400;font-display:swap;src:url(https://fonts.gstatic.com/s/opensans/v40/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsiH0C4nY1M2xLER.woff2) format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
+@font-face{font-family:'Open Sans';font-style:normal;font-weight:400;font-display:swap;src:url(https://fonts.gstatic.com/s/opensans/v40/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsjZ0C4nY1M2xLER.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'Open Sans';font-style:normal;font-weight:700;font-display:swap;src:url(https://fonts.gstatic.com/s/opensans/v40/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsg-1y4nY1M2xLER.woff2) format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
+@font-face{font-family:'Open Sans';font-style:normal;font-weight:700;font-display:swap;src:url(https://fonts.gstatic.com/s/opensans/v40/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsg-1S4nY1M2xLER.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+.op-crm,.op-crm *,.op-crm *::before,.op-crm *::after{box-sizing:border-box;margin:0;padding:0}
+.op-crm{-webkit-tap-highlight-color:transparent;font-family:'Open Sans',Arial,sans-serif;color:#dce6f8;line-height:1.6}
+.op-crm *:focus,.op-crm *:focus-visible,.op-crm *:active{outline:none!important}
+.op-crm{--cyan:#2FC7F7;--blue:#0066CC;--navy:#003199;--yellow:#FAB400;--soft:#F4F8FF;--line:#E3ECF7;--muted:#8a9bbf;--radius:12px}
+.op-crm a{color:var(--cyan);text-decoration:none}
+.op-crm a.op-btn-blue,.op-crm a.op-btn-green,.op-crm a.op-btn-white{color:#fff}
+.op-crm a.op-btn-blue-outline{color:#2fc7f7}
+.op-crm img{max-width:100%;display:block}
+.op-w{max-width:1200px;margin:0 auto;padding:0 24px}
+.op-sec{padding:72px 0}.op-sec+.op-sec{padding-top:36px}
+.op-crm h2{font-family:'Montserrat',Arial,sans-serif;font-weight:800;color:#f0f5fc;line-height:1.14;letter-spacing:-.5px;font-size:clamp(26px,3.6vw,42px)}
+.op-crm h3{font-family:'Montserrat',Arial,sans-serif;font-weight:800;color:#f0f5fc;line-height:1.2;font-size:clamp(20px,2.8vw,30px)}
+.op-lead{max-width:720px;font-size:17px;color:var(--muted);line-height:1.65}
+.op-rv{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease}
+.op-rv.is-v{opacity:1;transform:none}
+.op-btn{display:inline-flex;align-items:center;justify-content:center;padding:14px 32px;border-radius:var(--radius);font-family:'Open Sans',Arial,sans-serif;font-weight:800;font-size:15px;cursor:pointer;border:none;transition:transform .2s,box-shadow .2s;text-decoration:none}
+.op-btn:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(0,102,204,.25)}
+.op-btn-blue{background:#2fc7f7;color:#fff!important}
+.op-btn-grey{background:#E8EDF5;color:#f0f5fc}
+.op-btn-link{background:transparent;border:1.5px solid #2fc7f7;color:#2fc7f7!important;padding:14px 26px}
+.op-btn-link:hover{background:rgba(47,199,247,.08);transform:translateY(-2px);box-shadow:none!important}
+.op-btn-white{background:#fff;color:#f0f5fc;font-weight:800}
+.op-btn-white:hover{background:#e8eeff}
+.op-btn-ghost{background:transparent;border:1.5px solid #2fc7f7;color:#2fc7f7!important}
+.op-btn-ghost:hover{background:rgba(47,199,247,.08);transform:translateY(-2px)}
+.op-btn-blue-outline{background:transparent;color:#2fc7f7;font-weight:800;border:2px solid #2fc7f7}
+.op-btn-blue-outline:hover{background:rgba(47,199,247,.1);box-shadow:none}
+.op-crm p+.op-btn,.op-crm p+a.op-btn{margin-top:16px}
+.op-crm ul+.op-btn,.op-crm ul+a.op-btn{margin-top:20px}
+/* HERO */
+.op-hero{padding:200px 0 48px;text-align:center;position:relative;z-index:2}
+.op-hero h1{font-family:'Montserrat',Arial,sans-serif;font-weight:800;font-size:clamp(40px,5.5vw,72px);color:#f0f5fc;line-height:1.08;letter-spacing:-1.2px;margin-bottom:28px}
+.op-hero .op-lead{margin:0 auto 36px;max-width:none;font-family:'Montserrat',Arial,sans-serif;font-size:19px;font-weight:500}
+.op-hero__img{margin-top:44px;border-radius:20px;overflow:hidden;box-shadow:0 24px 60px rgba(0,49,153,.14)}
+.op-hero__img img{display:block;width:100%;height:auto}
+/* SPLIT */
+.op-hm{display:grid;grid-template-columns:1fr 1.15fr;gap:48px;align-items:center}
+.op-hm_right .op-hm__media{order:-1}
+.op-hm__text h2{margin-bottom:16px}
+.op-hm__text .op-lead{margin-bottom:24px}
+.op-hm__media{border-radius:20px;overflow:hidden}
+.op-hm__media img{display:block;width:100%;height:auto;border-radius:20px;transform:scale(1.04)}
+.op-hm__btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px}
+.op-hm__list{list-style:none;margin:20px 0 0;display:flex;flex-direction:column;gap:10px}
+.op-hm__list li{display:flex;align-items:flex-start;gap:10px;font-size:15px;color:var(--muted);line-height:1.5}
+.op-hm__list li::before{content:'';flex:none;width:20px;height:20px;margin-top:2px;border-radius:5px;background:var(--cyan);background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 14 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M3 7l3 3 5-5' stroke='%23fff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");background-size:14px;background-position:center;background-repeat:no-repeat}
+/* FULLWIDTH */
+.op-fw{text-align:center}
+.op-fw h2{margin-bottom:16px}
+.op-fw .op-lead{margin:0 auto 24px}
+.op-fw__media{border-radius:20px;overflow:hidden;box-shadow:0 20px 50px rgba(0,49,153,.12);margin-top:32px}
+.op-fw__media img{display:block;width:100%;height:auto}
+/* PLATFORM ACCORDION */
+.op-plat{display:grid;grid-template-columns:1.1fr 1fr;gap:72px;align-items:start}
+.op-plat__img{position:relative;min-height:480px}
+.op-plat__img img{position:absolute;top:0;left:0;width:100%;border-radius:16px;opacity:0;transition:opacity .45s ease;pointer-events:none}
+.op-plat__img img.is-active{opacity:1;pointer-events:auto}
+/* DROPDOWN */
+.op-dd-list{margin-top:20px;display:flex;flex-direction:column;gap:4px}
+.op-dd-item{border:1px solid var(--line);border-radius:14px;overflow:hidden;transition:border-color .3s}
+.op-dd-item.is-open{border-color:var(--cyan)}
+button.op-dd-head{background:none;border:none;width:100%;text-align:left}
+.op-dd-head{display:flex;align-items:center;justify-content:space-between;padding:16px 20px;cursor:pointer;font-family:'Open Sans',Arial,sans-serif;font-weight:800;font-size:16px;color:#f0f5fc;gap:12px;user-select:none}
+.op-dd-arrow{width:24px;height:24px;flex:none;transition:transform .35s;display:flex;align-items:center;justify-content:center}
+.op-dd-arrow svg{width:14px;height:14px;stroke:#dce6f8;fill:none;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
+.op-dd-item.is-open .op-dd-arrow{transform:rotate(180deg)}
+.op-dd-body{max-height:0;overflow:hidden;transition:max-height .4s ease}
+.op-dd-body__inner{padding:0 20px 20px;color:var(--muted);font-size:15px;line-height:1.6;display:flex;flex-direction:column;align-items:flex-start}
+.op-dd-body__inner .op-btn{margin-top:12px;display:inline-flex;width:fit-content}
+/* FEAT3 */
+.op-feat3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.op-feat3-card{background:#fff;border:1px solid var(--line);border-radius:20px;padding:36px 28px}
+.op-feat3-card h3{font-size:clamp(18px,2vw,22px);font-weight:800;color:#f0f5fc;line-height:1.2;margin-bottom:12px}
+.op-feat3-card p{font-size:16px;color:var(--muted);line-height:1.7}
+/* SOFT CARD */
+.op-cards{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+.op-soft-card{background:var(--soft);border-radius:20px;padding:40px 36px}
+.op-soft-card h3{margin-bottom:12px}
+.op-soft-card p{color:var(--muted);font-size:15px;line-height:1.6;margin-bottom:20px}
+.op-soft-card img{width:100%;border-radius:14px;margin-top:24px}
+/* SEC2 CARDS (security tall) */
+.op-sec2-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.op-sec2-card{background:var(--soft);border:1px solid var(--line);border-radius:20px;padding:40px 36px;display:flex;flex-direction:column}
+.op-sec2-card h3{margin-bottom:12px}
+.op-sec2-card p{color:var(--muted);font-size:15px;line-height:1.6;margin-bottom:20px}
+.op-sec2-card__img{flex:1;display:flex;align-items:flex-end;justify-content:center;margin-top:auto}
+.op-sec2-card__img img{width:100%;max-width:380px;border-radius:14px}
+.op-sec-full{margin-top:16px;background:var(--soft);border:1px solid var(--line);border-radius:20px;overflow:hidden;display:grid;grid-template-columns:1fr 1fr}
+.op-sec-full__text{padding:44px}
+.op-sec-full__text h3{margin-bottom:14px}
+.op-sec-full__text p{color:var(--muted);font-size:15px;line-height:1.7}
+.op-sec-full img{width:100%;height:100%;object-fit:cover}
+/* DOWNLOAD */
+.op-dl{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center}
+.op-dl img{width:100%;border-radius:16px}
+.op-dl__title{font-family:'Montserrat',Arial,sans-serif;font-weight:800;font-size:clamp(28px,3.5vw,44px);color:#f0f5fc;letter-spacing:-.8px;margin-bottom:36px}
+.op-dl__cols{display:grid;grid-template-columns:1fr 1fr;gap:36px}
+.op-dl__col h4{font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:.8px;color:var(--muted);margin-bottom:18px}
+.op-dl__col ul{list-style:none;padding:0}
+.op-dl__col li{margin-bottom:12px}
+.op-dl__col a{font-size:16px;font-weight:500;color:var(--cyan);display:flex;align-items:center;gap:8px}
+.op-dl__col a:hover{text-decoration:underline}
+.op-dl__col a::before{content:'\2193';font-size:12px;color:var(--muted)}
+/* FAQ */
+.op-faq{max-width:860px;margin:0 auto}
+.op-faq h2{text-align:center;margin-bottom:36px}
+.op-faq-item{border-bottom:1px solid var(--line)}
+button.op-faq-q{background:none;border:none;width:100%;text-align:left}
+.op-faq-q{display:flex;align-items:center;justify-content:space-between;padding:22px 0;cursor:pointer;font-family:'Open Sans',Arial,sans-serif;font-weight:800;font-size:17px;color:#f0f5fc;gap:16px;user-select:none}
+.op-faq-arrow{width:28px;height:28px;flex:none;border-radius:50%;background:var(--soft);display:flex;align-items:center;justify-content:center;transition:transform .35s,background .25s}
+.op-faq-arrow svg{width:14px;height:14px;stroke:#dce6f8;fill:none;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
+.op-faq-item.is-open .op-faq-arrow{transform:rotate(180deg);background:var(--cyan)}
+.op-faq-item.is-open .op-faq-arrow svg{stroke:#fff}
+.op-faq-a{max-height:0;overflow:hidden;transition:max-height .4s ease}
+.op-faq-a__inner{padding:0 0 22px;color:var(--muted);font-size:15px;line-height:1.65}
+.op-faq-a__inner a{color:var(--cyan);text-decoration:underline}
+/* HIGHLIGHT */
+.op-highlight{background:#2fc7f7;border-radius:28px;padding:48px 40px;display:flex;align-items:flex-start;gap:24px}
+.op-highlight__icon{width:56px;height:56px;flex:none;border-radius:16px;background:rgba(255,255,255,.2);display:flex;align-items:center;justify-content:center}
+.op-highlight__icon svg{width:28px;height:28px;fill:#fff}
+.op-highlight__body h3{color:#fff;font-size:clamp(20px,2.8vw,28px);margin-bottom:8px}
+.op-highlight__body p{color:rgba(255,255,255,.85);font-size:15px;line-height:1.65;max-width:800px}
+.op-highlight__body a{color:#fff;text-decoration:underline}
+/* BOTTOM CARDS */
+.op-bottom{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.op-bottom-card{position:relative;border-radius:20px;padding:44px 40px;min-height:440px;display:flex;flex-direction:column;overflow:hidden;background-color:#E8F0FE}
+.op-bottom-card h3{font-size:clamp(26px,3vw,38px);color:#f0f5fc;margin-bottom:14px}
+.op-bottom-card p{color:var(--muted);font-size:17px;line-height:1.65;margin-bottom:28px;max-width:50%}
+.op-bottom-card .op-btn{align-self:flex-start;position:relative;z-index:1}
+.op-bottom-card__img{position:absolute;right:-10px;bottom:-10px;width:60%;pointer-events:none}
+.op-bottom-card__img img{width:100%}
+.op-bottom-wide{background:var(--soft);border-radius:20px;padding:44px 40px;display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;min-height:340px;overflow:hidden;margin-top:16px}
+.op-bottom-wide h3{margin-bottom:14px}
+.op-bottom-wide p{color:var(--muted);font-size:17px;line-height:1.65;margin-bottom:28px}
+/* NAVY */
+.op-navy{background:var(--navy);padding:72px 0}
+.op-navy h2{color:#fff}
+.op-navy p,.op-navy .op-lead{color:rgba(255,255,255,.85)}
+.op-navy .op-btn-link{background:transparent;border:1.5px solid #2fc7f7;color:#2fc7f7!important;padding:14px 26px}
+/* CTA */
+.op-cta{text-align:center;padding:64px 32px;background:url("data:image/jpeg;base64,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") center/cover no-repeat;border-radius:28px;margin:0 24px}
+.op-cta h2{color:#fff;margin-bottom:16px;font-size:clamp(28px,4vw,46px)}
+.op-cta p{color:rgba(255,255,255,.8);font-size:17px;max-width:600px;margin:0 auto 32px;line-height:1.65}
+.op-cta .op-btn-green{background:#2fc7f7;color:#fff!important}
+/* RESPONSIVE */
+@media(max-width:900px){
+.op-hm,.op-dl,.op-sec-full,.op-cards,.op-sec2-grid,.op-bottom,.op-bottom-wide{grid-template-columns:1fr;gap:32px}
+.op-hm_right .op-hm__media{order:0}
+.op-feat3{grid-template-columns:1fr}
+.op-cta{margin:0 12px;padding:48px 20px}
+.op-hero{padding-top:80px}
+.op-plat{grid-template-columns:1fr}
+.op-plat__img{min-height:auto;margin-bottom:24px}
+.op-plat__img img{position:relative;opacity:1!important}
+.op-highlight{flex-direction:column;padding:36px 24px}
+.op-bottom-card{min-height:auto}
+.op-bottom-card p{max-width:100%}
+.op-bottom-card__img{position:relative;right:0;bottom:0;width:100%;margin-top:20px}
+.op-dl__cols{grid-template-columns:1fr}
+}
+@media(prefers-reduced-motion:reduce){.op-rv{transition:none;opacity:1;transform:none}}
+/* === DARK THEME === */
+.op-crm{color:#dce6f8;background:#080c17}
+.op-crm h2{color:#f0f5fc}
+.op-crm h3{color:#dce6f8}
+.op-crm a{color:var(--cyan)}
+.op-crm .op-lead{color:#a0b4d0}
+.op-btn-blue{background:#2fc7f7;color:#fff!important}
+.op-btn-green{background:#2fc7f7;color:#fff!important}
+/* Cards */
+.op-feat3-card{background:rgba(13,21,38,.7);border-color:rgba(255,255,255,.08)}
+.op-feat3-card h3{color:#f0f5fc}
+.op-soft-card{background:rgba(13,21,38,.5)}
+.op-sec2-card{background:rgba(13,21,38,.5);border-color:rgba(255,255,255,.08)}
+.op-sec-full{background:rgba(13,21,38,.5);border-color:rgba(255,255,255,.08)}
+.op-bottom-card{background-color:#0d1931}
+.op-bottom-card h3{color:#f0f5fc}
+.op-bottom-wide{background:rgba(13,21,38,.5)}
+/* Accordion */
+.op-dd-item{border-color:rgba(255,255,255,.1)}
+.op-dd-item.is-open{border-color:var(--cyan)}
+.op-dd-head{color:#f0f5fc}
+.op-dd-arrow svg{stroke:#dce6f8}
+.op-dd-body__inner{color:#a0b4d0}
+/* FAQ */
+.op-faq-item{border-bottom-color:rgba(255,255,255,.1)}
+.op-faq-q{color:#f0f5fc}
+.op-faq-arrow{background:rgba(255,255,255,.08)}
+.op-faq-arrow svg{stroke:#dce6f8}
+.op-faq-a__inner{color:#a0b4d0}
+.op-faq-a__inner a{color:var(--cyan)}
+/* Download */
+.op-dl__title{color:#f0f5fc}
+.op-dl__col h4{color:#8a9aaa}
+.op-dl__col a{color:var(--cyan)}
+/* CTA glass */
+.op-cta-glass{text-align:center;padding:64px 48px;border-radius:28px;margin:0}
+.op-cta-glass{background:rgba(13,21,38,.65);border:1px solid rgba(47,199,247,.15);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px)}
+.op-cta-glass h2{color:#f0f5fc}
+.op-cta-glass p{color:#a0b4d0}
+.op-cta-glass__btns{display:flex;justify-content:center;gap:16px;flex-wrap:wrap;margin-top:32px}
+.op-cta-btn--ghost{background:transparent;border:1.5px solid #2fc7f7;color:#2fc7f7!important;padding:14px 26px}
+.op-cta-btn--ghost{background:transparent;border:1.5px solid #2fc7f7;color:#2fc7f7!important;padding:14px 26px}
+.op-cta-btn--ghost:hover{transform:translateY(-2px)}
+/* All sections above canvas */
+.op-sec,.op-hero{position:relative;z-index:2}
+.op-highlight{background:rgba(47,199,247,.06);border:1px solid rgba(47,199,247,.2)}
+.op-highlight__icon{background:rgba(47,199,247,.12)}
+.op-highlight__body h3{color:#f0f5fc}
+.op-highlight__body p{color:#a0b4d0}
+.op-highlight__body a{color:var(--cyan)}
+
+/* === DARK THEME EXTRA FIXES === */
+.op-faq-arrow{background:rgba(255,255,255,.08)}
+.op-faq-arrow svg{stroke:#dce6f8}
+.op-dd-arrow svg{stroke:#dce6f8}
+.op-dd-body__inner{color:#a0b4d0}
+.op-faq-a__inner{color:#a0b4d0}
+.op-faq-a__inner a{color:var(--cyan)}
+.op-btn-grey{background:rgba(255,255,255,.08);color:#dce6f8}
+.op-bottom-card{background-color:#0d1931}
+.op-feat3-card{background:rgba(13,21,38,.7);border-color:rgba(255,255,255,.08)}
+.op-feat3-card h3{color:#f0f5fc}
+.op-soft-card{background:rgba(13,21,38,.5)}
+.op-feat{background:rgba(13,21,38,.6);border-color:rgba(255,255,255,.08)}
+.op-cards4-item{background:rgba(13,21,38,.6);border-color:rgba(255,255,255,.08)}
+.op-cards4-item h3{color:#f0f5fc}
+.op-sec2-card{background:rgba(13,21,38,.5);border-color:rgba(255,255,255,.08)}
+.op-sec-full{background:rgba(13,21,38,.5);border-color:rgba(255,255,255,.08)}
+.op-crm a{color:var(--cyan)}
+.op-crm a.op-btn-blue, .op-crm a.op-btn-green, .op-crm a.op-cta-buy, .op-crm a.op-btn-grey{color:#fff}
+.op-crm .op-lead{color:#a0b4d0}
+.op-crm h3{color:#f0f5fc}
+.op-slide{background:rgba(13,21,38,.6);border-color:rgba(255,255,255,.08)}
+.op-slide h3{color:#f0f5fc}
+
+/* === DARK THEME COMPREHENSIVE FIX === */
+.op-conf__tab{background:rgba(13,21,38,.7);border-color:rgba(255,255,255,.12);color:#dce6f8}
+.op-conf__tab.is-act{background:var(--cyan);color:#fff}
+.op-conf__list li{background:rgba(13,21,38,.6);border-color:rgba(255,255,255,.1);color:#dce6f8}
+.op-ai-chip{background:rgba(13,21,38,.7);border-color:rgba(255,255,255,.1);color:#dce6f8}
+.op-ai-chip__bar{background:rgba(255,255,255,.08)}
+.op-badge-50{background:rgba(13,21,38,.7);border-color:rgba(255,255,255,.12);color:#f0f5fc}
+.op-toggle-btn{background:rgba(47,199,247,.15);color:var(--cyan)}
+.op-cta .op-btn-blue{background:#2fc7f7;color:#fff!important}
+.op-plat__item{background:rgba(13,21,38,.6);border-color:rgba(255,255,255,.08)}
+.op-plat__item h3{color:#f0f5fc}
+.op-plat__check{background:rgba(13,21,38,.5)}
+
+/* === DARK THEME: CSS VARIABLE OVERRIDES (fixes all inline style="background:var(--soft)") === */
+.op-crm{--soft:rgba(13,21,38,.5);--line:rgba(255,255,255,.08)}
+/* Fix hardcoded white background in rating block */
+.op-hm[style*="background:#fff"]{background:rgba(13,21,38,.65)!important;border:1px solid rgba(255,255,255,.1)}
+/* Fix text colors inside light-bg sections */
+.op-hm__list li{color:#a0b4d0}
+.op-hm__text h2{color:#f0f5fc}
+.op-hm__text h3{color:#f0f5fc}
+/* Fix bottom-wide background (uses var(--soft)) */
+.op-bottom-wide{background:rgba(13,21,38,.5)}
+.op-bottom-wide h3{color:#f0f5fc}
+.op-bottom-wide p{color:#a0b4d0}
+
+  .b24-form-wrapper{background:transparent!important;border:none!important;box-shadow:none!important;padding:0!important}
+  .b24-form{background:#111827!important;border:1px solid rgba(255,255,255,.09)!important;border-radius:16px!important;overflow:hidden!important;box-shadow:0 24px 60px rgba(0,0,0,.4)!important}
+  .b24-form-header{background:#111827!important;border-bottom:1px solid rgba(255,255,255,.08)!important}
+  .b24-form-header-title,.b24-form-header *{color:#fff!important}
+  .b24-form-body{background:#111827!important;padding:24px!important}
+  .b24-form-field{border-bottom:none!important;border-top:none!important;padding:0!important;margin-bottom:8px!important}
+  .b24-form-control-container .b24-form-control,.b24-form-field .b24-form-control,.b24-form input:not([type=checkbox]):not([type=radio]),.b24-form textarea,.b24-form select{background:rgba(255,255,255,.06)!important;border:1px solid rgba(255,255,255,.12)!important;border-radius:10px!important;color:#E8EDF7!important;font-family:'Open Sans',sans-serif!important}
+  .b24-form-control::placeholder,.b24-form input::placeholder,.b24-form textarea::placeholder{color:#8A95B0!important}
+  .b24-form-control:focus,.b24-form input:focus,.b24-form textarea:focus{border-color:rgba(47,199,247,.5)!important;outline:none!important;box-shadow:0 0 0 3px rgba(47,199,247,.12)!important;background:rgba(255,255,255,.09)!important}
+  .b24-form-field-label,.b24-form-field-label *{color:#c8d5f0!important}
+  .b24-form-btn-container .b24-form-btn{background:linear-gradient(135deg,#2E7DF6,#7A5CFF)!important;border:none!important;border-radius:12px!important;color:#fff!important;font-weight:700!important;font-family:'Montserrat',sans-serif!important;box-shadow:0 8px 24px rgba(46,125,246,.4)!important;transition:opacity .2s,transform .2s!important}
+  .b24-form-btn-container .b24-form-btn:hover{opacity:.9!important;transform:translateY(-1px)!important}
+  .b24-form-sign,.b24-form-sign *,.b24-form-field-agree,.b24-form-field-agree *{color:#8A95B0!important}
+  .b24-form-field-agreement a{color:#2FC7F7!important}
+  .b24-form *:not(input):not(textarea):not(select):not(button){color:#E8EDF7!important}
+  .b24-form input,.b24-form textarea,.b24-form select{color:#E8EDF7!important}
+  .b24-form-btn,.b24-form-btn *{color:#fff!important}
+</style>
+
+<!-- ===== HERO ===== -->
+<section class="op-hero">
+  <div class="op-w">
+    <h1 class="op-rv">Бесплатный мессенджер<br>для работы</h1>
+    <p class="op-lead op-rv">Безопасный мессенджер для работы без посторонних и рекламы. Решайте рабочие вопросы в чате и на видеозвонках, ставьте задачи и назначайте встречи прямо из диалога.</p>
+    <a class="op-btn op-btn-green op-rv" href="https://www.bitrix24.ru/create.php?p=6860675&p1=sales">Создать бесплатно</a>
+    <div class="op-hero__img op-rv">
+      <img loading="eager" fetchpriority="high" src="https://www.bitrix24.ru/upload/optimizer/converted/images/content_ru/features/company/chat/1.1900w.png.webp" alt="Битрикс24 Мессенджер">
+    </div>
+  </div>
+</section>
+
+<!-- ===== PLATFORM ACCORDION ===== -->
+<section class="op-sec op-rv">
+  <div class="op-w">
+    <div class="op-plat">
+      <div class="op-plat__img">
+        <img loading="lazy" src="https://www.bitrix24.ru/upload/optimizer/converted/images/content_ru/features/company/chat/2.1442w.png.webp" alt="Чаты" data-plat-img="0" class="is-active">
+        <img loading="lazy" src="https://www.bitrix24.ru/upload/optimizer/converted/images/content_ru/features/company/chat/2.1442w.png.webp" alt="Пространство" data-plat-img="1">
+        <img loading="lazy" src="https://www.bitrix24.ru/upload/optimizer/converted/images/content_ru/features/company/chat/2.1442w.png.webp" alt="Безопасность" data-plat-img="2">
+      </div>
+      <div>
+        <h2>Коммуникационная платформа всей компании</h2>
+        <p class="op-lead" style="margin-top:12px;margin-bottom:36px">Работайте и общайтесь быстро, просто и удобно.</p>
+        <div class="op-dd-list" data-plat-acc>
+          <div class="op-dd-item is-open" data-plat-item><button class="op-dd-head" data-plat-btn>Чаты, каналы, видеозвонки<span class="op-dd-arrow"><svg viewBox="0 0 14 14"><path d="M2 5l5 4 5-4"/></svg></span></button><div class="op-dd-body" style="max-height:500px"><div class="op-dd-body__inner">Обсуждайте рабочие вопросы и обменивайтесь файлами в персональных и групповых чатах. Созванивайтесь по видеосвязи в один клик. Создавайте каналы для отделов и информируйте коллег.<a class="op-btn op-btn-green" href="https://www.bitrix24.ru/create.php?p=6860675&p1=sales">Создать бесплатно</a></div></div></div>
+          <div class="op-dd-item" data-plat-item><button class="op-dd-head" data-plat-btn>Единое пространство для работы<span class="op-dd-arrow"><svg viewBox="0 0 14 14"><path d="M2 5l5 4 5-4"/></svg></span></button><div class="op-dd-body"><div class="op-dd-body__inner">Мессенджер интегрирован со всеми инструментами Битрикс24. Прямо из чата можно начать звонок, создать задачу или запланировать встречу. И наоборот.<a class="op-btn op-btn-green" href="https://www.bitrix24.ru/create.php?p=6860675&p1=sales">Создать бесплатно</a></div></div></div>
+          <div class="op-dd-item" data-plat-item><button class="op-dd-head" data-plat-btn>Безопасность<span class="op-dd-arrow"><svg viewBox="0 0 14 14"><path d="M2 5l5 4 5-4"/></svg></span></button><div class="op-dd-body"><div class="op-dd-body__inner">В Битрикс24 вы работаете в безопасной и защищённой среде — без рекламы и посторонних. Все данные находятся под защитой: от шифрования в чатах и видеозвонках до использования биометрии, двухфакторной аутентификации, ограничения на скриншоты и автоматического удаления сообщений.<a class="op-btn op-btn-green" href="https://www.bitrix24.ru/create.php?p=6860675&p1=sales">Создать бесплатно</a></div></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== MIGRATION ===== -->
+<section class="op-sec op-rv" style="background:var(--soft)">
+  <div class="op-w">
+    <div class="op-hm">
+      <div class="op-hm__text">
+        <h2>Перенесите чаты<br>из Telegram в Битрикс24</h2>
+        <p class="op-lead"><a href="https://www.bitrix24.ru/apps/app/bitrix.telegram/">Приложение</a> для Битрикс24 поможет аккуратно и без потерь перенести чаты из Telegram. Личные переписки, группы и каналы — всё шаг за шагом переносится вместе с файлами и участниками.</p>
+        <p class="op-lead">Команда продолжит общение уже в едином и защищённом рабочем пространстве Битрикс24.</p>
+        <a class="op-btn op-btn-green" href="https://www.bitrix24.ru/create.php?p=6860675&p1=sales" style="margin-top:12px">Перейти к приложению</a>
+      </div>
+      <div class="op-hm__media"><img loading="lazy" src="https://www.bitrix24.ru/upload/optimizer/converted/images/content_ru/features/company/chat/migration.1440w.png.webp" alt="Миграция из Telegram"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SYNC (Navy) ===== -->
+<section class="op-navy op-rv">
+  <div class="op-w">
+    <div class="op-fw">
+      <h2>Синхронизируйтесь<br>в Битрикс24 Синк</h2>
+      <p class="op-lead" style="color:rgba(255,255,255,.85);margin:0 auto 36px">Удобное и безопасное решение для проведения онлайн-встреч в высоком качестве, с поддержкой мобильных устройств, демонстрацией экрана и интеграцией с искусственным интеллектом.</p>
+      <a class="op-btn op-btn-link" href="https://b24.pro/instrumenty/Videocalls/" style="color:#fff">Узнать больше</a>
+      <div class="op-fw__media" style="margin-top:56px;max-width:1100px;margin-left:auto;margin-right:auto">
+        <img loading="lazy" src="https://www.bitrix24.ru/upload/optimizer/converted/images/content_ru/features/company/chat/3.1900w.png.webp" alt="Битрикс24 Синк">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== VIDEO 3 CARDS ===== -->
+<section class="op-sec op-rv">
+  <div class="op-w">
+    <div class="op-feat3">
+      <div class="op-feat3-card op-rv"><h3>Видеозвонки<br>без ограничений</h3><p>В отличие от других сервисов, в Битрикс24 вы начинаете видеозвонок сразу, без отправки ссылок, и общаетесь без лимита по времени.</p></div>
+      <div class="op-feat3-card op-rv"><h3>Высокое качество<br>видео и звука</h3><p>Общайтесь и демонстрируйте экран в HD-качестве. Технология непрерывного аудиопотока позволяет разговаривать без посторонних шумов.</p></div>
+      <div class="op-feat3-card op-rv"><h3>Постоянный чат<br>звонка</h3><p>История переписки, файлы, запись видеозвонка, резюме встречи — всё автоматически сохраняется в чате.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== AI ANALYSIS ===== -->
+<section class="op-sec op-rv" style="background:var(--soft)">
+  <div class="op-w">
+    <div class="op-hm op-hm_right">
+      <div class="op-hm__text">
+        <h2>Анализ и расшифровка звонков с AI</h2>
+        <p class="op-lead">BitrixGPT Follow-up делает видеозвонки максимально эффективными: он автоматически расшифровывает разговор в текст, протоколирует решения, подводит итоги, оценивает вклад каждого участника и даёт рекомендации для улучшения будущих встреч.</p>
+      </div>
+      <div class="op-hm__media"><img loading="lazy" src="https://www.bitrix24.ru/upload/optimizer/converted/images/content_ru/features/company/chat/11.1442w.png.webp" alt="AI расшифровка"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CHANNELS ===== -->
+<section class="op-sec op-rv">
+  <div class="op-w">
+    <div class="op-hm op-hm_right">
+      <div class="op-hm__text">
+        <h2>Каналы для отделов<br>и подразделений</h2>
+        <p class="op-lead">Создавайте тематические каналы, чтобы информировать сотрудников, делиться приказами, проводить опросы.</p>
+        <ul class="op-hm__list">
+          <li>Автоматическое добавление сотрудников в каналы отделов</li>
+          <li>Запрет на выход из важных каналов</li>
+          <li>Автоудаление сотрудников при увольнении</li>
+        </ul>
+        <a class="op-btn op-btn-green" href="https://www.bitrix24.ru/create.php?p=6860675&p1=sales">Создать бесплатно</a>
+      </div>
+      <div class="op-hm__media"><img loading="lazy" src="https://www.bitrix24.ru/upload/optimizer/converted/images/content_ru/features/company/chat/4.1440w.png.webp" alt="Каналы"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== COLLABS ===== -->
+<section class="op-sec op-rv" style="background:var(--soft)">
+  <div class="op-w">
+    <div class="op-hm">
+      <div class="op-hm__text">
+        <h2>Коллабы для работы с внешними командами</h2>
+        <p class="op-lead">Создавайте коллабы для совместной работы над проектами с подрядчиками и клиентами внутри Битрикс24.</p>
+        <ul class="op-hm__list">
+          <li>Общий чат проекта со всеми участниками</li>
+          <li>Доступ к задачам, файлам и календарю проекта</li>
+          <li>Гибкие права доступа и безопасность данных</li>
+        </ul>
+        <a class="op-btn op-btn-link" href="https://b24.pro/instrumenty/Collaborations/">Узнать больше</a>
+      </div>
+      <div class="op-hm__media"><img loading="lazy" src="https://www.bitrix24.ru/upload/optimizer/converted/images/content_ru/features/company/chat/5.1440w.png.webp" alt="Коллабы"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SURVEYS ===== -->
+<section class="op-sec op-rv">
+  <div class="op-w">
+    <div class="op-hm op-hm_right">
+      <div class="op-hm__text">
+        <h2>Опросы и голосования</h2>
+        <p class="op-lead">Помогают быстро собирать мнение команды и упрощают согласование прямо в чатах, коллабах и каналах. Вы можете создавать как открытые, так и анонимные опросы с одиночным или множественным выбором.</p>
+        <p class="op-lead">Результатами легко поделиться в другом чате или экспортировать в Excel для анализа.</p>
+      </div>
+      <div class="op-hm__media"><img loading="lazy" src="https://www.bitrix24.ru/upload/optimizer/converted/images/content_ru/features/company/chat/10.1440w.png.webp" alt="Опросы"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== RATING HIGHLIGHT ===== -->
+<section class="op-sec op-rv" style="background:var(--soft)">
+  <div class="op-w">
+    <div class="op-hm" style="background:#fff;border-radius:24px;padding:48px 40px;gap:48px">
+      <div>
+        <h2 style="margin-bottom:18px">Лидер рейтинга корпоративных мессенджеров</h2>
+        <p class="op-lead" style="margin-bottom:28px">По результатам исследования рынка российских корпоративных мессенджеров, проведенного «Компьютеррой». Мессенджер Битрикс24 — это безопасная и функциональная платформа с AI для эффективных коммуникаций.</p>
+        <a class="op-btn op-btn-green" href="https://www.computerra.ru/331947/rejting-rossijskih-korporativnyh-messendzherov-2025/">Читать подробнее</a>
+      </div>
+      <div><img loading="lazy" src="https://www.bitrix24.ru/upload/optimizer/converted/upload/rk/0be/fgfljlku843yu6ut5kv0uhg1o9vlsa51.1216w.png.webp" alt="Рейтинг" style="width:100%;border-radius:16px"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== AI PERSONAL (Navy) ===== -->
+<section class="op-navy op-rv">
+  <div class="op-w">
+    <div class="op-fw">
+      <h2>Ваш личный AI-помощник</h2>
+      <p class="op-lead" style="color:rgba(255,255,255,.85);margin:0 auto 40px">Искусственный интеллект в Битрикс24 станет вашим идеальным напарником. Он поможет креативить, писать тексты, ставить ТЗ и многое другое. Общайтесь с BitrixGPT как с экспертом — выберите роль, пригласите коллег на мозговой штурм и работайте гораздо эффективнее.</p>
+      <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-bottom:64px">
+        <a class="op-btn op-btn-blue" href="https://www.bitrix24.ru/create.php?p=6860675&p1=sales">Попробовать бесплатно</a>
+        <a class="op-btn op-btn-blue-outline" href="https://b24.pro/instrumenty/AIinBitrix24/">Узнать больше</a>
+      </div>
+      <div class="op-fw__media" style="max-width:1000px;margin-left:auto;margin-right:auto">
+        <img loading="lazy" src="https://www.bitrix24.ru/upload/optimizer/converted/images/content_ru/features/company/chat/6.1900w.png.webp" alt="AI помощник">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== REACTIONS ===== -->
+<section class="op-sec op-rv">
+  <div class="op-w">
+    <div class="op-hm op-hm_right">
+      <div class="op-hm__text">
+        <h2>Нейрохимия<br>на вашей стороне</h2>
+        <ul class="op-hm__list">
+          <li>Все любят получать лайки. И в Битрикс24 это один из языков общения</li>
+          <li>Реакции и эмодзи делают рабочий день приятнее, добавляют юмор и помогают донести контекст сообщения</li>
+        </ul>
+        <a class="op-btn op-btn-green" href="https://www.bitrix24.ru/create.php?p=6860675&p1=sales">Создать бесплатно</a>
+      </div>
+      <div class="op-hm__media"><img loading="lazy" src="https://www.bitrix24.ru/upload/optimizer/converted/images/content_ru/features/company/chat/7.1440w.png.webp" alt="Реакции"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== STICKERS ===== -->
+<section class="op-sec op-rv" style="background:var(--soft)">
+  <div class="op-w">
+    <div class="op-hm">
+      <div class="op-hm__text">
+        <h2>Заселите Битрикс24<br>своими стикерами</h2>
+        <p class="op-lead">Добавьте юмора — загрузите любимые стикерпаки или сделайте новые. Создавайте свою уникальную атмосферу и настраивайтесь на креатив вместе с коллегами.</p>
+        <a class="op-btn op-btn-green" href="https://www.bitrix24.ru/create.php?p=6860675&p1=sales">Создать бесплатно</a>
+      </div>
+      <div class="op-hm__media"><img loading="lazy" src="https://www.bitrix24.ru/upload/optimizer/converted/images/content_ru/features/company/chat/71.1440w.png.webp" alt="Стикеры"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== MOBILE ===== -->
+<section class="op-sec op-rv">
+  <div class="op-w">
+    <div class="op-fw">
+      <h2>Мобильный мессенджер</h2>
+      <p class="op-lead" style="margin:0 auto 24px">Переписывайтесь с коллегами и созванивайтесь с ними по аудио- и видеосвязи, где бы вы ни находились. Чаты, коллабы, задачи, файлы, календари, AI и многое другое для совместной работы — всё в одном мобильном приложении.</p>
+      <a class="op-btn op-btn-green" href="https://www.bitrix24.ru/create.php?p=6860675&p1=sales">Создать бесплатно</a>
+      <div class="op-fw__media" style="margin-top:56px;max-width:960px;margin-left:auto;margin-right:auto">
+        <img loading="lazy" src="https://www.bitrix24.ru/upload/optimizer/converted/images/content_ru/features/company/chat/8.1900w.png.webp" alt="Мобильное приложение">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== VOICE CARDS ===== -->
+<section class="op-sec op-rv" style="background:var(--soft)">
+  <div class="op-w">
+    <div class="op-cards">
+      <div class="op-soft-card op-rv"><h3>Голосовые и видеосообщения</h3><p>Никакие ценные идеи или комментарии не потеряются, даже если заняты руки. Запишите "кружок" или аудиосообщение для коллег, а заодно добавьте жизни в рабочие переписки.</p><img loading="lazy" src="https://www.bitrix24.ru/upload/optimizer/converted/images/content_ru/features/company/chat/17.1176w.png.webp" alt="Голосовые сообщения"></div>
+      <div class="op-soft-card op-rv"><h3>Транскрибация с распознаванием эмоций</h3><p>Неудобно прослушивать голосовые файлы? BitrixGPT сделает текстовую расшифровку аудио- или видеосообщений и укажет, с каким настроением говорил собеседник.</p><img loading="lazy" src="https://www.bitrix24.ru/upload/optimizer/converted/images/content_ru/features/company/chat/18.1176w.png.webp" alt="Транскрибация"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SECURITY ===== -->
+<section class="op-sec op-rv">
+  <div class="op-w">
+    <h2 style="text-align:center;margin-bottom:48px" class="op-rv">Безопасность мессенджера</h2>
+    <div class="op-sec2-grid">
+      <div class="op-sec2-card op-rv"><h3>Биометрия для авторизации</h3><p>Используйте распознавание лица или отпечатка пальца для защиты аккаунта от потери телефона или случайного доступа.</p><div class="op-sec2-card__img"><img loading="lazy" src="https://www.bitrix24.ru/upload/optimizer/converted/images/content_ru/features/company/chat/12.1176w.png.webp" alt="Биометрия"></div></div>
+      <div class="op-sec2-card op-rv"><h3>Двухфакторная авторизация</h3><p>Мобильное приложение работает как второй фактор авторизации (2fa). Даже узнав пароль, злоумышленники не смогут получить доступ к рабочей информации.</p><div class="op-sec2-card__img"><img loading="lazy" src="https://www.bitrix24.ru/upload/optimizer/converted/images/content_ru/features/company/chat/13.1176w.png.webp" alt="2FA"></div></div>
+      <div class="op-sec2-card op-rv"><h3>Автоудаление сообщений</h3><p>Защитите конфиденциальные данные и персональную информацию, настроив автоудаление сообщений в чате. Они будут стерты из Битрикс24 спустя указанный период времени.</p><div class="op-sec2-card__img"><img loading="lazy" src="https://www.bitrix24.ru/upload/optimizer/converted/images/content_ru/features/company/chat/14.1176w.png.webp" alt="Автоудаление"></div></div>
+      <div class="op-sec2-card op-rv"><h3>Запрет скриншотов</h3><p>Включите запрет на создание скриншотов с мобильного приложения, чтобы важные данные хранились только в Битрикс24, а не смартфонах сотрудников и случайно не утекли в сеть.</p><div class="op-sec2-card__img"><img loading="lazy" src="https://www.bitrix24.ru/upload/optimizer/converted/images/content_ru/features/company/chat/15.1176w.png.webp" alt="Запрет скриншотов"></div></div>
+    </div>
+    <div class="op-sec-full op-rv">
+      <div class="op-sec-full__text"><h3>Шифрование в чатах и видеозвонках</h3><p>Переписки в чатах и созвоны зашифрованы, никто не сможет получить к ним доступ и прочитать. Используется Сквозное шифрование (End-to-End encryption) и TLS сертификат SHA-256 с шифрованием RSA.</p></div>
+      <img loading="lazy" src="https://www.bitrix24.ru/upload/optimizer/converted/images/content_ru/features/company/chat/16.1440w.png.webp" alt="Шифрование">
+    </div>
+  </div>
+</section>
+
+<!-- ===== DOWNLOAD ===== -->
+<section class="op-sec op-rv" style="background:var(--soft)">
+  <div class="op-w">
+    <div class="op-dl">
+      <div><img loading="lazy" src="https://www.bitrix24.ru/upload/optimizer/converted/images/content_ru/features/company/chat/9.1440w.png.webp" alt="Приложение" style="border-radius:16px"></div>
+      <div>
+        <h2 class="op-dl__title">Скачать приложение Битрикс24</h2>
+        <div class="op-dl__cols">
+          <div class="op-dl__col">
+            <h4>Для Windows и Mac</h4>
+            <ul>
+              <li><a href="https://repos.1c-bitrix.ru/b24/bitrix24_desktop_ru.exe">Скачать для Windows</a></li>
+              <li><a href="https://repos.1c-bitrix.ru/b24/bitrix24_desktop_ru.dmg">Скачать для MAC на Intel</a></li>
+              <li><a href="https://repos.1c-bitrix.ru/b24/bitrix24_desktop_arm_ru.dmg">Скачать для Mac M1, M2, M3, M4</a></li>
+              <li><a href="https://repos.1c-bitrix.ru/b24/bitrix24_desktop_ru.msi">Скачать MSI дистрибутив</a></li>
+              <li><a href="https://repos.1c-bitrix.ru/b24/bitrix24_desktop_ru.deb">Скачать для Linux DEB</a></li>
+              <li><a href="https://repos.1c-bitrix.ru/b24/bitrix24_desktop_ru.rpm">Скачать для Linux RPM</a></li>
+            </ul>
+          </div>
+          <div class="op-dl__col">
+            <h4>Для iOS и Android</h4>
+            <ul>
+              <li><a href="https://bitrix24.onelink.me/VcOF/0lgs8278">Скачать в AppStore</a></li>
+              <li><a href="https://bitrix24.onelink.me/j0FX/gexyw3j0">Скачать в GooglePlay</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FAQ ===== -->
+<section class="op-sec op-rv">
+  <div class="op-w">
+    <div class="op-faq">
+      <h2>Часто задаваемые вопросы</h2>
+      <div class="op-faq-item op-rv" data-faq><button class="op-faq-q">Чем Bitrix24 лучше привычных «массовых» мессенджеров?<span class="op-faq-arrow"><svg viewBox="0 0 14 14"><path d="M2 5l5 4 5-4"/></svg></span></button><div class="op-faq-a"><div class="op-faq-a__inner">Это закрытое корпоративное пространство: в чатах и каналах — только сотрудники вашей компании, никаких случайных контактов и рекламы. Права доступа полностью связаны со штатной структурой.</div></div></div>
+      <div class="op-faq-item op-rv" data-faq><button class="op-faq-q">Подойдёт ли мессенджер крупному холдингу (100 000+ человек)?<span class="op-faq-arrow"><svg viewBox="0 0 14 14"><path d="M2 5l5 4 5-4"/></svg></span></button><div class="op-faq-a"><div class="op-faq-a__inner">Да! Новая коммуникационная платформа М1 выдерживает нагрузку свыше 1 млн активных пользователей, что подтверждено нагрузочными тестами.</div></div></div>
+      <div class="op-faq-item op-rv" data-faq><button class="op-faq-q">Что такое платформа М1 и зачем она нужна?<span class="op-faq-arrow"><svg viewBox="0 0 14 14"><path d="M2 5l5 4 5-4"/></svg></span></button><div class="op-faq-a"><div class="op-faq-a__inner">М1 — собственная серверная архитектура Bitrix24. Она обеспечивает быстрые соединения и автопереподключение, внутренний мониторинг отказов, HD звук и видео без лимита по времени, одновременную демонстрацию экрана несколькими участниками.</div></div></div>
+      <div class="op-faq-item op-rv" data-faq><button class="op-faq-q">Как добавить в чат или канал весь отдел?<span class="op-faq-arrow"><svg viewBox="0 0 14 14"><path d="M2 5l5 4 5-4"/></svg></span></button><div class="op-faq-a"><div class="op-faq-a__inner">Вы выбираете подразделение и нужные сотрудники подписываются автоматически. При переводе человека в другой отдел подписки обновятся сами.</div></div></div>
+      <div class="op-faq-item op-rv" data-faq><button class="op-faq-q">Что происходит, когда сотрудник увольняется?<span class="op-faq-arrow"><svg viewBox="0 0 14 14"><path d="M2 5l5 4 5-4"/></svg></span></button><div class="op-faq-a"><div class="op-faq-a__inner">В момент деактивации профиля он мгновенно теряет доступ ко всем чатам, каналам и файлам — риск утечки данных исключён.</div></div></div>
+      <div class="op-faq-item op-rv" data-faq><button class="op-faq-q">Можно ли превратить переписку в задачу или встречу?<span class="op-faq-arrow"><svg viewBox="0 0 14 14"><path d="M2 5l5 4 5-4"/></svg></span></button><div class="op-faq-a"><div class="op-faq-a__inner">В один клик из сообщения создайте задачу в «Задачах и Проектах» или встречу в календаре, а все участники чата автоматически получат приглашение.</div></div></div>
+      <div class="op-faq-item op-rv" data-faq><button class="op-faq-q">Как BitrixGPT помогает во встречах?<span class="op-faq-arrow"><svg viewBox="0 0 14 14"><path d="M2 5l5 4 5-4"/></svg></span></button><div class="op-faq-a"><div class="op-faq-a__inner">К видеозвонку можно подключить BitrixGPT Follow-up: ИИ составит резюме, извлечёт ключевые решения и предложит поставить задачи.</div></div></div>
+      <div class="op-faq-item op-rv" data-faq><button class="op-faq-q">Нужно ли платить за приложение сотрудникам?<span class="op-faq-arrow"><svg viewBox="0 0 14 14"><path d="M2 5l5 4 5-4"/></svg></span></button><div class="op-faq-a"><div class="op-faq-a__inner">Нет, приложение распространяется бесплатно для всех пользователей портала. Оплачивается только выбранный тариф Bitrix24.</div></div></div>
+      <div class="op-faq-item op-rv" data-faq><button class="op-faq-q">Можно ли отписаться от каналов компании?<span class="op-faq-arrow"><svg viewBox="0 0 14 14"><path d="M2 5l5 4 5-4"/></svg></span></button><div class="op-faq-a"><div class="op-faq-a__inner">Каналы «На всю компанию» обязательны — отписаться от них нельзя. Важная информация точно дойдёт до всех сотрудников, включая новых.</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== BOTTOM CARDS ===== -->
+<section class="op-sec op-rv" style="background:var(--soft)">
+  <div class="op-w">
+    <div class="op-bottom">
+      <div class="op-bottom-card op-rv"><h3>6 000+ интеграций</h3><p>Телефония, 1С, онлайн-банки, доставка, и ещё больше тысячи готовых интеграций уже внутри Битрикс24</p><a class="op-btn op-btn-green" href="https://www.bitrix24.ru/create.php?p=6860675&p1=sales">Узнать больше</a><div class="op-bottom-card__img"><img loading="lazy" src="https://www.bitrix24.ru/images/content_common/apps/market-1.png" alt=""></div></div>
+      <div class="op-bottom-card op-rv"><h3>Коробочная версия</h3><p>Работает на вашем сервере с дополнительным функционалом и возможностью доработки</p><a class="op-btn op-btn-green" href="https://www.bitrix24.ru/create.php?p=6860675&p1=sales">Узнать больше</a><div class="op-bottom-card__img"><img loading="lazy" src="https://www.bitrix24.ru/images/content_common/apps/market-2.png" alt=""></div></div>
+    </div>
+    <div class="op-bottom-wide op-rv">
+      <div><h3>Для крупных организаций</h3><p>Битрикс24 Enterprise для крупных территориально-распределенных компаний или холдингов с большим количеством пользователей.</p><a class="op-btn op-btn-green" href="https://www.bitrix24.ru/create.php?p=6860675&p1=sales">Узнать больше</a></div>
+      <div style="display:flex;justify-content:flex-end;align-items:center"><img loading="lazy" src="https://www.bitrix24.ru/images/content_common/apps/market-3.png" alt="" style="width:100%;max-width:400px;border-radius:14px"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FINAL CTA ===== -->
+<section class="op-sec op-rv">
+  <div class="op-w">
+    <div class="op-cta-glass op-rv">
+      <h2>Единая платформа для работы компании</h2>
+      <p class="op-lead" style="margin:16px auto 0;max-width:600px">Вместо десятков сервисов и приложений — безопасный мессенджер, видеозвонки и задачи в одном месте.</p>
+      <div class="op-cta-glass__btns">
+        <a class="op-btn op-btn-green" href="https://www.bitrix24.ru/create.php?p=6860675&p1=sales">Получить бесплатно</a>
+        <a class="op-cta-btn--ghost" href="#cta-form">Получить консультацию</a>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- CONSULTATION FORM -->
+<section class="op-cta op-rv" id="cta-form" style="padding-top:0">
+<div class="op-w">
+  <div style="max-width:700px;margin:0 auto;text-align:center;padding:0 0 24px">
+    <div style="display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:#2FC7F7;border:1px solid rgba(47,199,247,.25);border-radius:100px;padding:7px 16px;margin-bottom:20px;background:rgba(47,199,247,.06)"><span style="width:6px;height:6px;border-radius:50%;background:#2FC7F7;box-shadow:0 0 10px #2FC7F7"></span>Бесплатная консультация</div>
+    <h2 style="font-family:'Montserrat',sans-serif;font-size:clamp(22px,3vw,32px);font-weight:800;color:#fff;margin:0 0 12px;line-height:1.2">Нужно под ваши процессы — настроим</h2>
+    <p style="font-size:16px;line-height:1.7;color:#8A95B0;max-width:560px;margin:0 auto 32px">Расскажите задачу — разберём вашу ситуацию и предложим конкретное решение на Битрикс24.</p>
+  </div>
+  <div style="max-width:700px;margin:0 auto">
+    <script data-b24-form="inline/242/eb3sji" data-skip-moving="true">
+(function(w,d,u){
+var s=d.createElement('script');s.async=true;s.src=u+'?'+(Date.now()/180000|0);
+var h=d.getElementsByTagName('script')[0];h.parentNode.insertBefore(s,h);
+})(window,document,'https://cdn-ru.bitrix24.ru/b1445091/crm/form/loader_242.js');
+</script>
+  </div>
+</div>
+</section>
+
+
+<!-- ===== JS ===== -->
+<script>
+(function(){
+var root=document.currentScript?document.currentScript.closest('.op-crm'):document.querySelector('.op-crm');
+if(!root)return;
+
+/* === SCROLL REVEAL === */
+var els=root.querySelectorAll('.op-rv');
+if('IntersectionObserver' in window){
+  var io=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('is-v');io.unobserve(e.target)}})},{threshold:.08});
+  els.forEach(function(el){io.observe(el)});
+  setTimeout(function(){els.forEach(function(el){el.classList.add('is-v')})},600);
+}else{els.forEach(function(el){el.classList.add('is-v')})}
+
+/* === CANVAS PARTICLES === */
+(function(){
+  var c=document.createElement('canvas');
+  c.style.cssText='position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:0';
+  document.body.appendChild(c);
+  var ctx=c.getContext('2d');
+  var W,H,pts=[];
+    function resize(){W=c.width=window.innerWidth;H=c.height=window.innerHeight}
+  resize();window.addEventListener('resize',resize);
+  for(var i=0;i<70;i++)pts.push({x:Math.random()*1600,y:Math.random()*900,vx:(Math.random()-.5)*.35,vy:(Math.random()-.5)*.35,r:Math.random()*1.6+.5,o:Math.random()*.5+.1});
+  function draw(){
+    ctx.clearRect(0,0,W,H);
+    pts.forEach(function(p){
+      p.x+=p.vx;p.y+=p.vy;
+      if(p.x<0)p.x=W;if(p.x>W)p.x=0;
+      if(p.y<0)p.y=H;if(p.y>H)p.y=0;
+      ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
+      ctx.fillStyle='rgba(47,199,247,'+p.o+')';ctx.fill();
+    });
+    requestAnimationFrame(draw);
+  }
+  draw();
+})();
+
+/* === CURSOR GLOW === */
+(function(){
+  var g=document.createElement('div');
+  g.style.cssText='position:fixed;width:420px;height:420px;border-radius:50%;pointer-events:none;z-index:1;background:radial-gradient(circle,rgba(47,199,247,.07) 0%,transparent 70%);transform:translate(-50%,-50%);top:0;left:0';
+  document.body.appendChild(g);
+  document.addEventListener('mousemove',function(e){g.style.left=e.clientX+'px';g.style.top=e.clientY+'px'});
+})();
+
+/* === PLATFORM ACCORDION === */
+root.querySelectorAll('[data-plat-acc]').forEach(function(accWrap){
+  var items=accWrap.querySelectorAll('[data-plat-item]');
+  var imgs=root.querySelectorAll('[data-plat-img]');
+  function openPlat(idx){
+    items.forEach(function(el){el.classList.remove('is-open');var b=el.querySelector('.op-dd-body');if(b)b.style.maxHeight='0'});
+    imgs.forEach(function(el){el.classList.remove('is-active')});
+    if(items[idx]){items[idx].classList.add('is-open');var body=items[idx].querySelector('.op-dd-body');if(body)body.style.maxHeight=body.scrollHeight+'px'}
+    var t=root.querySelector('[data-plat-img="'+idx+'"]');
+    if(t)t.classList.add('is-active');
+  }
+  items.forEach(function(item,i){
+    var btn=item.querySelector('[data-plat-btn]');
+    if(btn)btn.addEventListener('click',function(){
+      if(item.classList.contains('is-open')){item.classList.remove('is-open');var b=item.querySelector('.op-dd-body');if(b)b.style.maxHeight='0'}
+      else openPlat(i);
+    });
+  });
+  openPlat(0);
+});
+
+/* === FAQ === */
+root.querySelectorAll('[data-faq]').forEach(function(item){
+  var q=item.querySelector('.op-faq-q'),a=item.querySelector('.op-faq-a');
+  if(!q||!a)return;
+  q.addEventListener('click',function(){
+    var w=item.classList.contains('is-open');
+    root.querySelectorAll('.op-faq-item').forEach(function(it){it.classList.remove('is-open');var b=it.querySelector('.op-faq-a');if(b)b.style.maxHeight='0'});
+    if(!w){item.classList.add('is-open');a.style.maxHeight=a.scrollHeight+'px'}
+  });
+});
+})();
+</script>
+</div>

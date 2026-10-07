@@ -1,0 +1,260 @@
+<script>(function(){var urls=['https://fonts.bunny.net/css?family=montserrat:400,600,700,800|open-sans:400,600,700&display=swap','https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;600;700&display=swap'];function tryLoad(i){if(i>=urls.length)return;var l=document.createElement('link');l.rel='stylesheet';l.href=urls[i];l.onerror=function(){tryLoad(i+1)};(document.head||document.body).appendChild(l)}tryLoad(0);})();</script>
+<div class="op-crm" id="op-block-results">
+<style>
+/* === Все стили скопированы под #op-block-results — не утекают на соседние блоки === */
+#op-block-results,#op-block-results *,#op-block-results *::before,#op-block-results *::after{box-sizing:border-box}
+#op-block-results{
+  --cyan:#2FC7F7;--blue:#2E7DF6;--violet:#7A5CFF;
+  --muted:#8A95B0;--line:rgba(255,255,255,.08);
+  --font-display:'Montserrat',system-ui,sans-serif;
+  --font-body:'Open Sans',system-ui,sans-serif;
+  font-family:var(--font-body);color:#E8EDF7;background:#080c17;
+  position:relative;overflow-x:hidden;-webkit-font-smoothing:antialiased
+}
+#op-block-results .op-w{max-width:1160px;margin:0 auto;padding:0 24px}
+#op-block-results h2{font-family:var(--font-display);font-size:clamp(24px,3.5vw,40px);font-weight:800;line-height:1.15;letter-spacing:-.03em;color:#fff;margin:0 0 16px}
+
+/* ===== REVEAL ===== */
+#op-block-results .op-rv{opacity:1;transform:none}
+#op-block-results.op-js .op-rv{opacity:0;transform:translateY(28px);transition:opacity .65s cubic-bezier(.2,.8,.2,1),transform .55s cubic-bezier(.2,.8,.2,1)}
+#op-block-results.op-js .op-rv.is-v{opacity:1;transform:none}
+#op-block-results.op-js .op-rv[data-delay="1"]{transition-delay:.1s}
+#op-block-results.op-js .op-rv[data-delay="2"]{transition-delay:.2s}
+#op-block-results.op-js .op-rv[data-delay="3"]{transition-delay:.3s}
+#op-block-results.op-js .op-rv[data-delay="4"]{transition-delay:.4s}
+#op-block-results.op-js .op-rv[data-delay="5"]{transition-delay:.5s}
+
+/* ===== SECTION ===== */
+#op-block-results .op-res-sec{padding:80px 0;position:relative;overflow:hidden}
+#op-block-results .op-res-sec::before{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse 70% 60% at 50% 50%,rgba(46,125,246,.07),transparent 70%);
+  pointer-events:none}
+
+/* ===== HEADER ===== */
+#op-block-results .op-sec-label{display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--cyan);
+  border:1px solid rgba(47,199,247,.25);border-radius:100px;padding:7px 16px;margin-bottom:20px;background:rgba(47,199,247,.06)}
+#op-block-results .op-sec-label .dot{width:6px;height:6px;border-radius:50%;background:var(--cyan);box-shadow:0 0 10px var(--cyan);animation:res-pulse 2s ease-in-out infinite}
+@keyframes res-pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(.7)}}
+#op-block-results .op-res-head{text-align:center;margin-bottom:16px}
+#op-block-results .op-res-sub{text-align:center;font-size:clamp(15px,2vw,17px);color:var(--muted);max-width:540px;margin:0 auto 52px;line-height:1.65}
+
+/* ===== GRID ===== */
+#op-block-results .op-res-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:44px}
+
+/* ===== CARD ===== */
+#op-block-results .op-res-card{
+  position:relative;border-radius:22px;padding:32px 28px 28px;overflow:hidden;
+  background:linear-gradient(160deg,rgba(30,40,70,.65),rgba(14,20,38,.85));
+  border:1px solid rgba(255,255,255,.09);
+  transition:transform .4s cubic-bezier(.2,.8,.2,1),box-shadow .4s,border-color .4s;
+  cursor:default;
+  display:flex;flex-direction:column}
+#op-block-results .op-res-card::before{
+  content:'';position:absolute;inset:0;border-radius:22px;padding:1px;pointer-events:none;
+  background:linear-gradient(140deg,rgba(47,199,247,.35),transparent 55%,rgba(122,92,255,.3));
+  -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
+  -webkit-mask-composite:xor;mask-composite:exclude;
+  opacity:0;transition:opacity .35s}
+#op-block-results .op-res-card::after{
+  content:'';position:absolute;top:-40%;left:-20%;width:140%;height:80%;
+  background:radial-gradient(ellipse,rgba(47,199,247,.06) 0%,transparent 70%);
+  pointer-events:none;opacity:0;transition:opacity .4s}
+#op-block-results .op-res-card:hover{transform:translateY(-6px);box-shadow:0 40px 80px -20px rgba(0,10,40,.8),0 0 40px -12px rgba(47,199,247,.14)}
+#op-block-results .op-res-card:hover::before{opacity:1}
+#op-block-results .op-res-card:hover::after{opacity:1}
+
+/* accent line at top */
+#op-block-results .op-res-card-accent{position:absolute;top:0;left:28px;right:28px;height:2px;border-radius:0 0 4px 4px;
+  background:linear-gradient(90deg,var(--cyan),var(--blue));
+  transform:scaleX(0);transform-origin:left;transition:transform .5s .1s cubic-bezier(.2,.8,.2,1)}
+#op-block-results .op-res-card.is-v .op-res-card-accent{transform:scaleX(1)}
+
+/* ===== CARD CONTENT ===== */
+#op-block-results .op-res-num{
+  font-family:var(--font-display);
+  font-size:clamp(40px,5vw,64px);
+  font-weight:800;line-height:1;
+  background:linear-gradient(120deg,#fff 0%,var(--cyan) 60%,var(--blue) 100%);
+  -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+  margin-bottom:14px;display:block;
+  filter:drop-shadow(0 0 24px rgba(47,199,247,.3))}
+#op-block-results .op-res-card:hover .op-res-num{filter:drop-shadow(0 0 36px rgba(47,199,247,.5))}
+#op-block-results .op-res-title{font-family:var(--font-display);font-size:15px;font-weight:700;color:#fff;
+  letter-spacing:-.01em;line-height:1.35;margin-bottom:8px}
+#op-block-results .op-res-desc{font-size:13px;color:var(--muted);line-height:1.6;margin-bottom:16px;flex:1}
+#op-block-results .op-res-divider{height:1px;background:var(--line);margin-bottom:14px;margin-top:auto}
+#op-block-results .op-res-tag{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:700;
+  letter-spacing:.08em;text-transform:uppercase;color:var(--cyan);
+  background:rgba(47,199,247,.08);border:1px solid rgba(47,199,247,.18);
+  border-radius:6px;padding:4px 10px}
+#op-block-results .op-res-case-link{display:inline-flex;align-items:center;gap:8px;
+  font-family:var(--font-display);font-size:14px;font-weight:700;
+  color:#c8d5f0!important;text-decoration:none!important;
+  padding:11px 18px;border-radius:10px;margin-top:6px;
+  background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);
+  transition:all .25s cubic-bezier(.4,0,.2,1)}
+#op-block-results .op-res-case-link:hover{
+  color:#fff!important;
+  background:rgba(47,199,247,.1);border-color:rgba(47,199,247,.3);
+  transform:translateY(-1px)}
+#op-block-results .op-res-case-link svg{width:15px;height:15px;stroke:currentColor;stroke-width:2;fill:none;
+  transition:transform .25s}
+#op-block-results .op-res-case-link:hover svg{transform:translateX(3px)}
+
+/* ===== CTA ===== */
+#op-block-results .op-res-cta{text-align:center}
+#op-block-results .op-btn-cases{
+  display:inline-flex;align-items:center;gap:10px;
+  padding:16px 36px;border-radius:14px;
+  font-family:var(--font-display);font-size:15px;font-weight:700;
+  text-decoration:none!important;cursor:pointer;
+  background:transparent;border:1.5px solid rgba(47,199,247,.4);
+  color:#fff!important;
+  transition:all .3s cubic-bezier(.4,0,.2,1);
+  position:relative;overflow:hidden}
+#op-block-results .op-btn-cases::before{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(135deg,rgba(47,199,247,.1),rgba(46,125,246,.08));
+  opacity:0;transition:opacity .3s}
+#op-block-results .op-btn-cases:hover{border-color:rgba(47,199,247,.7);transform:translateY(-2px);
+  box-shadow:0 12px 32px -8px rgba(47,199,247,.2)}
+#op-block-results .op-btn-cases:hover::before{opacity:1}
+#op-block-results .op-btn-cases .arrow{display:inline-flex;align-items:center;transition:transform .3s}
+#op-block-results .op-btn-cases:hover .arrow{transform:translateX(4px)}
+#op-block-results .op-btn-cases svg{width:18px;height:18px;stroke:var(--cyan);stroke-width:2;fill:none}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:860px){#op-block-results .op-res-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:520px){
+  #op-block-results .op-res-grid{grid-template-columns:1fr;gap:12px}
+  #op-block-results .op-res-sec{padding:56px 0}
+  #op-block-results .op-res-num{font-size:clamp(36px,12vw,52px)}
+}
+@media(max-width:390px){#op-block-results .op-w{padding:0 14px}}
+
+/* ===== OVERRIDES ===== */
+#op-block-results{color:#E8EDF7!important;background:#080c17!important}
+#op-block-results h2{color:#fff!important}
+#op-block-results a,#op-block-results a:hover,#op-block-results a:visited{text-decoration:none!important}
+#op-block-results .op-res-num{-webkit-text-fill-color:transparent!important}
+</style>
+
+<section class="op-res-sec">
+  <div class="op-w">
+
+    <!-- Header -->
+    <div class="op-res-head op-rv">
+      <div class="op-sec-label"><span class="dot"></span>Результаты</div>
+      <h2>Цифры, а не обещания</h2>
+    </div>
+    <p class="op-res-sub op-rv" data-delay="1">Реальные показатели из завершённых проектов. Фиксируем метрики до старта и сдаём по акту.</p>
+
+    <!-- 4 cards -->
+    <div class="op-res-grid">
+
+      <!-- Card 1 -->
+      <div class="op-res-card op-rv" data-delay="1">
+        <div class="op-res-card-accent"></div>
+        <span class="op-res-num" data-count="5" data-suffix="× быстрее">5× быстрее</span>
+        <div class="op-res-title">Согласование договоров</div>
+        <div class="op-res-desc">8 типов документов — разные маршруты согласования, всё автоматически в Битрикс24.</div>
+        <div class="op-res-divider"></div>
+        <span class="op-res-tag">Строительство · Проектирование</span>
+        <a class="op-res-case-link" href="https://b24.pro/keysy/Approvalof8typesofcontracts5timesfaster/" target="_blank" rel="noopener">Читать кейс <svg viewBox="0 0 14 14"><path d="M2 7h10M8 3l4 4-4 4" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="op-res-card op-rv" data-delay="2">
+        <div class="op-res-card-accent"></div>
+        <span class="op-res-num">62М+&nbsp;₽</span>
+        <div class="op-res-title">В активной воронке CRM</div>
+        <div class="op-res-desc">2400+ сделок под контролем. Заявки с сайта, звонки и WhatsApp — в единой воронке с PMS.</div>
+        <div class="op-res-divider"></div>
+        <span class="op-res-tag">Санаторно-курортный бизнес</span>
+        <a class="op-res-case-link" href="https://b24.pro/keysy/Levelautomation/" target="_blank" rel="noopener">Читать кейс <svg viewBox="0 0 14 14"><path d="M2 7h10M8 3l4 4-4 4" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="op-res-card op-rv" data-delay="3">
+        <div class="op-res-card-accent"></div>
+        <span class="op-res-num" data-count="100" data-suffix="% звонков">100% звонков</span>
+        <div class="op-res-title">Зафиксировано в CRM</div>
+        <div class="op-res-desc">Ни один звонок не теряется — каждый фиксируется, распределяется и обрабатывается в CRM.</div>
+        <div class="op-res-divider"></div>
+        <span class="op-res-tag">Транспорт · Сеть автосервисов</span>
+        <a class="op-res-case-link" href="https://b24.pro/keysy/callresponse/" target="_blank" rel="noopener">Читать кейс <svg viewBox="0 0 14 14"><path d="M2 7h10M8 3l4 4-4 4" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      </div>
+
+
+    </div>
+
+    <!-- CTA -->
+    <div class="op-res-cta op-rv" data-delay="5">
+      <a class="op-btn-cases" href="/cases/">
+        Смотреть все кейсы внедрения
+        <span class="arrow">
+          <svg viewBox="0 0 18 18"><path d="M4 9h10M10 5l4 4-4 4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<script>(function(){
+  var root=document.getElementById('op-block-results');
+  if(!root)return;
+
+  /* === Reveal on scroll === */
+  var els=root.querySelectorAll('.op-rv');
+  if('IntersectionObserver' in window){
+    root.classList.add('op-js');
+    var io=new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){
+          e.target.classList.add('is-v');
+          io.unobserve(e.target);
+          /* trigger accent line via class already on card */
+        }
+      });
+    },{threshold:.12,rootMargin:'0px 0px -40px 0px'});
+    els.forEach(function(el){io.observe(el);});
+    setTimeout(function(){els.forEach(function(el){el.classList.add('is-v');});},2800);
+  }
+
+  /* === Counter animation === */
+  function animCount(el){
+    var target=parseInt(el.getAttribute('data-count'),10);
+    var suffix=el.getAttribute('data-suffix')||'';
+    if(isNaN(target))return;
+    var dur=1600,start=null;
+    function step(ts){
+      if(!start)start=ts;
+      var p=Math.min((ts-start)/dur,1);
+      var ease=1-Math.pow(1-p,4);
+      el.textContent=Math.round(ease*target)+suffix;
+      if(p<1)requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+
+  /* fire counters when cards come into view */
+  var cards=root.querySelectorAll('.op-res-card');
+  var counted=false;
+  if('IntersectionObserver' in window){
+    var cio=new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting&&!counted){
+          counted=true;
+          root.querySelectorAll('[data-count]').forEach(animCount);
+          cio.disconnect();
+        }
+      });
+    },{threshold:.1});
+    cards.forEach(function(c){cio.observe(c);});
+  } else {
+    root.querySelectorAll('[data-count]').forEach(animCount);
+  }
+})();</script>
+</div>

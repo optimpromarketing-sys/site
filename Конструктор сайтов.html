@@ -1,0 +1,629 @@
+<!-- ОПТИМ ПРО · Конструктор сайтов Битрикс24 · для Битрикс24.Сайты -->
+<div class="op-crm">
+<style>
+@font-face{font-family:'Montserrat';font-style:normal;font-weight:800;font-display:swap;src:url(https://fonts.gstatic.com/s/montserrat/v29/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCvr70w-Y3tcoqK5.woff2) format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
+@font-face{font-family:'Montserrat';font-style:normal;font-weight:800;font-display:swap;src:url(https://fonts.gstatic.com/s/montserrat/v29/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCvr73w-Y3tcoqK5.woff2) format('woff2');unicode-range:U+0000-00FF}
+@font-face{font-family:'Open Sans';font-style:normal;font-weight:400;font-display:swap;src:url(https://fonts.gstatic.com/s/opensans/v40/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsiH0C4nY1M2xLER.woff2) format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
+@font-face{font-family:'Open Sans';font-style:normal;font-weight:400;font-display:swap;src:url(https://fonts.gstatic.com/s/opensans/v40/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsjZ0C4nY1M2xLER.woff2) format('woff2');unicode-range:U+0000-00FF}
+@font-face{font-family:'Open Sans';font-style:normal;font-weight:700;font-display:swap;src:url(https://fonts.gstatic.com/s/opensans/v40/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsg-1y4nY1M2xLER.woff2) format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
+@font-face{font-family:'Open Sans';font-style:normal;font-weight:700;font-display:swap;src:url(https://fonts.gstatic.com/s/opensans/v40/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsg-1S4nY1M2xLER.woff2) format('woff2');unicode-range:U+0000-00FF}
+.op-crm,.op-crm *,.op-crm *::before,.op-crm *::after{box-sizing:border-box;margin:0;padding:0}
+.op-crm{-webkit-tap-highlight-color:transparent;font-family:'Open Sans',Arial,sans-serif;color:#dce6f8;line-height:1.6}
+.op-crm *:focus,.op-crm *:focus-visible,.op-crm *:active{outline:none!important}
+.op-crm{--cyan:#2FC7F7;--blue:#0066CC;--navy:#003199;--yellow:#FAB400;--soft:#F4F8FF;--line:#E3ECF7;--muted:#8a9bbf;--radius:12px}
+.op-crm a{color:var(--cyan);text-decoration:none}
+.op-crm{color:#dce6f8;background:#080c17}
+.op-crm h2{color:#f0f5fc}
+.op-crm h3{color:#dce6f8}
+.op-crm a{color:var(--cyan)}
+.op-crm .op-lead{color:#a0b4d0}
+.op-w{max-width:1200px;margin:0 auto;padding:0 24px}
+.op-sec{padding:72px 0;position:relative;z-index:2}
+.op-sec+.op-sec{padding-top:0}
+.op-crm h2{font-family:'Montserrat',Arial,sans-serif;font-weight:800;color:#f0f5fc;line-height:1.14;letter-spacing:-.5px;font-size:clamp(26px,3.6vw,42px)}
+.op-crm h3{font-family:'Montserrat',Arial,sans-serif;font-weight:800;color:#f0f5fc;line-height:1.2;font-size:clamp(18px,2vw,24px)}
+.op-lead{max-width:720px;font-size:17px;color:var(--muted);line-height:1.65}
+.op-rv{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease}
+.op-rv.is-v{opacity:1;transform:none}
+.op-btn{display:inline-flex;align-items:center;justify-content:center;padding:14px 32px;border-radius:var(--radius);font-family:'Open Sans',Arial,sans-serif;font-weight:800;font-size:15px;cursor:pointer;border:none;transition:transform .2s,box-shadow .2s;text-decoration:none}
+.op-btn:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(0,102,204,.25)}
+.op-btn-blue{background:#2fc7f7;color:#fff!important}
+/* Hero */
+.op-hero{padding:200px 0 48px;text-align:center;position:relative;z-index:2}
+.op-hero h1{font-family:'Montserrat',Arial,sans-serif;font-weight:800;font-size:clamp(40px,5.5vw,72px);color:#f0f5fc;line-height:1.08;letter-spacing:-1.2px;margin-bottom:28px}
+.op-hero .op-lead{margin:0 auto 36px;max-width:700px}
+.op-hero__img{margin-top:44px;border-radius:20px;overflow:hidden;box-shadow:0 24px 60px rgba(0,49,153,.14)}
+.op-hero__img img{display:block;width:100%;height:auto}
+/* Half-media */
+.op-hm{display:grid;grid-template-columns:1fr 1.15fr;gap:48px;align-items:center}
+.op-hm_right .op-hm__media{order:-1}
+.op-hm__text h2{margin-bottom:16px}
+.op-hm__text .op-lead{margin-bottom:24px}
+.op-hm__media img{display:block;width:100%;height:auto;border-radius:20px;transform:scale(1.04)}
+.op-hm__btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px}
+/* Icons strip */
+.op-icons{text-align:center}
+.op-icons h2{margin-bottom:16px}
+.op-icons .op-lead{margin:0 auto 36px}
+.op-icons__row{display:flex;flex-wrap:wrap;gap:28px;justify-content:center}
+.op-icons__item{display:flex;flex-direction:column;align-items:center;gap:14px;flex:0 0 220px;text-align:center}
+.op-icons__icon{width:64px;height:64px;border-radius:18px;background:linear-gradient(135deg,var(--cyan) 0%,var(--blue) 100%);display:flex;align-items:center;justify-content:center}
+.op-icons__icon svg{width:28px;height:28px;fill:#fff}
+.op-icons__name{font-weight:700;font-size:15px;color:#f0f5fc;line-height:1.3}
+.op-icons__name{color:#dce6f8}
+/* Cards */
+.op-cards{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+.op-card{background:#fff;border:1px solid var(--line);border-radius:20px;overflow:hidden;transition:box-shadow .3s,transform .3s;display:flex;flex-direction:column;position:relative}
+.op-card:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(0,49,153,.1)}
+.op-card__media img{display:block;width:100%;height:auto}
+.op-card__body{padding:28px;display:flex;flex-direction:column;gap:10px;flex:1}
+.op-card__body h3{margin-bottom:0}
+.op-card__body p{font-size:15px;color:var(--muted);line-height:1.6;flex:1}
+.op-card{background:rgba(13,21,38,.7);border-color:rgba(255,255,255,.08)}
+.op-card__body p{color:#a0b4d0}
+.op-feat-glow{position:absolute;width:600px;height:600px;border-radius:50%;pointer-events:none;z-index:0;opacity:0;top:0;left:0;transform:translate(var(--gx,50%),var(--gy,50%)) translate(-50%,-50%);background:radial-gradient(circle,rgba(47,199,247,.13) 0%,rgba(46,125,246,.07) 40%,transparent 70%);filter:blur(40px);transition:opacity .3s ease}
+.op-card:hover .op-feat-glow{opacity:1}
+/* AI Slider */
+.op-ai-slider{display:grid;grid-template-columns:1fr 1.6fr;gap:48px;align-items:start}
+.op-ai-slider__text h2{margin-bottom:16px}
+.op-ai-slider__text .op-lead{margin-bottom:28px}
+.op-ai-slider__chips{display:flex;flex-direction:column;gap:6px}
+.op-ai-chip{display:flex;flex-direction:column;gap:0;padding:14px 18px;border-radius:14px;cursor:pointer;border:1.5px solid transparent;transition:border-color .25s,background .25s;background:none;text-align:left;font-family:'Open Sans',Arial,sans-serif}
+.op-ai-chip.is-act{border-color:var(--cyan);background:rgba(47,199,247,.06)}
+.op-ai-chip__label{font-weight:700;font-size:15px;color:#f0f5fc;transition:color .25s}
+.op-ai-chip__label{color:#dce6f8}
+.op-ai-chip.is-act .op-ai-chip__label{color:var(--cyan)}
+.op-ai-chip__bar{height:3px;background:var(--line);border-radius:2px;margin-top:8px;overflow:hidden;display:none}
+.op-ai-chip.is-act .op-ai-chip__bar{display:block}
+.op-ai-chip__prog{height:100%;width:0;background:var(--cyan);border-radius:2px;transition:width linear}
+.op-ai-slider__images{border-radius:20px;overflow:hidden;position:relative}
+.op-ai-slider__slide{display:none}
+.op-ai-slider__slide.is-act{display:block}
+.op-ai-slider__slide img{display:block;width:100%;height:auto;border-radius:20px}
+/* Full-width */
+.op-fw{text-align:center}
+.op-fw h2{margin-bottom:16px}
+.op-fw .op-lead{margin:0 auto 24px}
+.op-fw__media{border-radius:20px;overflow:hidden;box-shadow:0 20px 50px rgba(0,49,153,.12);margin-top:32px}
+.op-fw__media img{display:block;width:100%;height:auto}
+/* FAQ */
+.op-faq{max-width:800px;margin:0 auto}
+.op-faq h2{text-align:center;margin-bottom:40px}
+.op-faq-item{border-bottom:1px solid var(--line);padding:4px 0}
+.op-faq-q{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:20px 4px;cursor:pointer;font-weight:700;font-size:16px;color:#f0f5fc;user-select:none}
+.op-faq-arrow{width:32px;height:32px;flex:none;border-radius:50%;background:var(--soft);display:flex;align-items:center;justify-content:center;transition:transform .35s,background .25s}
+.op-faq-arrow svg{width:14px;height:14px;stroke:#dce6f8;fill:none;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;transition:stroke .25s}
+.op-faq-item.is-open .op-faq-arrow{transform:rotate(180deg);background:var(--cyan)}
+.op-faq-item.is-open .op-faq-arrow svg{stroke:#fff}
+.op-faq-a{max-height:0;overflow:hidden;transition:max-height .4s ease}
+.op-faq-a__inner{padding:0 4px 20px;color:var(--muted);font-size:15px;line-height:1.65}
+.op-faq-item{border-bottom-color:rgba(255,255,255,.08)}
+.op-faq-q{color:#f0f5fc}
+.op-faq-arrow{background:rgba(255,255,255,.08)}
+.op-faq-arrow svg{stroke:#dce6f8}
+.op-faq-a__inner{color:#a0b4d0}
+/* Bottom cards */
+.op-bottom{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.op-bottom-card{border-radius:20px;padding:36px 32px;background-size:cover;background-position:center;position:relative;overflow:hidden;display:flex;flex-direction:column;gap:12px}
+.op-bottom-card::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(0,49,153,.82) 0%,rgba(0,49,153,.60) 100%)}
+.op-bottom-card>*{position:relative;z-index:1}
+.op-bottom-card h3{font-family:'Montserrat',Arial,sans-serif;font-weight:800;color:#fff;font-size:20px}
+.op-bottom-card p{font-size:14px;color:rgba(255,255,255,.82);line-height:1.5;flex:1}
+/* CTA */
+.op-cta{padding:72px 0;position:relative;z-index:2}
+.op-cta-inner{position:relative;z-index:2;border-radius:32px;padding:56px 48px;text-align:center;background:rgba(13,21,38,.65);border:1px solid rgba(255,255,255,.1);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);box-shadow:0 40px 100px -30px rgba(0,6,30,.7)}
+.op-cta-inner h2{color:#f0f5fc;margin-bottom:16px}
+.op-cta-inner p{color:rgba(232,237,248,.7);font-size:17px;max-width:560px;margin:0 auto 32px}
+.op-cta-btns{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+.op-cta-btn--ghost{background:transparent;border:1.5px solid #2fc7f7;color:#2fc7f7!important;padding:14px 26px}
+/* Particles */
+.op-particles-bg{position:fixed;top:0;left:0;pointer-events:none;z-index:0;opacity:.6}
+.op-page-glow{position:fixed;top:0;left:0;width:700px;height:700px;border-radius:50%;pointer-events:none;z-index:1;background:radial-gradient(circle,rgba(47,199,247,.13) 0%,rgba(46,125,246,.07) 40%,transparent 70%);filter:blur(40px);will-change:transform}
+/* Responsive */
+@media(max-width:960px){
+  .op-hm{grid-template-columns:1fr;gap:32px}
+  .op-hm_right .op-hm__media{order:0}
+  .op-ai-slider{grid-template-columns:1fr;gap:32px}
+  .op-ai-slider__chips{flex-direction:row;flex-wrap:wrap}
+  .op-cards{grid-template-columns:1fr}
+  .op-bottom{grid-template-columns:1fr}
+  .op-hero{padding:140px 0 32px}
+  .op-icons__row{gap:20px}
+  .op-icons__item{flex:0 0 160px}
+}
+@media(max-width:640px){
+  .op-hero{padding:120px 0 24px}
+  .op-cta-inner{padding:40px 24px;border-radius:20px}
+  .op-cta-btns{flex-direction:column;align-items:stretch}
+  .op-icons__item{flex:0 0 140px}
+}
+@media(prefers-reduced-motion:reduce){
+  .op-rv{transition:none;opacity:1;transform:none}
+  .op-particles-bg,.op-page-glow,.op-feat-glow{display:none}
+}
+
+/* === DARK THEME EXTRA FIXES === */
+.op-faq-arrow{background:rgba(255,255,255,.08)}
+.op-faq-arrow svg{stroke:#dce6f8}
+.op-dd-arrow svg{stroke:#dce6f8}
+.op-dd-body__inner{color:#a0b4d0}
+.op-faq-a__inner{color:#a0b4d0}
+.op-faq-a__inner a{color:var(--cyan)}
+.op-btn-grey{background:rgba(255,255,255,.08);color:#dce6f8}
+.op-bottom-card{background-color:#0d1931}
+.op-feat3-card{background:rgba(13,21,38,.7);border-color:rgba(255,255,255,.08)}
+.op-feat3-card h3{color:#f0f5fc}
+.op-soft-card{background:rgba(13,21,38,.5)}
+.op-feat{background:rgba(13,21,38,.6);border-color:rgba(255,255,255,.08)}
+.op-cards4-item{background:rgba(13,21,38,.6);border-color:rgba(255,255,255,.08)}
+.op-cards4-item h3{color:#f0f5fc}
+.op-sec2-card{background:rgba(13,21,38,.5);border-color:rgba(255,255,255,.08)}
+.op-sec-full{background:rgba(13,21,38,.5);border-color:rgba(255,255,255,.08)}
+.op-crm a{color:var(--cyan)}
+.op-crm a.op-btn-blue, .op-crm a.op-btn-green, .op-crm a.op-cta-buy, .op-crm a.op-btn-grey{color:#fff}
+.op-crm .op-lead{color:#a0b4d0}
+.op-crm h3{color:#f0f5fc}
+.op-slide{background:rgba(13,21,38,.6);border-color:rgba(255,255,255,.08)}
+.op-slide h3{color:#f0f5fc}
+
+/* === DARK THEME COMPREHENSIVE FIX === */
+.op-conf__tab{background:rgba(13,21,38,.7);border-color:rgba(255,255,255,.12);color:#dce6f8}
+.op-conf__tab.is-act{background:var(--cyan);color:#fff}
+.op-conf__list li{background:rgba(13,21,38,.6);border-color:rgba(255,255,255,.1);color:#dce6f8}
+.op-ai-chip{background:rgba(13,21,38,.7);border-color:rgba(255,255,255,.1);color:#dce6f8}
+.op-ai-chip__bar{background:rgba(255,255,255,.08)}
+.op-badge-50{background:rgba(13,21,38,.7);border-color:rgba(255,255,255,.12);color:#f0f5fc}
+.op-toggle-btn{background:rgba(47,199,247,.15);color:var(--cyan)}
+.op-cta .op-btn-blue{background:#2fc7f7;color:#fff!important}
+.op-plat__item{background:rgba(13,21,38,.6);border-color:rgba(255,255,255,.08)}
+.op-plat__item h3{color:#f0f5fc}
+.op-plat__check{background:rgba(13,21,38,.5)}
+
+  .b24-form-wrapper{background:transparent!important;border:none!important;box-shadow:none!important;padding:0!important}
+  .b24-form{background:#111827!important;border:1px solid rgba(255,255,255,.09)!important;border-radius:16px!important;overflow:hidden!important;box-shadow:0 24px 60px rgba(0,0,0,.4)!important}
+  .b24-form-header{background:#111827!important;border-bottom:1px solid rgba(255,255,255,.08)!important}
+  .b24-form-header-title,.b24-form-header *{color:#fff!important}
+  .b24-form-body{background:#111827!important;padding:24px!important}
+  .b24-form-field{border-bottom:none!important;border-top:none!important;padding:0!important;margin-bottom:8px!important}
+  .b24-form-control-container .b24-form-control,.b24-form-field .b24-form-control,.b24-form input:not([type=checkbox]):not([type=radio]),.b24-form textarea,.b24-form select{background:rgba(255,255,255,.06)!important;border:1px solid rgba(255,255,255,.12)!important;border-radius:10px!important;color:#E8EDF7!important;font-family:'Open Sans',sans-serif!important}
+  .b24-form-control::placeholder,.b24-form input::placeholder,.b24-form textarea::placeholder{color:#8A95B0!important}
+  .b24-form-control:focus,.b24-form input:focus,.b24-form textarea:focus{border-color:rgba(47,199,247,.5)!important;outline:none!important;box-shadow:0 0 0 3px rgba(47,199,247,.12)!important;background:rgba(255,255,255,.09)!important}
+  .b24-form-field-label,.b24-form-field-label *{color:#c8d5f0!important}
+  .b24-form-btn-container .b24-form-btn{background:linear-gradient(135deg,#2E7DF6,#7A5CFF)!important;border:none!important;border-radius:12px!important;color:#fff!important;font-weight:700!important;font-family:'Montserrat',sans-serif!important;box-shadow:0 8px 24px rgba(46,125,246,.4)!important;transition:opacity .2s,transform .2s!important}
+  .b24-form-btn-container .b24-form-btn:hover{opacity:.9!important;transform:translateY(-1px)!important}
+  .b24-form-sign,.b24-form-sign *,.b24-form-field-agree,.b24-form-field-agree *{color:#8A95B0!important}
+  .b24-form-field-agreement a{color:#2FC7F7!important}
+  .b24-form *:not(input):not(textarea):not(select):not(button){color:#E8EDF7!important}
+  .b24-form input,.b24-form textarea,.b24-form select{color:#E8EDF7!important}
+  .b24-form-btn,.b24-form-btn *{color:#fff!important}
+</style>
+
+<!-- HERO -->
+<section class="op-hero">
+<div class="op-w">
+  <h1>Конструктор сайтов</h1>
+  <p class="op-lead">Создайте продающий лендинг за считаные минуты — прямо в CRM. Всё, что нужно для успешных продаж, уже есть на сайте: формы заявок, аналитика, интеграции и многое другое. Просто выберите подходящий шаблон и начните привлекать клиентов уже сегодня.</p>
+  <a class="op-btn op-btn-green" href="https://www.bitrix24.ru/create.php?p=6860675&p1=sales">Создать бесплатно</a>
+  <div class="op-hero__img">
+    <img loading="eager" fetchpriority="high" src="https://www.bitrix24.ru/upload/optimizer/converted/images/content_ru/features/crm/sites/sites/1.1900w.png" alt="Конструктор сайтов Битрикс24">
+  </div>
+</div>
+</section>
+
+<!-- AI создает сайты сам (slider 1) -->
+<section class="op-sec op-rv">
+<div class="op-w">
+  <div class="op-ai-slider" data-ai-slider data-duration="5">
+    <div class="op-ai-slider__text">
+      <h2>AI создаёт сайты сам</h2>
+      <p class="op-lead">Искусственный интеллект создаст ваш сайт за минуту, включая тексты и изображения. Вам остаётся только проверить контент и опубликовать.</p>
+      <div class="op-ai-slider__chips">
+        <button class="op-ai-chip is-act" data-ai-chip="0"><span class="op-ai-chip__label">Создание лендинга</span><div class="op-ai-chip__bar"><div class="op-ai-chip__prog"></div></div></button>
+        <button class="op-ai-chip" data-ai-chip="1"><span class="op-ai-chip__label">Изображения</span><div class="op-ai-chip__bar"><div class="op-ai-chip__prog"></div></div></button>
+        <button class="op-ai-chip" data-ai-chip="2"><span class="op-ai-chip__label">Продающие тексты</span><div class="op-ai-chip__bar"><div class="op-ai-chip__prog"></div></div></button>
+      </div>
+    </div>
+    <div class="op-ai-slider__images">
+      <div class="op-ai-slider__slide is-act" data-ai-slide="0"><img loading="lazy" src="https://www.bitrix24.ru/upload/optimizer/converted/images/content_ru/features/crm/sites/sites/2.1912w.png" alt="Создание лендинга"></div>
+      <div class="op-ai-slider__slide" data-ai-slide="1"><img loading="lazy" src="https://www.bitrix24.ru/upload/optimizer/converted/images/content_ru/features/crm/sites/sites/3.1900w.png" alt="Изображения"></div>
+      <div class="op-ai-slider__slide" data-ai-slide="2"><img loading="lazy" src="https://www.bitrix24.ru/upload/optimizer/converted/images/content_ru/features/crm/sites/sites/4.1900w.png" alt="Продающие тексты"></div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- Готовые шаблоны -->
+<section class="op-sec op-rv">
+<div class="op-w">
+  <div class="op-hm">
+    <div class="op-hm__text">
+      <h2>Готовые шаблоны для любого бизнеса</h2>
+      <p class="op-lead">Выберите из множества шаблонов, адаптированных под разные отрасли. От лендингов до интернет-магазинов — с Битрикс24 легко создать сайт, который привлечёт ваших клиентов.</p>
+      <div class="op-hm__btns">
+        <a class="op-btn op-btn-green" href="https://www.bitrix24.ru/create.php?p=6860675&p1=sales">Создать бесплатно</a>
+      </div>
+    </div>
+    <div class="op-hm__media">
+      <img loading="lazy" src="https://www.bitrix24.ru/upload/optimizer/converted/images/content_ru/features/crm/sites/sites/5.1440w.png" alt="Готовые шаблоны">
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- Простой конструктор -->
+<section class="op-sec op-rv">
+<div class="op-w">
+  <div class="op-hm op-hm_right">
+    <div class="op-hm__text">
+      <h2>Простой конструктор сайтов</h2>
+      <p class="op-lead">Выбирайте из сотни готовых блоков или создавайте свои для идеального сайта: фотогалереи, видео, CRM-формы, расписание и многое другое.</p>
+      <p class="op-lead" style="margin-top:12px">Сайт, созданный в конструкторе, сразу адаптирован под все разрешения, мобильные телефоны, планшеты, iOS и Android.</p>
+      <div class="op-hm__btns">
+        <a class="op-btn op-btn-green" href="https://www.bitrix24.ru/create.php?p=6860675&p1=sales">Создать бесплатно</a>
+      </div>
+    </div>
+    <div class="op-hm__media">
+      <img loading="lazy" src="https://www.bitrix24.ru/upload/optimizer/converted/images/content_ru/features/crm/sites/sites/6.1440w.png" alt="Простой конструктор">
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- Icons: Битрикс24 Сайты помогают продавать -->
+<section class="op-sec op-rv">
+<div class="op-w">
+  <div class="op-icons">
+    <h2>Битрикс24 Сайты помогают продавать</h2>
+    <p class="op-lead">Звонки, соцсети, форма на сайте — все сообщения автоматически попадают в CRM. Наращивайте клиентскую базу и продавайте повторно. С Битрикс24 всё важное сохранится в истории общения с клиентом.</p>
+    <div class="op-icons__row">
+      <div class="op-icons__item">
+        <div class="op-icons__icon"><svg viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-2 12H6v-2h12v2zm0-3H6V9h12v2zm0-3H6V6h12v2z"/></svg></div>
+        <span class="op-icons__name">Бесплатный виджет с онлайн-чатом</span>
+      </div>
+      <div class="op-icons__item">
+        <div class="op-icons__icon"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm4 0h-2V8h2v8z"/></svg></div>
+        <span class="op-icons__name">Уведомления через WhatsApp и SMS</span>
+      </div>
+      <div class="op-icons__item">
+        <div class="op-icons__icon"><svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 14l-5-5 1.41-1.41L12 14.17l7.59-7.59L21 8l-9 9z"/></svg></div>
+        <span class="op-icons__name">CRM-формы для сайтов и соцсетей</span>
+      </div>
+      <div class="op-icons__item">
+        <div class="op-icons__icon"><svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg></div>
+        <span class="op-icons__name">Телефония с аналитикой звонков</span>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- Сайты создаются прямо в CRM -->
+<section class="op-sec op-rv">
+<div class="op-w">
+  <div class="op-hm">
+    <div class="op-hm__text">
+      <h2>Сайты создаются прямо в CRM</h2>
+      <p class="op-lead">Не нужно беспокоиться о переносе данных с сайта в CRM — все заказы, контакты клиентов и покупки автоматически синхронизируются.</p>
+      <div class="op-hm__btns">
+        <a class="op-btn op-btn-green" href="https://www.bitrix24.ru/create.php?p=6860675&p1=sales">Создать бесплатно</a>
+      </div>
+    </div>
+    <div class="op-hm__media">
+      <img loading="lazy" src="https://www.bitrix24.ru/upload/optimizer/converted/images/content_ru/features/crm/sites/sites/7.1440w.png" alt="Сайты в CRM">
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- Cards: Маркетинг + Автоматизация -->
+<section class="op-sec op-rv">
+<div class="op-w">
+  <div class="op-cards">
+    <div class="op-card">
+      <div class="op-feat-glow"></div>
+      <div class="op-card__media"><img loading="lazy" src="https://www.bitrix24.ru/upload/optimizer/converted/images/content_ru/features/crm/sites/sites/8.1176w.png" alt="Маркетинг"></div>
+      <div class="op-card__body">
+        <h3>Маркетинг для привлечения клиентов</h3>
+        <p>Запускайте рекламу, Email- и SMS-рассылки для своей аудитории — это эффективно привлекает внимание, повышает конверсию и увеличивает повторные продажи.</p>
+      </div>
+    </div>
+    <div class="op-card">
+      <div class="op-feat-glow"></div>
+      <div class="op-card__media"><img loading="lazy" src="https://www.bitrix24.ru/upload/optimizer/converted/images/content_ru/features/crm/sites/sites/9.1176w.png" alt="Автоматизация продаж"></div>
+      <div class="op-card__body">
+        <h3>Автоматизация продаж</h3>
+        <p>CRM сама распределит заказы, отправит SMS, запишет звонки, выставит счёт и сформирует отчёт. А <a href="https://b24.pro/instrumenty/AIinBitrix24/">AI</a> возьмёт на себя рутину — преобразует разговоры звонков в текст и сам заполнит поля в карточке сделки.</p>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- Cards: Онлайн-чат + WhatsApp -->
+<section class="op-sec op-rv">
+<div class="op-w">
+  <div class="op-cards">
+    <div class="op-card">
+      <div class="op-feat-glow"></div>
+      <div class="op-card__media"><img loading="lazy" src="https://www.bitrix24.ru/upload/optimizer/converted/images/content_ru/features/crm/sites/sites/10.1176w.png" alt="Бесплатный онлайн-чат"></div>
+      <div class="op-card__body">
+        <h3>Бесплатный онлайн-чат</h3>
+        <p>Ваши клиенты смогут написать вам с сайта в онлайн-чат, в Telegram, ВКонтакте, WhatsApp — общаться с вами так, как им удобно. Они оценят персональный подход! Все сообщения сохранятся в CRM.</p>
+      </div>
+    </div>
+    <div class="op-card">
+      <div class="op-feat-glow"></div>
+      <div class="op-card__media"><img loading="lazy" src="https://www.bitrix24.ru/upload/optimizer/converted/images/content_ru/features/crm/sites/sites/11.1176w.png" alt="Виртуальный WhatsApp"></div>
+      <div class="op-card__body">
+        <h3>Виртуальный WhatsApp</h3>
+        <p>Общайтесь с клиентами в WhatsApp. Мессенджер автоматически подключается к виджету на сайте и сразу готов к работе. Число диалогов не ограничено, всё сохраняется в CRM.</p>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- Cards: CRM-формы + Лендинги для соцсетей -->
+<section class="op-sec op-rv">
+<div class="op-w">
+  <div class="op-cards">
+    <div class="op-card">
+      <div class="op-feat-glow"></div>
+      <div class="op-card__media"><img loading="lazy" src="https://www.bitrix24.ru/upload/optimizer/converted/images/content_ru/features/crm/sites/sites/12.1176w.png" alt="CRM-формы"></div>
+      <div class="op-card__body">
+        <h3>CRM-формы</h3>
+        <p>Собирайте контакты, продвигайтесь в соцсетях, увеличивайте продажи с помощью CRM-форм.</p>
+      </div>
+    </div>
+    <div class="op-card">
+      <div class="op-feat-glow"></div>
+      <div class="op-card__media"><img loading="lazy" src="https://www.bitrix24.ru/upload/optimizer/converted/images/content_ru/features/crm/sites/sites/13.1176w.png" alt="Лендинги для соцсетей"></div>
+      <div class="op-card__body">
+        <h3>Лендинги для соцсетей</h3>
+        <p>Создайте короткую целевую страницу для сбора заявок, рекламной акции или ссылок на ваши соцсети. В Битрикс24 есть готовые шаблоны для бизнеса в соцсетях.</p>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- AI Slider 2: Простой и удобный конструктор -->
+<section class="op-sec op-rv">
+<div class="op-w">
+  <div class="op-ai-slider" data-ai-slider data-duration="5">
+    <div class="op-ai-slider__text">
+      <h2>Простой и удобный конструктор</h2>
+      <p class="op-lead">Редактируйте изображения прямо в конструкторе, парой кликов настраивайте цвета всего сайта, добавляйте и убирайте любые элементы. С Битрикс24 вы легко создадите сайт без привлечения дизайнеров и разработчиков.</p>
+      <div class="op-ai-slider__chips">
+        <button class="op-ai-chip is-act" data-ai-chip="0"><span class="op-ai-chip__label">Графический редактор</span><div class="op-ai-chip__bar"><div class="op-ai-chip__prog"></div></div></button>
+        <button class="op-ai-chip" data-ai-chip="1"><span class="op-ai-chip__label">Корпоративные цвета</span><div class="op-ai-chip__bar"><div class="op-ai-chip__prog"></div></div></button>
+        <button class="op-ai-chip" data-ai-chip="2"><span class="op-ai-chip__label">Суперблок</span><div class="op-ai-chip__bar"><div class="op-ai-chip__prog"></div></div></button>
+      </div>
+    </div>
+    <div class="op-ai-slider__images">
+      <div class="op-ai-slider__slide is-act" data-ai-slide="0"><img loading="lazy" src="https://www.bitrix24.ru/upload/optimizer/converted/images/content_ru/features/crm/sites/sites/14.1900w.png" alt="Графический редактор"></div>
+      <div class="op-ai-slider__slide" data-ai-slide="1"><img loading="lazy" src="https://www.bitrix24.ru/upload/optimizer/converted/images/content_ru/features/crm/sites/sites/15.1900w.png" alt="Корпоративные цвета"></div>
+      <div class="op-ai-slider__slide" data-ai-slide="2"><img loading="lazy" src="https://www.bitrix24.ru/upload/optimizer/converted/images/content_ru/features/crm/sites/sites/16.1900w.png" alt="Суперблок"></div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- Cards: Лента новостей + Многостраничные -->
+<section class="op-sec op-rv">
+<div class="op-w">
+  <div class="op-cards">
+    <div class="op-card">
+      <div class="op-feat-glow"></div>
+      <div class="op-card__media"><img loading="lazy" src="https://www.bitrix24.ru/upload/optimizer/converted/images/content_ru/features/crm/sites/sites/17.1176w.png" alt="Лента новостей"></div>
+      <div class="op-card__body">
+        <h3>Лента новостей</h3>
+        <p>Добавьте пост в новости группы, и он попадёт в новости на ваш сайт. Картинка и текст опубликуются в нужном виде. Чем чаще появляются новости на вашем сайте, тем более живым и интересным он будет для посетителей.</p>
+      </div>
+    </div>
+    <div class="op-card">
+      <div class="op-feat-glow"></div>
+      <div class="op-card__media"><img loading="lazy" src="https://www.bitrix24.ru/upload/optimizer/converted/images/content_ru/features/crm/sites/sites/18.1176w.png" alt="Многостраничные сайты"></div>
+      <div class="op-card__body">
+        <h3>Многостраничные сайты</h3>
+        <p>Настройте общий вид для многостраничного сайта. Вы можете добавить блоки, которые будут отображаться на всех страницах: логотип, основное меню в шапке или контакты компании в подвале сайта.</p>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- Cards: Аналитика + Права доступа -->
+<section class="op-sec op-rv">
+<div class="op-w">
+  <div class="op-cards">
+    <div class="op-card">
+      <div class="op-feat-glow"></div>
+      <div class="op-card__media"><img loading="lazy" src="https://www.bitrix24.ru/upload/optimizer/converted/images/content_ru/features/crm/sites/sites/19.1176w.png" alt="Системы аналитики"></div>
+      <div class="op-card__body">
+        <h3>Системы аналитики</h3>
+        <p>В один клик в настройках подключите Яндекс Метрику и Google Analytics, чтобы получать полную статистику по сайту.</p>
+      </div>
+    </div>
+    <div class="op-card">
+      <div class="op-feat-glow"></div>
+      <div class="op-card__media"><img loading="lazy" src="https://www.bitrix24.ru/upload/optimizer/converted/images/content_ru/features/crm/sites/sites/20.1176w.png" alt="Права доступа"></div>
+      <div class="op-card__body">
+        <h3>Права доступа</h3>
+        <p>Вы сами решаете, кому дать права на создание, внесение изменений или удаление страниц сайта. Полные права доступа имеют только люди с правами администратора Битрикс24.</p>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- Full-width: Полная адаптивность -->
+<section class="op-sec op-rv">
+<div class="op-w">
+  <div class="op-fw">
+    <h2>Полная адаптивность</h2>
+    <p class="op-lead">Битрикс24 Сайты отлично выглядят на смартфонах и планшетах. Вы можете легко настроить видимость блоков сайта на разных устройствах.</p>
+    <div class="op-fw__media">
+      <img loading="lazy" src="https://www.bitrix24.ru/upload/optimizer/converted/images/content_ru/features/crm/sites/sites/21.1900w.png" alt="Полная адаптивность">
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- FAQ -->
+<section class="op-sec op-rv">
+<div class="op-w">
+  <div class="op-faq">
+    <h2>Частые вопросы</h2>
+    <div class="op-faq-item" data-faq>
+      <div class="op-faq-q">Как бесплатно сделать и опубликовать сайт в конструкторе?<span class="op-faq-arrow"><svg viewBox="0 0 14 14"><path d="M2 5l5 4 5-4"/></svg></span></div>
+      <div class="op-faq-a"><div class="op-faq-a__inner">Зайдите в ваш Битрикс24 и в левом меню выберите раздел «Сайты и Магазины». Во вкладке «Сайты» нажмите «Создать». Выберите готовый шаблон или соберите сайт из блоков. Опубликовать сайт можно за один клик на бесплатном домене bitrix24site.ru.</div></div>
+    </div>
+    <div class="op-faq-item" data-faq>
+      <div class="op-faq-q">Можно ли создать сайт в конструкторе без знания кода?<span class="op-faq-arrow"><svg viewBox="0 0 14 14"><path d="M2 5l5 4 5-4"/></svg></span></div>
+      <div class="op-faq-a"><div class="op-faq-a__inner">Да, можно. Используйте готовые шаблоны, блоки, формы и кнопки. Вам нужно будет только заменить текст и картинки. Конструктор подходит для создания как мини-сайтов, так и больших онлайн-магазинов с любым количеством страниц.</div></div>
+    </div>
+    <div class="op-faq-item" data-faq>
+      <div class="op-faq-q">Как сделать мобильную версию сайта через конструктор?<span class="op-faq-arrow"><svg viewBox="0 0 14 14"><path d="M2 5l5 4 5-4"/></svg></span></div>
+      <div class="op-faq-a"><div class="op-faq-a__inner">Все шаблоны и блоки уже адаптированы для мобильных устройств. Вам не придётся создавать отдельную мобильную версию. Чтобы посмотреть, как ваш сайт будет выглядеть на мобильных устройствах, переключитесь в режим мобильного представления.</div></div>
+    </div>
+    <div class="op-faq-item" data-faq>
+      <div class="op-faq-q">Нужен ли хостинг для сайта, сделанного на конструкторе?<span class="op-faq-arrow"><svg viewBox="0 0 14 14"><path d="M2 5l5 4 5-4"/></svg></span></div>
+      <div class="op-faq-a"><div class="op-faq-a__inner">Нет, отдельный хостинг не нужен. Битрикс24 предлагает конструктор с хостингом по умолчанию.</div></div>
+    </div>
+    <div class="op-faq-item" data-faq>
+      <div class="op-faq-q">Можно ли подключить конструктор к уже существующему домену?<span class="op-faq-arrow"><svg viewBox="0 0 14 14"><path d="M2 5l5 4 5-4"/></svg></span></div>
+      <div class="op-faq-a"><div class="op-faq-a__inner">Да, вы можете подключить сайт, сделанный в конструкторе, к любому вашему домену. Такая опция есть в Настройках сайта, она доступна на платных тарифах.</div></div>
+    </div>
+    <div class="op-faq-item" data-faq>
+      <div class="op-faq-q">Что лучше: использовать конструктор сайтов или нанять программиста?<span class="op-faq-arrow"><svg viewBox="0 0 14 14"><path d="M2 5l5 4 5-4"/></svg></span></div>
+      <div class="op-faq-a"><div class="op-faq-a__inner">Зависит от задачи. Программист может сделать сложный сайт с уникальным дизайном, но пропорционально сложности растут сроки и стоимость. Конструктор сайтов позволяет запустить готовый сайт за несколько часов, а не месяцев. Элементы в конструкторе уже оптимизированы и адаптированы для быстрой работы.</div></div>
+    </div>
+    <div class="op-faq-item" data-faq>
+      <div class="op-faq-q">Где взять картинки для сайта?<span class="op-faq-arrow"><svg viewBox="0 0 14 14"><path d="M2 5l5 4 5-4"/></svg></span></div>
+      <div class="op-faq-a"><div class="op-faq-a__inner">Используйте свои или стоковые изображения, дорабатывайте их во встроенном графическом редакторе. Попробуйте создать контент с помощью <a href="https://b24.pro/instrumenty/AIinBitrix24/">AI в Битрикс24</a>. Искусственный интеллект генерирует уникальные изображения и тексты по вашему запросу.</div></div>
+    </div>
+    <div class="op-faq-item" data-faq>
+      <div class="op-faq-q">Как оптимизировать сайт для SEO с помощью Битрикс24?<span class="op-faq-arrow"><svg viewBox="0 0 14 14"><path d="M2 5l5 4 5-4"/></svg></span></div>
+      <div class="op-faq-a"><div class="op-faq-a__inner">В конструкторе Битрикс24 предусмотрены необходимые настройки для SEO: мета-теги для страниц, подключение систем аналитики. Создавая сайт с помощью конструктора, заполняйте все предлагаемые поля с тегами и заголовками.</div></div>
+    </div>
+    <div class="op-faq-item" data-faq>
+      <div class="op-faq-q">Что делать, если мне не хватает возможностей конструктора?<span class="op-faq-arrow"><svg viewBox="0 0 14 14"><path d="M2 5l5 4 5-4"/></svg></span></div>
+      <div class="op-faq-a"><div class="op-faq-a__inner">Обратите внимание на режим суперблока. В нём вы можете полностью управлять расположением контента, добавлять и убирать любые элементы. Также вы можете обратиться к <a href="https://www.bitrix24.ru/partners/" target="_blank" rel="noopener">официальным партнёрам Битрикс24</a> — сертифицированным компаниям, которые могут реализовать любые ваши бизнес-задачи.</div></div>
+    </div>
+    <div class="op-faq-item" data-faq>
+      <div class="op-faq-q">Чем отличаются платные тарифы от бесплатного?<span class="op-faq-arrow"><svg viewBox="0 0 14 14"><path d="M2 5l5 4 5-4"/></svg></span></div>
+      <div class="op-faq-a"><div class="op-faq-a__inner">Бесплатный тариф имеет некоторые ограничения. В конструкторе бесплатно можно создать только один активный сайт, нет возможности добавить счётчики систем аналитики или использовать суперблоки. Однако бесплатный тариф позволяет создать готовый коммерческий сайт меньше чем за час. Ознакомьтесь с возможностями на всех тарифах <a href="https://www.bitrix24.ru/prices/" target="_blank" rel="noopener">здесь</a>.</div></div>
+    </div>
+    <div class="op-faq-item" data-faq>
+      <div class="op-faq-q">К кому обратиться, если мне нужна помощь с сайтом Битрикс24?<span class="op-faq-arrow"><svg viewBox="0 0 14 14"><path d="M2 5l5 4 5-4"/></svg></span></div>
+      <div class="op-faq-a"><div class="op-faq-a__inner">Если у вас есть вопросы по работе сервиса Битрикс24, вы можете обратиться в техподдержку или найти ответ на свой вопрос в <a href="https://helpdesk.bitrix24.ru/#section105667" target="_blank" rel="noopener">этом разделе</a>.</div></div>
+    </div>
+    <div class="op-faq-item" data-faq>
+      <div class="op-faq-q">Будет ли сайт, сделанный в конструкторе, хорошо работать?<span class="op-faq-arrow"><svg viewBox="0 0 14 14"><path d="M2 5l5 4 5-4"/></svg></span></div>
+      <div class="op-faq-a"><div class="op-faq-a__inner">Архитектура и дизайн элементов конструктора Битрикс24 разработаны профессионалами и проверены миллионами клиентов. Сайты, созданные на Битрикс24, имеют высокую степень защиты баз данных, используют SSL-сертификаты шифрования, оптимизированы для поисковых систем и спроектированы так, чтобы их было удобно использовать и легко поддерживать.</div></div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- Bottom cards -->
+<section class="op-sec op-rv">
+<div class="op-w">
+  <div class="op-bottom">
+    <div class="op-bottom-card" style="background-image:url('https://www.bitrix24.ru/images/content_common/apps/market-1.png')">
+      <h3>6 080+ интеграций</h3>
+      <p>Телефония, 1С, онлайн-банки, доставка и ещё больше тысячи готовых интеграций уже внутри Битрикс24.</p>
+      <a class="op-btn op-btn-blue" href="https://www.bitrix24.ru/apps/" target="_blank" rel="noopener">Узнать больше</a>
+    </div>
+    <div class="op-bottom-card" style="background-image:url('https://www.bitrix24.ru/images/content_common/apps/market-2.png')">
+      <h3>Коробочная версия</h3>
+      <p>Работает на вашем сервере с дополнительным функционалом и возможностью доработки.</p>
+      <a class="op-btn op-btn-blue" href="https://www.bitrix24.ru/self-hosted/" target="_blank" rel="noopener">Узнать больше</a>
+    </div>
+    <div class="op-bottom-card" style="background-image:url('https://www.bitrix24.ru/images/content_common/apps/market-3.png')">
+      <h3>Для крупных организаций</h3>
+      <p>Битрикс24 Enterprise для крупных территориально-распределённых компаний или холдингов.</p>
+      <a class="op-btn op-btn-blue" href="https://www.bitrix24.ru/enterprise/" target="_blank" rel="noopener">Узнать больше</a>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- CTA -->
+<section class="op-cta op-rv">
+<div class="op-w">
+  <div class="op-cta-inner">
+    <h2>Единая платформа для работы компании</h2>
+    <p>Вместо десятков сервисов и приложений</p>
+    <div class="op-cta-btns">
+      <a class="op-btn op-btn-green" href="https://www.bitrix24.ru/create.php?p=6860675&p1=sales">Получить бесплатно</a>
+      <a class="op-btn op-cta-btn--ghost" href="#cta-form">Получить консультацию</a>
+    </div>
+  </div>
+</div>
+</section>
+<!-- CONSULTATION FORM -->
+<section class="op-cta op-rv" id="cta-form" style="padding-top:0">
+<div class="op-w">
+  <div style="max-width:700px;margin:0 auto;text-align:center;padding:0 0 24px">
+    <div style="display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:#2FC7F7;border:1px solid rgba(47,199,247,.25);border-radius:100px;padding:7px 16px;margin-bottom:20px;background:rgba(47,199,247,.06)"><span style="width:6px;height:6px;border-radius:50%;background:#2FC7F7;box-shadow:0 0 10px #2FC7F7"></span>Бесплатная консультация</div>
+    <h2 style="font-family:'Montserrat',sans-serif;font-size:clamp(22px,3vw,32px);font-weight:800;color:#fff;margin:0 0 12px;line-height:1.2">Нужно под ваши процессы — настроим</h2>
+    <p style="font-size:16px;line-height:1.7;color:#8A95B0;max-width:560px;margin:0 auto 32px">Расскажите задачу — разберём вашу ситуацию и предложим конкретное решение на Битрикс24.</p>
+  </div>
+  <div style="max-width:700px;margin:0 auto">
+    <script data-b24-form="inline/242/eb3sji" data-skip-moving="true">
+(function(w,d,u){
+var s=d.createElement('script');s.async=true;s.src=u+'?'+(Date.now()/180000|0);
+var h=d.getElementsByTagName('script')[0];h.parentNode.insertBefore(s,h);
+})(window,document,'https://cdn-ru.bitrix24.ru/b1445091/crm/form/loader_242.js');
+</script>
+  </div>
+</div>
+</section>
+
+
+<script>
+(function(){
+var root=document.currentScript?document.currentScript.closest('.op-crm'):document.querySelector('.op-crm');
+if(!root)return;
+var els=root.querySelectorAll('.op-rv');
+if('IntersectionObserver' in window){
+  var io=new IntersectionObserver(function(ee){ee.forEach(function(e){if(e.isIntersecting){e.target.classList.add('is-v');io.unobserve(e.target)}})},{threshold:.08});
+  els.forEach(function(el){io.observe(el)});
+  setTimeout(function(){els.forEach(function(el){el.classList.add('is-v')})},600);
+}else{els.forEach(function(el){el.classList.add('is-v')})}
+var pc=document.createElement('canvas');pc.className='op-particles-bg';pc.setAttribute('aria-hidden','true');document.body.appendChild(pc);
+var ctx=pc.getContext('2d'),pts=[],W=0,H=0;
+function resizePc(){W=pc.width=window.innerWidth;H=pc.height=Math.max(document.body.scrollHeight,window.innerHeight);pc.style.width=W+'px';pc.style.height=H+'px'}
+function initPts(){pts=[];var n=Math.floor(W*H/18000);for(var i=0;i<n;i++)pts.push({x:Math.random()*W,y:Math.random()*H,vx:(Math.random()-.5)*.35,vy:(Math.random()-.5)*.35,r:Math.random()*1.5+.5,a:Math.random()*.5+.15})}
+function drawPts(){ctx.clearRect(0,0,W,H);var col='rgba(47,199,247,';pts.forEach(function(p){p.x+=p.vx;p.y+=p.vy;if(p.x<0)p.x=W;if(p.x>W)p.x=0;if(p.y<0)p.y=H;if(p.y>H)p.y=0;ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);ctx.fillStyle=col+p.a+')';ctx.fill()});requestAnimationFrame(drawPts)}
+resizePc();initPts();drawPts();window.addEventListener('resize',function(){resizePc();initPts()},{passive:true});
+var pg=document.createElement('div');pg.className='op-page-glow';pg.setAttribute('aria-hidden','true');document.body.appendChild(pg);
+var pgX=window.innerWidth/2,pgY=window.innerHeight/2,pgRaf=null;
+function movePg(tx,ty){pgX+=(tx-pgX)*.1;pgY+=(ty-pgY)*.1;pg.style.transform='translate('+pgX+'px,'+pgY+'px) translate(-50%,-50%)';pgRaf=requestAnimationFrame(function(){movePg(tx,ty)})}
+document.addEventListener('mousemove',function(e){if(pgRaf)cancelAnimationFrame(pgRaf);movePg(e.clientX,e.clientY)},{passive:true});
+root.querySelectorAll('.op-card').forEach(function(c){var g=c.querySelector('.op-feat-glow');if(!g)return;c.addEventListener('mousemove',function(e){var r=c.getBoundingClientRect();g.style.setProperty('--gx',(e.clientX-r.left)+'px');g.style.setProperty('--gy',(e.clientY-r.top)+'px')},{passive:true})});
+root.querySelectorAll('[data-faq]').forEach(function(item){var q=item.querySelector('.op-faq-q'),a=item.querySelector('.op-faq-a');if(!q||!a)return;q.addEventListener('click',function(){var w=item.classList.contains('is-open');root.querySelectorAll('.op-faq-item').forEach(function(it){it.classList.remove('is-open');var b=it.querySelector('.op-faq-a');if(b)b.style.maxHeight='0'});if(!w){item.classList.add('is-open');a.style.maxHeight=a.scrollHeight+'px'}})});
+root.querySelectorAll('[data-ai-slider]').forEach(function(sl){
+  var dur=(parseInt(sl.getAttribute('data-duration'))||5)*1000;
+  var chips=sl.querySelectorAll('[data-ai-chip]');
+  var slides=sl.querySelectorAll('[data-ai-slide]');
+  var cur=0,timer=null,animFrame=null,startTime=null;
+  function goTo(idx){
+    chips.forEach(function(c){c.classList.remove('is-act');var p=c.querySelector('.op-ai-chip__prog');if(p){p.style.transition='none';p.style.width='0'}});
+    slides.forEach(function(s){s.classList.remove('is-act')});
+    cur=idx;
+    chips[cur].classList.add('is-act');
+    slides[cur].classList.add('is-act');
+    var prog=chips[cur].querySelector('.op-ai-chip__prog');
+    if(prog){setTimeout(function(){prog.style.transition='width '+dur+'ms linear';prog.style.width='100%'},20)}
+    if(timer)clearTimeout(timer);
+    timer=setTimeout(function(){goTo((cur+1)%chips.length)},dur);
+  }
+  chips.forEach(function(c,i){c.addEventListener('click',function(){goTo(i)})});
+  goTo(0);
+});
+})();
+</script>
+</div>

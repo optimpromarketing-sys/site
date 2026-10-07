@@ -1,0 +1,915 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Кейсы внедрения Битрикс24 — Оптим Про</title>
+<style>
+@font-face{font-family:'Montserrat';font-style:normal;font-weight:800;font-display:swap;src:url(https://fonts.gstatic.com/s/montserrat/v29/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCvr70w-Y3tcoqK5.woff2) format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
+@font-face{font-family:'Montserrat';font-style:normal;font-weight:800;font-display:swap;src:url(https://fonts.gstatic.com/s/montserrat/v29/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCvr73w-Y3tcoqK5.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'Open Sans';font-style:normal;font-weight:400;font-display:swap;src:url(https://fonts.gstatic.com/s/opensans/v40/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsiH0C4nY1M2xLER.woff2) format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
+@font-face{font-family:'Open Sans';font-style:normal;font-weight:400;font-display:swap;src:url(https://fonts.gstatic.com/s/opensans/v40/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsjZ0C4nY1M2xLER.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'Open Sans';font-style:normal;font-weight:700;font-display:swap;src:url(https://fonts.gstatic.com/s/opensans/v40/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsg-1y4nY1M2xLER.woff2) format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
+@font-face{font-family:'Open Sans';font-style:normal;font-weight:700;font-display:swap;src:url(https://fonts.gstatic.com/s/opensans/v40/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsg-1S4nY1M2xLER.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  .cases-section {
+    --bg: linear-gradient(180deg, #ffffff 0%, #eef7fd 100%);
+    --card-bg: #ffffff;
+    --card-bg-hover: #ffffff;
+    --card-border: rgba(0,49,153,0.08);
+    --card-border-hover: rgba(47,199,247,0.55);
+    --card-shadow: 0 2px 14px rgba(0,102,204,0.06);
+    --card-shadow-hover: 0 22px 50px rgba(0,102,204,0.18), 0 0 0 1px rgba(47,199,247,0.45), inset 0 1px 0 rgba(255,255,255,0.8);
+    --glow: rgba(47,199,247,0.12);
+    --title: #003199;
+    --eyebrow: #2FC7F7;
+    --ctitle: #003199;
+    --ctitle-hover: #0066CC;
+    --desc: #5a6b7d;
+    --desc-hover: #3f4f5e;
+    --statval: #0066CC;
+    --statval-hover: #2FC7F7;
+    --statlabel: #8a98a8;
+    --divider: rgba(0,49,153,0.1);
+    --divider-hover: rgba(47,199,247,0.4);
+    --tag-bg: rgba(0,102,204,0.9);
+    --tag-bg-hover: #2FC7F7;
+    --empty-text: #5a6b7d;
+    --img-overlay: rgba(0,49,153,0.18);
+    --accent: #0066CC;
+    --accent-hover: #2FC7F7;
+  }
+
+.cases-section {
+    --bg: linear-gradient(180deg, #0d1b2e 0%, #0a1422 100%);
+    --card-bg: rgba(255,255,255,0.04);
+    --card-bg-hover: rgba(255,255,255,0.07);
+    --card-border: rgba(255,255,255,0.08);
+    --card-border-hover: rgba(47,199,247,0.55);
+    --card-shadow: 0 2px 14px rgba(0,0,0,0.3);
+    --card-shadow-hover: 0 22px 60px rgba(0,0,0,0.45), 0 0 0 1px rgba(47,199,247,0.5), inset 0 1px 0 rgba(255,255,255,0.12);
+    --glow: rgba(47,199,247,0.16);
+    --title: #ffffff;
+    --eyebrow: #2FC7F7;
+    --ctitle: #f0f4ff;
+    --ctitle-hover: #ffffff;
+    --desc: rgba(255,255,255,0.5);
+    --desc-hover: rgba(255,255,255,0.72);
+    --statval: #2FC7F7;
+    --statval-hover: #7fdcff;
+    --statlabel: rgba(255,255,255,0.4);
+    --divider: rgba(255,255,255,0.1);
+    --divider-hover: rgba(47,199,247,0.4);
+    --tag-bg: rgba(0,102,204,0.92);
+    --tag-bg-hover: #2FC7F7;
+    --empty-text: rgba(255,255,255,0.6);
+    --img-overlay: rgba(0,0,0,0.45);
+    --accent: #7fdcff;
+    --accent-hover: #ffffff;
+  }
+
+  .cases-section {
+    font-family: 'Open Sans', sans-serif;
+    background: var(--bg);
+    padding: calc(72px + 100pt) 24px 72px;
+    position: relative;
+    overflow: hidden;
+    transition: background 0.4s ease;
+  }
+
+  #cases-canvas { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; }
+  .cases-inner { max-width: 1100px; margin: 0 auto; position: relative; z-index: 1; }
+
+  .cases-topbar { display: flex; justify-content: center; align-items: center; gap: 16px; margin-bottom: 32px; text-align: center; }
+  .cases-eyebrow { font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--eyebrow); margin-bottom: 12px; }
+  .cases-title { font-family: 'Montserrat', sans-serif; font-size: clamp(28px,4vw,52px); font-weight: 800; color: var(--title); line-height: 1.1; max-width: 640px; transition: color 0.4s ease; }
+
+
+
+  .cases-empty { text-align: center; padding: 48px 16px; font-family: 'Open Sans', sans-serif; font-size: 15px; color: var(--empty-text); }
+  .empty-reset { font-family: 'Montserrat', sans-serif; font-weight: 600; font-size: 15px; color: var(--accent); background: none; border: none; padding: 0; cursor: pointer; text-decoration: underline; text-underline-offset: 3px; }
+  .empty-reset:hover { color: #2FC7F7; }
+
+  .cases-more { display: none; margin: 38px auto 0; padding: 14px 34px; font-family: 'Montserrat', sans-serif; font-weight: 600; font-size: 15px; color: #2FC7F7; background: transparent; border: 1.5px solid #2FC7F7; border-radius: 12px; cursor: pointer; transition: transform .25s ease, box-shadow .25s ease, background .25s ease, color .25s ease, border-color .25s ease; }
+  .cases-more:hover { background: linear-gradient(135deg, #0066CC, #2FC7F7); color: #fff; border-color: transparent; transform: translateY(-2px); box-shadow: 0 12px 26px rgba(0,102,204,.28); }
+  .cases-more { display: flex; align-items: center; gap: 8px; }
+  .cases-more .more-ico { width: 16px; height: 16px; flex-shrink: 0; transition: transform .3s ease; }
+  .cases-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 24px; }
+  .case-card { background: var(--card-bg); border-radius: 16px; overflow: hidden; border: 1px solid var(--card-border); box-shadow: var(--card-shadow); transition: transform 0.4s cubic-bezier(0.23,1,0.32,1), box-shadow 0.4s cubic-bezier(0.23,1,0.32,1), border-color 0.4s ease, background 0.4s ease; cursor: pointer; text-decoration: none; display: block; color: inherit; position: relative; transform-style: preserve-3d; will-change: transform; }
+  .case-card::before { content: ''; position: absolute; inset: 0; border-radius: 16px; background: radial-gradient(600px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), var(--glow), transparent 40%); opacity: 0; transition: opacity 0.4s ease; z-index: 0; pointer-events: none; }
+  .case-card:hover::before { opacity: 1; }
+  .case-card:hover { transform: translateY(-8px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg)); box-shadow: var(--card-shadow-hover); border-color: var(--card-border-hover); background: var(--card-bg-hover); text-decoration: none; }
+  .case-card, .case-card:hover, .case-card:focus, .case-card:hover .case-title, .case-card:hover .case-desc { text-decoration: none; }
+  .case-card > * { position: relative; z-index: 1; }
+
+  .case-img-wrap { position: relative; height: 200px; overflow: hidden; background: #0a3a72; }
+  .case-img-wrap img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.6s cubic-bezier(0.23,1,0.32,1), filter 0.4s ease; filter: brightness(0.97) saturate(1.02); }
+  .case-card:hover .case-img-wrap img { transform: scale(1.08); filter: brightness(1.04) saturate(1.12); }
+  .case-img-wrap::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 55%; background: linear-gradient(to top, var(--img-overlay) 0%, transparent 100%); transition: opacity 0.4s, background 0.4s ease; pointer-events: none; }
+  .case-card:hover .case-img-wrap::after { opacity: 0.5; }
+
+  .case-tag { position: absolute; top: 14px; left: 14px; font-family: 'Montserrat', sans-serif; background: var(--tag-bg); color: #fff; font-size: 11px; font-weight: 600; letter-spacing: 0.02em; text-transform: none; line-height: 1.3; max-width: calc(100% - 28px); padding: 5px 10px; border-radius: 6px; backdrop-filter: blur(8px); z-index: 2; transition: background 0.3s, transform 0.3s; }
+  .case-card:hover .case-tag { background: var(--tag-bg-hover); transform: scale(1.05); }
+
+  .case-body { padding: 24px; display: flex; flex-direction: column; flex: 1; }
+  .case-title { font-family: 'Montserrat', sans-serif; font-size: 17px; font-weight: 600; color: var(--ctitle); line-height: 1.35; margin-bottom: 10px; transition: color 0.3s; }
+  .case-card:hover .case-title { color: var(--ctitle-hover); }
+  .case-desc { font-size: 14px; color: var(--desc); line-height: 1.6; margin-bottom: 20px; transition: color 0.3s; }
+  .case-card:hover .case-desc { color: var(--desc-hover); }
+
+  .case-stat { display: flex; gap: 28px; border-top: 1px solid var(--divider); padding-top: 20px; margin-top: auto; transition: border-color 0.3s; }
+  .case-card:hover .case-stat { border-color: var(--divider-hover); }
+  .stat-item { display: flex; flex-direction: column; gap: 5px; }
+  .stat-value { font-family: 'Montserrat', sans-serif; font-size: 36px; font-weight: 800; color: var(--statval); line-height: 1; transition: color 0.3s, transform 0.3s; display: inline-block; letter-spacing: -0.5px; }
+  .case-card:hover .stat-value { color: var(--statval-hover); transform: scale(1.06); }
+  .stat-label { font-family: 'Montserrat', sans-serif; font-size: 11px; color: var(--statlabel); font-weight: 500; text-transform: uppercase; letter-spacing: 0.06em; line-height: 1.4; }
+
+  .case-link { display: inline-flex; align-items: center; gap: 6px; border-top: 1px solid var(--divider); padding-top: 16px; margin-top: auto; font-family: 'Montserrat', sans-serif; font-size: 13px; font-weight: 600; color: var(--accent); transition: color 0.3s, border-color 0.3s, gap 0.3s; }
+  .case-card:hover .case-link { color: var(--accent-hover); border-color: var(--divider-hover); gap: 10px; }
+  .case-link svg { width: 14px; height: 14px; }
+
+  .cases-cta { margin-top: 48px; text-align: center; }
+  .btn-all { display: inline-flex; align-items: center; gap: 8px; background: linear-gradient(135deg, #0066CC 0%, #2FC7F7 100%); color: #fff; font-family: 'Montserrat', sans-serif; font-size: 14px; font-weight: 600; padding: 14px 32px; border-radius: 10px; text-decoration: none; transition: transform 0.2s, box-shadow 0.2s, filter 0.2s; border: none; cursor: pointer; position: relative; overflow: hidden; box-shadow: 0 6px 18px rgba(0,102,204,0.25); }
+  .btn-all:hover { filter: brightness(1.06); transform: translateY(-2px); box-shadow: 0 10px 28px rgba(47,199,247,0.4); }
+  .btn-all:active { transform: translateY(0); }
+  .btn-all:focus-visible { outline: 3px solid #2FC7F7; outline-offset: 3px; }
+  .btn-all svg { width: 16px; height: 16px; transition: transform 0.3s; }
+  .btn-all:hover svg { transform: translateX(4px); }
+
+  /* CTA block */
+  .cases-cta-block { margin-top: 56px; border-radius: 18px; background: linear-gradient(135deg, rgba(0,49,153,0.06) 0%, rgba(47,199,247,0.08) 100%); border: 1px solid rgba(47,199,247,0.2); padding: 40px 36px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 24px; }
+.cases-cta-block { background: linear-gradient(135deg, rgba(0,49,153,0.18) 0%, rgba(47,199,247,0.1) 100%); border-color: rgba(47,199,247,0.25); }
+  .cases-cta-block__text { flex: 1 1 260px; }
+  .cases-cta-block__text h3 { font-family: 'Montserrat', sans-serif; font-size: 20px; font-weight: 700; color: var(--title); margin-bottom: 8px; }
+  .cases-cta-block__text p { font-size: 14px; color: var(--desc); line-height: 1.6; }
+  .btn-cta { display: inline-flex; align-items: center; gap: 8px; background: linear-gradient(135deg, #0066CC 0%, #2FC7F7 100%); color: #fff; font-family: 'Montserrat', sans-serif; font-size: 14px; font-weight: 600; padding: 14px 28px; border-radius: 10px; text-decoration: none; transition: transform 0.2s, box-shadow 0.2s, filter 0.2s; border: none; cursor: pointer; white-space: nowrap; box-shadow: 0 6px 18px rgba(0,102,204,0.25); }
+  .btn-cta:hover { filter: brightness(1.08); transform: translateY(-2px); box-shadow: 0 12px 28px rgba(47,199,247,0.4); }
+  .btn-cta svg { width: 16px; height: 16px; transition: transform 0.3s; }
+  .btn-cta:hover svg { transform: translateX(3px); }
+
+  @media (max-width: 680px) { .cases-cta-block { padding: 28px 20px; flex-direction: column; text-align: center; align-items: center; } }
+  @media (max-width: 680px) { .cases-title { font-size: 26px; } .cases-grid { grid-template-columns: 1fr; } .cases-section { padding: calc(48px + 40pt) 16px 48px; } }
+  @media (prefers-reduced-motion: reduce) { .case-card, .case-card *, .btn-all, .btn-all svg { transition: none !important; } .case-card:hover { transform: none; } .case-card:hover .case-img-wrap img { transform: none; } }
+
+  /* ===== OP-SEARCH WIDGET ===== */
+  .op-search{--cyan:#2FC7F7;--blue:#0066CC;--navy:#003199;--soft:#F4F8FF;--line:#E3ECF7;--muted:#8a9bbf;margin-bottom:40px}
+  .op-search *{box-sizing:border-box}
+  .op-search{font-family:'Montserrat','Open Sans',Arial,sans-serif;color:#dce6f8}
+  .ops-box{position:relative;text-align:center;padding:36px 0 16px;background:transparent}
+  .ops-eyebrow{display:inline-flex;align-items:center;gap:7px;font-size:12.5px;font-weight:700;color:var(--cyan);background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);padding:7px 16px;border-radius:100px;margin-bottom:18px;box-shadow:0 4px 14px rgba(0,49,153,.06);margin-left:0}
+  .ops-eyebrow svg{width:15px;height:15px;stroke:var(--blue);fill:none;stroke-width:2.2}
+  .ops-box .ops-h2{font-family:'Montserrat',sans-serif;font-weight:800;line-height:1.15;letter-spacing:-.5px;font-size:clamp(22px,3vw,36px);margin:0 0 12px;color:#f0f5fc;background:linear-gradient(120deg,var(--navy),var(--blue) 52%,var(--cyan));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+  .ops-box .ops-sub{color:var(--muted);font-size:15px;max-width:520px;margin:0 auto 24px}
+  /* Search row */
+  .ops-row{display:flex;gap:12px;align-items:stretch;width:100%}
+  .ops-row .ops-searchbar{flex:1}
+  .ops-searchbar{position:relative;background:linear-gradient(135deg,var(--cyan),var(--blue));padding:2.5px;border-radius:18px;box-shadow:0 14px 40px rgba(0,102,204,.2);transition:box-shadow .25s,transform .25s}
+  .ops-searchbar:focus-within{box-shadow:0 20px 54px rgba(0,102,204,.32);transform:translateY(-2px)}
+  .ops-inwrap{position:relative;background:#fff;border-radius:15.5px}
+  .ops-mag{position:absolute;left:18px;top:50%;transform:translateY(-50%);width:19px;height:19px;stroke:var(--blue);fill:none;stroke-width:2.2;z-index:1}
+  .ops-input{width:100%;border:none;background:transparent;border-radius:15.5px;padding:18px 50px 18px 48px;font-family:'Open Sans',sans-serif;font-size:16px;color:#dce6f8}
+  .ops-input::placeholder{color:transparent}
+  .ops-input:focus{outline:none}
+  .ops-clear{position:absolute;right:10px;top:50%;transform:translateY(-50%);width:28px;height:28px;border:none;background:var(--soft);border-radius:50%;cursor:pointer;color:var(--muted);font-size:17px;line-height:1;display:none;align-items:center;justify-content:center}
+  .ops-clear:hover{background:rgba(255,255,255,.06);color:var(--cyan)}
+  .ops-clear.on{display:flex}
+  /* Typewriter */
+  .ops-typewrap{position:absolute;left:48px;right:46px;top:0;bottom:0;display:flex;align-items:center;pointer-events:none;opacity:0;transition:opacity .25s}
+  .ops-input:placeholder-shown:not(:focus)~.ops-typewrap{opacity:1}
+  .ops-type{display:inline-block;max-width:100%;overflow:hidden;white-space:nowrap;color:#9aa4bd;font-size:16px;line-height:1.2;border-right:2px solid var(--blue);width:0;animation:opsCasesType 20s infinite,opsCaret .9s step-end infinite}
+  .ops-type::before{content:"интеграция с 1С…";animation:opsCasesText 20s infinite}
+  @keyframes opsCaret{50%{border-color:transparent}}
+  @keyframes opsCasesText{0%,24.9%{content:"интеграция с 1С…"}25%,49.9%{content:"автоматизировать тендер…"}50%,74.9%{content:"документооборот для стройки…"}75%,100%{content:"бронирование санатория…"}}
+  @keyframes opsCasesType{0%{width:0}7%{width:18ch}20%{width:18ch}24%{width:0}25%{width:0}32%{width:24ch}45%{width:24ch}49%{width:0}50%{width:0}57%{width:28ch}70%{width:28ch}74%{width:0}75%{width:0}82%{width:22ch}95%{width:22ch}99%{width:0}100%{width:0}}
+  @media(prefers-reduced-motion:reduce){.ops-type,.ops-type::before{animation:none}.ops-type{width:auto;border-right:none}}
+  /* Filter button */
+  .ops-filterbtn{display:inline-flex;align-items:center;gap:8px;padding:0 22px;height:100%;min-height:56px;background:rgba(255,255,255,.07);border:2px solid rgba(255,255,255,.12);border-radius:16px;color:#f0f5fc;font-family:'Montserrat',sans-serif;font-weight:700;font-size:14px;cursor:pointer;transition:border-color .2s,box-shadow .2s,background .2s,color .2s;white-space:nowrap;flex-shrink:0}
+  .ops-filterbtn:hover{border-color:var(--cyan);box-shadow:0 6px 18px rgba(0,102,204,.12)}
+  .ops-filterbtn.active{background:linear-gradient(135deg,var(--blue),var(--cyan));border-color:transparent;color:#fff;box-shadow:0 8px 20px rgba(0,102,204,.3)}
+  .ops-filterbtn svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:2;flex-shrink:0}
+  .ops-fbadge{display:none;min-width:20px;height:20px;padding:0 5px;border-radius:100px;background:rgba(255,255,255,.3);color:#fff;font-size:11px;font-weight:800;align-items:center;justify-content:center;line-height:1}
+  .ops-filterbtn:not(.active) .ops-fbadge{background:linear-gradient(135deg,var(--blue),var(--cyan));color:#fff}
+  .ops-fbadge.on{display:inline-flex}
+  /* Bar */
+  .ops-bar{display:flex;align-items:center;justify-content:center;gap:18px;flex-wrap:wrap;margin:18px 0 0;width:100%}
+  .ops-count{font-size:14px;color:var(--muted)}
+  .ops-count b{color:#dce6f8;font-weight:800}
+  .ops-reset{border:none;background:none;color:var(--cyan);font-family:'Montserrat',sans-serif;font-weight:700;font-size:14px;cursor:pointer;display:none;text-decoration:underline;text-underline-offset:2px}
+  .ops-reset:hover{color:var(--cyan)}
+  .ops-reset.on{display:inline}
+  /* Drawer */
+  .ops-backdrop{position:fixed;inset:0;background:rgba(5,15,35,.4);z-index:9998;opacity:0;pointer-events:none;transition:opacity .28s ease;backdrop-filter:blur(3px)}
+  .ops-backdrop.open{opacity:1;pointer-events:auto}
+  .ops-drawer{position:fixed;top:0;left:0;bottom:0;width:300px;max-width:88vw;background:#fff;z-index:9999;display:flex;flex-direction:column;transform:translateX(-100%);transition:transform .32s cubic-bezier(.4,0,.2,1);box-shadow:6px 0 32px rgba(0,49,153,.14)}
+  .ops-drawer.open{transform:translateX(0)}
+  .ops-drawer-head{display:flex;align-items:center;justify-content:space-between;padding:18px 20px 16px;border-bottom:1px solid #edf2f9}
+  .ops-drawer-head h3{font-family:'Montserrat',sans-serif;font-size:16px;font-weight:800;color:#f0f5fc;margin:0}
+  .ops-drawer-close{width:30px;height:30px;border:none;background:#f0f5fb;border-radius:50%;cursor:pointer;font-size:18px;color:#8a9bbf;display:flex;align-items:center;justify-content:center;line-height:1;transition:background .15s,color .15s}
+  .ops-drawer-close:hover{background:rgba(255,255,255,.08);color:#f0f5fc}
+  .ops-drawer-body{flex:1;overflow-y:auto;padding:18px 20px}
+  .ops-drawer-body::-webkit-scrollbar{width:4px}
+  .ops-drawer-body::-webkit-scrollbar-thumb{background:#dde6f0;border-radius:2px}
+  .ops-drawer-label{font-family:'Montserrat',sans-serif;font-size:11px;font-weight:800;letter-spacing:.07em;text-transform:uppercase;color:var(--cyan);margin:0 0 8px}
+  .ops-drawer-label.two{margin-top:20px;padding-top:20px;border-top:1px solid #edf2f9}
+  .ops-drawer-opts{display:flex;flex-direction:column;gap:2px}
+  .ops-dopt{display:flex;align-items:center;gap:12px;padding:10px 12px;border-radius:8px;cursor:pointer;transition:background .14s;border:none;background:transparent;text-align:left;width:100%;font-family:'Open Sans',sans-serif;font-size:14px;font-weight:400;color:#c8d4e8}
+  .ops-dopt:hover{background:rgba(255,255,255,.06)}
+  .ops-dopt.on{background:rgba(47,199,247,.12);color:var(--cyan);font-weight:600}
+  .ops-dopt-check{width:17px;height:17px;border-radius:4px;border:1.5px solid #c8d4e6;flex-shrink:0;display:flex;align-items:center;justify-content:center;transition:background .14s,border-color .14s}
+  .ops-dopt.on .ops-dopt-check{background:linear-gradient(135deg,#0066CC,#2FC7F7);border-color:transparent}
+  .ops-dopt-check svg{display:none;width:10px;height:10px;stroke:#fff;fill:none;stroke-width:3}
+  .ops-dopt.on .ops-dopt-check svg{display:block}
+  .ops-drawer-foot{padding:14px 20px;border-top:1px solid #edf2f9;display:flex;gap:10px}
+  .ops-drawer-apply{flex:1;padding:13px;border-radius:10px;border:none;background:linear-gradient(135deg,#0066CC,#2FC7F7);color:#fff;font-family:'Montserrat',sans-serif;font-weight:700;font-size:14px;cursor:pointer;transition:filter .2s,transform .15s}
+  .ops-drawer-apply:hover{filter:brightness(1.07);transform:translateY(-1px)}
+  .ops-drawer-reset-btn{padding:13px 14px;border-radius:10px;border:1.5px solid rgba(255,255,255,.12);background:transparent;color:#8a9bbf;font-family:'Montserrat',sans-serif;font-weight:600;font-size:14px;cursor:pointer;transition:border-color .15s,color .15s}
+  .ops-drawer-reset-btn:hover{border-color:#2FC7F7;color:var(--cyan)}
+  /* Dark theme */
+.op-search{color:#c8d4e8}
+.ops-eyebrow{background:#0d1526;border-color:rgba(47,199,247,.25);color:var(--cyan)}
+.ops-eyebrow svg{stroke:var(--cyan)}
+.ops-box .ops-h2{background:linear-gradient(120deg,#2FC7F7,#7A5CFF 52%,#e8edf8);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.ops-box .ops-sub{color:#8a98b8}
+.ops-inwrap{background:#0d1526}
+.ops-input{color:#e8edf8;background:transparent}
+.ops-type{color:#4a5a7a}
+.ops-clear{background:#182038;color:#8a98b8}
+.ops-clear:hover{background:#1e2a40;color:var(--cyan)}
+.ops-filterbtn{background:#0d1526;border-color:rgba(255,255,255,.14);color:#c8d4e8}
+.ops-filterbtn:hover{border-color:var(--cyan)}
+.ops-filterbtn.active{background:linear-gradient(135deg,#0066CC,#2FC7F7);border-color:transparent;color:#fff}
+.ops-count{color:#8a98b8}
+.ops-count b{color:var(--cyan)}
+.ops-reset{color:var(--cyan)}
+.ops-backdrop{background:rgba(4,8,20,.65)}
+.ops-drawer{background:#0d1526;box-shadow:6px 0 32px rgba(0,0,0,.55)}
+.ops-drawer-head{border-color:rgba(255,255,255,.08)}
+.ops-drawer-head h3{color:#e8f0ff}
+.ops-drawer-close{background:rgba(255,255,255,.07);color:#8a98b8}
+.ops-drawer-close:hover{background:rgba(255,255,255,.13);color:#fff}
+.ops-drawer-label{color:#2FC7F7}
+.ops-drawer-label.two{border-color:rgba(255,255,255,.08)}
+.ops-dopt{color:#c8d4e8}
+.ops-dopt:hover{background:rgba(255,255,255,.05)}
+.ops-dopt.on{background:rgba(47,199,247,.1);color:#2FC7F7}
+.ops-dopt-check{border-color:rgba(255,255,255,.2)}
+.ops-drawer-foot{border-color:rgba(255,255,255,.08)}
+.ops-drawer-reset-btn{border-color:rgba(255,255,255,.12);color:#8a98b8}
+.ops-drawer-reset-btn:hover{border-color:var(--cyan);color:var(--cyan)}
+  @media(max-width:580px){.ops-row{flex-direction:column}.ops-filterbtn{border-radius:14px;min-height:52px;justify-content:center}.ops-box .ops-sub{font-size:13px}}
+
+  /* B24 FORM */
+  .b24-form-wrapper{background:transparent!important;border:none!important;box-shadow:none!important;padding:0!important}.b24-form{background:#111827!important;border:1px solid rgba(255,255,255,.09)!important;border-radius:16px!important;overflow:hidden!important;box-shadow:0 24px 60px rgba(0,0,0,.4)!important}
+  .b24-form-header{background:#111827!important;border-bottom:1px solid rgba(255,255,255,.08)!important}
+  .b24-form-header-title,.b24-form-header *{color:#fff!important}
+  .b24-form-body{background:#111827!important}
+  .b24-form-control-container .b24-form-control,.b24-form-field .b24-form-control{background:rgba(255,255,255,.06)!important;border:1px solid rgba(255,255,255,.12)!important;border-radius:10px!important;color:#E8EDF7!important}
+  .b24-form-control::placeholder{color:#8A95B0!important}
+  .b24-form-control:focus{border-color:rgba(47,199,247,.5)!important;outline:none!important;box-shadow:0 0 0 3px rgba(47,199,247,.12)!important}
+  .b24-form-field-label,.b24-form-field-label *{color:#c8d5f0!important}
+  .b24-form-btn-container .b24-form-btn{background:linear-gradient(135deg,#2E7DF6,#7A5CFF)!important;border:none!important;border-radius:12px!important;color:#fff!important;font-weight:700!important;box-shadow:0 8px 24px rgba(46,125,246,.4)!important}
+  .b24-form-sign,.b24-form-sign *,.b24-form-field-agree,.b24-form-field-agree *{color:#8A95B0!important}
+  .b24-form-field-agreement a{color:#2FC7F7!important}
+  .b24-form *:not(input):not(textarea):not(select):not(button){color:#E8EDF7!important}
+  .b24-form input,.b24-form textarea,.b24-form select{color:#E8EDF7!important}
+  .b24-form-btn,.b24-form-btn *{color:#fff!important}
+
+  /* ===== VIEW TOGGLE ===== */
+  .view-controls{display:flex;justify-content:flex-end;align-items:center;gap:8px;margin-bottom:20px}
+  .view-label{font-family:'Montserrat',sans-serif;font-size:12px;font-weight:600;color:rgba(255,255,255,.38);margin-right:2px}
+  .view-btn{width:36px;height:36px;border:1.5px solid rgba(255,255,255,.12);border-radius:9px;background:rgba(255,255,255,.04);color:rgba(255,255,255,.4);cursor:pointer;display:flex;align-items:center;justify-content:center;transition:border-color .2s,color .2s,background .2s;padding:0;flex-shrink:0}
+  .view-btn:hover{border-color:rgba(47,199,247,.55);color:#2FC7F7;background:rgba(47,199,247,.08)}
+  .view-btn.active{background:rgba(47,199,247,.15);border-color:#2FC7F7;color:#2FC7F7}
+  .view-btn svg{width:17px;height:17px}
+
+  /* LIST MODE */
+  .cases-section.view-list .cases-grid{display:flex;flex-direction:column;gap:8px}
+  .cases-section.view-list .case-card{display:flex;flex-direction:row;align-items:center;border-radius:12px;overflow:visible}
+  .cases-section.view-list .case-card:hover{transform:translateY(-2px) !important}
+  .cases-section.view-list .case-img-wrap{display:none}
+  .cases-section.view-list .case-body{display:flex;flex-direction:row;align-items:center;gap:16px;padding:15px 20px;flex:1;flex-wrap:wrap;min-width:0}
+  .cases-section.view-list .case-title{font-size:14px;margin-bottom:0;flex:1 1 220px;min-width:160px}
+  .cases-section.view-list .case-desc{display:none}
+  .cases-section.view-list .case-stat{display:none}
+  .cases-section.view-list .case-link{display:none}
+  .cases-section.view-list .case-list-meta{display:flex !important;align-items:center;gap:10px;flex-wrap:wrap;flex-shrink:0}
+  .case-list-meta{display:none}
+  .case-list-industry{font-family:'Montserrat',sans-serif;font-size:11px;font-weight:600;color:#2FC7F7;background:rgba(47,199,247,.10);border:1px solid rgba(47,199,247,.22);border-radius:6px;padding:4px 10px;white-space:normal;line-height:1.4;max-width:260px;flex-shrink:0}
+  .case-list-tools{display:flex;gap:5px;flex-wrap:wrap;max-width:220px;flex-shrink:0}
+  .case-list-tool{font-family:'Montserrat',sans-serif;font-size:10px;font-weight:600;color:rgba(255,255,255,.48);background:rgba(255,255,255,.07);border-radius:5px;padding:3px 8px;text-transform:lowercase;letter-spacing:.02em}
+  .case-list-readbtn{display:inline-flex;align-items:center;gap:5px;font-family:'Montserrat',sans-serif;font-size:12px;font-weight:700;color:#2FC7F7;border:1.5px solid rgba(47,199,247,.35);border-radius:8px;padding:7px 14px;white-space:nowrap;transition:all .2s;background:transparent;text-decoration:none;flex-shrink:0}
+  .case-list-readbtn:hover{background:rgba(47,199,247,.12);border-color:#2FC7F7;color:#fff;text-decoration:none}
+  .case-list-readbtn svg{width:11px;height:11px}
+  @media(max-width:680px){
+    .cases-section.view-list .case-body{gap:10px;padding:12px 14px}
+    .case-list-tools{display:none}
+    .case-list-industry{max-width:150px}
+  }
+</style>
+</head>
+<body>
+
+<section class="cases-section">
+  <canvas id="cases-canvas"></canvas>
+
+  <div class="cases-inner">
+    <div class="cases-topbar">
+      <div class="cases-header">
+        <div class="cases-eyebrow">Кейсы внедрений</div>
+        <h2 class="cases-title">Результаты, которые говорят за нас</h2>
+      </div>
+    </div>
+
+    <div class="op-search">
+      <div class="ops-box">
+        <span class="ops-eyebrow"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"></circle><path d="M21 21l-4.3-4.3"></path></svg>Подбор кейса</span>
+        <h2 class="ops-h2">Найдите кейс, похожий на вашу задачу</h2>
+        <p class="ops-sub">Напишите отрасль или задачу — покажем подходящие проекты.</p>
+        <div class="ops-row">
+          <button class="ops-filterbtn" id="opsFilterBtn" type="button" aria-haspopup="dialog">
+            <svg viewBox="0 0 24 24"><path d="M3 6h18M7 12h10M10 18h4" stroke-linecap="round"/></svg>
+            Фильтры
+            <span class="ops-fbadge" id="opsFBadge"></span>
+          </button>
+          <div class="ops-searchbar">
+            <div class="ops-inwrap">
+              <svg class="ops-mag" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"></circle><path d="M21 21l-4.3-4.3"></path></svg>
+              <input class="ops-input" id="caseSearch" type="text" autocomplete="off" placeholder=" ">
+              <div class="ops-typewrap" aria-hidden="true"><span class="ops-type"></span></div>
+              <button class="ops-clear" id="opsClear" type="button" aria-label="Очистить">&#215;</button>
+            </div>
+          </div>
+        </div>
+        <div class="ops-bar">
+          <div class="ops-count" id="opsCount"></div>
+          <button class="ops-reset" id="opsReset" type="button">Показать все кейсы</button>
+        </div>
+      </div>
+    </div><!-- /.op-search -->
+
+    <div class="ops-backdrop" id="opsBackdrop" aria-hidden="true"></div>
+    <div class="ops-drawer" id="opsDrawer" role="dialog" aria-modal="true" aria-label="Фильтры по кейсам">
+      <div class="ops-drawer-head">
+        <h3>Фильтры</h3>
+        <button class="ops-drawer-close" id="opsDrawerClose" type="button" aria-label="Закрыть">&#215;</button>
+      </div>
+      <div class="ops-drawer-body">
+        <div class="ops-drawer-label">Что хотите автоматизировать</div>
+        <div class="ops-drawer-opts" id="opsProblems">
+          <button class="ops-dopt" type="button" data-id="crm"><span class="ops-dopt-check"><svg viewBox="0 0 12 10"><polyline points="1,5 4,8 11,1"/></svg></span>CRM и продажи</button>
+          <button class="ops-dopt" type="button" data-id="интеграция"><span class="ops-dopt-check"><svg viewBox="0 0 12 10"><polyline points="1,5 4,8 11,1"/></svg></span>Интеграция систем</button>
+          <button class="ops-dopt" type="button" data-id="документооборот"><span class="ops-dopt-check"><svg viewBox="0 0 12 10"><polyline points="1,5 4,8 11,1"/></svg></span>Документооборот</button>
+          <button class="ops-dopt" type="button" data-id="телефония"><span class="ops-dopt-check"><svg viewBox="0 0 12 10"><polyline points="1,5 4,8 11,1"/></svg></span>Телефония</button>
+          <button class="ops-dopt" type="button" data-id="аналитика"><span class="ops-dopt-check"><svg viewBox="0 0 12 10"><polyline points="1,5 4,8 11,1"/></svg></span>Аналитика</button>
+          <button class="ops-dopt" type="button" data-id="бронирование"><span class="ops-dopt-check"><svg viewBox="0 0 12 10"><polyline points="1,5 4,8 11,1"/></svg></span>Бронирование</button>
+          <button class="ops-dopt" type="button" data-id="смарт-процессы"><span class="ops-dopt-check"><svg viewBox="0 0 12 10"><polyline points="1,5 4,8 11,1"/></svg></span>Смарт-процессы</button>
+          <button class="ops-dopt" type="button" data-id="найм"><span class="ops-dopt-check"><svg viewBox="0 0 12 10"><polyline points="1,5 4,8 11,1"/></svg></span>Найм и кадры</button>
+          <button class="ops-dopt" type="button" data-id="тендер"><span class="ops-dopt-check"><svg viewBox="0 0 12 10"><polyline points="1,5 4,8 11,1"/></svg></span>Тендер</button>
+        </div>
+        <div class="ops-drawer-label two">Отрасль / сфера</div>
+        <div class="ops-drawer-opts" id="opsAreas">
+          <button class="ops-dopt" type="button" data-id="производство"><span class="ops-dopt-check"><svg viewBox="0 0 12 10"><polyline points="1,5 4,8 11,1"/></svg></span>Производство</button>
+          <button class="ops-dopt" type="button" data-id="horeca"><span class="ops-dopt-check"><svg viewBox="0 0 12 10"><polyline points="1,5 4,8 11,1"/></svg></span>HoReCa</button>
+          <button class="ops-dopt" type="button" data-id="логистика,вэд"><span class="ops-dopt-check"><svg viewBox="0 0 12 10"><polyline points="1,5 4,8 11,1"/></svg></span>Логистика и ВЭД</button>
+          <button class="ops-dopt" type="button" data-id="строительство"><span class="ops-dopt-check"><svg viewBox="0 0 12 10"><polyline points="1,5 4,8 11,1"/></svg></span>Строительство</button>
+          <button class="ops-dopt" type="button" data-id="недвижимость"><span class="ops-dopt-check"><svg viewBox="0 0 12 10"><polyline points="1,5 4,8 11,1"/></svg></span>Недвижимость</button>
+          <button class="ops-dopt" type="button" data-id="кадры,hr"><span class="ops-dopt-check"><svg viewBox="0 0 12 10"><polyline points="1,5 4,8 11,1"/></svg></span>HR и кадры</button>
+          <button class="ops-dopt" type="button" data-id="автобизнес"><span class="ops-dopt-check"><svg viewBox="0 0 12 10"><polyline points="1,5 4,8 11,1"/></svg></span>Автобизнес</button>
+          <button class="ops-dopt" type="button" data-id="промышленность"><span class="ops-dopt-check"><svg viewBox="0 0 12 10"><polyline points="1,5 4,8 11,1"/></svg></span>Промышленность</button>
+        </div>
+      </div>
+      <div class="ops-drawer-foot">
+        <button class="ops-drawer-apply" id="opsApply" type="button">Применить</button>
+        <button class="ops-drawer-reset-btn" id="opsDrawerReset" type="button">Сбросить</button>
+      </div>
+    </div>
+
+    <div class="view-controls" id="viewControls">
+      <span class="view-label">Вид:</span>
+      <button class="view-btn active" id="btnViewGrid" type="button" title="Карточки" aria-label="Вид карточками">
+        <svg viewBox="0 0 17 17" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="1.5" y="1.5" width="5.5" height="5.5" rx="1.2"/>
+          <rect x="10" y="1.5" width="5.5" height="5.5" rx="1.2"/>
+          <rect x="1.5" y="10" width="5.5" height="5.5" rx="1.2"/>
+          <rect x="10" y="10" width="5.5" height="5.5" rx="1.2"/>
+        </svg>
+      </button>
+      <button class="view-btn" id="btnViewList" type="button" title="Список" aria-label="Вид списком">
+        <svg viewBox="0 0 17 17" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="1.5" y1="4" x2="15.5" y2="4"/>
+          <line x1="1.5" y1="8.5" x2="15.5" y2="8.5"/>
+          <line x1="1.5" y1="13" x2="15.5" y2="13"/>
+        </svg>
+      </button>
+    </div>
+    <div class="cases-grid">
+
+      <a class="case-card" href="https://b24.pro/keysy/pustayastranitsa_iluc_cnok/" data-tags="horeca,аналитика,crm">
+        <div class="case-img-wrap">
+          <img loading="eager" fetchpriority="high" src="https://images.unsplash.com/photo-1513104890138-7c749659a591?w=700&q=80&auto=format&fit=crop" alt="Жалобы из стресса — в управляемую аналитику">
+          <span class="case-tag">Гостинично-ресторанный бизнес</span>
+        </div>
+        <div class="case-body">
+          <div class="case-title">«Пицца-Синица» перевела жалобы из стресса в управляемую аналитику</div>
+          <div class="case-desc">Построили систему обработки жалоб с аналитикой и прозрачным статусом по каждому обращению.</div>
+          <div class="case-stat"><div class="stat-item"><span class="stat-value">100%</span><span class="stat-label">Рекламаций в единой системе</span></div><div class="stat-item"><span class="stat-value">0</span><span class="stat-label">Ручной сортировки жалоб</span></div></div>
+        </div>
+      </a>
+
+      <a class="case-card" href="https://b24.pro/keysy/pustayastranitsa_iluc/" data-tags="crm,документооборот,hr">
+        <div class="case-img-wrap">
+          <img loading="eager" src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=700&q=80&auto=format&fit=crop" alt="«Пицца-Синица»: экономия 40% времени на HR-документообороте">
+          <span class="case-tag">Гостинично-ресторанный бизнес</span>
+        </div>
+        <div class="case-body">
+          <div class="case-title">«Пицца-Синица»: экономия 40% времени на HR-документообороте</div>
+          <div class="case-desc">Перевели отпуска, больничные и командировки в смарт-процессы Битрикс24 — без бумаги и ручных согласований.</div>
+          <div class="case-stat"><div class="stat-item"><span class="stat-value">40%</span><span class="stat-label">Экономия времени</span></div><div class="stat-item"><span class="stat-value">3</span><span class="stat-label">Процесса в смарт-процессах</span></div></div>
+        </div>
+      </a>
+
+      <a class="case-card" href="https://b24.pro/keysy/Large-scaledigitalizationofthemanufacturingcompany/" data-tags="производство,crm,интеграция">
+        <div class="case-img-wrap">
+          <img loading="eager" src="https://images.unsplash.com/photo-1666219462105-2909c2d72d01?w=700&q=80&auto=format&fit=crop" alt="Полная автоматизация промышленной компании">
+          <span class="case-tag">Промышленность</span>
+        </div>
+        <div class="case-body">
+          <div class="case-title">«Магикрот»: 4 контура бизнеса в единой системе Битрикс24</div>
+          <div class="case-desc">Внедрили Битрикс24 для управления продажами и производством на единой платформе.</div>
+          <div class="case-stat"><div class="stat-item"><span class="stat-value">4</span><span class="stat-label">Контура в одной системе</span></div><div class="stat-item"><span class="stat-value">2</span><span class="stat-label">Воронки CRM</span></div></div>
+        </div>
+      </a>
+
+      <a class="case-card" href="https://b24.pro/keysy/Approvalof8typesofcontracts5timesfaster/" data-tags="строительство,документооборот,согласование">
+        <div class="case-img-wrap">
+          <img loading="eager" src="https://images.unsplash.com/photo-1526656001029-20a71b17f7ba?w=700&q=80&auto=format&fit=crop" alt="Согласование 8 типов договоров в 5 раз быстрее">
+          <span class="case-tag">Строительство и проектирование</span>
+        </div>
+        <div class="case-body">
+          <div class="case-title">Проектно-строительная компания: согласование 8 типов договоров в 5 раз быстрее на Битрикс24</div>
+          <div class="case-desc">Настроили маршруты согласования договоров прямо в Битрикс24 — скорость выросла в пять раз.</div>
+          <div class="case-stat"><div class="stat-item"><span class="stat-value">5×</span><span class="stat-label">Быстрее согласование</span></div><div class="stat-item"><span class="stat-value">8</span><span class="stat-label">Типов договоров</span></div></div>
+        </div>
+      </a>
+
+      <a class="case-card" href="https://b24.pro/keysy/Automateproductionsales/" data-tags="производство,телефония,интеграция">
+        <div class="case-img-wrap">
+          <img loading="eager" src="https://images.unsplash.com/photo-1652211955967-99c892925469?w=700&q=80&auto=format&fit=crop" alt="Автоматизация производства, продаж и мониторинга оборудования">
+          <span class="case-tag">Пищевое производство</span>
+        </div>
+        <div class="case-body">
+          <div class="case-title">Производственная компания: автоматизация производства, продаж и мониторинга на Битрикс24</div>
+          <div class="case-desc">Связали 1С, CRM, телефонию и мониторинг 78 единиц оборудования в единой платформе Битрикс24 — производство, продажи и аудиты под контролем.</div>
+          <div class="case-stat"><div class="stat-item"><span class="stat-value">3</span><span class="stat-label">Контура автоматизации</span></div><div class="stat-item"><span class="stat-value">78</span><span class="stat-label">CRM-форм оборудования</span></div></div>
+        </div>
+      </a>
+
+      <a class="case-card" href="https://b24.pro/keysy/SynchronizingBnovoandBitrix24/" data-tags="horeca,интеграция,бронирование">
+        <div class="case-img-wrap">
+          <img loading="eager" src="https://images.unsplash.com/photo-1580202313707-46a966af5c6f?w=700&q=80&auto=format&fit=crop" alt="Сократили ошибки администратора гостевых домов на 92%">
+          <span class="case-tag">Досуг, туризм и отдых</span>
+        </div>
+        <div class="case-body">
+          <div class="case-title">Гостевой комплекс: синхронизация Bnovo и Битрикс24, −92% ошибок администратора</div>
+          <div class="case-desc">Внедрили единую систему бронирования и уведомлений — администраторы перестали терять заявки.</div>
+          <div class="case-stat"><div class="stat-item"><span class="stat-value">92%</span><span class="stat-label">Меньше ошибок</span></div></div>
+        </div>
+      </a>
+
+      <a class="case-card" href="https://b24.pro/keysy/callresponse/" data-tags="автобизнес,телефония,crm">
+        <div class="case-img-wrap">
+          <img loading="eager" src="https://images.unsplash.com/photo-1625047509168-a7026f36de04?w=700&q=80&auto=format&fit=crop" alt="100% ответов на звонки для сети автосервисов">
+          <span class="case-tag">Транспорт, Авиация, автобизнес</span>
+        </div>
+        <div class="case-body">
+          <div class="case-title">Сеть автосервисов: 100% ответов на звонки после интеграции Битрикс24</div>
+          <div class="case-desc">Интегрировали телефонию с Битрикс24 — ни один входящий звонок не теряется.</div>
+          <div class="case-stat"><div class="stat-item"><span class="stat-value">100%</span><span class="stat-label">Отвеченных звонков</span></div><div class="stat-item"><span class="stat-value">0</span><span class="stat-label">Потерянных звонков</span></div></div>
+        </div>
+      </a>
+
+      <a class="case-card" href="https://b24.pro/keysy/Levelautomation/" data-tags="horeca,бронирование,crm">
+        <div class="case-img-wrap">
+          <img loading="eager" src="https://images.unsplash.com/photo-1445019980597-93fa8acb246c?w=700&q=80&auto=format&fit=crop" alt="Автоматизация бронирования и клиентских коммуникаций санатория">
+          <span class="case-tag">Санаторно-курортный бизнес</span>
+        </div>
+        <div class="case-body">
+          <div class="case-title">Санаторий: автоматизация бронирования, продаж и коммуникаций на Битрикс24</div>
+          <div class="case-desc">Свели заявки с сайта, звонки и WhatsApp в единую воронку с Logus PMS — авто-уведомления гостям и контроль оплат без участия менеджера.</div>
+          <div class="case-stat"><div class="stat-item"><span class="stat-value">62М+</span><span class="stat-label">₽ в воронке</span></div><div class="stat-item"><span class="stat-value">2400+</span><span class="stat-label">сделок в воронке</span></div></div>
+        </div>
+      </a>
+
+      <a class="case-card" href="https://b24.pro/keysy/ImplementingCRM_obei/" data-tags="промышленность,crm,документооборот">
+        <div class="case-img-wrap">
+          <img loading="eager" src="https://images.unsplash.com/photo-1635335874521-7987db781153?w=700&q=80&auto=format&fit=crop" alt="Внедрение CRM и автоматизация бизнес-процессов">
+          <span class="case-tag">Промышленность</span>
+        </div>
+        <div class="case-body">
+          <div class="case-title">Торгово-промышленная компания: CRM и автоматизация бизнес-процессов на Битрикс24</div>
+          <div class="case-desc">Собрали лиды, сделки и документооборот торгово-промышленной компании в единую систему Битрикс24 — за три итерации, с авто-распределением и цифровой бухгалтерией.</div>
+          <div class="case-stat"><div class="stat-item"><span class="stat-value">100%</span><span class="stat-label">сделок под контролем</span></div><div class="stat-item"><span class="stat-value">0</span><span class="stat-label">бумажных журналов</span></div></div>
+        </div>
+      </a>
+
+      <a class="case-card" href="https://b24.pro/keysy/fordevelopers/" data-tags="недвижимость,crm,смарт-процессы">
+        <div class="case-img-wrap">
+          <img loading="eager" src="https://images.unsplash.com/photo-1762028007806-751f2bef444a?w=700&q=80&auto=format&fit=crop" alt="Полный цикл продаж недвижимости на 12 смарт-процессах">
+          <span class="case-tag">Недвижимость, риэлтерские компании</span>
+        </div>
+        <div class="case-body">
+          <div class="case-title">Девелопер: полный цикл продаж и учёт недвижимости на 12 смарт-процессах Битрикс24</div>
+          <div class="case-desc">Выстроили 12 смарт-процессов для полного цикла сделок с недвижимостью — от лида до закрытия.</div>
+          <div class="case-stat"><div class="stat-item"><span class="stat-value">12</span><span class="stat-label">Смарт-процессов</span></div></div>
+        </div>
+      </a>
+
+      <a class="case-card" href="https://b24.pro/keysy/Bitrix24+MyWarehouseIntegration/" data-tags="производство,интеграция,склад">
+        <div class="case-img-wrap">
+          <img loading="eager" src="https://images.unsplash.com/photo-1749244768351-2726dc23d26c?w=700&q=80&auto=format&fit=crop" alt="Интеграция Битрикс24 и МойСклад: продажи и остатки под контролем">
+          <span class="case-tag">Розничная торговля</span>
+        </div>
+        <div class="case-body">
+          <div class="case-title">Производитель шкафов управления: Битрикс24 + МойСклад и автоматизация продаж</div>
+          <div class="case-desc">Настроили двустороннюю синхронизацию Битрикс24 и МойСклад — продажи и складские остатки в одном месте.</div>
+          <div class="case-stat"><div class="stat-item"><span class="stat-value">2</span><span class="stat-label">Системы в синхронизации</span></div></div>
+        </div>
+      </a>
+
+      <a class="case-card" href="https://b24.pro/keysy/Automation/" data-tags="логистика,тендер,автоматизация">
+        <div class="case-img-wrap">
+          <img loading="eager" src="https://images.unsplash.com/photo-1616432043562-3671ea2e5242?w=700&q=80&auto=format&fit=crop" alt="Автоматизация тендера и выбора экспедиторов">
+          <span class="case-tag">Логистика</span>
+        </div>
+        <div class="case-body">
+          <div class="case-title">Логистическая компания: автоматизация тендера и выбора экспедиторов на Битрикс24</div>
+          <div class="case-desc">Автоматизировали тендерный процесс выбора транспортных партнёров и экспедиторов.</div>
+          <div class="case-stat"><div class="stat-item"><span class="stat-value">1</span><span class="stat-label">Клик до запуска тендера</span></div><div class="stat-item"><span class="stat-value">3</span><span class="stat-label">Связанных процесса</span></div></div>
+        </div>
+      </a>
+
+      <a class="case-card" href="https://b24.pro/keysy/Automatedworkstation/" data-tags="кадры,найм,смарт-процессы">
+        <div class="case-img-wrap">
+          <img loading="eager" src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=700&q=80&auto=format&fit=crop" alt="АРМ для массового найма и аутстаффинга">
+          <span class="case-tag">Трудоустройство</span>
+        </div>
+        <div class="case-body">
+          <div class="case-title">Кадровое агентство: единое АРМ для массового найма и аутстаффинга на Битрикс24</div>
+          <div class="case-desc">Создали рабочее место рекрутера с автоматизацией массового подбора и аутстаффинга.</div>
+          <div class="case-stat"><div class="stat-item"><span class="stat-value">1</span><span class="stat-label">Единое АРМ рекрутера</span></div><div class="stat-item"><span class="stat-value">100%</span><span class="stat-label">Документов под контролем</span></div></div>
+        </div>
+      </a>
+
+      <a class="case-card" href="https://b24.pro/keysy/21_smart_processes/" data-tags="вэд,логистика,смарт-процессы">
+        <div class="case-img-wrap">
+          <img loading="eager" src="https://images.unsplash.com/photo-1473968512647-3e447244af8f?w=700&q=80&auto=format&fit=crop" alt="Сквозная автоматизация ВЭД, закупок и поставок группы компаний">
+          <span class="case-tag">ВЭД / Импорт · БПЛА</span>
+        </div>
+        <div class="case-body">
+          <div class="case-title">21 смарт-процесс для полного цикла международных закупок и поставок</div>
+          <div class="case-desc">21 смарт-процесс вместо таблиц и мессенджеров — полный цикл от запроса клиента до платежа поставщику. Несколько юрлиц, филиальная сеть, импорт дронов DJI и Autel из Азии.</div>
+          <div class="case-stat"><div class="stat-item"><span class="stat-value">21</span><span class="stat-label">Смарт-процесс</span></div><div class="stat-item"><span class="stat-value">100%</span><span class="stat-label">Цикл ВЭД под контролем</span></div></div>
+        </div>
+      </a>
+
+    </div>
+    <button type="button" id="casesMore" class="cases-more">Смотреть все кейсы</button>
+
+    <div class="cases-empty" id="casesEmpty" hidden>
+      Ничего не нашлось по запросу. Попробуйте другой или <button type="button" class="empty-reset" id="emptyReset">сбросить фильтры</button>.
+    </div>
+
+
+    <div class="cases-cta-block">
+      <div class="cases-cta-block__text">
+        <h3>Не нашли похожий кейс?</h3>
+        <p>Расскажите о задаче — разберём вашу ситуацию и покажем, как это решается в Битрикс24.</p>
+      </div>
+      <a class="btn-cta" href="#cta-form">
+        Обсудить проект
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+      </a>
+    </div>
+
+  </div>
+  <div id="cta-form" style="padding:64px 24px;position:relative;z-index:1">
+  <div class="wrap" style="max-width:740px;margin:0 auto">
+    <div style="text-align:center;margin-bottom:36px">
+      <div style="display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:#2FC7F7;border:1px solid rgba(47,199,247,.25);border-radius:100px;padding:7px 16px;margin-bottom:20px;background:rgba(47,199,247,.06)"><span style="width:6px;height:6px;border-radius:50%;background:#2FC7F7;box-shadow:0 0 10px #2FC7F7"></span>Оставить заявку</div>
+      <h2 style="font-family:'Montserrat',sans-serif;font-size:clamp(22px,3vw,34px);font-weight:800;color:#fff;margin:0 0 12px">Хотите похожий результат для своего бизнеса?</h2>
+      <p style="font-size:16px;line-height:1.7;color:#8A95B0;max-width:580px;margin:0 auto">Ответим в течение рабочего дня. Первая консультация бесплатно.</p>
+    </div>
+    <script data-b24-form="inline/246/bgv07m" data-skip-moving="true">
+(function(w,d,u){
+var s=d.createElement('script');s.async=true;s.src=u+'?'+(Date.now()/180000|0);
+var h=d.getElementsByTagName('script')[0];h.parentNode.insertBefore(s,h);
+})(window,document,'https://cdn-ru.bitrix24.ru/b1445091/crm/form/loader_246.js');
+</script>
+  </div>
+  </div>
+</section>
+
+
+<script>
+var dark = (typeof dark !== 'undefined') ? dark : true; /* тема: true=dark, задаётся шапкой сайта */
+
+var section = document.querySelector('.cases-section');
+(function() {
+  var prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var canvas = document.getElementById('cases-canvas');
+  var ctx = canvas.getContext('2d');
+  var W, H, particles, mouse = { x: -999, y: -999 };
+  var PALETTE = { light: ['47,199,247', '0,102,204', '0,49,153'], dark: ['47,199,247', '125,210,255', '255,255,255'] };
+  function resize() { W = canvas.width = section.offsetWidth; H = canvas.height = section.offsetHeight; }
+  function mkParticle() {
+    return { x: Math.random()*W, y: Math.random()*H, r: Math.random()*1.6+0.5, vx:(Math.random()-0.5)*0.3, vy:(Math.random()-0.5)*0.3, alpha: Math.random()*0.4+0.15, tone: Math.random()<0.5?0:(Math.random()<0.64?1:2), pulse: Math.random()*Math.PI*2, pulseSpeed: Math.random()*0.02+0.005 };
+  }
+  function init() { resize(); particles = Array.from({ length: 95 }, mkParticle); }
+  function draw() {
+    if (W !== section.offsetWidth || H !== section.offsetHeight) resize();
+    ctx.clearRect(0,0,W,H);
+    var palette = PALETTE.dark;
+    var lineRGB = dark ? '125,210,255' : '0,102,204';
+    var glowA = dark ? 0.14 : 0.10;
+    var grd = ctx.createRadialGradient(mouse.x, mouse.y, 0, mouse.x, mouse.y, 200);
+    grd.addColorStop(0, 'rgba(47,199,247,' + glowA + ')');
+    grd.addColorStop(1, 'rgba(47,199,247,0)');
+    ctx.fillStyle = grd; ctx.fillRect(0,0,W,H);
+    particles.forEach(function(p) {
+      p.pulse += p.pulseSpeed;
+      var a = p.alpha * (0.7 + 0.3 * Math.sin(p.pulse));
+      var dx = mouse.x - p.x, dy = mouse.y - p.y;
+      var dist = Math.sqrt(dx*dx + dy*dy);
+      if (dist < 200) { p.vx += dx/dist*0.015; p.vy += dy/dist*0.015; }
+      p.vx *= 0.98; p.vy *= 0.98; p.x += p.vx; p.y += p.vy;
+      if (p.x < 0) p.x = W; if (p.x > W) p.x = 0;
+      if (p.y < 0) p.y = H; if (p.y > H) p.y = 0;
+      ctx.beginPath(); ctx.arc(p.x, p.y, p.r, 0, Math.PI*2);
+      ctx.fillStyle = 'rgba(' + palette[p.tone] + ',' + a + ')'; ctx.fill();
+      particles.forEach(function(p2) {
+        var dx2 = p2.x - p.x, dy2 = p2.y - p.y;
+        var d2 = Math.sqrt(dx2*dx2 + dy2*dy2);
+        if (d2 < 100 && d2 > 0) {
+          ctx.beginPath(); ctx.moveTo(p.x, p.y); ctx.lineTo(p2.x, p2.y);
+          ctx.strokeStyle = 'rgba(' + lineRGB + ',' + (0.08*(1 - d2/100)) + ')';
+          ctx.lineWidth = 0.5; ctx.stroke();
+        }
+      });
+    });
+    requestAnimationFrame(draw);
+  }
+  section.addEventListener('mousemove', function(e) { var r = section.getBoundingClientRect(); mouse.x = e.clientX - r.left; mouse.y = e.clientY - r.top; });
+  section.addEventListener('mouseleave', function() { mouse.x = -999; mouse.y = -999; });
+  window.addEventListener('resize', function() { resize(); });
+  init();
+  draw();
+})();
+
+var reducedTilt = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+document.querySelectorAll('.case-card').forEach(function(card) {
+  card.addEventListener('mousemove', function(e) {
+    if (reducedTilt) return;
+    var rect = card.getBoundingClientRect();
+    var cx = rect.left + rect.width/2, cy = rect.top + rect.height/2;
+    var dx = (e.clientX - cx)/(rect.width/2), dy = (e.clientY - cy)/(rect.height/2);
+    card.style.setProperty('--rx', (-dy*6) + 'deg');
+    card.style.setProperty('--ry', (dx*6) + 'deg');
+    var mx = ((e.clientX - rect.left)/rect.width)*100, my = ((e.clientY - rect.top)/rect.height)*100;
+    card.style.setProperty('--mouse-x', mx + '%'); card.style.setProperty('--mouse-y', my + '%');
+  });
+  card.addEventListener('mouseleave', function() { card.style.setProperty('--rx','0deg'); card.style.setProperty('--ry','0deg'); });
+});
+
+(function(){
+  // ── Словарь синонимов ────────────────────────────────────────────────
+  // Группы: слова одной группы ищутся вместе
+  var SYN_GROUPS = [
+    ['horeca','ресторан','кафе','общепит','гостиница','отель','санаторий'],
+    ['производство','завод','фабрика','предприятие','промышленность'],
+    ['строительство','стройка','подрядчик'],
+    ['недвижимость','девелопер','застройщик','риэлтор'],
+    ['логистика','доставка','перевозка','транспорт'],
+    ['автобизнес','автосервис','авто','ремонт'],
+    ['crm','клиенты','продажи','воронка','сделки','лиды','заявки'],
+    ['документооборот','документы','договора','договоры','согласование','эдо','кэдо'],
+    ['hr','кадры','персонал','сотрудники','найм','рекрутинг','подбор','аутстаффинг'],
+    ['телефония','звонки','звонок','колл-центр'],
+    ['склад','остатки','товары','запасы','моисклад'],
+    ['аналитика','отчёты','отчеты','статистика','дашборд'],
+    ['автоматизация','роботы','бизнес-процессы','смарт-процессы'],
+    ['бронирование','bnovo','logus'],
+    ['тендер','закупки','поставки'],
+    ['вэд','импорт','экспорт','таможня','международные'],
+    ['жалобы','рекламации','претензии'],
+    ['интеграция','синхронизация','1с'],
+  ];
+
+  // Строим плоский словарь из групп
+  var SYNONYMS = {};
+  SYN_GROUPS.forEach(function(group) {
+    group.forEach(function(word) {
+      SYNONYMS[word] = group.filter(function(w) { return w !== word; });
+    });
+  });
+
+  function expandQuery(q) {
+    if (!q) return [];
+    var terms = [q];
+    var words = q.split(/\s+/).filter(Boolean);
+    words.forEach(function(w) {
+      var syns = SYNONYMS[w];
+      if (syns) terms = terms.concat(syns);
+    });
+    // deduplicate
+    return terms.filter(function(t, i) { return terms.indexOf(t) === i; });
+  }
+
+  var inp           = document.getElementById('caseSearch');
+  var clr           = document.getElementById('opsClear');
+  var opsReset      = document.getElementById('opsReset');
+  var opsCount      = document.getElementById('opsCount');
+  var opsFBadge     = document.getElementById('opsFBadge');
+  var opsFilterBtn  = document.getElementById('opsFilterBtn');
+  var opsBackdrop   = document.getElementById('opsBackdrop');
+  var opsDrawer     = document.getElementById('opsDrawer');
+  var opsDrawerClose= document.getElementById('opsDrawerClose');
+  var opsApply      = document.getElementById('opsApply');
+  var opsDrawerReset= document.getElementById('opsDrawerReset');
+  var empty         = document.getElementById('casesEmpty');
+  var moreBtn       = document.getElementById('casesMore');
+  var cards         = Array.prototype.slice.call(document.querySelectorAll('.case-card'));
+  var state         = { q: '', tasks: {}, areas: {} };
+  var expanded      = false; var LIMIT = 6;
+
+  function cardTags(c){ var r=c.getAttribute('data-tags')||''; return r?r.split(',').map(function(s){return s.trim();}):[]; }
+  function chipIds(id){ return id.split(',').map(function(s){return s.trim();}); }
+  function tagsMatch(tags, store){
+    var keys=Object.keys(store); if(!keys.length) return true;
+    return keys.some(function(k){ return chipIds(k).some(function(id){ return tags.indexOf(id)!==-1; }); });
+  }
+
+  function render(){
+    var q=(inp.value||'').trim().toLowerCase();
+    var sel=Object.keys(state.tasks).length+Object.keys(state.areas).length;
+    var active=!!(q||sel);
+    if(opsFBadge){ if(sel){opsFBadge.textContent=sel;opsFBadge.classList.add('on');}else{opsFBadge.classList.remove('on');} }
+    if(opsFilterBtn) opsFilterBtn.classList.toggle('active', sel>0);
+    var matched=0;
+    var qTerms = expandQuery(q);
+    cards.forEach(function(card){
+      var tags=cardTags(card);
+      var searchable=(card.textContent+' '+tags.join(' ')).toLowerCase();
+      var textMatch = !q || qTerms.some(function(t){ return searchable.indexOf(t) !== -1; });
+      var ok=textMatch&&tagsMatch(tags,state.tasks)&&tagsMatch(tags,state.areas);
+      if(ok){ matched++; card.style.display=(expanded||matched<=LIMIT)?'':'none'; }
+      else   { card.style.display='none'; }
+    });
+    if(empty) empty.hidden=matched!==0;
+    if(opsCount){
+      opsCount.innerHTML='';
+      if(active){ var b=document.createElement('b');b.textContent=matched;opsCount.appendChild(document.createTextNode('Найдено кейсов: '));opsCount.appendChild(b); }
+    }
+    if(opsReset) opsReset.classList.toggle('on',active);
+    if(moreBtn){
+      if(matched>LIMIT&&!active){
+        moreBtn.style.display='block';
+        moreBtn.innerHTML=expanded
+          ?'Свернуть <svg class="more-ico" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10l4-4 4 4"/></svg>'
+          :'Смотреть все кейсы <svg class="more-ico" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6l4 4 4-4"/></svg>';
+      }else{ moreBtn.style.display='none'; }
+    }
+    window.dispatchEvent(new Event('resize'));
+  }
+
+  function openDrawer(){ opsDrawer.classList.add('open'); opsBackdrop.classList.add('open'); document.body.style.overflow='hidden'; }
+  function closeDrawer(){ opsDrawer.classList.remove('open'); opsBackdrop.classList.remove('open'); document.body.style.overflow=''; }
+
+  if(opsFilterBtn)   opsFilterBtn.addEventListener('click', openDrawer);
+  if(opsDrawerClose) opsDrawerClose.addEventListener('click', closeDrawer);
+  if(opsBackdrop)    opsBackdrop.addEventListener('click', closeDrawer);
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape') closeDrawer(); });
+
+  function bindOpts(id, store){
+    var w=document.getElementById(id); if(!w) return;
+    w.querySelectorAll('.ops-dopt').forEach(function(btn){
+      btn.addEventListener('click',function(){
+        var did=btn.getAttribute('data-id');
+        if(store[did]){ delete store[did]; btn.classList.remove('on'); }
+        else{ store[did]=1; btn.classList.add('on'); }
+      });
+    });
+  }
+  bindOpts('opsProblems', state.tasks);
+  bindOpts('opsAreas',    state.areas);
+
+  if(opsApply) opsApply.addEventListener('click',function(){ closeDrawer(); expanded=false; render(); });
+
+  if(opsDrawerReset) opsDrawerReset.addEventListener('click',function(){
+    state.tasks={}; state.areas={};
+    document.querySelectorAll('.ops-dopt.on').forEach(function(b){b.classList.remove('on');});
+    render();
+  });
+
+  var deb;
+  inp.addEventListener('input',function(){
+    state.q=inp.value;
+    inp.value?clr.classList.add('on'):clr.classList.remove('on');
+    clearTimeout(deb); deb=setTimeout(function(){expanded=false;render();},120);
+  });
+  if(clr) clr.addEventListener('click',function(){ inp.value='';state.q='';clr.classList.remove('on');expanded=false;render();inp.focus(); });
+
+  function resetAll(){
+    inp.value='';state.q='';state.tasks={};state.areas={};
+    clr.classList.remove('on');
+    document.querySelectorAll('.ops-dopt.on').forEach(function(b){b.classList.remove('on');});
+    expanded=false; render();
+  }
+  if(opsReset) opsReset.addEventListener('click', resetAll);
+  var emptyReset=document.getElementById('emptyReset');
+  if(emptyReset) emptyReset.addEventListener('click',function(){ resetAll(); inp.focus(); });
+
+  if(moreBtn) moreBtn.addEventListener('click',function(){
+    expanded=!expanded; render();
+    if(!expanded){ var sec=document.querySelector('.cases-section'); if(sec) sec.scrollIntoView({behavior:'smooth',block:'start'}); }
+  });
+
+  render();
+})();
+
+
+</script>
+<script>
+/* VIEW TOGGLE — изолированный блок */
+(function() {
+  try {
+    var section = document.querySelector('.cases-section');
+    var btnGrid = document.getElementById('btnViewGrid');
+    var btnList = document.getElementById('btnViewList');
+    if (!section || !btnGrid || !btnList) return;
+
+    /* Добавляем list-meta в каждую карточку */
+    document.querySelectorAll('.case-card').forEach(function(card) {
+      if (card.querySelector('.case-list-meta')) return; /* уже добавлено */
+      var tagEl = card.querySelector('.case-tag');
+      var industry = tagEl ? tagEl.textContent.trim() : '';
+      var tagsRaw = (card.getAttribute('data-tags') || '').split(',').map(function(t){ return t.trim(); }).filter(Boolean);
+
+      var meta = document.createElement('div');
+      meta.className = 'case-list-meta';
+
+      if (industry) {
+        var ind = document.createElement('span');
+        ind.className = 'case-list-industry';
+        ind.textContent = industry;
+        meta.appendChild(ind);
+      }
+      if (tagsRaw.length) {
+        var tw = document.createElement('div');
+        tw.className = 'case-list-tools';
+        tagsRaw.slice(0, 4).forEach(function(t) {
+          var chip = document.createElement('span');
+          chip.className = 'case-list-tool';
+          chip.textContent = t;
+          tw.appendChild(chip);
+        });
+        meta.appendChild(tw);
+      }
+      var readBtn = document.createElement('a');
+      readBtn.className = 'case-list-readbtn';
+      readBtn.href = card.getAttribute('href') || '#';
+      readBtn.innerHTML = 'Читать кейс&nbsp;<svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 6h8M7 3l3 3-3 3"/></svg>';
+      readBtn.addEventListener('click', function(e) { e.stopPropagation(); });
+      meta.appendChild(readBtn);
+
+      var body = card.querySelector('.case-body');
+      if (body) body.appendChild(meta);
+    });
+
+    function setView(mode) {
+      if (mode === 'list') {
+        section.classList.add('view-list');
+        btnList.classList.add('active');
+        btnGrid.classList.remove('active');
+      } else {
+        section.classList.remove('view-list');
+        btnList.classList.remove('active');
+        btnGrid.classList.add('active');
+      }
+      try { localStorage.setItem('casesView', mode); } catch(e) {}
+    }
+
+    btnGrid.addEventListener('click', function() { setView('grid'); });
+    btnList.addEventListener('click', function() { setView('list'); });
+
+    try {
+      if (localStorage.getItem('casesView') === 'list') setView('list');
+    } catch(e) {}
+
+  } catch(err) {
+    console.warn('ViewToggle error:', err);
+  }
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,498 @@
+<!-- ОПТИМ ПРО · Битрикс24 Коллабы · для Битрикс24.Сайты -->
+<div class="op-crm">
+<style>
+@font-face{font-family:'Montserrat';font-style:normal;font-weight:800;font-display:swap;src:url(https://fonts.gstatic.com/s/montserrat/v29/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCvr70w-Y3tcoqK5.woff2) format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
+@font-face{font-family:'Montserrat';font-style:normal;font-weight:800;font-display:swap;src:url(https://fonts.gstatic.com/s/montserrat/v29/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCvr73w-Y3tcoqK5.woff2) format('woff2');unicode-range:U+0000-00FF}
+@font-face{font-family:'Open Sans';font-style:normal;font-weight:400;font-display:swap;src:url(https://fonts.gstatic.com/s/opensans/v40/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsiH0C4nY1M2xLER.woff2) format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
+@font-face{font-family:'Open Sans';font-style:normal;font-weight:400;font-display:swap;src:url(https://fonts.gstatic.com/s/opensans/v40/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsjZ0C4nY1M2xLER.woff2) format('woff2');unicode-range:U+0000-00FF}
+@font-face{font-family:'Open Sans';font-style:normal;font-weight:700;font-display:swap;src:url(https://fonts.gstatic.com/s/opensans/v40/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsg-1y4nY1M2xLER.woff2) format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
+@font-face{font-family:'Open Sans';font-style:normal;font-weight:700;font-display:swap;src:url(https://fonts.gstatic.com/s/opensans/v40/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsg-1S4nY1M2xLER.woff2) format('woff2');unicode-range:U+0000-00FF}
+.op-crm,.op-crm *,.op-crm *::before,.op-crm *::after{box-sizing:border-box;margin:0;padding:0}
+.op-crm{-webkit-tap-highlight-color:transparent;font-family:'Open Sans',Arial,sans-serif;color:#dce6f8;line-height:1.6}
+.op-crm *:focus,.op-crm *:focus-visible,.op-crm *:active{outline:none!important}
+.op-crm{--cyan:#2FC7F7;--blue:#0066CC;--navy:#003199;--yellow:#FAB400;--soft:#F4F8FF;--line:#E3ECF7;--muted:#8a9bbf;--radius:12px}
+.op-crm a{color:var(--cyan);text-decoration:none}
+.op-crm{color:#dce6f8;background:#080c17}
+.op-crm h2{color:#f0f5fc}
+.op-crm h3{color:#dce6f8}
+.op-crm a{color:var(--cyan)}
+.op-crm .op-lead{color:#a0b4d0}
+.op-w{max-width:1200px;margin:0 auto;padding:0 24px}
+.op-sec{padding:72px 0;position:relative;z-index:2}
+.op-sec+.op-sec{padding-top:0}
+.op-crm h2{font-family:'Montserrat',Arial,sans-serif;font-weight:800;color:#f0f5fc;line-height:1.14;letter-spacing:-.5px;font-size:clamp(26px,3.6vw,42px)}
+.op-crm h3{font-family:'Montserrat',Arial,sans-serif;font-weight:800;color:#f0f5fc;line-height:1.2;font-size:clamp(18px,2vw,24px)}
+.op-lead{max-width:720px;font-size:17px;color:var(--muted);line-height:1.65}
+.op-rv{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease}
+.op-rv.is-v{opacity:1;transform:none}
+.op-btn{display:inline-flex;align-items:center;justify-content:center;padding:14px 32px;border-radius:var(--radius);font-family:'Open Sans',Arial,sans-serif;font-weight:800;font-size:15px;cursor:pointer;border:none;transition:transform .2s,box-shadow .2s;text-decoration:none}
+.op-btn:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(0,102,204,.25)}
+.op-btn-blue{background:#2fc7f7;color:#fff!important}
+/* Hero */
+.op-hero{padding:200px 0 48px;text-align:center;position:relative;z-index:2}
+.op-hero h1{font-family:'Montserrat',Arial,sans-serif;font-weight:800;font-size:clamp(40px,5.5vw,72px);color:#f0f5fc;line-height:1.08;letter-spacing:-1.2px;margin-bottom:28px}
+.op-hero .op-lead{margin:0 auto 36px;max-width:700px}
+.op-hero__img{margin-top:44px;border-radius:20px;overflow:hidden;box-shadow:0 24px 60px rgba(0,49,153,.14)}
+.op-hero__img img{display:block;width:100%;height:auto}
+/* Accordion + image (platform) */
+.op-plat{display:grid;grid-template-columns:1fr 1.2fr;gap:48px;align-items:start}
+.op-plat h2{margin-bottom:8px}
+.op-plat>.op-plat__text>.op-lead{margin-bottom:24px}
+.op-plat__img img{display:block;width:100%;height:auto;border-radius:20px}
+.op-dd-list{display:flex;flex-direction:column;gap:4px}
+.op-dd-item{border:1px solid var(--line);border-radius:14px;overflow:hidden;transition:border-color .3s}
+.op-dd-item.is-open{border-color:var(--cyan)}
+.op-dd-head{display:flex;align-items:center;justify-content:space-between;padding:16px 20px;cursor:pointer;font-family:'Open Sans',Arial,sans-serif;font-weight:700;font-size:16px;color:#f0f5fc;gap:12px;user-select:none;background:none;border:none;width:100%;text-align:left}
+.op-dd-arrow{width:24px;height:24px;flex:none;transition:transform .35s;display:flex;align-items:center;justify-content:center}
+.op-dd-arrow svg{width:14px;height:14px;stroke:#dce6f8;fill:none;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
+.op-dd-item.is-open .op-dd-arrow{transform:rotate(180deg)}
+.op-dd-body{max-height:0;overflow:hidden;transition:max-height .4s ease}
+.op-dd-body__inner{padding:0 20px 20px;color:var(--muted);font-size:15px;line-height:1.6}
+.op-dd-item{border-color:rgba(255,255,255,.08);background:rgba(13,21,38,.5)}
+.op-dd-item.is-open{border-color:var(--cyan)}
+.op-dd-head{color:#f0f5fc}
+.op-dd-arrow svg{stroke:#dce6f8}
+.op-dd-body__inner{color:#a0b4d0}
+/* Soft cards */
+.op-soft-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.op-soft-card{background:#fff;border:1px solid var(--line);border-radius:20px;overflow:hidden;display:flex;flex-direction:column;transition:box-shadow .3s,transform .3s;position:relative}
+.op-soft-card:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(0,49,153,.1)}
+.op-soft-card__body{padding:28px;display:flex;flex-direction:column;gap:10px;flex:1}
+.op-soft-card__body h3{margin-bottom:0}
+.op-soft-card__body p{font-size:15px;color:var(--muted);line-height:1.6;flex:1}
+.op-soft-card__img{padding:0 24px 0;margin-top:auto}
+.op-soft-card__img img{display:block;width:100%;height:auto;border-radius:12px 12px 0 0}
+.op-soft-card{background:rgba(13,21,38,.7);border-color:rgba(255,255,255,.08)}
+.op-soft-card__body p{color:#a0b4d0}
+.op-feat-glow{position:absolute;width:600px;height:600px;border-radius:50%;pointer-events:none;z-index:0;opacity:0;top:0;left:0;transform:translate(var(--gx,50%),var(--gy,50%)) translate(-50%,-50%);background:radial-gradient(circle,rgba(47,199,247,.13) 0%,rgba(46,125,246,.07) 40%,transparent 70%);filter:blur(40px);transition:opacity .3s ease}
+.op-soft-card:hover .op-feat-glow{opacity:1}
+/* Half-media */
+.op-hm{display:grid;grid-template-columns:1fr 1.15fr;gap:48px;align-items:center}
+.op-hm_right .op-hm__media{order:-1}
+.op-hm__text h2{margin-bottom:16px}
+.op-hm__text .op-lead{margin-bottom:24px}
+.op-hm__media img{display:block;width:100%;height:auto;border-radius:20px}
+.op-hm__btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px}
+.op-hm__list{list-style:none;margin:16px 0 24px;display:flex;flex-direction:column;gap:10px}
+.op-hm__list li{display:flex;align-items:flex-start;gap:10px;font-size:15px;color:var(--muted);line-height:1.5}
+.op-hm__list li::before{content:'';flex:none;width:20px;height:20px;margin-top:2px;border-radius:5px;background:var(--cyan);background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 14 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M3 7l3 3 5-5' stroke='%23fff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");background-size:14px;background-position:center;background-repeat:no-repeat}
+.op-hm__list li{color:#a0b4d0}
+/* Feat3 */
+.op-feat3{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:40px}
+.op-feat3-card{background:#fff;border:1px solid var(--line);border-radius:20px;padding:28px;display:flex;flex-direction:column;gap:14px;transition:box-shadow .3s,transform .3s;position:relative;overflow:hidden}
+.op-feat3-card:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(0,49,153,.1)}
+.op-feat3-card:hover .op-feat-glow{opacity:1}
+.op-feat3-card h3{font-size:18px}
+.op-feat3-card p{font-size:14px;color:var(--muted);line-height:1.6;flex:1}
+.op-feat3-card{background:rgba(13,21,38,.7);border-color:rgba(255,255,255,.08)}
+.op-feat3-card p{color:#a0b4d0}
+/* Full-width section */
+.op-fw{position:relative;z-index:2;padding:72px 0}
+.op-fw__inner{display:grid;grid-template-columns:1fr 1.4fr;gap:48px;align-items:center}
+.op-fw__inner.rev .op-fw__media{order:-1}
+.op-fw__media img{display:block;width:100%;height:auto;border-radius:20px}
+/* FAQ */
+.op-faq{max-width:800px;margin:0 auto}
+.op-faq h2{text-align:center;margin-bottom:40px}
+.op-faq-item{border-bottom:1px solid var(--line);padding:4px 0}
+.op-faq-q{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:20px 4px;cursor:pointer;font-weight:700;font-size:16px;color:#f0f5fc;user-select:none}
+.op-faq-arrow{width:32px;height:32px;flex:none;border-radius:50%;background:var(--soft);display:flex;align-items:center;justify-content:center;transition:transform .35s,background .25s}
+.op-faq-arrow svg{width:14px;height:14px;stroke:#dce6f8;fill:none;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;transition:stroke .25s}
+.op-faq-item.is-open .op-faq-arrow{transform:rotate(180deg);background:var(--cyan)}
+.op-faq-item.is-open .op-faq-arrow svg{stroke:#fff}
+.op-faq-a{max-height:0;overflow:hidden;transition:max-height .4s ease}
+.op-faq-a__inner{padding:0 4px 20px;color:var(--muted);font-size:15px;line-height:1.65}
+.op-faq-item{border-bottom-color:rgba(255,255,255,.08)}
+.op-faq-q{color:#f0f5fc}
+.op-faq-arrow{background:rgba(255,255,255,.08)}
+.op-faq-arrow svg{stroke:#dce6f8}
+.op-faq-a__inner{color:#a0b4d0}
+/* Bottom cards */
+.op-bottom{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.op-bottom-card{border-radius:20px;padding:36px 32px;background-size:cover;background-position:center;position:relative;overflow:hidden;display:flex;flex-direction:column;gap:12px}
+.op-bottom-card::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(0,49,153,.82) 0%,rgba(0,49,153,.60) 100%)}
+.op-bottom-card>*{position:relative;z-index:1}
+.op-bottom-card h3{font-family:'Montserrat',Arial,sans-serif;font-weight:800;color:#fff;font-size:20px}
+.op-bottom-card p{font-size:14px;color:rgba(255,255,255,.82);line-height:1.5;flex:1}
+/* CTA */
+.op-cta{padding:72px 0;position:relative;z-index:2}
+.op-cta-inner{position:relative;z-index:2;border-radius:32px;padding:56px 48px;text-align:center;background:rgba(13,21,38,.65);border:1px solid rgba(255,255,255,.1);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);box-shadow:0 40px 100px -30px rgba(0,6,30,.7)}
+.op-cta-inner h2{color:#f0f5fc;margin-bottom:16px}
+.op-cta-inner p{color:rgba(232,237,248,.7);font-size:17px;max-width:560px;margin:0 auto 32px}
+.op-cta-btns{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+.op-cta-btn--ghost{background:transparent;border:1.5px solid #2fc7f7;color:#2fc7f7!important;padding:14px 26px}
+/* Particles */
+.op-particles-bg{position:fixed;top:0;left:0;pointer-events:none;z-index:0;opacity:.6}
+.op-page-glow{position:fixed;top:0;left:0;width:700px;height:700px;border-radius:50%;pointer-events:none;z-index:1;background:radial-gradient(circle,rgba(47,199,247,.13) 0%,rgba(46,125,246,.07) 40%,transparent 70%);filter:blur(40px);will-change:transform}
+/* Responsive */
+@media(max-width:960px){
+  .op-hm,.op-plat,.op-fw__inner{grid-template-columns:1fr;gap:32px}
+  .op-hm_right .op-hm__media,.op-fw__inner.rev .op-fw__media{order:0}
+  .op-soft-grid{grid-template-columns:1fr}
+  .op-feat3{grid-template-columns:1fr 1fr}
+  .op-bottom{grid-template-columns:1fr}
+  .op-hero{padding:140px 0 32px}
+}
+@media(max-width:640px){
+  .op-hero{padding:120px 0 24px}
+  .op-feat3{grid-template-columns:1fr}
+  .op-cta-inner{padding:40px 24px;border-radius:20px}
+  .op-cta-btns{flex-direction:column;align-items:stretch}
+}
+@media(prefers-reduced-motion:reduce){
+  .op-rv{transition:none;opacity:1;transform:none}
+  .op-particles-bg,.op-page-glow,.op-feat-glow{display:none}
+}
+
+/* === DARK THEME EXTRA FIXES === */
+.op-faq-arrow{background:rgba(255,255,255,.08)}
+.op-faq-arrow svg{stroke:#dce6f8}
+.op-dd-arrow svg{stroke:#dce6f8}
+.op-dd-body__inner{color:#a0b4d0}
+.op-faq-a__inner{color:#a0b4d0}
+.op-faq-a__inner a{color:var(--cyan)}
+.op-btn-grey{background:rgba(255,255,255,.08);color:#dce6f8}
+.op-bottom-card{background-color:#0d1931}
+.op-feat3-card{background:rgba(13,21,38,.7);border-color:rgba(255,255,255,.08)}
+.op-feat3-card h3{color:#f0f5fc}
+.op-soft-card{background:rgba(13,21,38,.5)}
+.op-feat{background:rgba(13,21,38,.6);border-color:rgba(255,255,255,.08)}
+.op-cards4-item{background:rgba(13,21,38,.6);border-color:rgba(255,255,255,.08)}
+.op-cards4-item h3{color:#f0f5fc}
+.op-sec2-card{background:rgba(13,21,38,.5);border-color:rgba(255,255,255,.08)}
+.op-sec-full{background:rgba(13,21,38,.5);border-color:rgba(255,255,255,.08)}
+.op-crm a{color:var(--cyan)}
+.op-crm a.op-btn-blue, .op-crm a.op-btn-green, .op-crm a.op-cta-buy, .op-crm a.op-btn-grey{color:#fff}
+.op-crm .op-lead{color:#a0b4d0}
+.op-crm h3{color:#f0f5fc}
+.op-slide{background:rgba(13,21,38,.6);border-color:rgba(255,255,255,.08)}
+.op-slide h3{color:#f0f5fc}
+
+/* === DARK THEME COMPREHENSIVE FIX === */
+.op-conf__tab{background:rgba(13,21,38,.7);border-color:rgba(255,255,255,.12);color:#dce6f8}
+.op-conf__tab.is-act{background:var(--cyan);color:#fff}
+.op-conf__list li{background:rgba(13,21,38,.6);border-color:rgba(255,255,255,.1);color:#dce6f8}
+.op-ai-chip{background:rgba(13,21,38,.7);border-color:rgba(255,255,255,.1);color:#dce6f8}
+.op-ai-chip__bar{background:rgba(255,255,255,.08)}
+.op-badge-50{background:rgba(13,21,38,.7);border-color:rgba(255,255,255,.12);color:#f0f5fc}
+.op-toggle-btn{background:rgba(47,199,247,.15);color:var(--cyan)}
+.op-cta .op-btn-blue{background:#2fc7f7;color:#fff!important}
+.op-plat__item{background:rgba(13,21,38,.6);border-color:rgba(255,255,255,.08)}
+.op-plat__item h3{color:#f0f5fc}
+.op-plat__check{background:rgba(13,21,38,.5)}
+
+  .b24-form-wrapper{background:transparent!important;border:none!important;box-shadow:none!important;padding:0!important}
+  .b24-form{background:#111827!important;border:1px solid rgba(255,255,255,.09)!important;border-radius:16px!important;overflow:hidden!important;box-shadow:0 24px 60px rgba(0,0,0,.4)!important}
+  .b24-form-header{background:#111827!important;border-bottom:1px solid rgba(255,255,255,.08)!important}
+  .b24-form-header-title,.b24-form-header *{color:#fff!important}
+  .b24-form-body{background:#111827!important;padding:24px!important}
+  .b24-form-field{border-bottom:none!important;border-top:none!important;padding:0!important;margin-bottom:8px!important}
+  .b24-form-control-container .b24-form-control,.b24-form-field .b24-form-control,.b24-form input:not([type=checkbox]):not([type=radio]),.b24-form textarea,.b24-form select{background:rgba(255,255,255,.06)!important;border:1px solid rgba(255,255,255,.12)!important;border-radius:10px!important;color:#E8EDF7!important;font-family:'Open Sans',sans-serif!important}
+  .b24-form-control::placeholder,.b24-form input::placeholder,.b24-form textarea::placeholder{color:#8A95B0!important}
+  .b24-form-control:focus,.b24-form input:focus,.b24-form textarea:focus{border-color:rgba(47,199,247,.5)!important;outline:none!important;box-shadow:0 0 0 3px rgba(47,199,247,.12)!important;background:rgba(255,255,255,.09)!important}
+  .b24-form-field-label,.b24-form-field-label *{color:#c8d5f0!important}
+  .b24-form-btn-container .b24-form-btn{background:linear-gradient(135deg,#2E7DF6,#7A5CFF)!important;border:none!important;border-radius:12px!important;color:#fff!important;font-weight:700!important;font-family:'Montserrat',sans-serif!important;box-shadow:0 8px 24px rgba(46,125,246,.4)!important;transition:opacity .2s,transform .2s!important}
+  .b24-form-btn-container .b24-form-btn:hover{opacity:.9!important;transform:translateY(-1px)!important}
+  .b24-form-sign,.b24-form-sign *,.b24-form-field-agree,.b24-form-field-agree *{color:#8A95B0!important}
+  .b24-form-field-agreement a{color:#2FC7F7!important}
+  .b24-form *:not(input):not(textarea):not(select):not(button){color:#E8EDF7!important}
+  .b24-form input,.b24-form textarea,.b24-form select{color:#E8EDF7!important}
+  .b24-form-btn,.b24-form-btn *{color:#fff!important}
+</style>
+
+<!-- HERO -->
+<section class="op-hero">
+<div class="op-w">
+  <h1>Битрикс24 Коллабы</h1>
+  <p class="op-lead">Пространства для совместной работы с внешними командами и клиентами — с мессенджером, задачами, файлами и календарём. Все под вашим контролем, без лишних сервисов.</p>
+  <a class="op-btn op-btn-green" href="https://www.bitrix24.ru/create.php?p=6860675&p1=sales">Получить бесплатно</a>
+  <div class="op-hero__img">
+    <img loading="eager" fetchpriority="high" src="https://www.bitrix24.ru/upload/optimizer/converted/images/content_ru/features/company/collabs/1.1900w.png.webp" alt="Битрикс24 Коллабы">
+  </div>
+</div>
+</section>
+
+<!-- Всё для работы уже в коллабе -->
+<section class="op-sec op-rv">
+<div class="op-w">
+  <div class="op-plat">
+    <div class="op-plat__text">
+      <h2>Всё для работы уже в коллабе</h2>
+      <p class="op-lead">Не нужно переключаться между разными сервисами — всё, что нужно для совместной работы, уже внутри.</p>
+      <div class="op-dd-list" data-accordion>
+        <div class="op-dd-item" data-dropdown>
+          <div class="op-dd-head" data-dropdown-header>Общайтесь по видео и в чатах<span class="op-dd-arrow"><svg viewBox="0 0 14 14"><path d="M2 5l5 4 5-4"/></svg></span></div>
+          <div class="op-dd-body"><div class="op-dd-body__inner">Видеозвонки, чаты и каналы — всё внутри коллабы, без сторонних сервисов.</div></div>
+        </div>
+        <div class="op-dd-item" data-dropdown>
+          <div class="op-dd-head" data-dropdown-header>Используйте календарь<span class="op-dd-arrow"><svg viewBox="0 0 14 14"><path d="M2 5l5 4 5-4"/></svg></span></div>
+          <div class="op-dd-body"><div class="op-dd-body__inner">Общий календарь для всех участников коллабы — находите свободные слоты и планируйте встречи.</div></div>
+        </div>
+        <div class="op-dd-item" data-dropdown>
+          <div class="op-dd-head" data-dropdown-header>Редактируйте документы<span class="op-dd-arrow"><svg viewBox="0 0 14 14"><path d="M2 5l5 4 5-4"/></svg></span></div>
+          <div class="op-dd-body"><div class="op-dd-body__inner">Совместная работа с документами прямо в коллабе — без переключений между сервисами.</div></div>
+        </div>
+        <div class="op-dd-item" data-dropdown>
+          <div class="op-dd-head" data-dropdown-header>Храните файлы на диске<span class="op-dd-arrow"><svg viewBox="0 0 14 14"><path d="M2 5l5 4 5-4"/></svg></span></div>
+          <div class="op-dd-body"><div class="op-dd-body__inner">Защищённое облачное хранилище для всех рабочих файлов проекта.</div></div>
+        </div>
+      </div>
+      <div style="margin-top:24px"><a class="op-btn op-btn-green" href="https://www.bitrix24.ru/create.php?p=6860675&p1=sales">Получить бесплатно</a></div>
+    </div>
+    <div class="op-plat__img">
+      <img loading="lazy" src="https://www.bitrix24.ru/upload/optimizer/converted/images/content_ru/features/company/collabs/1.1900w.png.webp" alt="Инструменты коллабы">
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- Soft cards: Легко + Привычно -->
+<section class="op-sec op-rv">
+<div class="op-w">
+  <div class="op-soft-grid">
+    <div class="op-soft-card">
+      <div class="op-feat-glow"></div>
+      <div class="op-soft-card__body">
+        <h3>Легко присоединиться</h3>
+        <p>Соберите всех участников в коллабу всего за минуту. Чтобы добавить внешние команды — укажите их email, а сотрудников просто выберите из списка.</p>
+        <a class="op-btn op-btn-green" href="https://www.bitrix24.ru/create.php?p=6860675&p1=sales" style="margin-top:8px;align-self:flex-start">Получить бесплатно</a>
+      </div>
+      <div class="op-soft-card__img">
+        <img loading="lazy" src="https://www.bitrix24.ru/upload/optimizer/converted/images/content_ru/features/company/collabs/2.1176w.png.webp" alt="Легко присоединиться">
+      </div>
+    </div>
+    <div class="op-soft-card">
+      <div class="op-feat-glow"></div>
+      <div class="op-soft-card__body">
+        <h3>Привычно, как в мессенджере</h3>
+        <p>Знакомые чаты, каналы и видеозвонки, но лучше: они связаны с целым набором рабочих инструментов — задачами, файлами, календарём и видеозвонками.</p>
+        <a class="op-btn op-btn-green" href="https://www.bitrix24.ru/create.php?p=6860675&p1=sales" style="margin-top:8px;align-self:flex-start">Получить бесплатно</a>
+      </div>
+      <div class="op-soft-card__img">
+        <img loading="lazy" src="https://www.bitrix24.ru/upload/optimizer/converted/images/content_ru/features/company/collabs/3.1178w.png.webp" alt="Привычно, как в мессенджере">
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- Понятно, кто есть кто -->
+<section class="op-sec op-rv">
+<div class="op-w">
+  <div class="op-hm op-hm_right">
+    <div class="op-hm__text">
+      <h2>Понятно, кто есть кто</h2>
+      <p class="op-lead">В коллабе нет никаких странных ников вроде @Таня или @anton89. Вы всегда точно знаете реальное имя участников проекта, их должности и телефоны.</p>
+      <div class="op-hm__btns">
+        <a class="op-btn op-btn-green" href="https://www.bitrix24.ru/create.php?p=6860675&p1=sales">Получить бесплатно</a>
+      </div>
+    </div>
+    <div class="op-hm__media">
+      <img loading="lazy" src="https://www.bitrix24.ru/upload/optimizer/converted/images/content_ru/features/company/collabs/4.1900w.png.webp" alt="Понятно, кто есть кто">
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- Никаких лишних шагов + 3 feat cards -->
+<section class="op-sec op-rv">
+<div class="op-w">
+  <div class="op-hm">
+    <div class="op-hm__text">
+      <h2>Никаких лишних шагов</h2>
+      <p class="op-lead">В коллабе все задачи на виду — удобно синхронизироваться и двигать проект к результату.</p>
+      <div class="op-hm__btns">
+        <a class="op-btn op-btn-green" href="https://www.bitrix24.ru/create.php?p=6860675&p1=sales">Получить бесплатно</a>
+      </div>
+    </div>
+    <div class="op-hm__media">
+      <img loading="lazy" src="https://www.bitrix24.ru/upload/optimizer/converted/images/content_ru/features/company/collabs/5.1442w.png.webp" alt="Никаких лишних шагов">
+    </div>
+  </div>
+  <div class="op-feat3">
+    <div class="op-feat3-card">
+      <div class="op-feat-glow"></div>
+      <h3>Договорённости становятся задачами</h3>
+      <p>Они не потеряются в потоке сообщений. Создавайте задачу или встречу прямо в чате — это очень удобно.</p>
+    </div>
+    <div class="op-feat3-card">
+      <div class="op-feat-glow"></div>
+      <h3>Видеозвонки без обмена ссылками</h3>
+      <p>Созванивайтесь одной кнопкой, транслируйте экран, смотрите файлы. AI подскажет, какие шаги предпринять после звонка.</p>
+    </div>
+    <div class="op-feat3-card">
+      <div class="op-feat-glow"></div>
+      <h3>Календарь со свободными слотами</h3>
+      <p>Вы легко найдёте время для общей встречи. Пара кликов — и никаких долгих согласований.</p>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- Безопасность -->
+<section class="op-sec op-rv">
+<div class="op-w">
+  <div class="op-hm op-hm_right">
+    <div class="op-hm__text">
+      <h2>Безопасность данных и контроль доступа</h2>
+      <ul class="op-hm__list">
+        <li>Данные под контролем: Битрикс24 удаляет уволенных, а файлы и задачи остаются в коллабе</li>
+        <li>Настройка прав доступа для каждого участника</li>
+        <li>Защита от спама: посторонние не попадут в вашу рабочую группу</li>
+      </ul>
+      <div class="op-hm__btns">
+        <a class="op-btn op-btn-green" href="https://www.bitrix24.ru/create.php?p=6860675&p1=sales">Получить бесплатно</a>
+      </div>
+    </div>
+    <div class="op-hm__media">
+      <img loading="lazy" src="https://www.bitrix24.ru/upload/optimizer/converted/images/content_ru/features/company/collabs/6.1440w.png.webp" alt="Безопасность данных">
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- Мобильное приложение -->
+<section class="op-sec op-rv">
+<div class="op-w">
+  <div class="op-hm">
+    <div class="op-hm__text">
+      <h2>Мобильное приложение</h2>
+      <p class="op-lead">Коллабы — это как мессенджер, но без хаоса, с полным набором инструментов, и главное — всё под вашим контролем. Ставьте задачи и общайтесь в удобном мобильном приложении.</p>
+      <div class="op-hm__btns">
+        <a class="op-btn op-btn-green" href="https://www.bitrix24.ru/create.php?p=6860675&p1=sales">Получить бесплатно</a>
+      </div>
+    </div>
+    <div class="op-hm__media">
+      <img loading="lazy" src="https://www.bitrix24.ru/upload/optimizer/converted/images/content_ru/features/company/collabs/7.1900w.png.webp" alt="Мобильное приложение">
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- FAQ -->
+<section class="op-sec op-rv">
+<div class="op-w">
+  <div class="op-faq">
+    <h2>Часто задаваемые вопросы</h2>
+    <div class="op-faq-item" data-faq>
+      <div class="op-faq-q">Что такое Битрикс24 Коллабы?<span class="op-faq-arrow"><svg viewBox="0 0 14 14"><path d="M2 5l5 4 5-4"/></svg></span></div>
+      <div class="op-faq-a"><div class="op-faq-a__inner">Битрикс24 Коллабы — это защищённые пространства для совместной работы с внешними командами и клиентами. В коллабах удобно общаться в чатах и видеозвонках, делиться файлами, использовать общий календарь и управлять проектами.</div></div>
+    </div>
+    <div class="op-faq-item" data-faq>
+      <div class="op-faq-q">Чем Коллабы отличаются от обычных мессенджеров?<span class="op-faq-arrow"><svg viewBox="0 0 14 14"><path d="M2 5l5 4 5-4"/></svg></span></div>
+      <div class="op-faq-a"><div class="op-faq-a__inner">В отличие от публичных мессенджеров, Коллабы обеспечивают защищённые каналы связи, полное управление доступом участников и защиту от спама. Все рабочие процессы находятся под вашим контролем.</div></div>
+    </div>
+    <div class="op-faq-item" data-faq>
+      <div class="op-faq-q">Как подключить внешнюю команду или клиента в Коллабы?<span class="op-faq-arrow"><svg viewBox="0 0 14 14"><path d="M2 5l5 4 5-4"/></svg></span></div>
+      <div class="op-faq-a"><div class="op-faq-a__inner">Вы можете легко пригласить участников по ссылке. Даже если кто-то пропустит приглашение, Битрикс24 напомнит об этом автоматически.</div></div>
+    </div>
+    <div class="op-faq-item" data-faq>
+      <div class="op-faq-q">Какие инструменты доступны в Коллабах?<span class="op-faq-arrow"><svg viewBox="0 0 14 14"><path d="M2 5l5 4 5-4"/></svg></span></div>
+      <div class="op-faq-a"><div class="op-faq-a__inner">В Коллабах вы можете проводить видеозвонки и общаться в чатах, использовать общий календарь, создавать задачи и договорённости прямо из переписки, делиться файлами через защищённое хранилище и работать без переключений между разными сервисами.</div></div>
+    </div>
+    <div class="op-faq-item" data-faq>
+      <div class="op-faq-q">Насколько безопасна работа в Коллабах?<span class="op-faq-arrow"><svg viewBox="0 0 14 14"><path d="M2 5l5 4 5-4"/></svg></span></div>
+      <div class="op-faq-a"><div class="op-faq-a__inner">Все данные в Коллабах остаются под вашим контролем. Уволенные сотрудники автоматически теряют доступ, а переписки и файлы сохраняются. Посторонние лица не смогут случайно попасть в вашу рабочую группу.</div></div>
+    </div>
+    <div class="op-faq-item" data-faq>
+      <div class="op-faq-q">Могу ли я использовать Коллабы с мобильного устройства?<span class="op-faq-arrow"><svg viewBox="0 0 14 14"><path d="M2 5l5 4 5-4"/></svg></span></div>
+      <div class="op-faq-a"><div class="op-faq-a__inner">Да! Битрикс24 Коллабы доступны в мобильном приложении. Вы сможете оставаться на связи и управлять рабочими процессами даже в пути.</div></div>
+    </div>
+    <div class="op-faq-item" data-faq>
+      <div class="op-faq-q">Нужно ли оплачивать Коллабы отдельно?<span class="op-faq-arrow"><svg viewBox="0 0 14 14"><path d="M2 5l5 4 5-4"/></svg></span></div>
+      <div class="op-faq-a"><div class="op-faq-a__inner">Нет, Коллабы входят в состав Битрикс24. Вам не нужно подключать и оплачивать несколько разных сервисов для совместной работы.</div></div>
+    </div>
+    <div class="op-faq-item" data-faq>
+      <div class="op-faq-q">Как быстро можно начать работать в Коллабах?<span class="op-faq-arrow"><svg viewBox="0 0 14 14"><path d="M2 5l5 4 5-4"/></svg></span></div>
+      <div class="op-faq-a"><div class="op-faq-a__inner">Создание коллабы занимает всего одну минуту. Вы можете сразу начать общаться, делиться файлами и ставить задачи.</div></div>
+    </div>
+    <div class="op-faq-item" data-faq>
+      <div class="op-faq-q">Как понять, кто участвует в проекте?<span class="op-faq-arrow"><svg viewBox="0 0 14 14"><path d="M2 5l5 4 5-4"/></svg></span></div>
+      <div class="op-faq-a"><div class="op-faq-a__inner">В Коллабах используются только реальные имена, должности и телефоны сотрудников. Никаких странных ников — вы всегда знаете, с кем работаете.</div></div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- Bottom cards -->
+<section class="op-sec op-rv">
+<div class="op-w">
+  <div class="op-bottom">
+    <div class="op-bottom-card" style="background-image:url('https://www.bitrix24.ru/images/content_common/apps/market-1.png')">
+      <h3>6 080+ интеграций</h3>
+      <p>Телефония, 1С, онлайн-банки, доставка и ещё больше тысячи готовых интеграций уже внутри Битрикс24.</p>
+      <a class="op-btn op-btn-blue" href="https://www.bitrix24.ru/apps/" target="_blank" rel="noopener">Узнать больше</a>
+    </div>
+    <div class="op-bottom-card" style="background-image:url('https://www.bitrix24.ru/images/content_common/apps/market-2.png')">
+      <h3>Коробочная версия</h3>
+      <p>Работает на вашем сервере с дополнительным функционалом и возможностью доработки.</p>
+      <a class="op-btn op-btn-blue" href="https://www.bitrix24.ru/self-hosted/" target="_blank" rel="noopener">Узнать больше</a>
+    </div>
+    <div class="op-bottom-card" style="background-image:url('https://www.bitrix24.ru/images/content_common/apps/market-3.png')">
+      <h3>Для крупных организаций</h3>
+      <p>Битрикс24 Enterprise для крупных территориально-распределённых компаний или холдингов.</p>
+      <a class="op-btn op-btn-blue" href="https://www.bitrix24.ru/enterprise/" target="_blank" rel="noopener">Узнать больше</a>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- CTA -->
+<section class="op-cta op-rv">
+<div class="op-w">
+  <div class="op-cta-inner">
+    <h2>Единая платформа для работы компании</h2>
+    <p>Вместо десятков сервисов и приложений</p>
+    <div class="op-cta-btns">
+      <a class="op-btn op-btn-green" href="https://www.bitrix24.ru/create.php?p=6860675&p1=sales">Получить бесплатно</a>
+      <a class="op-btn op-cta-btn--ghost" href="#cta-form">Получить консультацию</a>
+    </div>
+  </div>
+</div>
+</section>
+<!-- CONSULTATION FORM -->
+<section class="op-cta op-rv" id="cta-form" style="padding-top:0">
+<div class="op-w">
+  <div style="max-width:700px;margin:0 auto;text-align:center;padding:0 0 24px">
+    <div style="display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:#2FC7F7;border:1px solid rgba(47,199,247,.25);border-radius:100px;padding:7px 16px;margin-bottom:20px;background:rgba(47,199,247,.06)"><span style="width:6px;height:6px;border-radius:50%;background:#2FC7F7;box-shadow:0 0 10px #2FC7F7"></span>Бесплатная консультация</div>
+    <h2 style="font-family:'Montserrat',sans-serif;font-size:clamp(22px,3vw,32px);font-weight:800;color:#fff;margin:0 0 12px;line-height:1.2">Нужно под ваши процессы — настроим</h2>
+    <p style="font-size:16px;line-height:1.7;color:#8A95B0;max-width:560px;margin:0 auto 32px">Расскажите задачу — разберём вашу ситуацию и предложим конкретное решение на Битрикс24.</p>
+  </div>
+  <div style="max-width:700px;margin:0 auto">
+    <script data-b24-form="inline/242/eb3sji" data-skip-moving="true">
+(function(w,d,u){
+var s=d.createElement('script');s.async=true;s.src=u+'?'+(Date.now()/180000|0);
+var h=d.getElementsByTagName('script')[0];h.parentNode.insertBefore(s,h);
+})(window,document,'https://cdn-ru.bitrix24.ru/b1445091/crm/form/loader_242.js');
+</script>
+  </div>
+</div>
+</section>
+
+
+<script>
+(function(){
+var root=document.currentScript?document.currentScript.closest('.op-crm'):document.querySelector('.op-crm');
+if(!root)return;
+var els=root.querySelectorAll('.op-rv');
+if('IntersectionObserver' in window){
+  var io=new IntersectionObserver(function(ee){ee.forEach(function(e){if(e.isIntersecting){e.target.classList.add('is-v');io.unobserve(e.target)}})},{threshold:.08});
+  els.forEach(function(el){io.observe(el)});
+  setTimeout(function(){els.forEach(function(el){el.classList.add('is-v')})},600);
+}else{els.forEach(function(el){el.classList.add('is-v')})}
+var pc=document.createElement('canvas');pc.className='op-particles-bg';pc.setAttribute('aria-hidden','true');document.body.appendChild(pc);
+var ctx=pc.getContext('2d'),pts=[],W=0,H=0;
+function resizePc(){W=pc.width=window.innerWidth;H=pc.height=Math.max(document.body.scrollHeight,window.innerHeight);pc.style.width=W+'px';pc.style.height=H+'px'}
+function initPts(){pts=[];var n=Math.floor(W*H/18000);for(var i=0;i<n;i++)pts.push({x:Math.random()*W,y:Math.random()*H,vx:(Math.random()-.5)*.35,vy:(Math.random()-.5)*.35,r:Math.random()*1.5+.5,a:Math.random()*.5+.15})}
+function drawPts(){ctx.clearRect(0,0,W,H);var col='rgba(47,199,247,';pts.forEach(function(p){p.x+=p.vx;p.y+=p.vy;if(p.x<0)p.x=W;if(p.x>W)p.x=0;if(p.y<0)p.y=H;if(p.y>H)p.y=0;ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);ctx.fillStyle=col+p.a+')';ctx.fill()});requestAnimationFrame(drawPts)}
+resizePc();initPts();drawPts();window.addEventListener('resize',function(){resizePc();initPts()},{passive:true});
+var pg=document.createElement('div');pg.className='op-page-glow';pg.setAttribute('aria-hidden','true');document.body.appendChild(pg);
+var pgX=window.innerWidth/2,pgY=window.innerHeight/2,pgRaf=null;
+function movePg(tx,ty){pgX+=(tx-pgX)*.1;pgY+=(ty-pgY)*.1;pg.style.transform='translate('+pgX+'px,'+pgY+'px) translate(-50%,-50%)';pgRaf=requestAnimationFrame(function(){movePg(tx,ty)})}
+document.addEventListener('mousemove',function(e){if(pgRaf)cancelAnimationFrame(pgRaf);movePg(e.clientX,e.clientY)},{passive:true});
+root.querySelectorAll('.op-soft-card,.op-feat3-card').forEach(function(c){var g=c.querySelector('.op-feat-glow');if(!g)return;c.addEventListener('mousemove',function(e){var r=c.getBoundingClientRect();g.style.setProperty('--gx',(e.clientX-r.left)+'px');g.style.setProperty('--gy',(e.clientY-r.top)+'px')},{passive:true})});
+root.querySelectorAll('[data-accordion]').forEach(function(acc){acc.querySelectorAll('[data-dropdown]').forEach(function(item){var head=item.querySelector('[data-dropdown-header]'),body=item.querySelector('.op-dd-body');if(!head||!body)return;head.addEventListener('click',function(){var w=item.classList.contains('is-open');acc.querySelectorAll('.op-dd-item').forEach(function(it){it.classList.remove('is-open');var b=it.querySelector('.op-dd-body');if(b)b.style.maxHeight='0'});if(!w){item.classList.add('is-open');body.style.maxHeight=body.scrollHeight+'px'}})})});
+root.querySelectorAll('[data-faq]').forEach(function(item){var q=item.querySelector('.op-faq-q'),a=item.querySelector('.op-faq-a');if(!q||!a)return;q.addEventListener('click',function(){var w=item.classList.contains('is-open');root.querySelectorAll('.op-faq-item').forEach(function(it){it.classList.remove('is-open');var b=it.querySelector('.op-faq-a');if(b)b.style.maxHeight='0'});if(!w){item.classList.add('is-open');a.style.maxHeight=a.scrollHeight+'px'}})});
+})();
+</script>
+</div>
