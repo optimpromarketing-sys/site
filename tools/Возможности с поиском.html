@@ -1,6 +1,6 @@
 <!-- ОПТИМ ПРО · Возможности Битрикс24 · для Битрикс24.Сайты -->
 <script>(function(){var t=localStorage.getItem('op-theme');if(t==='light')document.documentElement.setAttribute('data-theme','light');else document.documentElement.removeAttribute('data-theme');})();</script>
-<div class="op-crm">
+<div class="op-crm" id="op-capabilities">
 <div class="op-bg" aria-hidden="true"><div class="op-blob b1"></div><div class="op-blob b2"></div><div class="op-blob b3"></div></div>
 <div class="op-grid-ov" aria-hidden="true"></div>
 
@@ -446,6 +446,13 @@ html:not([data-theme="light"]) .op-plat__item{background:rgba(13,21,38,.6);borde
 html:not([data-theme="light"]) .op-plat__item h3{color:#f0f5fc}
 html:not([data-theme="light"]) .op-plat__check{background:rgba(13,21,38,.5)}
 
+
+/* Keep category scrolling inside the page at mobile widths. */
+@media(max-width:768px){
+  #op-capabilities .op-tabs{margin-left:0;margin-right:0;width:100%;max-width:100%;min-width:0;box-sizing:border-box}
+}
+
+@media(prefers-reduced-motion:no-preference){html:has(#op-capabilities){scroll-behavior:smooth}}
 </style>
 
 <!-- SVG SPRITE -->
@@ -700,7 +707,7 @@ function boot(){
   function chip(host,store){[].slice.call(host.querySelectorAll('.ops-chip')).forEach(function(b){b.addEventListener('click',function(){var id=b.getAttribute('data-id');if(store[id]){delete store[id];b.classList.remove('on');}else{store[id]=1;b.classList.add('on');}render();});});}
   chip(ui.querySelector('#opsProblems'),state.problems);
   chip(ui.querySelector('#opsAreas'),state.areas);
-  [].slice.call(ui.querySelectorAll('.ops-ex')).forEach(function(b){b.addEventListener('click',function(){input.value=b.textContent;state.q=b.textContent;clr.classList.add('on');render();ui.scrollIntoView({behavior:'smooth',block:'start'});});});
+  [].slice.call(ui.querySelectorAll('.ops-ex')).forEach(function(b){b.addEventListener('click',function(){input.value=b.textContent;state.q=b.textContent;clr.classList.add('on');render();ui.scrollIntoView({block:'start'});});});
   function tc(){if(input.value)clr.classList.add('on');else clr.classList.remove('on');}
   var deb;input.addEventListener('input',function(){state.q=input.value;tc();clearTimeout(deb);deb=setTimeout(render,120);});
   clr.addEventListener('click',function(){input.value='';state.q='';tc();render();input.focus();});
@@ -1223,7 +1230,7 @@ root.querySelectorAll('.op-tab').forEach(function(tab){
     var target=root.querySelector('#'+id);
     if(target){
       var y=target.getBoundingClientRect().top+window.scrollY-40;
-      window.scrollTo({top:y,behavior:'smooth'});
+      window.scrollTo({top:y});
     }
     root.querySelectorAll('.op-tab').forEach(function(t){t.classList.remove('is-active')});
     tab.classList.add('is-active');
