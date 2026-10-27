@@ -318,6 +318,7 @@
 /* Секция (аккордеон) */
 .op-mob-section { margin-bottom: 2px }
 .op-mob-section-title {
+  width:100%; background:transparent; border:0; text-align:left;
   display: flex; align-items: center; justify-content: space-between;
   padding: 13px 16px;
   font-size: 13px; font-weight: 700;
@@ -337,6 +338,7 @@
   border-left-color: var(--h-accent);
 }
 .op-mob-section.is-open .op-mob-section-title {
+  width:100%; background:transparent; border:0; text-align:left;
   color: var(--h-accent);
   border-left-color: var(--h-accent);
   background: rgba(47,199,247,.06);
@@ -421,11 +423,11 @@
     <!-- DESKTOP НАВИГАЦИЯ -->
     <nav class="op-hdr__nav" aria-label="Основная навигация">
 
-      <a href="https://b24.pro/" class="op-nav-link">О нас</a>
+      <a href="https://b24.pro/#b29154" class="op-nav-link">О нас</a>
 
       <!-- ИНСТРУМЕНТЫ — мега-меню -->
       <div class="op-nav-item has-drop">
-        <button class="op-nav-link drop-trigger" aria-haspopup="true">
+        <button class="op-nav-link drop-trigger" type="button" aria-haspopup="true" aria-expanded="false">
           Инструменты
           <svg viewBox="0 0 14 14"><path d="M2 5l5 4 5-4"/></svg>
         </button>
@@ -484,7 +486,7 @@
 
       <!-- ПРИЛОЖЕНИЯ — обычный дропдаун -->
       <div class="op-nav-item has-drop">
-        <button class="op-nav-link drop-trigger" aria-haspopup="true">
+        <button class="op-nav-link drop-trigger" type="button" aria-haspopup="true" aria-expanded="false">
           Приложения
           <svg viewBox="0 0 14 14"><path d="M2 5l5 4 5-4"/></svg>
         </button>
@@ -525,7 +527,7 @@
       <!-- CTA -->
       <a href="https://b24.pro/#b28970" class="op-hdr__cta">Оставить заявку</a>
       <!-- Бургер -->
-      <button class="op-burger" id="opBurger" aria-label="Открыть меню">
+      <button class="op-burger" id="opBurger" type="button" aria-label="Открыть меню" aria-controls="opMob" aria-expanded="false">
         <span id="opBL1"></span>
         <span id="opBL2"></span>
         <span id="opBL3"></span>
@@ -538,14 +540,14 @@
 <!-- ═══════════════ МОБИЛЬНОЕ МЕНЮ ═══════════════ -->
 <nav class="op-mob" id="opMob" aria-label="Мобильная навигация">
 
-  <a href="https://b24.pro/" class="op-mob-link">О нас</a>
+  <a href="https://b24.pro/#b29154" class="op-mob-link">О нас</a>
 
   <!-- Инструменты (аккордеон) -->
   <div class="op-mob-section">
-    <div class="op-mob-section-title mob-trigger">
+    <button class="op-mob-section-title mob-trigger" type="button" aria-expanded="false">
       Инструменты
       <svg viewBox="0 0 14 14"><path d="M2 5l5 4 5-4"/></svg>
-    </div>
+    </button>
     <div class="op-mob-items">
       <a href="https://b24.pro/instrumenty/CRM/"                class="op-mob-link">CRM</a>
       <a href="https://b24.pro/instrumenty/AIinBitrix24/"      class="op-mob-link">AI в Битрикс24</a>
@@ -579,10 +581,10 @@
 
   <!-- Приложения (аккордеон) -->
   <div class="op-mob-section">
-    <div class="op-mob-section-title mob-trigger">
+    <button class="op-mob-section-title mob-trigger" type="button" aria-expanded="false">
       Приложения
       <svg viewBox="0 0 14 14"><path d="M2 5l5 4 5-4"/></svg>
-    </div>
+    </button>
     <div class="op-mob-items">
       <a href="https://b24.pro/prilozheniyastranitsa/optimgpt/"    class="op-mob-link">OptimGPT</a>
       <a href="https://b24.pro/prilozheniyastranitsa/geotrekker/"  class="op-mob-link">Геотрекер</a>
@@ -603,79 +605,71 @@
 </nav>
 
 <script>
-/* ── ОПТИМ ПРО · Шапка · JS ── */
-
-/* 2. EVENT DELEGATION — вешаем на document, не на конкретные элементы.
-      Это работает даже если Битрикс вставляет блок после выполнения скрипта. */
-document.addEventListener('click', function(e) {
-  /* ── Desktop дропдаун ── */
-  var dropTrigger = e.target.closest('.drop-trigger');
-  if (dropTrigger) {
-    e.stopPropagation();
-    var item = dropTrigger.closest('.op-nav-item');
-    var wasOpen = item && item.classList.contains('is-open');
-    document.querySelectorAll('.op-nav-item.has-drop').forEach(function(d) {
-      d.classList.remove('is-open');
+(function(){
+  function closeDropdowns(){
+    document.querySelectorAll('.op-hdr-root .op-nav-item.has-drop').forEach(function(item){
+      item.classList.remove('is-open');
+      var trigger=item.querySelector('.drop-trigger');
+      if(trigger)trigger.setAttribute('aria-expanded','false');
     });
-    if (item && !wasOpen) item.classList.add('is-open');
-    return;
   }
-
-  /* ── Бургер ── */
-  var burgerBtn = e.target.closest('#opBurger');
-  if (burgerBtn) {
-    e.stopPropagation();
-    var mob = document.getElementById('opMob');
-    var isOpen = mob && mob.classList.contains('is-open');
-    if (mob) mob.classList.toggle('is-open', !isOpen);
-    var bl1 = document.getElementById('opBL1');
-    var bl2 = document.getElementById('opBL2');
-    var bl3 = document.getElementById('opBL3');
-    if (bl1 && bl2 && bl3) {
-      if (!isOpen) {
-        bl1.style.transform = 'translateY(7px) rotate(45deg)';
-        bl2.style.opacity = '0';
-        bl3.style.transform = 'translateY(-7px) rotate(-45deg)';
-      } else {
-        bl1.style.transform = bl2.style.opacity = bl3.style.transform = '';
+  function setMobile(open){
+    var menu=document.getElementById('opMob');
+    var burger=document.getElementById('opBurger');
+    if(menu)menu.classList.toggle('is-open',open);
+    if(burger){
+      burger.setAttribute('aria-expanded',String(open));
+      burger.setAttribute('aria-label',open?'Закрыть меню':'Открыть меню');
+    }
+    var first=document.getElementById('opBL1');
+    var middle=document.getElementById('opBL2');
+    var last=document.getElementById('opBL3');
+    if(first)first.style.transform=open?'translateY(7px) rotate(45deg)':'';
+    if(middle)middle.style.opacity=open?'0':'';
+    if(last)last.style.transform=open?'translateY(-7px) rotate(-45deg)':'';
+  }
+  document.addEventListener('click',function(e){
+    var trigger=e.target.closest('.op-hdr-root .drop-trigger');
+    if(trigger){
+      var item=trigger.closest('.op-nav-item');
+      var open=item&&!item.classList.contains('is-open');
+      closeDropdowns();
+      if(item&&open){item.classList.add('is-open');trigger.setAttribute('aria-expanded','true');}
+      return;
+    }
+    var burger=e.target.closest('#opBurger');
+    if(burger){setMobile(burger.getAttribute('aria-expanded')!=='true');return;}
+    var mobileTrigger=e.target.closest('.op-hdr-root .mob-trigger');
+    if(mobileTrigger){
+      var section=mobileTrigger.closest('.op-mob-section');
+      var open=section&&!section.classList.contains('is-open');
+      document.querySelectorAll('.op-hdr-root .op-mob-section').forEach(function(s){
+        s.classList.remove('is-open');
+        var button=s.querySelector('.mob-trigger');if(button)button.setAttribute('aria-expanded','false');
+        var items=s.querySelector('.op-mob-items');if(items)items.style.maxHeight='0';
+      });
+      if(section&&open){
+        section.classList.add('is-open');
+        mobileTrigger.setAttribute('aria-expanded','true');
+        var items=section.querySelector('.op-mob-items');if(items)items.style.maxHeight=items.scrollHeight+'px';
       }
+      return;
     }
-    return;
-  }
-
-  /* ── Мобильный аккордеон ── */
-  var mobTrigger = e.target.closest('.mob-trigger');
-  if (mobTrigger) {
-    var sec = mobTrigger.closest('.op-mob-section');
-    var items = sec && sec.querySelector('.op-mob-items');
-    var wasOpenSec = sec && sec.classList.contains('is-open');
-    document.querySelectorAll('.op-mob-section').forEach(function(s) {
-      s.classList.remove('is-open');
-      var it = s.querySelector('.op-mob-items');
-      if (it) it.style.maxHeight = '0';
-    });
-    if (sec && !wasOpenSec) {
-      sec.classList.add('is-open');
-      if (items) items.style.maxHeight = items.scrollHeight + 'px';
-    }
-    return;
-  }
-
-  /* ── Клик вне — закрыть всё ── */
-  document.querySelectorAll('.op-nav-item.has-drop').forEach(function(d) {
-    d.classList.remove('is-open');
+    closeDropdowns();
+    var menu=document.getElementById('opMob');
+    if(menu&&(!menu.contains(e.target)||e.target.closest('a[href]')))setMobile(false);
   });
-  var mob2 = document.getElementById('opMob');
-  var burger2 = document.getElementById('opBurger');
-  if (mob2 && mob2.classList.contains('is-open') &&
-      !mob2.contains(e.target) && (!burger2 || !burger2.contains(e.target))) {
-    mob2.classList.remove('is-open');
-    var bl1b = document.getElementById('opBL1');
-    var bl2b = document.getElementById('opBL2');
-    var bl3b = document.getElementById('opBL3');
-    if (bl1b) bl1b.style.transform = bl2b.style.opacity = bl3b.style.transform = '';
-  }
-});
+  document.addEventListener('keydown',function(e){
+    if(e.key!=='Escape')return;
+    var activeTrigger=document.querySelector('.op-hdr-root .op-nav-item.is-open .drop-trigger');
+    var burger=document.getElementById('opBurger');
+    var mobileOpen=burger&&burger.getAttribute('aria-expanded')==='true';
+    closeDropdowns();setMobile(false);
+    if(mobileOpen)burger.focus();else if(activeTrigger)activeTrigger.focus();
+  });
+  window.addEventListener('resize',function(){if(window.innerWidth>1000)setMobile(false);},{passive:true});
+})();
 </script>
 
 </div>
+

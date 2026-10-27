@@ -1,0 +1,490 @@
+{
+  "verified_on": "2026-10-27",
+  "timezone": "Europe/Moscow",
+  "site_id": 238,
+  "home_landing_id": 1604,
+  "published_landing_ids": [
+    1024,
+    1026,
+    1604
+  ],
+  "source_checks": [
+    {
+      "file": "blocks/block-01-hero.html",
+      "lid": 1604,
+      "published_block_id": 28988,
+      "equal": true
+    },
+    {
+      "file": "blocks/block-02-results.html",
+      "lid": 1604,
+      "published_block_id": 28996,
+      "equal": true
+    },
+    {
+      "file": "blocks/block-03-about.html",
+      "lid": 1604,
+      "published_block_id": 29156,
+      "equal": true
+    },
+    {
+      "file": "blocks/block-05-apps.html",
+      "lid": 1604,
+      "published_block_id": 28990,
+      "equal": true
+    },
+    {
+      "file": "blocks/block-06-pricing.html",
+      "lid": 1604,
+      "published_block_id": 29004,
+      "equal": true
+    },
+    {
+      "file": "blocks/block-07-project-map.html",
+      "lid": 1604,
+      "published_block_id": 29092,
+      "equal": true
+    },
+    {
+      "file": "blocks/block-08-certs.html",
+      "lid": 1604,
+      "published_block_id": 29006,
+      "equal": true
+    },
+    {
+      "file": "blocks/block-09-faq.html",
+      "lid": 1604,
+      "published_block_id": 29096,
+      "equal": true
+    },
+    {
+      "file": "blocks/block-10-form.html",
+      "lid": 1604,
+      "published_block_id": 29010,
+      "equal": true
+    },
+    {
+      "file": "blocks/footer.html",
+      "lid": 1026,
+      "published_block_id": 29068,
+      "equal": true
+    },
+    {
+      "file": "blocks/header.html",
+      "lid": 1024,
+      "published_block_id": 29136,
+      "equal": true
+    }
+  ],
+  "browser": {
+    "mode": "live",
+    "widths": {
+      "360": {
+        "viewport": 360,
+        "scroll": 360,
+        "headline_phrases": 4
+      },
+      "390": {
+        "viewport": 390,
+        "scroll": 390,
+        "headline_phrases": 4
+      },
+      "430": {
+        "viewport": 430,
+        "scroll": 430,
+        "headline_phrases": 4
+      },
+      "1440": {
+        "viewport": 1440,
+        "scroll": 1440,
+        "headline_phrases": 4
+      }
+    },
+    "errors": [],
+    "request_failures": [],
+    "duplicate_ids": [
+      "b24-form-field-1",
+      "b24-form-error-1",
+      "b24-form-field-2",
+      "b24-form-error-2",
+      "b24-form-field-3",
+      "b24-form-error-3",
+      "b24-form-field-4",
+      "b24-form-error-4",
+      "bxSunLines",
+      "a",
+      "b"
+    ],
+    "owned_duplicate_ids": [],
+    "vendor_duplicate_id_elements": [
+      {
+        "id": "b24-form-field-1",
+        "tag": "INPUT",
+        "form": true,
+        "svg": false,
+        "parent": "b24-form-control-container b24-form-control-icon-after"
+      },
+      {
+        "id": "b24-form-field-1",
+        "tag": "INPUT",
+        "form": true,
+        "svg": false,
+        "parent": "b24-form-control-container b24-form-control-icon-after"
+      },
+      {
+        "id": "b24-form-error-1",
+        "tag": "DIV",
+        "form": true,
+        "svg": false,
+        "parent": "b24-form-control-container b24-form-control-icon-after"
+      },
+      {
+        "id": "b24-form-error-1",
+        "tag": "DIV",
+        "form": true,
+        "svg": false,
+        "parent": "b24-form-control-container b24-form-control-icon-after"
+      },
+      {
+        "id": "b24-form-field-2",
+        "tag": "INPUT",
+        "form": true,
+        "svg": false,
+        "parent": "b24-form-control-container b24-form-control-icon-after"
+      },
+      {
+        "id": "b24-form-field-2",
+        "tag": "INPUT",
+        "form": true,
+        "svg": false,
+        "parent": "b24-form-control-container b24-form-control-icon-after"
+      },
+      {
+        "id": "b24-form-error-2",
+        "tag": "DIV",
+        "form": true,
+        "svg": false,
+        "parent": "b24-form-control-container b24-form-control-icon-after"
+      },
+      {
+        "id": "b24-form-error-2",
+        "tag": "DIV",
+        "form": true,
+        "svg": false,
+        "parent": "b24-form-control-container b24-form-control-icon-after"
+      },
+      {
+        "id": "b24-form-field-3",
+        "tag": "INPUT",
+        "form": true,
+        "svg": false,
+        "parent": "b24-form-control-container b24-form-control-icon-after"
+      },
+      {
+        "id": "b24-form-field-3",
+        "tag": "INPUT",
+        "form": true,
+        "svg": false,
+        "parent": "b24-form-control-container b24-form-control-icon-after"
+      },
+      {
+        "id": "b24-form-error-3",
+        "tag": "DIV",
+        "form": true,
+        "svg": false,
+        "parent": "b24-form-control-container b24-form-control-icon-after"
+      },
+      {
+        "id": "b24-form-error-3",
+        "tag": "DIV",
+        "form": true,
+        "svg": false,
+        "parent": "b24-form-control-container b24-form-control-icon-after"
+      },
+      {
+        "id": "b24-form-field-4",
+        "tag": "TEXTAREA",
+        "form": true,
+        "svg": false,
+        "parent": "b24-form-control-container b24-form-control-icon-after"
+      },
+      {
+        "id": "b24-form-field-4",
+        "tag": "TEXTAREA",
+        "form": true,
+        "svg": false,
+        "parent": "b24-form-control-container b24-form-control-icon-after"
+      },
+      {
+        "id": "b24-form-error-4",
+        "tag": "DIV",
+        "form": true,
+        "svg": false,
+        "parent": "b24-form-control-container b24-form-control-icon-after"
+      },
+      {
+        "id": "b24-form-error-4",
+        "tag": "DIV",
+        "form": true,
+        "svg": false,
+        "parent": "b24-form-control-container b24-form-control-icon-after"
+      },
+      {
+        "id": "bxSunLines",
+        "tag": "path",
+        "form": true,
+        "svg": true,
+        "parent": {}
+      },
+      {
+        "id": "bxSunLines",
+        "tag": "path",
+        "form": true,
+        "svg": true,
+        "parent": {}
+      },
+      {
+        "id": "a",
+        "tag": "circle",
+        "form": true,
+        "svg": true,
+        "parent": {}
+      },
+      {
+        "id": "a",
+        "tag": "circle",
+        "form": true,
+        "svg": true,
+        "parent": {}
+      },
+      {
+        "id": "b",
+        "tag": "filter",
+        "form": true,
+        "svg": true,
+        "parent": {}
+      },
+      {
+        "id": "b",
+        "tag": "filter",
+        "form": true,
+        "svg": true,
+        "parent": {}
+      }
+    ],
+    "faq": "opens, switches and closes",
+    "project_tabs": "manual switching works",
+    "certificates": "opens and Escape closes",
+    "about_anchor": "works",
+    "desktop_menu": "opens and Escape closes",
+    "mobile_menu": "keyboard accordion, navigation, closing and Escape work",
+    "form_frames": [],
+    "form_fields": 4,
+    "form_submission": "not performed"
+  },
+  "internal_links": [
+    {
+      "url": "https://b24.pro/",
+      "status": 200,
+      "final": "https://b24.pro/"
+    },
+    {
+      "url": "https://b24.pro/blog_hqom/",
+      "status": 200,
+      "final": "https://b24.pro/blog_hqom/"
+    },
+    {
+      "url": "https://b24.pro/box/",
+      "status": 200,
+      "final": "https://b24.pro/box/"
+    },
+    {
+      "url": "https://b24.pro/cases/",
+      "status": 200,
+      "final": "https://b24.pro/cases/"
+    },
+    {
+      "url": "https://b24.pro/instrumenty/1C/",
+      "status": 200,
+      "final": "https://b24.pro/instrumenty/1C/"
+    },
+    {
+      "url": "https://b24.pro/instrumenty/AIinBitrix24/",
+      "status": 200,
+      "final": "https://b24.pro/instrumenty/AIinBitrix24/"
+    },
+    {
+      "url": "https://b24.pro/instrumenty/AIinBitrix24_MCP/",
+      "status": 200,
+      "final": "https://b24.pro/instrumenty/AIinBitrix24_MCP/"
+    },
+    {
+      "url": "https://b24.pro/instrumenty/AIinBitrix24_xwfb/",
+      "status": 200,
+      "final": "https://b24.pro/instrumenty/AIinBitrix24_xwfb/"
+    },
+    {
+      "url": "https://b24.pro/instrumenty/All/",
+      "status": 200,
+      "final": "https://b24.pro/instrumenty/All/"
+    },
+    {
+      "url": "https://b24.pro/instrumenty/BitrixGPT+Marketplace/",
+      "status": 200,
+      "final": "https://b24.pro/instrumenty/BitrixGPT+Marketplace/"
+    },
+    {
+      "url": "https://b24.pro/instrumenty/CRM/",
+      "status": 200,
+      "final": "https://b24.pro/instrumenty/CRM/"
+    },
+    {
+      "url": "https://b24.pro/instrumenty/Collaboration/",
+      "status": 200,
+      "final": "https://b24.pro/instrumenty/Collaboration/"
+    },
+    {
+      "url": "https://b24.pro/instrumenty/Collaborations/",
+      "status": 200,
+      "final": "https://b24.pro/instrumenty/Collaborations/"
+    },
+    {
+      "url": "https://b24.pro/instrumenty/Digital_Workplace/",
+      "status": 200,
+      "final": "https://b24.pro/instrumenty/Digital_Workplace/"
+    },
+    {
+      "url": "https://b24.pro/instrumenty/KEDO/",
+      "status": 200,
+      "final": "https://b24.pro/instrumenty/KEDO/"
+    },
+    {
+      "url": "https://b24.pro/instrumenty/Messenger/",
+      "status": 200,
+      "final": "https://b24.pro/instrumenty/Messenger/"
+    },
+    {
+      "url": "https://b24.pro/instrumenty/Videocalls/",
+      "status": 200,
+      "final": "https://b24.pro/instrumenty/Videocalls/"
+    },
+    {
+      "url": "https://b24.pro/instrumenty/Warehouse_accounting/",
+      "status": 200,
+      "final": "https://b24.pro/instrumenty/Warehouse_accounting/"
+    },
+    {
+      "url": "https://b24.pro/instrumenty/Website_Builder/",
+      "status": 200,
+      "final": "https://b24.pro/instrumenty/Website_Builder/"
+    },
+    {
+      "url": "https://b24.pro/instrumenty/analytics/",
+      "status": 200,
+      "final": "https://b24.pro/instrumenty/analytics/"
+    },
+    {
+      "url": "https://b24.pro/instrumenty/bi_full/",
+      "status": 200,
+      "final": "https://b24.pro/instrumenty/bi_full/"
+    },
+    {
+      "url": "https://b24.pro/instrumenty/booking_full/",
+      "status": 200,
+      "final": "https://b24.pro/instrumenty/booking_full/"
+    },
+    {
+      "url": "https://b24.pro/instrumenty/contact-center/",
+      "status": 200,
+      "final": "https://b24.pro/instrumenty/contact-center/"
+    },
+    {
+      "url": "https://b24.pro/instrumenty/flowAI/",
+      "status": 200,
+      "final": "https://b24.pro/instrumenty/flowAI/"
+    },
+    {
+      "url": "https://b24.pro/instrumenty/mobile/",
+      "status": 200,
+      "final": "https://b24.pro/instrumenty/mobile/"
+    },
+    {
+      "url": "https://b24.pro/instrumenty/robotization/",
+      "status": 200,
+      "final": "https://b24.pro/instrumenty/robotization/"
+    },
+    {
+      "url": "https://b24.pro/instrumenty/scrum/",
+      "status": 200,
+      "final": "https://b24.pro/instrumenty/scrum/"
+    },
+    {
+      "url": "https://b24.pro/instrumenty/tasks/",
+      "status": 200,
+      "final": "https://b24.pro/instrumenty/tasks/"
+    },
+    {
+      "url": "https://b24.pro/keysy/Approvalof8typesofcontracts5timesfaster/",
+      "status": 200,
+      "final": "https://b24.pro/keysy/Approvalof8typesofcontracts5timesfaster/"
+    },
+    {
+      "url": "https://b24.pro/keysy/Levelautomation/",
+      "status": 200,
+      "final": "https://b24.pro/keysy/Levelautomation/"
+    },
+    {
+      "url": "https://b24.pro/keysy/callresponse/",
+      "status": 200,
+      "final": "https://b24.pro/keysy/callresponse/"
+    },
+    {
+      "url": "https://b24.pro/oferta_lic/",
+      "status": 200,
+      "final": "https://b24.pro/oferta_lic/"
+    },
+    {
+      "url": "https://b24.pro/prilozheniyastranitsa/apps-page_woqe/",
+      "status": 200,
+      "final": "https://b24.pro/prilozheniyastranitsa/apps-page_woqe/"
+    },
+    {
+      "url": "https://b24.pro/prilozheniyastranitsa/geotrekker/",
+      "status": 200,
+      "final": "https://b24.pro/prilozheniyastranitsa/geotrekker/"
+    },
+    {
+      "url": "https://b24.pro/prilozheniyastranitsa/laborcost/",
+      "status": 200,
+      "final": "https://b24.pro/prilozheniyastranitsa/laborcost/"
+    },
+    {
+      "url": "https://b24.pro/prilozheniyastranitsa/optimgpt/",
+      "status": 200,
+      "final": "https://b24.pro/prilozheniyastranitsa/optimgpt/"
+    },
+    {
+      "url": "https://b24.pro/prilozheniyastranitsa/passport/",
+      "status": 200,
+      "final": "https://b24.pro/prilozheniyastranitsa/passport/"
+    },
+    {
+      "url": "https://b24.pro/prilozheniyastranitsa/telemost_1/",
+      "status": 200,
+      "final": "https://b24.pro/prilozheniyastranitsa/telemost_1/"
+    },
+    {
+      "url": "https://b24.pro/prilozheniyastranitsa/translator/",
+      "status": 200,
+      "final": "https://b24.pro/prilozheniyastranitsa/translator/"
+    }
+  ],
+  "syntax": {
+    "all_home_scripts_checked": 20,
+    "final_changed_scripts_checked": 5,
+    "command": "node --check",
+    "passed": true
+  },
+  "verification_transport": "Browser resources loaded through the session proxy with Python urllib and the configured system CA trust; TLS verification enabled.",
+  "vendor_note": "Повторяющиеся ID находятся в двух экземплярах штатной CRM-формы/виджета Битрикс24, включая его SVG. В собственных компонентах дублей ID нет. Виджет загружается; отправка обращения не выполнялась. Код поставщика не переписывался."
+}

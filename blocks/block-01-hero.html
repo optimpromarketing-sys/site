@@ -107,7 +107,7 @@
 }
 
 /* ===== CYCLING TEXT ===== */
-:where(#op-block-01) .op-cycle{display:inline-block;transition:opacity .3s ease,transform .3s ease;white-space:nowrap;}
+:where(#op-block-01) .op-cycle{display:inline-block;transition:opacity .3s ease,transform .3s ease;white-space:normal;max-width:100%;overflow-wrap:break-word;}
 :where(#op-block-01) .op-cycle.is-out{opacity:0!important;transform:translateY(-16px)!important;-webkit-text-fill-color:transparent!important;}
 :where(#op-block-01) .op-cycle.is-in{opacity:0!important;transform:translateY(18px)!important;-webkit-text-fill-color:transparent!important;}
 
@@ -378,9 +378,9 @@
 
       <!-- Stats -->
       <div class="op-hero__stats">
-        <div class="op-stat">
-          <div class="op-stat__num" data-count="8">8</div>
-          <div class="op-stat__label">лет на рынке</div>
+        <div class="op-stat counted">
+          <div class="op-stat__num">2017</div>
+          <div class="op-stat__label">работаем с этого года</div>
           <span class="op-stat__bar"></span>
         </div>
         <div class="op-stat">
@@ -394,7 +394,7 @@
           <span class="op-stat__bar"></span>
         </div>
         <div class="op-stat">
-          <div class="op-stat__num" data-count="5">5</div>
+          <div class="op-stat__num" data-count="6">6</div>
           <div class="op-stat__label">приложений в маркетплейсе</div>
           <span class="op-stat__bar"></span>
         </div>
@@ -514,3 +514,4 @@
   setTimeout(function(){counters.forEach(function(c){animateCount(c);});},500);
 })();</script>
 </div>
+

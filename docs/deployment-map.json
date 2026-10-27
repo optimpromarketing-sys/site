@@ -121,8 +121,9 @@
       "public_anchor": "b28952",
       "snapshot_verified": true,
       "source_root_id": "op-block-01",
-      "verified_published_sha256": "30f2c25b0325f2a810718bcc87e0bb0fb486f92cd0479bedef4d9241a745ffaf",
-      "published_matches_source": true
+      "verified_published_sha256": "6fb0bdb2aa4ac1d6e988de95b14c0af6065fbaf2cd235e1bd7def166dc4d711f",
+      "published_matches_source": true,
+      "source_verified_on": "2026-10-27"
     },
     {
       "file": "blocks/block-02-results.html",
@@ -217,8 +218,9 @@
       "public_anchor": "b29094",
       "snapshot_verified": true,
       "source_root_id": "op-block-faq",
-      "verified_published_sha256": "6cfe4a44fc79308265c616b09232e71c6d8c08277f2cc93dcac52cf1ab7a5a41",
-      "published_matches_source": true
+      "verified_published_sha256": "e581e2ac0083105000a182aa1eaa75777840fd7f067494782b3f741d36584ae6",
+      "published_matches_source": true,
+      "source_verified_on": "2026-10-27"
     },
     {
       "file": "blocks/block-10-form.html",
@@ -253,8 +255,9 @@
       "public_anchor": "b29066",
       "snapshot_verified": true,
       "source_root_id": null,
-      "verified_published_sha256": "e70b2c14ed247050bd53839f6c4e44d84f09f30f9735befb71aa5e8d203456ad",
-      "published_matches_source": true
+      "verified_published_sha256": "622406369cad91f55347a709c246df49a6fd90737dba6f49ba0c85a610ec0d25",
+      "published_matches_source": true,
+      "source_verified_on": "2026-10-27"
     },
     {
       "file": "blocks/header.html",
@@ -265,8 +268,9 @@
       "public_anchor": "b29134",
       "snapshot_verified": true,
       "source_root_id": null,
-      "verified_published_sha256": "10294ea7a89e4d230341a6c938ab5ddb8d83c90080e3c8f3cc4ea90d3d041b5e",
-      "published_matches_source": true
+      "verified_published_sha256": "d97dae9877afaf8ca8c5e91f82b2ae4ba606f7166c0abf81f49164ef6a8fab0d",
+      "published_matches_source": true,
+      "source_verified_on": "2026-10-27"
     },
     {
       "file": "blocks/steps.html",
@@ -773,5 +777,57 @@
       "published_matches_source": true
     }
   ],
-  "verified_on": "2026-10-07"
+  "verified_on": "2026-10-07",
+  "home_maintenance_checked_on": "2026-10-27",
+  "home_standard_blocks": [
+    {
+      "draft_block_id": 29158,
+      "published_block_id": 29160,
+      "code": "08.4.fix_title_and_text",
+      "active": false,
+      "note": "Заголовок прошедшего вебинара; опечатка исправлена, блок скрыт"
+    },
+    {
+      "draft_block_id": 30316,
+      "published_block_id": 30318,
+      "code": "26.separator",
+      "active": false,
+      "note": "Разделитель анонса; скрыт"
+    },
+    {
+      "draft_block_id": 30304,
+      "published_block_id": 30306,
+      "code": "43.4.cover_with_price_text_button_bgimg",
+      "active": false,
+      "note": "Анонс вебинара 22 октября; скрыт после окончания события"
+    },
+    {
+      "draft_block_id": 30312,
+      "published_block_id": 30314,
+      "code": "26.separator",
+      "active": false,
+      "note": "Разделитель анонса; скрыт"
+    },
+    {
+      "draft_block_id": 30308,
+      "published_block_id": 30310,
+      "code": "08.4.fix_title_and_text",
+      "active": false,
+      "note": "Старый дополнительный заголовок «О нас»"
+    },
+    {
+      "draft_block_id": 29146,
+      "published_block_id": 29148,
+      "code": "08.4.fix_title_and_text",
+      "active": false,
+      "note": "Старый дополнительный заголовок «Приложения»"
+    },
+    {
+      "draft_block_id": 29150,
+      "published_block_id": 29152,
+      "code": "08.4.fix_title_and_text",
+      "active": false,
+      "note": "Старый дополнительный заголовок «Условия»"
+    }
+  ]
 }
