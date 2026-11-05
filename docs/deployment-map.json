@@ -146,8 +146,9 @@
       "public_anchor": "b29154",
       "snapshot_verified": true,
       "source_root_id": "op-block-02",
-      "verified_published_sha256": "be6b26f957cbff67a4b95c7819b0e837ba63052e66d3ef548b1710f225a2a6c2",
-      "published_matches_source": true
+      "verified_published_sha256": "b6e3e126204a201bd7ae6855e3183792905a0669988d404efc4d8d66b64ac72b",
+      "published_matches_source": true,
+      "source_verified_on": "2026-11-05"
     },
     {
       "file": "blocks/block-04-cases.html",
