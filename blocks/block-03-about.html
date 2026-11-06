@@ -23,7 +23,7 @@
 #op-block-02 .op-principle p{font-size:16px;line-height:1.6;color:#c8d5f0;margin:0;}
 #op-block-02 .op-team-col{position:relative;display:flex;align-items:center;justify-content:center;}
 #op-block-02 .op-team-col::before{content:"";position:absolute;inset:12% 8%;border-radius:50%;filter:blur(70px);opacity:.35;background:radial-gradient(circle,var(--cyan),transparent 70%);pointer-events:none;z-index:0;}
-#op-block-02 .op-team-img{position:relative;z-index:1;width:100%;max-width:380px;height:auto;display:block;filter:drop-shadow(0 30px 60px rgba(47,199,247,.2));}
+#op-block-02 .op-team-img{position:relative;z-index:1;width:100%;max-width:480px;height:auto;display:block;filter:drop-shadow(0 30px 60px rgba(47,199,247,.2));}
 #op-block-02 .op-stack-box{margin-top:40px;min-width:0;}
 #op-block-02 .op-stack-header{margin-bottom:18px;}
 #op-block-02 .op-stack-list{margin:0;}
@@ -32,8 +32,8 @@
 #op-block-02 .op-stack-row:last-child{padding-bottom:0;border-bottom:0;}
 #op-block-02 .op-stack-row dt{font-size:14px;font-weight:700;line-height:1.6;color:#E8EDF7;margin:0;}
 #op-block-02 .op-stack-row dd{font-size:14px;line-height:1.65;color:#c8d5f0;margin:0;overflow-wrap:break-word;}
-@media(max-width:1024px){#op-block-02 .op-about-grid{gap:36px;}#op-block-02 .op-quality{padding:20px;}#op-block-02 .op-team-img{max-width:340px;}}
-@media(max-width:860px){#op-block-02 .op-about-grid{grid-template-columns:minmax(0,1fr);gap:40px;}#op-block-02 .op-team-img{max-width:300px;}#op-block-02 .op-stack-box{margin-top:32px;}}
+@media(max-width:1024px){#op-block-02 .op-about-grid{gap:36px;}#op-block-02 .op-quality{padding:20px;}#op-block-02 .op-team-img{max-width:420px;}}
+@media(max-width:860px){#op-block-02 .op-about-grid{grid-template-columns:minmax(0,1fr);gap:40px;}#op-block-02 .op-team-img{max-width:360px;}#op-block-02 .op-stack-box{margin-top:32px;}}
 @media(max-width:640px){#op-block-02 .op-sec{padding:80px 0 56px;}#op-block-02 .op-about-intro{font-size:16px;line-height:1.65;}#op-block-02 .op-team-fact strong{font-size:26px;}#op-block-02 .op-quality{padding:20px 16px;}#op-block-02 .op-principle{gap:10px;}#op-block-02 .op-stack-row{grid-template-columns:minmax(0,1fr);gap:6px;}}
 @media(max-width:390px){#op-block-02 .op-w{padding:0 14px;}}
 </style>
@@ -45,28 +45,6 @@
         <h2 class="op-about-title" id="op-about-title">Команда, которая знает ваш проект целиком</h2>
         <p class="op-about-intro">Аналитика, разработка и внедрение — силами нашей команды. Не передаём ваш проект на аутсорс.</p>
         <p class="op-team-fact"><strong>20+</strong><span>специалистов в команде</span></p>
-        <section class="op-stack-box" aria-labelledby="op-stack-title">
-          <h3 class="op-stack-header" id="op-stack-title">Технический стек</h3>
-          <dl class="op-stack-list">
-            <div class="op-stack-row">
-              <dt>Разработка на Битрикс24</dt>
-              <dd>PHP, Bitrix Framework (D7), ORM Битрикс</dd>
-            </div>
-            <div class="op-stack-row">
-              <dt>Интерфейсы</dt>
-              <dd>JavaScript, React, Vue</dd>
-            </div>
-            <div class="op-stack-row">
-              <dt>Интеграции</dt>
-              <dd>REST API Битрикс24 и внешних систем, Webhooks, OAuth 2.0</dd>
-            </div>
-          </dl>
-        </section>
-      </div>
-      <div class="op-about-side">
-        <div class="op-team-col">
-          <img class="op-team-img" src="https://cdn-ru.bitrix24.ru/b1445091/landing/e40/e40adbfbbecbe1c346beed1e6ea3862c/frame_13_1x.png" alt="Команда Оптим Про" loading="eager">
-        </div>
         <section class="op-quality" aria-labelledby="op-about-principles-title">
           <h3 class="op-quality-title" id="op-about-principles-title">Как работаем</h3>
           <ol class="op-principles">
@@ -92,6 +70,28 @@
               </div>
             </li>
           </ol>
+        </section>
+      </div>
+      <div class="op-about-side">
+        <div class="op-team-col">
+          <img class="op-team-img" src="https://cdn-ru.bitrix24.ru/b1445091/landing/e40/e40adbfbbecbe1c346beed1e6ea3862c/frame_13_1x.png" alt="Команда Оптим Про" loading="eager">
+        </div>
+        <section class="op-stack-box" aria-labelledby="op-stack-title">
+          <h3 class="op-stack-header" id="op-stack-title">Технический стек</h3>
+          <dl class="op-stack-list">
+            <div class="op-stack-row">
+              <dt>Разработка на Битрикс24</dt>
+              <dd>PHP, Bitrix Framework (D7), ORM Битрикс</dd>
+            </div>
+            <div class="op-stack-row">
+              <dt>Интерфейсы</dt>
+              <dd>JavaScript, React, Vue</dd>
+            </div>
+            <div class="op-stack-row">
+              <dt>Интеграции</dt>
+              <dd>REST API Битрикс24 и внешних систем, Webhooks, OAuth 2.0</dd>
+            </div>
+          </dl>
         </section>
       </div>
     </div>
