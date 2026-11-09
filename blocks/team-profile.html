@@ -441,7 +441,7 @@ var CREW_TEAM = [{
     var employeeIndex=0,data=team[0];
     var q=function(s){return root.querySelector(s)};
     var addText=function(parent,tag,content,cls){var el=document.createElement(tag);if(cls)el.className=cls;el.textContent=String(content||'');parent.appendChild(el);return el;};
-    var validUrl=function(value){try{var u=new URL(value,document.baseURI);return /^https?:$/.test(u.protocol)?u.href:null}catch(_){return null}};
+    var validUrl=function(value){if(typeof value!=='string'||!value.trim())return null;try{var u=new URL(value,document.baseURI);return /^https?:$/.test(u.protocol)?u.href:null}catch(_){return null}};
     var items=function(a){return Array.isArray(a)?a.filter(Boolean):[]};
     var safe=function(v){return typeof v==='string'?v.trim():''};
     var set=function(selector,v){var n=q(selector);if(n)n.textContent=safe(v)};
