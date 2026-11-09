@@ -19,7 +19,64 @@ var CREW_TEAM = [
     "about": "",
     "responsibilities": [],
     "projects": [],
-    "certificates": [],
+    "certificates": [
+      {
+        "title": "CRM-маркетинг в Битрикс24",
+        "image": "https://cdn-ru.bitrix24.ru/b1445091/landing/a32/a32aba1250b1307884a007c072dcee0a/file_001_1x.png",
+        "url": "https://cdn-ru.bitrix24.ru/b1445091/landing/a32/a32aba1250b1307884a007c072dcee0a/file_001_1x.png",
+        "issuer": "Битрикс24",
+        "year": "2026"
+      },
+      {
+        "title": "No-code в Битрикс24",
+        "image": "https://cdn-ru.bitrix24.ru/b1445091/landing/1c2/1c252e8ff115e9ce04399034cae8181f/file_001_1x.png",
+        "url": "https://cdn-ru.bitrix24.ru/b1445091/landing/1c2/1c252e8ff115e9ce04399034cae8181f/file_001_1x.png",
+        "issuer": "Битрикс24",
+        "year": "2026"
+      },
+      {
+        "title": "Автоматизация бизнес-процессов",
+        "image": "https://cdn-ru.bitrix24.ru/b1445091/landing/8b4/8b4189a868a48fd9c9eb092b16a795f3/file_001_1x.png",
+        "url": "https://cdn-ru.bitrix24.ru/b1445091/landing/8b4/8b4189a868a48fd9c9eb092b16a795f3/file_001_1x.png",
+        "issuer": "Битрикс24",
+        "year": "2026"
+      },
+      {
+        "title": "Базовый курс партнера Битрикс24",
+        "image": "https://cdn-ru.bitrix24.ru/b1445091/landing/ca3/ca3199782bf92ec8dbb9966f6e9c7a71/file_001_1x.png",
+        "url": "https://cdn-ru.bitrix24.ru/b1445091/landing/ca3/ca3199782bf92ec8dbb9966f6e9c7a71/file_001_1x.png",
+        "issuer": "Битрикс24",
+        "year": "2026"
+      },
+      {
+        "title": "Битрикс24.CRM: Основы",
+        "image": "https://cdn-ru.bitrix24.ru/b1445091/landing/3a2/3a27ab0a23f041678690da1cf9e5c165/file_001_1x.png",
+        "url": "https://cdn-ru.bitrix24.ru/b1445091/landing/3a2/3a27ab0a23f041678690da1cf9e5c165/file_001_1x.png",
+        "issuer": "Битрикс24",
+        "year": "2026"
+      },
+      {
+        "title": "Аналитик",
+        "image": "https://cdn-ru.bitrix24.ru/b1445091/landing/239/239d435a47730deb305db7c2f952df13/file_001_1x.png",
+        "url": "https://cdn-ru.bitrix24.ru/b1445091/landing/239/239d435a47730deb305db7c2f952df13/file_001_1x.png",
+        "issuer": "Битрикс24",
+        "year": "2026"
+      },
+      {
+        "title": "Онлайн-продажи в Битрикс24",
+        "image": "https://cdn-ru.bitrix24.ru/b1445091/landing/e7a/e7a67749caf8064fa23e1a087832efe5/file_001_1x.png",
+        "url": "https://cdn-ru.bitrix24.ru/b1445091/landing/e7a/e7a67749caf8064fa23e1a087832efe5/file_001_1x.png",
+        "issuer": "Битрикс24",
+        "year": "2026"
+      },
+      {
+        "title": "Сквозная аналитика в Битрикс24.CRM",
+        "image": "https://cdn-ru.bitrix24.ru/b1445091/landing/555/5551e57d0c54fc83063c3d358ecfb057/file_001_1x.png",
+        "url": "https://cdn-ru.bitrix24.ru/b1445091/landing/555/5551e57d0c54fc83063c3d358ecfb057/file_001_1x.png",
+        "issuer": "Битрикс24",
+        "year": "2026"
+      }
+    ],
     "autoSwitch": false
   }
 ];
@@ -604,7 +661,7 @@ var CREW_DIRECTORY = [
         var meta=[safe(cert.issuer),cert.year?String(cert.year):''].filter(Boolean).join(' · ');
         if(meta)addText(content,'p',meta,'oc6-gallery-meta');
         var href=validUrl(cert.url);
-        if(href)link(content,href,'Проверить документ ↗');
+        if(href)link(content,href,'Открыть изображение ↗');
       });
       function updateArrows(){prev.disabled=strip.scrollLeft<3;next.disabled=strip.scrollLeft+strip.clientWidth>=strip.scrollWidth-3;}
       strip.addEventListener('scroll',updateArrows,{passive:true});
