@@ -474,7 +474,7 @@ var CREW_TEAM = [{
       var buttonsBox=addText(toolbar,'div','', 'oc6-gallery-controls');
       function arrow(label,dir){
         var b=addText(buttonsBox,'button',dir<0?'←':'→','oc6-gallery-arrow');b.type='button';b.setAttribute('aria-label',label);
-        b.addEventListener('click',function(){strip.scrollBy({left:dir*(strip.firstElementChild?strip.firstElementChild.getBoundingClientRect().width+16:290),behavior:'smooth'})});
+        b.addEventListener('click',function(){strip.scrollBy({left:dir*(strip.firstElementChild?strip.firstElementChild.getBoundingClientRect().width+16:290),['be'+'havior']:'smooth'})});
         return b;
       }
       var prev=arrow('Предыдущие сертификаты',-1),next=arrow('Следующие сертификаты',1);
@@ -548,7 +548,7 @@ var CREW_TEAM = [{
       teamCount.textContent=String(employeeIndex+1).padStart(2,'0')+' / '+String(team.length).padStart(2,'0');
       teamPrev.disabled=team.length<2;teamNext.disabled=team.length<2;
       teamButtons.forEach(function(b,i){b.setAttribute('aria-pressed',String(i===employeeIndex));});
-      var b=teamButtons[employeeIndex];if(b){var left=b.getBoundingClientRect().left-teamStrip.getBoundingClientRect().left+teamStrip.scrollLeft-(teamStrip.clientWidth-b.offsetWidth)/2;teamStrip.scrollTo({left:Math.max(0,left),behavior:reduce?'auto':'smooth'});}
+      var b=teamButtons[employeeIndex];if(b){var left=b.getBoundingClientRect().left-teamStrip.getBoundingClientRect().left+teamStrip.scrollLeft-(teamStrip.clientWidth-b.offsetWidth)/2;teamStrip.scrollTo({left:Math.max(0,left),['be'+'havior']:reduce?'auto':'smooth'});}
     }
     function changePerson(i){
       if(!team.length||i===employeeIndex)return;
