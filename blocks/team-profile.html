@@ -1,4 +1,4 @@
-<!-- OPTIM PRO / CREW TERMINAL v7.4 | team navigator and certificate gallery, no particles -->
+<!-- OPTIM PRO / CREW TERMINAL v7.5 | team navigator and certificate gallery, no particles -->
 <!-- =============================================================
      НАСТРОЙКИ КОМАНДЫ. ПРИ ДОБАВЛЕНИИ СОТРУДНИКА
      РЕДАКТИРУЙТЕ ТОЛЬКО ЭТОТ БЛОК ДО СТРОКИ «КОНЕЦ НАСТРОЕК».
@@ -315,7 +315,7 @@ var CREW_TEAM = [{
     .optim-crew-v6 .oc6-cert-modal-close{position:absolute;top:20px;right:20px;border:1px solid rgba(255,255,255,.28);border-radius:12px;color:#fff;background:#16243b;font-size:27px;width:42px;height:42px;cursor:pointer;z-index:1}
     @media(max-width:700px){.optim-crew-v6 .oc6-gallery-item{flex-basis:min(230px,86%)}.optim-crew-v6 .oc6-gallery-image{height:175px}}
 
-    /* v7.4: team selector below the profile, independent from inner tabs and certificates. */
+    /* v7.5: portrait-first employee cards below the profile, separate from tabs. */
     .optim-crew-v6 .oc6-team-nav{margin-top:30px;padding:24px 24px 20px;border:1px solid rgba(255,255,255,.09);border-radius:20px;background:rgba(13,21,38,.68);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
     .optim-crew-v6 .oc6-team-head{display:flex;justify-content:space-between;align-items:baseline;gap:14px;margin-bottom:17px}
     .optim-crew-v6 .oc6-team-title{font:800 18px 'Montserrat',Arial,sans-serif;color:#f0f5fc;margin:0!important}
@@ -325,17 +325,17 @@ var CREW_TEAM = [{
     .optim-crew-v6 .oc6-team-arrow:hover:not(:disabled){background:rgba(47,199,247,.17);border-color:#2fc7f7}
     .optim-crew-v6 .oc6-team-arrow:disabled{opacity:.28;cursor:default}
     .optim-crew-v6 .oc6-team-strip{display:flex;align-items:stretch;gap:10px;min-width:0;flex:1;overflow-x:auto;scrollbar-width:thin;scrollbar-color:rgba(47,199,247,.3) transparent;scroll-snap-type:x proximity;padding:3px 2px 11px;overscroll-behavior-x:contain}
-    .optim-crew-v6 .oc6-team-person{flex:0 0 152px;display:flex;align-items:center;gap:10px;padding:9px 10px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.09);border-radius:14px;cursor:pointer;text-align:left;color:#cbd8ec;scroll-snap-align:start;transition:background .2s,border-color .2s,box-shadow .2s;min-width:0}
-    .optim-crew-v6 .oc6-team-person:hover{background:rgba(47,199,247,.075);border-color:rgba(47,199,247,.36)}
-    .optim-crew-v6 .oc6-team-person[aria-pressed="true"]{border-color:#2fc7f7;background:rgba(47,199,247,.13);box-shadow:0 0 0 1px rgba(47,199,247,.14)}
-    .optim-crew-v6 .oc6-team-avatar{flex:0 0 42px;width:42px;height:48px;border-radius:10px;overflow:hidden;display:grid;place-items:center;background:linear-gradient(140deg,#143b5c,#0b1728);font:700 14px 'Montserrat',Arial,sans-serif;color:#a9d8ed}
-    .optim-crew-v6 .oc6-team-avatar img{width:100%;height:100%;object-fit:cover;display:block}
-    .optim-crew-v6 .oc6-team-person-name{font:700 12px 'Montserrat',Arial,sans-serif;line-height:1.35;overflow-wrap:anywhere;color:#f0f5fc}
+    .optim-crew-v6 .oc6-team-person{flex:0 0 174px;display:flex;flex-direction:column;align-items:stretch;gap:0;padding:7px;background:rgba(255,255,255,.035);border:1px solid rgba(255,255,255,.09);border-radius:16px;cursor:pointer;text-align:left;color:#cbd8ec;scroll-snap-align:start;transition:background .2s,border-color .2s,box-shadow .2s,transform .2s;min-width:0;overflow:hidden}
+    .optim-crew-v6 .oc6-team-person:hover{background:rgba(47,199,247,.075);border-color:rgba(47,199,247,.36);transform:translateY(-2px)}
+    .optim-crew-v6 .oc6-team-person[aria-pressed="true"]{border-color:#2fc7f7;background:rgba(47,199,247,.09);box-shadow:0 0 0 1px rgba(47,199,247,.14)}
+    .optim-crew-v6 .oc6-team-avatar{display:grid;place-items:center;width:100%;height:154px;flex:0 0 154px;border-radius:11px;overflow:hidden;background:linear-gradient(140deg,#143b5c,#0b1728);font:700 32px 'Montserrat',Arial,sans-serif;color:#a9d8ed}
+    .optim-crew-v6 .oc6-team-avatar img{width:100%;height:100%;object-fit:cover;object-position:center 25%;display:block}
+    .optim-crew-v6 .oc6-team-person-text{display:flex;flex-direction:column;align-items:flex-start;gap:5px;flex:1;min-width:0;width:100%;padding:12px 7px 9px}
+    .optim-crew-v6 .oc6-team-person-name{display:block;font:700 13px 'Montserrat',Arial,sans-serif;line-height:1.35;overflow-wrap:anywhere;color:#f0f5fc}
     .optim-crew-v6 .oc6-team-person[aria-pressed="true"] .oc6-team-person-name{color:#2fc7f7}
-    .optim-crew-v6 .oc6-team-person-text{flex:1;min-width:0}
-    .optim-crew-v6 .oc6-team-person-position{font:400 11px 'Open Sans',Arial,sans-serif;color:#9fb4cc;line-height:1.4;margin-top:2px;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden}
+    .optim-crew-v6 .oc6-team-person-position{display:-webkit-box;font:400 11px 'Open Sans',Arial,sans-serif;color:#9fb4cc;line-height:1.45;-webkit-box-orient:vertical;-webkit-line-clamp:3;overflow:hidden}
     .optim-crew-v6 .oc6-team-arrow:focus-visible,.optim-crew-v6 .oc6-team-person:focus-visible{outline:2px solid #2fc7f7!important;outline-offset:3px}
-    @media(max-width:700px){.optim-crew-v6 .oc6-team-nav{padding:18px 12px;margin-top:22px}.optim-crew-v6 .oc6-team-person{flex-basis:137px}.optim-crew-v6 .oc6-team-arrow{width:34px;flex-basis:34px;height:44px}}
+    @media(max-width:700px){.optim-crew-v6 .oc6-team-nav{padding:18px 12px;margin-top:22px}.optim-crew-v6 .oc6-team-person{flex-basis:145px}.optim-crew-v6 .oc6-team-avatar{height:130px;flex-basis:130px}.optim-crew-v6 .oc6-team-arrow{width:34px;flex-basis:34px;height:44px}}
     @media(prefers-reduced-motion:reduce){.optim-crew-v6 .oc6-team-person,.optim-crew-v6 .oc6-team-arrow{transition:none}}
   </style>
   <div class="oc6-atmosphere" aria-hidden="true">
@@ -585,4 +585,4 @@ var CREW_TEAM = [{
   })();
   </script>
 </section>
-<!-- END OPTIM PRO / CREW TERMINAL v7.4 -->
+<!-- END OPTIM PRO / CREW TERMINAL v7.5 -->
