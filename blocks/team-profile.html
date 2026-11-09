@@ -1,4 +1,4 @@
-<!-- OPTIM PRO / CREW TERMINAL v7.5 | team navigator and certificate gallery, no particles -->
+<!-- OPTIM PRO / CREW TERMINAL v7.6 | team navigator and certificate gallery, no particles -->
 <!-- =============================================================
      НАСТРОЙКИ КОМАНДЫ. ПРИ ДОБАВЛЕНИИ СОТРУДНИКА
      РЕДАКТИРУЙТЕ ТОЛЬКО ЭТОТ БЛОК ДО СТРОКИ «КОНЕЦ НАСТРОЕК».
@@ -556,6 +556,38 @@ var CREW_TEAM = [{
       employeeIndex=(i+team.length)%team.length;data=team[employeeIndex];
       bindPerson();syncAuto();remaining=configured;setProgress(0);render('intro');updateControl();updateTeamNav();restart();
     }
+    /* v7.6: mobile screen-wide horizontal swipe changes employee.
+       Passive handlers keep vertical page scrolling native. Gesture starts only
+       while the profile block is visible and ignores browser edge gestures. */
+    (function initScreenSwipe(){
+      if(!window.matchMedia)return;
+      var touchScreen=window.matchMedia('(pointer:coarse)');
+      var start=null;
+      function visibleProfile(){
+        var rect=root.getBoundingClientRect();
+        return rect.bottom>0&&rect.top<window.innerHeight;
+      }
+      document.addEventListener('touchstart',function(e){
+        start=null;
+        if(team.length<2||!touchScreen.matches||!visibleProfile())return;
+        if(!q('[data-crew-cert-modal]').hidden)return;
+        if(e.touches.length!==1)return;
+        var t=e.touches[0];
+        // Do not steal system back/forward swipes from the screen edges.
+        if(t.clientX<24||t.clientX>window.innerWidth-24)return;
+        start={x:t.clientX,y:t.clientY,time:Date.now()};
+      },{passive:true});
+      document.addEventListener('touchend',function(e){
+        if(!start)return;
+        var initial=start;start=null;
+        if(!touchScreen.matches||!visibleProfile()||e.changedTouches.length!==1)return;
+        var t=e.changedTouches[0],dx=t.clientX-initial.x,dy=t.clientY-initial.y;
+        if(Math.abs(dx)<70||Math.abs(dx)<Math.abs(dy)*1.45)return;
+        if(Date.now()-initial.time>1200)return;
+        changePerson(employeeIndex+(dx<0?1:-1));
+      },{passive:true});
+      document.addEventListener('touchcancel',function(){start=null;},{passive:true});
+    })();
     teamPrev.addEventListener('click',function(){changePerson(employeeIndex-1)});
     teamNext.addEventListener('click',function(){changePerson(employeeIndex+1)});
     bindPerson();syncAuto();render('intro');remaining=configured;updateControl();updateTeamNav();restart();
@@ -585,4 +617,4 @@ var CREW_TEAM = [{
   })();
   </script>
 </section>
-<!-- END OPTIM PRO / CREW TERMINAL v7.5 -->
+<!-- END OPTIM PRO / CREW TERMINAL v7.6 -->
