@@ -1,0 +1,126 @@
+<!-- OPTIM PRO / TEAM MOSAIC v1.0 : progressive enhancement of the existing /team/ catalogue -->
+<section id="optim-team-mosaic-v1" aria-label="Команда Оптим Про" style="display:none">
+<style>
+#optim-team-mosaic-v1{--tm-bg:#091625;--tm-card:#0c1e33;--tm-line:rgba(86,187,232,.24);--tm-accent:#2fc7f7;--tm-ink:#eff7ff;--tm-muted:#a9c1d3;isolation:isolate;background:var(--tm-bg);color:var(--tm-ink);font-family:'Open Sans',Arial,sans-serif;position:relative}
+#optim-team-mosaic-v1,#optim-team-mosaic-v1 *{box-sizing:border-box}
+#optim-team-mosaic-v1 .tm-shell{width:min(1200px,calc(100% - 40px));margin:auto;padding:42px 0 70px}
+#optim-team-mosaic-v1 .tm-heading{font:800 clamp(28px,3.3vw,44px)/1.15 Montserrat,Arial,sans-serif;letter-spacing:-.035em;margin:0 0 8px}
+#optim-team-mosaic-v1 .tm-subheading{font:400 14px/1.65 'Open Sans',Arial,sans-serif;color:var(--tm-muted);margin:0 0 30px;max-width:720px}
+#optim-team-mosaic-v1 .tm-people{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;align-items:start}
+#optim-team-mosaic-v1 .tm-card{border:1px solid var(--tm-line);border-radius:17px;background:linear-gradient(150deg,#10243a,#0a192b);padding:17px;min-width:0;position:relative;overflow:visible}
+#optim-team-mosaic-v1 .tm-mosaic{--tm-title-h:43px;--tm-tile-h:133px;display:grid;grid-template-columns:repeat(6,minmax(0,1fr));grid-template-rows:var(--tm-title-h) var(--tm-tile-h);grid-auto-rows:var(--tm-tile-h);grid-auto-flow:row dense;gap:7px;min-width:0}
+#optim-team-mosaic-v1 .tm-photo{grid-column:1/span 2;grid-row:1/span 2;position:relative;overflow:hidden;border-radius:9px;background:linear-gradient(150deg,#0d4160,#081c30);border:1px solid rgba(89,203,246,.43);display:grid;place-items:center;color:#a6d9eb;font:800 34px Montserrat,Arial,sans-serif;min-height:0}
+#optim-team-mosaic-v1 .tm-photo img{width:100%;height:100%;object-fit:cover;object-position:center 24%;display:block;position:absolute;inset:0}
+#optim-team-mosaic-v1 .tm-identity{grid-column:3/-1;grid-row:1;display:flex;flex-direction:column;justify-content:center;min-width:0;overflow:hidden;padding-left:4px}
+#optim-team-mosaic-v1 .tm-name{font:800 clamp(15px,1.48vw,19px)/1.18 Montserrat,Arial,sans-serif;letter-spacing:-.025em;color:#f2f8ff;margin:0;overflow-wrap:anywhere}
+#optim-team-mosaic-v1 .tm-job{font:400 11px/1.3 'Open Sans',Arial,sans-serif;color:#8fdcff;margin:4px 0 0;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+#optim-team-mosaic-v1 .tm-stats{grid-column:3;grid-row:2;display:flex;flex-direction:column;gap:6px;min-width:0;position:relative;z-index:2;transform:translateX(-17px);width:calc(100% + 17px)}
+#optim-team-mosaic-v1 .tm-stat{flex:1;min-height:0;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;padding:6px 7px 6px 10px;background:rgba(6,24,43,.97);border:1px solid rgba(47,199,247,.66);border-radius:8px;box-shadow:0 5px 16px rgba(0,0,0,.26)}
+#optim-team-mosaic-v1 .tm-stat-num{font:800 clamp(17px,1.9vw,23px)/1 Montserrat,Arial,sans-serif;color:#2fc7f7;font-variant-numeric:tabular-nums}
+#optim-team-mosaic-v1 .tm-stat-label{font:600 9px/1.25 'Open Sans',Arial,sans-serif;color:#d7edf8;margin-top:4px;overflow-wrap:anywhere}
+#optim-team-mosaic-v1 .tm-cert{appearance:none;-webkit-appearance:none;display:grid;place-items:center;width:100%;height:var(--tm-tile-h);min-width:0;min-height:0;padding:5px;border:1px solid rgba(80,159,201,.25);border-radius:7px;background:#102c42;cursor:zoom-in;overflow:hidden;transition:background .18s,border-color .18s,transform .18s}
+#optim-team-mosaic-v1 .tm-cert:hover{background:#143d59;border-color:#2fc7f7;transform:translateY(-2px)}
+#optim-team-mosaic-v1 .tm-cert img{display:block;max-width:100%;max-height:100%;width:100%;height:100%;object-fit:contain}
+#optim-team-mosaic-v1 .tm-cert:focus-visible,#optim-team-mosaic-v1 .tm-case-btn:focus-visible,#optim-team-mosaic-v1 .tm-case-link:focus-visible{outline:2px solid #2fc7f7;outline-offset:3px}
+#optim-team-mosaic-v1 .tm-actions{display:flex;justify-content:flex-end;margin-top:13px;min-height:33px}
+#optim-team-mosaic-v1 .tm-case-btn{appearance:none;display:inline-flex;align-items:center;gap:8px;text-decoration:none;border:1px solid rgba(47,199,247,.54);border-radius:8px;padding:8px 13px;background:rgba(47,199,247,.09);color:#c7f1ff;font:700 12px/1.35 'Open Sans',Arial,sans-serif;cursor:pointer}
+#optim-team-mosaic-v1 .tm-case-btn:hover{background:rgba(47,199,247,.19);color:#fff;text-decoration:none}
+#optim-team-mosaic-v1 .tm-cases{margin-top:12px;padding:12px 14px;border:1px solid var(--tm-line);border-radius:9px;background:#08192b}
+#optim-team-mosaic-v1 .tm-cases[hidden]{display:none!important}
+#optim-team-mosaic-v1 .tm-case-link{display:block;color:#91e6ff;text-decoration:none;font:600 12px/1.5 'Open Sans',Arial,sans-serif;padding:7px 0;border-bottom:1px solid rgba(114,186,218,.14)}
+#optim-team-mosaic-v1 .tm-case-link:last-child{border:0}
+#optim-team-mosaic-v1 .tm-case-link:hover{text-decoration:underline}
+#optim-team-mosaic-v1 .tm-case-note{font:400 12px/1.5 'Open Sans',Arial,sans-serif;color:var(--tm-muted);margin-top:7px}
+#optim-team-mosaic-v1 .tm-viewer{position:fixed;inset:0;z-index:999999;background:rgba(2,9,19,.92);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:45px 18px 26px}
+#optim-team-mosaic-v1 .tm-viewer[hidden]{display:none!important}
+#optim-team-mosaic-v1 .tm-viewer img{width:auto;height:auto;max-width:min(95vw,1100px);max-height:78vh;object-fit:contain}
+#optim-team-mosaic-v1 .tm-viewer-title{margin:14px 0 0;font:600 14px/1.4 'Open Sans',Arial,sans-serif;text-align:center;color:#fff}
+#optim-team-mosaic-v1 .tm-viewer-close{position:absolute;right:18px;top:15px;color:#fff;background:transparent;border:1px solid rgba(255,255,255,.35);border-radius:8px;padding:7px 13px;cursor:pointer;font-size:24px}
+@media(max-width:900px){#optim-team-mosaic-v1 .tm-people{grid-template-columns:1fr;max-width:650px}#optim-team-mosaic-v1 .tm-mosaic{--tm-tile-h:154px;--tm-title-h:50px}#optim-team-mosaic-v1 .tm-name{font-size:20px}}
+@media(max-width:540px){#optim-team-mosaic-v1 .tm-shell{width:calc(100% - 24px);padding:25px 0 44px}#optim-team-mosaic-v1 .tm-card{padding:11px;border-radius:12px}#optim-team-mosaic-v1 .tm-mosaic{grid-template-columns:repeat(4,minmax(0,1fr));--tm-tile-h:116px;--tm-title-h:44px;gap:5px}#optim-team-mosaic-v1 .tm-name{font-size:15px}#optim-team-mosaic-v1 .tm-job{font-size:10px}#optim-team-mosaic-v1 .tm-stats{transform:translateX(-11px);width:calc(100% + 11px);gap:4px}#optim-team-mosaic-v1 .tm-stat{padding:4px 5px 4px 7px}#optim-team-mosaic-v1 .tm-stat-num{font-size:16px}#optim-team-mosaic-v1 .tm-stat-label{font-size:8px}#optim-team-mosaic-v1 .tm-cert{padding:3px}#optim-team-mosaic-v1 .tm-subheading{font-size:13px}}
+@media(prefers-reduced-motion:reduce){#optim-team-mosaic-v1 .tm-cert{transition:none;transform:none}}
+</style>
+<div class="tm-shell">
+<h1 class="tm-heading">Наша команда</h1>
+<p class="tm-subheading">Знакомьтесь с людьми, которые работают над вашими проектами. Сертификаты подтверждают квалификацию, а кейсы показывают практический опыт.</p>
+<div class="tm-people" data-tm-people></div>
+</div>
+<div class="tm-viewer" hidden role="dialog" aria-modal="true" aria-label="Просмотр сертификата">
+<button type="button" class="tm-viewer-close" aria-label="Закрыть сертификат">×</button>
+<img alt=""><p class="tm-viewer-title"></p>
+</div>
+<script>
+(function(){
+ 'use strict';
+ var section=document.getElementById('optim-team-mosaic-v1');
+ if(!section||section.dataset.mosaicReady)return;
+ section.dataset.mosaicReady='1';
+ var old=document.querySelector('[data-crew-profile]');
+ var directory=(typeof CREW_DIRECTORY!=='undefined'&&Array.isArray(CREW_DIRECTORY))?CREW_DIRECTORY.filter(function(p){return p&&p.url&&p.name}):[];
+ if(!old||!directory.length)return; // Preserve current catalogue if the existing data source changed.
+ function el(tag,cls,text){var x=document.createElement(tag);if(cls)x.className=cls;if(text!==undefined)x.textContent=String(text);return x;}
+ function address(s){try{var u=new URL(String(s||''),location.href);return /^https?:$/.test(u.protocol)?u:null}catch(e){return null}}
+ function displayCount(n){return Number.isInteger(n)?String(n):'—'}
+ function loadOne(person){
+  var u=address(person.url);
+  if(!u||u.origin!==location.origin)return Promise.resolve({person:person,profile:null});
+  return fetch(u.href,{credentials:'same-origin',cache:'no-store'}).then(function(r){if(!r.ok)throw new Error('Page '+r.status);return r.text()}).then(function(html){
+   var found=html.match(/\bvar\s+CREW_TEAM\s*=\s*(\[[\s\S]*?\])\s*;\s*var\s+CREW_DIRECTORY\s*=/);
+   if(!found)throw new Error('No public profile data');
+   var arr=JSON.parse(found[1]);
+   return {person:person,profile:Array.isArray(arr)&&arr[0]?arr[0]:null};
+  }).catch(function(){return {person:person,profile:null}});
+ }
+ var viewer=section.querySelector('.tm-viewer'),large=viewer.querySelector('img'),viewerTitle=viewer.querySelector('.tm-viewer-title');
+ var previousFocus=null;
+ function closeViewer(){viewer.hidden=true;large.removeAttribute('src');document.body.style.overflow='';if(previousFocus)previousFocus.focus();}
+ viewer.querySelector('.tm-viewer-close').addEventListener('click',closeViewer);
+ viewer.addEventListener('click',function(e){if(e.target===viewer)closeViewer()});
+ document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!viewer.hidden)closeViewer()});
+ function openViewer(cert,button){previousFocus=button;large.src=cert.image;large.alt='Сертификат: '+String(cert.title||'');viewerTitle.textContent=String(cert.title||'Сертификат');viewer.hidden=false;document.body.style.overflow='hidden';viewer.querySelector('.tm-viewer-close').focus();}
+ function draw(entry,i){
+  var person=entry.person,p=entry.profile||{},loaded=!!entry.profile,certs=Array.isArray(p.certificates)?p.certificates.filter(function(x){return x&&address(x.image)&&x.title}):[];
+  var cases=Array.isArray(p.projects)?p.projects.filter(function(x){return x&&x.title&&address(x.url)}):[];
+  var name=String(p.name||person.name),job=String(p.position||person.position||'');
+  var card=el('article','tm-card'),mosaic=el('div','tm-mosaic'),photo=el('div','tm-photo',name.split(/\s+/).map(function(s){return s.slice(0,1)}).slice(0,2).join(''));
+  var photoUrl=address(p.photo||person.photo);
+  if(photoUrl){var img=el('img');img.alt='Фото: '+name;img.loading=i<2?'eager':'lazy';img.src=photoUrl.href;img.addEventListener('error',function(){img.remove()},{once:true});photo.appendChild(img);}
+  mosaic.appendChild(photo);
+  var id=el('div','tm-identity'),heading=el('h2','tm-name',name),jobEl=el('p','tm-job',job);
+  id.appendChild(heading);id.appendChild(jobEl);mosaic.appendChild(id);
+  var stats=el('div','tm-stats');
+  [['Сертификаты',loaded?certs.length:null],['Проекты',loaded?cases.length:null]].forEach(function(pair){
+   var stat=el('div','tm-stat'),number=el('strong','tm-stat-num',displayCount(pair[1])),label=el('span','tm-stat-label',pair[0]);
+   stat.appendChild(number);stat.appendChild(label);stats.appendChild(stat);
+  });
+  mosaic.appendChild(stats);
+  certs.forEach(function(cert){
+   var url=address(cert.image);if(!url)return;
+   var btn=el('button','tm-cert'),im=el('img');btn.type='button';btn.setAttribute('aria-label','Открыть сертификат: '+cert.title);
+   im.src=url.href;im.loading='lazy';im.alt=cert.title;btn.appendChild(im);btn.addEventListener('click',function(){openViewer(cert,btn)});mosaic.appendChild(btn);
+  });
+  card.appendChild(mosaic);
+  var actions=el('div','tm-actions');
+  if(cases.length){
+   var trigger=el('button','tm-case-btn','Перейти к кейсам ↗');trigger.type='button';trigger.setAttribute('aria-expanded','false');
+   var caseBox=el('div','tm-cases');caseBox.hidden=true;
+   cases.forEach(function(item){var link=el('a','tm-case-link',item.title);link.href=address(item.url).href;link.target='_blank';link.rel='noopener noreferrer';caseBox.appendChild(link)});
+   trigger.addEventListener('click',function(){caseBox.hidden=!caseBox.hidden;trigger.setAttribute('aria-expanded',String(!caseBox.hidden))});
+   actions.appendChild(trigger);card.appendChild(actions);card.appendChild(caseBox);
+  }else{
+   var profileUrl=address(person.url);
+   if(profileUrl){var a=el('a','tm-case-btn','Открыть профиль ↗');a.href=profileUrl.href;actions.appendChild(a);}
+   card.appendChild(actions);
+  }
+  return card;
+ }
+ Promise.all(directory.map(loadOne)).then(function(list){
+  if(!list.some(function(x){return x.profile}))return; // Avoid overriding the existing page if extraction fails.
+  var host=section.querySelector('[data-tm-people]'),fragment=document.createDocumentFragment();
+  list.forEach(function(x,i){fragment.appendChild(draw(x,i))});
+  host.appendChild(fragment);section.style.display='block';old.style.display='none';
+ }).catch(function(){/* Original content remains visible and intact. */});
+})();
+</script>
+</section>
+<!-- END OPTIM PRO / TEAM MOSAIC -->
