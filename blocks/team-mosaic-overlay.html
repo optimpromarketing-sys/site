@@ -6,7 +6,7 @@
 #optim-team-mosaic-v1{--tm-bg:#091625;--tm-card:#0c1e33;--tm-line:rgba(86,187,232,.24);--tm-accent:#2fc7f7;--tm-blue:#0066CC;--tm-navy:#003199;--tm-ink:#eff7ff;--tm-muted:#a9c1d3;isolation:isolate;background:var(--tm-bg);color:var(--tm-ink);font-family:'Open Sans',Arial,sans-serif;position:relative}
 #optim-team-mosaic-v1,#optim-team-mosaic-v1 *{box-sizing:border-box}
 #optim-team-mosaic-v1 .tm-shell{width:min(1200px,calc(100% - 40px));margin:auto;padding:42px 0 70px}
-#optim-team-mosaic-v1 .tm-heading{font:800 clamp(28px,3.3vw,44px)/1.15 Montserrat,Arial,sans-serif;letter-spacing:-.035em;margin:0 0 8px}
+#optim-team-mosaic-v1 .tm-heading{font:800 clamp(28px,3.3vw,44px)/1.15 Montserrat,Arial,sans-serif;letter-spacing:-.035em;margin:0 0 8px;color:var(--tm-ink)}
 #optim-team-mosaic-v1 .tm-subheading{font:400 14px/1.65 'Open Sans',Arial,sans-serif;color:var(--tm-muted);margin:0 0 30px;max-width:720px}
 #optim-team-mosaic-v1 .tm-people{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;align-items:start}
 #optim-team-mosaic-v1 .tm-card{border:1px solid var(--tm-line);border-radius:17px;background:linear-gradient(150deg,#10243a,#0a192b);padding:17px;min-width:0;position:relative;overflow:visible}
@@ -87,7 +87,7 @@
   if(!imageCache.has(url.href))imageCache.set(url.href,new Promise(function(resolve){var im=new Image(),timer=setTimeout(function(){resolve(false)},15000);im.addEventListener('load',function(){clearTimeout(timer);resolve(im.naturalWidth>0)},{once:true});im.addEventListener('error',function(){clearTimeout(timer);resolve(false)},{once:true});im.src=url.href}));
   return imageCache.get(url.href).then(function(ok){return ok?cert:null})
  }
- function publishedCase(item){var u=address(item.url);if(!u||u.origin!==location.origin)return Promise.resolve(null);
+ function publishedCase(item){var u=address(item.url);if(!u||u.origin!==location.origin||!/^\/(keysy|cases)\/[^/]+/i.test(u.pathname))return Promise.resolve(null);
   return getPage(u).then(function(page){var doc=new DOMParser().parseFromString(page.html,'text/html');
    if(!doc.querySelector('main h1,main h2')||/404|страница не найдена|page not found/i.test(doc.title))return null;
    var canonical=doc.querySelector('link[rel="canonical"]');var result=Object.assign({},item);result.url=canonical&&address(canonical.href)?canonical.href:page.url;return result;
