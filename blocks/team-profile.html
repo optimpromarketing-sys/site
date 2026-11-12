@@ -3,7 +3,7 @@
      НАСТРОЙКИ КОМАНДЫ. ПРИ ДОБАВЛЕНИИ СОТРУДНИКА
      РЕДАКТИРУЙТЕ ТОЛЬКО ЭТОТ БЛОК ДО СТРОКИ «КОНЕЦ НАСТРОЕК».
      Для отсутствующих данных оставляйте пустые массивы [].
-     Добавляйте сотрудников в CREW_TEAM; две вкладки: «Проекты» и «Сертификаты».
+     Добавляйте сотрудников в CREW_TEAM; все три вкладки всегда видимы.
      Пожалуйста, используйте настоящие фотографии и подтвержденные кейсы.
      ============================================================= -->
 <script>
@@ -414,9 +414,6 @@ var CREW_DIRECTORY = [
 .optim-crew-v6 .oc6-person{display:none!important}
 .optim-crew-v6 .oc6-grid,.optim-crew-v6 .oc6-team-arrow,.optim-crew-v6 .oc6-team-count{display:none!important}.optim-crew-v6 .oc6-team-nav{margin-top:16px}.optim-crew-v6 .oc6-team-person{flex:1 0 200px}.optim-crew-v6 .oc6-team-avatar{height:230px;flex-basis:230px}
 .optim-crew-v6 .oc6-team-strip{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));overflow:visible}.optim-crew-v6 .oc6-team-person{width:100%;min-width:0}@media(max-width:850px){.optim-crew-v6 .oc6-team-strip{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:500px){.optim-crew-v6 .oc6-team-strip{grid-template-columns:1fr}}
-
-    /* Keep the original tab geometry and appearance; only enlarge the labels. */
-    .optim-crew-v6 .oc6-tab-label{font-size:18px!important}
 </style>
   <div class="oc6-atmosphere" aria-hidden="true">
     <div class="oc6-blob oc6-blob--a"></div>
@@ -433,8 +430,9 @@ var CREW_DIRECTORY = [
         </div>
         <nav class="oc6-navigation" aria-label="Разделы профиля" data-crew-nav>
           <p class="oc6-nav-title">РАЗДЕЛЫ ДОСЬЕ</p>
-          <button class="oc6-tab" type="button" data-tab="projects" aria-pressed="true"><span class="oc6-tab-num">01</span><span class="oc6-tab-label">Проекты</span></button>
-          <button class="oc6-tab" type="button" data-tab="expertise" aria-pressed="false"><span class="oc6-tab-num">02</span><span class="oc6-tab-label">Сертификаты</span></button>
+          <button class="oc6-tab" type="button" data-tab="intro" aria-pressed="true"><span class="oc6-tab-num">01</span><span class="oc6-tab-label">Знакомство</span></button>
+          <button class="oc6-tab" type="button" data-tab="projects" aria-pressed="false"><span class="oc6-tab-num">02</span><span class="oc6-tab-label">Проекты</span></button>
+          <button class="oc6-tab" type="button" data-tab="expertise" aria-pressed="false"><span class="oc6-tab-num">03</span><span class="oc6-tab-label">Экспертиза</span></button>
         </nav>
       </aside>
       <div class="oc6-right">
@@ -444,9 +442,9 @@ var CREW_DIRECTORY = [
           <p class="oc6-specialization" data-crew-specialization></p>
         </header>
       <div class="oc6-panel-wrap" data-crew-panel-wrap>
-        <div class="oc6-eyebrow" data-crew-section-label>01 / ПРОЕКТЫ</div>
-        <section class="oc6-panel" data-crew-panel aria-live="off"><h2>Проекты</h2><p>Сведения о проектах будут загружены при открытии страницы.</p></section>
-        <div class="oc6-autobar" data-crew-autobar hidden aria-hidden="true"><div class="oc6-autobar-fill" data-crew-autofill></div></div><div class="oc6-bottom"><span class="oc6-progress" data-crew-progress>01 / 02</span><button class="oc6-control" type="button" data-crew-pause hidden aria-pressed="false">Пауза автопоказа</button></div>
+        <div class="oc6-eyebrow" data-crew-section-label>01 / ЗНАКОМСТВО</div>
+        <section class="oc6-panel" data-crew-panel aria-live="off"><h2>Знакомство</h2><p>Сведения о специалисте будут загружены при открытии страницы.</p></section>
+        <div class="oc6-autobar" data-crew-autobar hidden aria-hidden="true"><div class="oc6-autobar-fill" data-crew-autofill></div></div><div class="oc6-bottom"><span class="oc6-progress" data-crew-progress>01 / 03</span><button class="oc6-control" type="button" data-crew-pause hidden aria-pressed="false">Пауза автопоказа</button></div>
       </div>
       </div>
     </div>
@@ -495,12 +493,12 @@ var CREW_DIRECTORY = [
       projectList=items(data.projects).filter(function(p){return p&&safe(p.title)});
       certList=items(data.certificates).filter(function(c){return c&&safe(c.title)&&validUrl(c.image)});
     }
-    var tabIds=['projects','expertise'];
+    var tabIds=['intro','projects','expertise'];
     var buttons=[].slice.call(root.querySelectorAll('[data-tab]'));
     buttons.forEach(function(b){if(tabIds.indexOf(b.dataset.tab)<0)b.hidden=true});
-    var labels={projects:'ПРОЕКТЫ',expertise:'СЕРТИФИКАТЫ'};
+    var labels={intro:'ЗНАКОМСТВО',projects:'ПРОЕКТЫ',expertise:'ЭКСПЕРТИЗА'};
     var panel=q('[data-crew-panel]'),progress=q('[data-crew-progress]'),caption=q('[data-crew-section-label]'),pause=q('[data-crew-pause]'),area=q('[data-crew-panel-wrap]');
-    var active='projects',index=0,timer=null,progressTimer=null,manual=false,paused=false;
+    var active='intro',index=0,timer=null,progressTimer=null,manual=false,paused=false;
     var inViewport=true, focusPanel=false, remaining=0, startedAt=0;
     var media=window.matchMedia?window.matchMedia('(prefers-reduced-motion: reduce)'):null;
     var reduce=!!(media&&media.matches);
@@ -672,7 +670,7 @@ var CREW_DIRECTORY = [
     })();
     teamPrev.addEventListener('click',function(){changePerson(employeeIndex-1)});
     teamNext.addEventListener('click',function(){changePerson(employeeIndex+1)});
-    bindPerson();syncAuto();render('projects');remaining=configured;updateControl();updateTeamNav();restart();
+    bindPerson();syncAuto();render('intro');remaining=configured;updateControl();updateTeamNav();restart();
     /* Ambient light follows cursor with a smooth, bounded interpolation.
        No listeners on document: this instance cannot interfere with other page sections. */
     (function initCrewGlow(){
