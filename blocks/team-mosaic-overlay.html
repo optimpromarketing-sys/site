@@ -111,11 +111,11 @@
  }
  var viewer=section.querySelector('.tm-viewer'),large=viewer.querySelector('img'),viewerTitle=viewer.querySelector('.tm-viewer-title');
  var previousFocus=null,previousOverflow='';var original=viewer.querySelector('.tm-viewer-original');
- function closeViewer(){viewer.hidden=true;large.removeAttribute('src');document.body.style.overflow=previousOverflow;if(previousFocus)previousFocus.focus();}
+ function closeViewer(){section.style.zIndex='';viewer.hidden=true;large.removeAttribute('src');document.body.style.overflow=previousOverflow;if(previousFocus)previousFocus.focus();}
  viewer.querySelector('.tm-viewer-close').addEventListener('click',closeViewer);
  viewer.addEventListener('click',function(e){if(e.target===viewer)closeViewer()});
  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!viewer.hidden)closeViewer();if(e.key==='Tab'&&!viewer.hidden){var first=viewer.querySelector('button'),last=original;if(e.shiftKey&&document.activeElement===first){e.preventDefault();last.focus()}else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus()}}});
- function openViewer(cert,button){previousFocus=button;previousOverflow=document.body.style.overflow;original.href=address(cert.image).href;large.src=cert.image;large.alt='Сертификат: '+String(cert.title||'');viewerTitle.textContent=String(cert.title||'Сертификат');viewer.hidden=false;document.body.style.overflow='hidden';viewer.querySelector('.tm-viewer-close').focus();}
+ function openViewer(cert,button){section.style.zIndex='2147483647';previousFocus=button;previousOverflow=document.body.style.overflow;original.href=address(cert.image).href;large.src=cert.image;large.alt='Сертификат: '+String(cert.title||'');viewerTitle.textContent=String(cert.title||'Сертификат');viewer.hidden=false;document.body.style.overflow='hidden';viewer.querySelector('.tm-viewer-close').focus();}
  function draw(entry,i){
   var person=entry.person,p=entry.profile||{},loaded=!!entry.profile,certs=entry.certs||[],cases=entry.cases||[];
   var name=String(person.name),job=String(person.position||p.position||'');
