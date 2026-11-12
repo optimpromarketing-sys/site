@@ -415,24 +415,8 @@ var CREW_DIRECTORY = [
 .optim-crew-v6 .oc6-grid,.optim-crew-v6 .oc6-team-arrow,.optim-crew-v6 .oc6-team-count{display:none!important}.optim-crew-v6 .oc6-team-nav{margin-top:16px}.optim-crew-v6 .oc6-team-person{flex:1 0 200px}.optim-crew-v6 .oc6-team-avatar{height:230px;flex-basis:230px}
 .optim-crew-v6 .oc6-team-strip{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));overflow:visible}.optim-crew-v6 .oc6-team-person{width:100%;min-width:0}@media(max-width:850px){.optim-crew-v6 .oc6-team-strip{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:500px){.optim-crew-v6 .oc6-team-strip{grid-template-columns:1fr}}
 
-    /* Navigation button appearance follows the main team page (.tm-case-btn). */
-    .optim-crew-v6 .oc6-tab,.optim-crew-v6 .oc6-control,.optim-crew-v6 .oc6-gallery-arrow,.optim-crew-v6 .oc6-team-arrow,.optim-crew-v6 .oc6-card a {
-      border:1px solid rgba(47,199,247,.54)!important;border-radius:8px!important;
-      background:rgba(47,199,247,.09)!important;color:#c7f1ff!important;
-      font:700 12px/1.35 'Open Sans',Arial,sans-serif!important;
-      text-decoration:none!important;box-shadow:none!important;
-      transition:background .2s,border-color .2s,color .2s!important
-    }
-    .optim-crew-v6 .oc6-tab{min-height:64px!important;padding:14px 18px!important;font-size:17px!important;gap:12px!important;width:100%!important;box-sizing:border-box!important}
-    .optim-crew-v6 .oc6-tab[aria-pressed="true"],.optim-crew-v6 .oc6-tab:hover,
-    .optim-crew-v6 .oc6-control:hover,.optim-crew-v6 .oc6-gallery-arrow:hover:not(:disabled),
-    .optim-crew-v6 .oc6-team-arrow:hover:not(:disabled),.optim-crew-v6 .oc6-card a:hover{
-      border-color:#2fc7f7!important;background:rgba(47,199,247,.19)!important;color:#fff!important
-    }
-    .optim-crew-v6 .oc6-card a{display:inline-flex!important;align-items:center!important;padding:8px 13px!important;margin-top:10px!important}
-    .optim-crew-v6 .oc6-tab-num{color:#2fc7f7!important;font-weight:800!important}
-    .optim-crew-v6 .oc6-tab-label{color:inherit!important;font:700 17px/1.35 'Open Sans',Arial,sans-serif!important}
-    .optim-crew-v6 :is(.oc6-tab,.oc6-control,.oc6-gallery-arrow,.oc6-team-arrow,.oc6-card a):focus-visible{outline:2px solid #2fc7f7!important;outline-offset:3px!important}
+    /* Keep the original tab geometry and appearance; only enlarge the labels. */
+    .optim-crew-v6 .oc6-tab-label{font-size:18px!important}
 </style>
   <div class="oc6-atmosphere" aria-hidden="true">
     <div class="oc6-blob oc6-blob--a"></div>
