@@ -108,7 +108,7 @@ var CREW_DIRECTORY = [
   {
     "id": "009",
     "name": "Виталий Минич",
-    "position": "Менеджер проектов (стажер)",
+    "position": "Менеджер проектов",
     "photo": "",
     "url": "https://b24.pro/team/vitaliy-m/"
   },
@@ -153,6 +153,13 @@ var CREW_DIRECTORY = [
     "position": "Руководитель отдела продаж",
     "photo": "",
     "url": "https://b24.pro/team/mikhail-v/"
+  },
+  {
+    "id": "016",
+    "name": "Марк Антонов",
+    "position": "Контроль и развитие приложений Маркетплейса",
+    "photo": "",
+    "url": "https://b24.pro/team/mark-a/"
   }
 ];
 </script>
@@ -451,6 +458,23 @@ var CREW_DIRECTORY = [
   .optim-crew-v6 a.oc6-team-person{text-decoration:none}
 
 
+
+/* Shared profile layout: photo and all three sections remain visible. */
+.optim-crew-v6 .oc6-photo-placeholder-copy{max-width:220px}
+.optim-crew-v6 .oc6-photo-placeholder-copy strong{display:block;margin-top:16px;font:600 14px 'Open Sans',Arial,sans-serif;color:#a9c3d7;line-height:1.5}
+.optim-crew-v6 .oc6-photo-placeholder-icon{display:block;position:relative;width:104px;height:104px;margin:auto;color:#2fc7f7;opacity:.6}
+.optim-crew-v6 .oc6-photo-placeholder-icon::before{content:"";position:absolute;top:8px;left:35px;width:34px;height:34px;border:2px solid currentColor;border-radius:50%;background:rgba(47,199,247,.04)}
+.optim-crew-v6 .oc6-photo-placeholder-icon::after{content:"";position:absolute;top:53px;left:13px;width:78px;height:43px;border:2px solid currentColor;border-radius:42px 42px 12px 12px;background:rgba(47,199,247,.04)}
+.optim-crew-v6 .oc6-empty-certificate{display:grid;grid-template-columns:104px minmax(0,1fr);gap:24px;align-items:center;padding:24px;border:1px dashed rgba(47,199,247,.32);border-radius:14px;background:rgba(47,199,247,.025)}
+.optim-crew-v6 .oc6-cert-placeholder-image{position:relative;width:104px;aspect-ratio:3/4;border:2px solid rgba(47,199,247,.4);border-radius:7px;background:rgba(47,199,247,.035)}
+.optim-crew-v6 .oc6-cert-placeholder-image::before{content:"";position:absolute;left:16px;right:16px;top:47px;height:2px;background:rgba(47,199,247,.35);box-shadow:0 14px 0 rgba(47,199,247,.25),0 28px 0 rgba(47,199,247,.18)}
+.optim-crew-v6 .oc6-cert-placeholder-image::after{content:"";position:absolute;left:16px;top:15px;width:18px;height:18px;border:2px solid rgba(47,199,247,.35);border-radius:50%}
+.optim-crew-v6 .oc6-empty-certificate h3{margin:0 0 8px!important;font-size:16px;line-height:1.5;color:#dbeaf5}
+.optim-crew-v6 .oc6-empty-certificate p{margin:0!important;color:#8a9bbf}
+.optim-crew-v6 .oc6-gallery-image img{display:block;width:100%;height:162px;max-height:162px;object-fit:contain}
+@media(max-width:700px){.optim-crew-v6 .oc6-tab{flex-direction:column;gap:4px;padding:10px 4px;min-height:62px}.optim-crew-v6 .oc6-tab-label{font-size:clamp(9px,2.2vw,11px);letter-spacing:0}.optim-crew-v6 .oc6-gallery-image img{height:147px;max-height:147px}}
+@media(max-width:420px){.optim-crew-v6 .oc6-empty-certificate{grid-template-columns:1fr;text-align:center;gap:18px;padding:20px}.optim-crew-v6 .oc6-cert-placeholder-image{width:94px;margin:auto}}
+
 </style>
   <div class="oc6-atmosphere" aria-hidden="true">
     <div class="oc6-blob oc6-blob--a"></div>
@@ -463,13 +487,13 @@ var CREW_DIRECTORY = [
     <div class="oc6-grid">
       <aside class="oc6-left" aria-label="Фотография и разделы профиля">
         <div class="oc6-person">
-          <div class="oc6-image"><div class="oc6-photo-fallback">Фотография сотрудника</div><img data-crew-photo alt="" hidden><div class="oc6-corners"></div><div class="oc6-image-id" data-crew-photo-id>CREW MEMBER</div></div>
+          <div class="oc6-image"><div class="oc6-photo-fallback"><div class="oc6-photo-placeholder-copy"><span class="oc6-photo-placeholder-icon" aria-hidden="true"></span><strong>Фото пока не добавлено</strong></div></div><img data-crew-photo alt="" hidden><div class="oc6-corners"></div><div class="oc6-image-id" data-crew-photo-id>CREW MEMBER</div></div>
         </div>
         <nav class="oc6-navigation" aria-label="Разделы профиля" data-crew-nav>
           <p class="oc6-nav-title">РАЗДЕЛЫ ДОСЬЕ</p>
-          <button class="oc6-tab" type="button" data-tab="intro" aria-pressed="true"><span class="oc6-tab-num">01</span><span class="oc6-tab-label">Знакомство</span></button>
-          <button class="oc6-tab" type="button" data-tab="projects" aria-pressed="false"><span class="oc6-tab-num">02</span><span class="oc6-tab-label">Проекты</span></button>
-          <button class="oc6-tab" type="button" data-tab="expertise" aria-pressed="false"><span class="oc6-tab-num">03</span><span class="oc6-tab-label">Экспертиза</span></button>
+          <button class="oc6-tab" type="button" data-tab="intro" aria-pressed="true"><span class="oc6-tab-num">01 /</span><span class="oc6-tab-label">ЗНАКОМСТВО</span></button>
+          <button class="oc6-tab" type="button" data-tab="projects" aria-pressed="false"><span class="oc6-tab-num">02 /</span><span class="oc6-tab-label">ПРОЕКТЫ</span></button>
+          <button class="oc6-tab" type="button" data-tab="expertise" aria-pressed="false"><span class="oc6-tab-num">03 /</span><span class="oc6-tab-label">ЭКСПЕРТИЗА</span></button>
         </nav>
       </aside>
       <div class="oc6-right">
@@ -516,8 +540,9 @@ var CREW_DIRECTORY = [
     var items=function(a){return Array.isArray(a)?a.filter(Boolean):[]};
     var safe=function(v){return typeof v==='string'?v.trim():''};
     var set=function(selector,v){var n=q(selector);if(n)n.textContent=safe(v)};
-    var photo=q('[data-crew-photo]');
-    photo.addEventListener('error',function(){photo.hidden=true;},{passive:true});
+    var photo=q('[data-crew-photo]'),photoPlaceholder=q('.oc6-photo-fallback');
+    photo.addEventListener('error',function(){photo.hidden=true;if(photoPlaceholder)photoPlaceholder.hidden=false;},{passive:true});
+    photo.addEventListener('load',function(){if(photoPlaceholder)photoPlaceholder.hidden=true;},{passive:true});
     var projectList=[],certList=[];
     function bindPerson(){
       set('[data-crew-name]',data.name||'Сотрудник Оптим Про');
@@ -525,7 +550,7 @@ var CREW_DIRECTORY = [
       set('[data-crew-specialization]',data.specialization);
       set('[data-crew-photo-id]','CREW MEMBER / '+(safe(data.id)||'—'));
       var purl=validUrl(data.photo);
-      photo.hidden=true;photo.removeAttribute('src');
+      photo.hidden=true;photo.removeAttribute('src');if(photoPlaceholder)photoPlaceholder.hidden=false;
       if(purl){photo.src=purl;photo.alt=safe(data.photoAlt)||safe(data.name);photo.hidden=false;}
       projectList=items(data.projects).filter(function(p){return p&&safe(p.title)});
       certList=items(data.certificates).filter(function(c){return c&&safe(c.title)&&validUrl(c.image)});
@@ -581,7 +606,11 @@ var CREW_DIRECTORY = [
     function renderExpertise(){
       addText(panel,'h2','Сертификаты Битрикс24');
       if(!certList.length){
-        addText(panel,'p','Сертификаты специалиста будут размещены здесь после загрузки подтверждённых документов.','oc6-cert-empty');
+        var empty=addText(panel,'div','', 'oc6-empty-certificate');
+        var preview=addText(empty,'div','', 'oc6-cert-placeholder-image');preview.setAttribute('role','img');preview.setAttribute('aria-label','Место для сертификата');
+        var emptyText=addText(empty,'div','', 'oc6-cert-empty');
+        addText(emptyText,'h3','Сертификаты пока не добавлены');
+        addText(emptyText,'p','Здесь будут подтверждённые документы специалиста.');
         return;
       }
       var wrap=addText(panel,'div','', 'oc6-gallery');
